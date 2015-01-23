@@ -1,21 +1,21 @@
 {
-  "name": "eo_elit",
+  "name": "elit",
   "version": "0.0.1",
-  "description": "EO Elit theme",
-  "main": "Gruntfile.js",
+  "description": "Elit theme",
+  "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pjsinco/eo_elit.git"
+    "url": "https://github.com/pjsinco/elit"
   },
   "author": "pjs",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/pjsinco/eo_elit/issues"
+    "url": "https://github.com/pjsinco/elit/issues"
   },
-  "homepage": "https://github.com/pjsinco/eo_elit",
+  "homepage": "https://github.com/pjsinco/elit",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.2.0",
