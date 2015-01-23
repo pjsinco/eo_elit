@@ -2,8 +2,15 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks("grunt-contrib-watch");
   grunt.loadNpmTasks("grunt-contrib-compass");
+  grunt.loadNpmTasks("grunt-autoprefixer");
 
   grunt.initConfig({
+
+    autoprefixer: {
+      css: {
+        src: './**/*.css'
+      }
+    },
 
     compass: {
       dev: {
@@ -21,7 +28,7 @@ module.exports = function(grunt) {
       
       sass: {
         files: ['sass/**/*.scss'],
-        tasks: ['compass:dev'] 
+        tasks: ['compass:dev', 'autoprefixer:css'] 
       },
 
       php: {
