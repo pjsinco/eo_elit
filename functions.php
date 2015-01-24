@@ -20,7 +20,6 @@ if ( ! function_exists( 'elit_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function elit_setup() {
-
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
@@ -100,11 +99,22 @@ add_action( 'widgets_init', 'elit_widgets_init' );
  * Enqueue scripts and styles.
  */
 function elit_scripts() {
-	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
 
 	//wp_enqueue_script( 'elit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	//wp_enqueue_script( 'elit-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
+
+  wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), false, false);
+
+  wp_register_script('typekit-load', '//use.typekit.net/vdi5qvx.js', array(), false, false);
+
+  wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
+  
+  wp_enqueue_script('modernizr');
+  wp_enqueue_script('typekit-load');
+  wp_enqueue_script('picturefill');
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -137,3 +147,61 @@ require get_template_directory() . '/inc/template-tags.php';
  * Load Jetpack compatibility file.
  */
 //require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Load our typekit fonts
+ * https://typekit.com/account/kits
+ */
+function elit_load_typekit() {
+  $output  = '<script>';
+  $output .= 'try{Typekit.load();}catch(e){}';
+  $output .= '</script>';
+  
+  echo $output;
+}
+add_action('wp_head', 'elit_load_typekit');
+
+/**
+ * Picture element html5 shim
+ */
+function elit_picture_elem_shim() {
+  $output  = '<script>';
+  $output .= 'document.createElement("picture");';
+  $output .= '</script>';
+  
+  echo $output;
+}
+add_action('wp_head', 'elit_picture_elem_shim');
+
+/**
+ * Add html5 shim
+ */
+function elit_add_html5_shim() {
+  $output =  '<!--[if lt IE 9]>';
+  $output .= '<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>';
+  $output .= '<![endif]-->';
+
+  echo $output;
+}
+add_action('wp_head', 'elit_add_html5_shim');
+
+/**
+ *  Add async to loading of picturefill script
+ *  At some point, maybe abstract this for any js script
+ *
+ *  See:
+ *  http://wordpress.stackexchange.com/questions/38319/how-to-add-defer-defer-tag-in-plugin-javascripts/38335#38335
+ *  https://developer.wordpress.org/reference/hooks/script_loader_tag/
+ */
+function elit_add_async_to_picturefill_load($tag, $handle) {
+
+  // make sure we're looking at picturefill
+  if ($handle !== 'picturefill') {
+    return;
+  }
+
+  return str_replace(' src', 'async="async" src', $tag);
+  
+}
+add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 2);
