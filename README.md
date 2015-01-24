@@ -40,3 +40,10 @@
     * we can use it to add 'async' to our scripts
 
 * [html5 boilerplate](https://github.com/h5bp/html5-boilerplate)
+
+* TODO: we need to add this just after the opening of the <body> tag
+    ```html
+    <!--from html5boilerplate--><!--[if lt IE 9]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser.  Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience."></p><![endif]-->
+"
+    ```
