@@ -154,9 +154,9 @@ require get_template_directory() . '/inc/template-tags.php';
  * https://typekit.com/account/kits
  */
 function elit_load_typekit() {
-  $output  = '<script>';
-  $output .= 'try{Typekit.load();}catch(e){}';
-  $output .= '</script>';
+  $output  = '<script>' . PHP_EOL;
+  $output .= 'try{Typekit.load();}catch(e){}' . PHP_EOL;
+  $output .= '</script>' . PHP_EOL;
   
   echo $output;
 }
@@ -166,9 +166,9 @@ add_action('wp_head', 'elit_load_typekit');
  * Picture element html5 shim
  */
 function elit_picture_elem_shim() {
-  $output  = '<script>';
-  $output .= 'document.createElement("picture");';
-  $output .= '</script>';
+  $output  = '<script>' . PHP_EOL;
+  $output .= 'document.createElement("picture");' . PHP_EOL;
+  $output .= '</script>' . PHP_EOL;
   
   echo $output;
 }
@@ -178,9 +178,9 @@ add_action('wp_head', 'elit_picture_elem_shim');
  * Add html5 shim
  */
 function elit_add_html5_shim() {
-  $output =  '<!--[if lt IE 9]>';
-  $output .= '<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>';
-  $output .= '<![endif]-->';
+  $output =  '<!--[if lt IE 9]>' . PHP_EOL;
+  $output .= '<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>' . PHP_EOL;
+  $output .= '<![endif]-->' . PHP_EOL;
 
   echo $output;
 }
@@ -201,7 +201,7 @@ function elit_add_async_to_picturefill_load($tag, $handle) {
     return;
   }
 
-  return str_replace(' src', 'async="async" src', $tag);
+  return str_replace(' src', ' async="async" src', $tag);
   
 }
 add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 2);
