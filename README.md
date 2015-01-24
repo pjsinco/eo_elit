@@ -41,3 +41,5 @@
 
 * [html5 boilerplate](https://github.com/h5bp/html5-boilerplate)
 
+###Sat Jan 24 10:30:04 2015 CST
+* [notes from a wpsession talk on theme customizer](https://github.com/pdclark/talk-wordpress-customizer)
