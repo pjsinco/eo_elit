@@ -11,10 +11,11 @@
  *
  * @package elit
  */
-
-
-get_header();
-
-
-
 ?>
+
+
+<?php get_header(); ?>
+
+<!-- stuff will go here -->
+
+<?php get_footer(); ?>
