@@ -43,3 +43,7 @@
 
 ###Sat Jan 24 10:30:04 2015 CST
 * [notes from a wpsession talk on theme customizer](https://github.com/pdclark/talk-wordpress-customizer)
+
+* [vagrant + wp + vvv tutorial](http://www.sitepoint.com/wordpress-meets-vagrant-vvv/)
+
+* [vvv](https://github.com/Varying-Vagrant-Vagrants/VVV)
