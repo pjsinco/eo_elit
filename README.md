@@ -49,3 +49,6 @@
 * [vvv](https://github.com/Varying-Vagrant-Vagrants/VVV)
 
 * [how to create a separate page for blog posts](http://www.wpbeginner.com/wp-tutorials/how-to-create-a-separate-page-for-blog-posts-in-wordpress/)
+
+###Sun Jan 25 09:17:51 2015 CST
+* [make an svg sprite sheet with icomoon](http://blog.teamtreehouse.com/create-svg-sprite-sheet)
