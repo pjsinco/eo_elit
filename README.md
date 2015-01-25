@@ -65,3 +65,6 @@
 * Inside the AOA should probably be a separate wp install entirely, like insidetheaoa.osteopathic.org
     * that would be easier to maintain, it seems
     * our 'inside the aoa' listing on the front page could be an rss feed from the blog
+
+* How do we create a taxonomy for a series?
+    * maybe the taxonomy is hierarchical (has descendants), called 'series'
