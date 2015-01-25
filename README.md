@@ -54,3 +54,10 @@
 * [make an svg sprite sheet with icomoon](http://blog.teamtreehouse.com/create-svg-sprite-sheet)
 
 * should our make a row of stickers instead of mixing them in?
+
+* [smashing mag on wp custom taxonomies](http://www.smashingmagazine.com/2012/01/04/create-custom-taxonomies-wordpress/)
+
+* our potential custom taxonomies:
+    * school
+    * state (region?)
+    * specialty
