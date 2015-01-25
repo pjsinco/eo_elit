@@ -47,3 +47,5 @@
 * [vagrant + wp + vvv tutorial](http://www.sitepoint.com/wordpress-meets-vagrant-vvv/)
 
 * [vvv](https://github.com/Varying-Vagrant-Vagrants/VVV)
+
+* [how to create a separate page for blog posts](http://www.wpbeginner.com/wp-tutorials/how-to-create-a-separate-page-for-blog-posts-in-wordpress/)
