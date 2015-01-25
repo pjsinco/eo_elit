@@ -52,3 +52,5 @@
 
 ###Sun Jan 25 09:17:51 2015 CST
 * [make an svg sprite sheet with icomoon](http://blog.teamtreehouse.com/create-svg-sprite-sheet)
+
+* should our make a row of stickers instead of mixing them in?
