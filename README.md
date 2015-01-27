@@ -68,3 +68,8 @@
 
 * How do we create a taxonomy for a series?
     * maybe the taxonomy is hierarchical (has descendants), called 'series'
+
+###Mon Jan 26 8:33:12 2015 CST
+
+###Tue Jan 27 10:59:57 2015 CST
+* [how to use jetpack's carousel without installing jetpack](http://www.wpbeginner.com/plugins/how-to-add-gallery-carousel-in-wordpress-without-jetpack/)
