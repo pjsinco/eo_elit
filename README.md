@@ -73,3 +73,5 @@
 
 ###Tue Jan 27 10:59:57 2015 CST
 * [how to use jetpack's carousel without installing jetpack](http://www.wpbeginner.com/plugins/how-to-add-gallery-carousel-in-wordpress-without-jetpack/)
+
+* set default sizes of media in media settings
