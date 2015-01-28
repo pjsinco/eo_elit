@@ -75,3 +75,9 @@
 * [how to use jetpack's carousel without installing jetpack](http://www.wpbeginner.com/plugins/how-to-add-gallery-carousel-in-wordpress-without-jetpack/)
 
 * set default sizes of media in media settings
+
+* [conditionally load our js?](http://code.tutsplus.com/articles/quick-tip-conditional-javascript-and-css-enqueueing-on-front-end-pages--wp-25049)
+
+* [conditionally load plugin scripts](http://customcreative.co.uk/conditionally-loading-plugin-scripts-in-wordpress/)
+
+* [conditionally loading js with a shortcode](http://scribu.net/wordpress/conditional-script-loading-revisited.html)
