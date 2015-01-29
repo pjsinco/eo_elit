@@ -73,5 +73,3 @@
         </nav>
       </section>
     </header>
-  
-    <div id="main" class="content">
