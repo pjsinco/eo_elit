@@ -81,12 +81,15 @@ function elit_scripts() {
   wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), false, false);
   wp_register_script('typekit-load', '//use.typekit.net/vdi5qvx.js', array(), false, false);
   wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
-  wp_register_script('nav', get_template_directory_uri() . '/js/nav.js', array(), false, true);
+  wp_register_script('nav', get_template_directory_uri() . '/js/nav.js', array('jquery'), false, true);
+  wp_register_script('ehs-head-tag', get_template_directory_uri() . '/js/ehs-head-tag.js', array(), false, true);
+  wp_register_script('ehs-ads', get_template_directory_uri() . '/js/ehs-ads.js', array('ehs-head-tag'), false, false);
   
   wp_enqueue_script('modernizr');
   wp_enqueue_script('typekit-load');
   wp_enqueue_script('picturefill');
   wp_enqueue_script('nav');
+  wp_enqueue_script('ehs-head-tag');
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -167,6 +170,11 @@ function elit_add_html5_shim() {
   echo $output;
 }
 add_action('wp_head', 'elit_add_html5_shim');
+
+function elit_add_ehs_tag() {
+  
+}
+add_action('' , 'function_name');
 
 /**
  *  Add async to loading of picturefill script
