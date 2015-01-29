@@ -76,6 +76,8 @@
 
 * set default sizes of media in media settings
 
+
+###Wed Jan 28 11:23:42 2015 CST
 * [conditionally load our js?](http://code.tutsplus.com/articles/quick-tip-conditional-javascript-and-css-enqueueing-on-front-end-pages--wp-25049)
 
 * [conditionally load plugin scripts](http://customcreative.co.uk/conditionally-loading-plugin-scripts-in-wordpress/)
@@ -101,3 +103,6 @@
 
 * [10 Awesome Shortcodes For Your WordPress Blog](http://premium.wpmudev.org/blog/10-awesome-shortcodes-for-your-wordpress-blog/)
     * see the "Related Posts" shortcode!
+
+###Thu Jan 29 08:59:37 2015 CST
+
