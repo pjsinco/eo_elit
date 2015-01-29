@@ -98,3 +98,6 @@
 * [WordPress Shortcodes: 3 Essential Tips](http://premium.wpmudev.org/blog/wordpress-shortcodes/)
 
 * [do_shortcode() on the codex](http://codex.wordpress.org/Function_Reference/do_shortcode)
+
+* [10 Awesome Shortcodes For Your WordPress Blog](http://premium.wpmudev.org/blog/10-awesome-shortcodes-for-your-wordpress-blog/)
+    * see the "Related Posts" shortcode!
