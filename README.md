@@ -81,3 +81,20 @@
 * [conditionally load plugin scripts](http://customcreative.co.uk/conditionally-loading-plugin-scripts-in-wordpress/)
 
 * [conditionally loading js with a shortcode](http://scribu.net/wordpress/conditional-script-loading-revisited.html)
+
+* [wp popular posts widget](https://wordpress.org/plugins/wordpress-popular-posts/)
+    * [other popularity plugins](http://www.wpbeginner.com/plugins/5-best-popular-posts-plugins-for-wordpress/)
+
+* [smashing: WordPress Shortcodes: A Complete Guide](http://www.smashingmagazine.com/2012/05/01/wordpress-shortcodes-complete-guide/)
+
+* [plugin for pulling in a post with a shortcode](https://wordpress.org/plugins/post-content-shortcodes/)
+    * possibility for pulling in a sidebar
+        * which could be a custom post type
+
+* TODO we're going, i think, to need a shortcode to insert rover-don and rover-peggy into every post.
+
+* [stackexchange: Prevent publishing the post before setting a featured image?](http://wordpress.stackexchange.com/questions/16372/prevent-publishing-the-post-before-setting-a-featured-image)
+
+* [WordPress Shortcodes: 3 Essential Tips](http://premium.wpmudev.org/blog/wordpress-shortcodes/)
+
+* [do_shortcode() on the codex](http://codex.wordpress.org/Function_Reference/do_shortcode)
