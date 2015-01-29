@@ -133,14 +133,14 @@
     _comment-form.scss
     _cta.scss
     frm.scss
-    _ad.scss
+    ~~_ad.scss~~
     _f-item-old.scss
     _grid.scss
     _social-pick.scss
     _featured.scss
     _front.scss
     _comment-link.scss
-    _icons.scss
+    ~~_icons.scss~~
     _meta.scss
     _f-row.scss
     _play-hiya.scss
@@ -148,7 +148,7 @@
     _prev-next.scss
     _comment.scss
     _image.scss
-    _site-search.scss
+    ~~_site-search.scss~~
     _comments.scss
     _story-footer.scss
     _story-nav.scss
