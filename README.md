@@ -168,3 +168,7 @@
     ```
 
 * [possible way to programmatically add don and peggy inside the loop](https://wordpress.org/support/topic/php-and-javascript-with-google-adsense-code)
+
+* TODO so we hardcoded our ehs script into sidebar-leaderboard.php. is there a better way to do it?
+    * like maybe making the leaderboard a widget area and echoing the script with a filter?
+        * or is it not that big of a deal to hard code this js snippet?
