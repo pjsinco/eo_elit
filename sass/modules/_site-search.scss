@@ -1,0 +1,63 @@
+.site-search {
+
+  position: relative;
+
+  &__form {
+    width: 100%;
+  }
+
+  &__label {
+
+  }
+
+  &__submit {
+
+  }
+
+  &__button {
+    border: none;
+    background: $lightgray;
+
+    &--hide {
+      display: none;
+    }
+  }
+
+  &__input {
+    top: -2px;
+    background-image: image-url('svg/glass.svg');
+    background-position: 7px center;
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-color: transparent;
+    position: relative;
+    padding-top: 8px;
+    padding-left: 2.5em;
+    padding-right: 0;
+    border: 0;
+    line-height: 0.9;
+    cursor: pointer;
+    height: 2em;
+    width: 0;
+    display: inline-block;
+    transition: width 400ms ease, background 400ms ease;
+
+    &:-ms-input-placeholder {
+      color: transparent;
+    }
+
+    &:focus {
+
+      margin-top: -1px;
+      width: 10em;
+      outline: none;
+      border: 1px solid $lightgray;
+      cursor: text;
+
+      &[type=text] {
+        /*padding: .5em 0 .5em 2em;*/
+      }
+    }
+  } 
+
+}

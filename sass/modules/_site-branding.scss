@@ -11,16 +11,13 @@
   
   @include breakpoint($screen $big-menu-start) {
     margin-top: 1em;
-    /*margin-bottom: 1.5em;*/
     box-shadow: none;
   }
 }
 
 .site-branding {
   height: 3em;
-  /*background-color: $primarycolor;*/
   background-color: $white;
-  /*text-transform: uppercase;*/
   text-align: center;
 
   @include breakpoint($screen $big-menu-start) {
@@ -31,7 +28,6 @@
   }
 
   &__link {
-    /*color: #fff;*/
     color: $primarycolor;
     font-size: 2em;
 
@@ -42,41 +38,26 @@
     @include breakpoint($screen $big-menu-start) {
       color: $primarycolor;
       font-size: 4.5em;
-      /*font-size: 3.125em;*/
-      /*font-size: 48px;*/
-      /*letter-spacing: 0.2em;*/
     }
 
-    &:after {
-      /*content: "Dr.ing";*/
-      /*content: "Elit Ornare";*/
-      content: "The DO";
-      line-height: .5;
-      display: block;
-      font-weight: bold;
-      font-size: 1em;
-
-      @include breakpoint($screen $medium-minor-start) {
-        /*content: "Doctoring";*/
-        /*content: "Elit Ornare";*/
-        /*font-size: 2em;*/
-      }
-
-      @include breakpoint($screen $big-menu-start) {
-        /*font-size: 4.5em;*/
-      }
-  
-    }
+//    &:after {
+//      content: "The DO";
+//      line-height: .5;
+//      display: block;
+//      font-weight: bold;
+//      font-size: 1em;
+//    }
   }
 
   &--alpha {
     position: relative;
     top: 1em;
-    /*letter-spacing: -.0625em;*/
     letter-spacing: -1px;
+    font-weight: bold;
+    line-height: .5;
+    
 
     @include breakpoint($screen $big-menu-start) {
-      /*letter-spacing: -.1875em;*/
       letter-spacing: -3px;
     }
   }

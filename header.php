@@ -27,18 +27,38 @@
     
     <header role="banner" id="banner" class="banner">
       <section class="site-branding">
-        <div class="site-branding--alpha"><a href="/" class="site-branding__link"></a></div>
-        <div class="site-branding--beta"><a href="http://www.osteopathic.org" title="American Osteopathic Association"><span class="icon-aoa-solid"></span></a></div>
+        <div class="site-branding--alpha">
+          <a href="<?php echo esc_url( home_url('/') ); ?>" class="site-branding__link">
+            <?php bloginfo('name'); ?>
+          </a>
+        </div>
+        <div class="site-branding--beta">
+          <a href="http://www.osteopathic.org" title="American Osteopathic Association">
+            <span class="icon-aoa-solid"></span>
+          </a>
+        </div>
       </section>
       <section class="site-navigation"><a href="#site-nav" class="nav__link--toggle"><span class="icon-menu"></span></a>
         <nav role="navigation" id="site-nav" class="nav">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#" class="nav__item--link">Patient Care</a></li>
-            <li class="nav__item"><a href="#" class="nav__item--link">Innovation</a></li>
-            <li class="nav__item"><a href="#" class="nav__item--link">Training</a></li>
-            <li class="nav__item"><a href="#" class="nav__item--link">Profession</a></li>
-            <li class="nav__item"><a href="#" class="nav__item--link">Policy</a></li>
-            <li class="nav__item"><a href="#" class="nav__item--link">Lifestyle</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Patient Care</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Innovation</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Training</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Profession</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Policy</a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__item--link">Lifestyle</a>
+            </li>
             <li class="nav__item nav__item--last">
               <section class="site-search">
                 <form action="/search" id="search-form" class="site-search__form">
