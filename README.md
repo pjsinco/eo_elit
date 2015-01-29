@@ -167,4 +167,4 @@
     _button.scss
     ```
 
-
+* [possible way to programmatically add don and peggy inside the loop](https://wordpress.org/support/topic/php-and-javascript-with-google-adsense-code)
