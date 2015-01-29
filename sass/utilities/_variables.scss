@@ -14,7 +14,8 @@ $bluegray: #2d4254; // la times
 $slategray: #2f404d; // itunes
 $bluey: #3484de; // itunes
 $overlayblue: #105acd;
-$aoa: #1C446C;
+$aoablue: #1C446C;
+$aoatrue: #000066;
 $facebook: #3b5999;
 $twitter: #5fa9dd;
 $gplus: #dc4a38;
@@ -101,9 +102,9 @@ $overlay-start: $large-start;
  */
 
 // Durations
-$fastDuration: .1s;
-$mediumDuration: .2s;
-$slowDuration: .5s;
+$fastduration: .1s;
+$mediumduration: .2s;
+$slowduration: .5s;
 
 // Browser Prefixes - Which CSS prefixes should be used?
 $webkit: true;
@@ -112,57 +113,10 @@ $ms: false;
 $o: false;
 
 
-$susy: (
-  global-box-sizing: border-box,
-  columns: 12,
-  /*container: 60em,*/
-  container: $site-width,
-  debug: (
-    /*image: show-columns,*/
-    image: hide,
-    color: rgba(#66f, .25),
-    output: background,
-    /*toggle: top right,*/
-  ),
-);
+$superfigborderwidth: 1px;
 
-$gridpage: (
-  global-box-sizing: border-box,
-  columns: 12,
-  /*container: 60em,*/
-  container: $site-width,
-  gutters: .25,
-  debug: (
-    image: show-columns,
-    /*image: hide,*/
-    color: rgba(#66f, .25),
-    output: overlay,
-    toggle: top right,
-  ),
-);
-
-$gridrow4: (
-  global-box-sizing: border-box,
-  columns: 4,
-  /*container: $site-width,*/
-  container: 94%,
-  gutters: .25,
-  debug: (
-    image: show-columns,
-    /*image: hide,*/
-    color: rgba(steelblue, .25),
-    output: overlay,
-    toggle: top left,
-  ),
-);
-
-$adleader: (
-  container-position: center,
-);
-
-$secondary: (
-  global-box-sizing: border-box,
-  columns: 2,
-  container: $article-max-width,
-  gutters: .25,
-);
+/**
+ * SOCIAL-PICK
+ *
+ */
+$socialpickheight: 3.4375em;

@@ -1,0 +1,110 @@
+.banner {
+  @include container($gridpage);
+  position: relative;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.15),0 -5px 3px 10px #fff;
+
+  @include breakpoint($screen $big-menu-start $xlarge-start) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  
+  @include breakpoint($screen $big-menu-start) {
+    margin-top: 1em;
+    /*margin-bottom: 1.5em;*/
+    box-shadow: none;
+  }
+}
+
+.site-branding {
+  height: 3em;
+  /*background-color: $primarycolor;*/
+  background-color: $white;
+  /*text-transform: uppercase;*/
+  text-align: center;
+
+  @include breakpoint($screen $big-menu-start) {
+    padding-bottom: 4em;
+    border-bottom: 1px solid $lightgray;
+    text-align: left;
+    background-color: $white;
+  }
+
+  &__link {
+    /*color: #fff;*/
+    color: $primarycolor;
+    font-size: 2em;
+
+    &:hover, &:active, &:focus {
+      text-decoration: none;
+    }
+  
+    @include breakpoint($screen $big-menu-start) {
+      color: $primarycolor;
+      font-size: 4.5em;
+      /*font-size: 3.125em;*/
+      /*font-size: 48px;*/
+      /*letter-spacing: 0.2em;*/
+    }
+
+    &:after {
+      /*content: "Dr.ing";*/
+      /*content: "Elit Ornare";*/
+      content: "The DO";
+      line-height: .5;
+      display: block;
+      font-weight: bold;
+      font-size: 1em;
+
+      @include breakpoint($screen $medium-minor-start) {
+        /*content: "Doctoring";*/
+        /*content: "Elit Ornare";*/
+        /*font-size: 2em;*/
+      }
+
+      @include breakpoint($screen $big-menu-start) {
+        /*font-size: 4.5em;*/
+      }
+  
+    }
+  }
+
+  &--alpha {
+    position: relative;
+    top: 1em;
+    /*letter-spacing: -.0625em;*/
+    letter-spacing: -1px;
+
+    @include breakpoint($screen $big-menu-start) {
+      /*letter-spacing: -.1875em;*/
+      letter-spacing: -3px;
+    }
+  }
+
+  &--beta {
+    position: relative;
+    top: -1em;
+    display: none;
+  
+    > a {
+      color: $mediumgray;
+      transition: color .25ms ease;
+
+      &:hover, &:active {
+        color: $aoatrue;
+        text-decoration: none;
+
+      }
+    }
+
+    @include breakpoint($screen $big-menu-start) {
+      float: right;
+      top: -1.3em;
+      display: block;
+
+      span {
+        font-size: 1.875em;
+      }
+    }
+  }
+}

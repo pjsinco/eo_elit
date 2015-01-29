@@ -7,9 +7,9 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
-}
+//if ( ! isset( $content_width ) ) {
+	//$content_width = 640; [> pixels <]
+//}
 
 if ( ! function_exists( 'elit_setup' ) ) :
 /**
@@ -22,9 +22,6 @@ if ( ! function_exists( 'elit_setup' ) ) :
 function elit_setup() {
 	/*
 	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Elit, use a find and replace
-	 * to change 'elit' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'elit', get_template_directory() . '/languages' );
 
@@ -38,40 +35,19 @@ function elit_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
   add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),
 	) );
 
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'gallery',
 	) );
 
-	// Set up the WordPress core custom background feature.
-	//add_theme_support( 'custom-background', apply_filters( 'elit_custom_background_args', array(
-		//'default-color' => 'ffffff',
-		//'default-image' => '',
-	//) ) );
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -100,17 +76,12 @@ add_action( 'widgets_init', 'elit_widgets_init' );
  */
 function elit_scripts() {
 
-	//wp_enqueue_script( 'elit-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
-	//wp_enqueue_script( 'elit-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-
 	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
 
   wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), false, false);
-
   wp_register_script('typekit-load', '//use.typekit.net/vdi5qvx.js', array(), false, false);
-
   wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
+  wp_register_script('nav', get_template_directory_uri() . '/js/nav.js', array(), false, true);
   
   wp_enqueue_script('modernizr');
   wp_enqueue_script('typekit-load');
@@ -123,10 +94,20 @@ function elit_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
+// use google's cdn for jquery and load it in the footer
+// http://www.wpbeginner.com/wp-themes/
+//    replace-default-wordpress-jquery-script-with-google-library/
+function elit_modify_jquery() {
+
+  if (! is_admin()) {
+    wp_deregister_script('jquery');
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', FALSE, '1.11.1', TRUE);
+    wp_enqueue_script('jquery');
+  }    
+}
+add_action('init' , 'elit_modify_jquery');
+
+
 
 /**
  * Custom template tags for this theme.
@@ -194,14 +175,14 @@ add_action('wp_head', 'elit_add_html5_shim');
  *  http://wordpress.stackexchange.com/questions/38319/how-to-add-defer-defer-tag-in-plugin-javascripts/38335#38335
  *  https://developer.wordpress.org/reference/hooks/script_loader_tag/
  */
-function elit_add_async_to_picturefill_load($tag, $handle) {
+function elit_add_async_to_picturefill_load($tag, $handle, $src) {
 
   // make sure we're looking at picturefill
   if ($handle !== 'picturefill') {
-    return;
+    return $tag;
   }
 
   return str_replace(' src', ' async="async" src', $tag);
   
 }
-add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 2);
+add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 3);

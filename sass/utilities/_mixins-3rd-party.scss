@@ -1,0 +1,129 @@
+// https://github.com/IanLunn/Hover/blob/master/scss/_mixins.scss
+
+// prefix declarations
+@mixin prefixed($property, $value) {
+  @if $webkit == true {
+    -webkit-#{$property}: #{$value};
+  }
+
+  @if $moz == true {
+    -moz-#{$property}: #{$value};
+  }
+
+  @if $ms == true {
+    -ms-#{$property}: #{$value};
+  }
+
+  @if $o == true {
+    -o-#{$property}: #{$value};
+  }
+
+  #{$property}: #{$value};
+}
+
+
+
+
+// https://github.com/IanLunn/Hover/blob/master/scss/_hacks.scss
+
+// As is often the case, some devices/browsers need additional code to get CSS to work
+// in the most desired way. These mixins are used to quickly drop in hacks for each element
+// Find out more here: https://github.com/IanLunn/Hover/wiki/Hacks-Explained
+
+@mixin hardwareAccel() {
+  // Improve performance on mobile/tablet devices
+  @include prefixed(transform, translateZ(0));
+}
+
+@mixin improveAntiAlias() {
+  // Improve aliasing on mobile/tablet devices
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+@mixin fontSmooth() {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin forceBlockLevel() {
+  // Transforms need to be block-level to work
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@mixin hacks() {
+  @include forceBlockLevel();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+  @include fontSmooth();
+}
+
+
+// https://raw.githubusercontent.com/IanLunn/Hover/master/scss/effects/border-transitions/_underline-from-center.scss
+
+/* Underline From Center */
+@mixin underline-from-center {
+  $duration: $mediumduration;
+
+  @include hacks();
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    background: $primarycolor;
+    height: 4px;
+    @include prefixed(transition-property, "left, right");
+    @include prefixed(transition-duration, $duration);
+    @include prefixed(transition-timing-function, ease-out);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+
+    &:before {
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+/* Underline Reveal */
+// modified by me
+@mixin underline-reveal($height) {
+  $duration: $mediumduration;
+
+  @include hacks();
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    /*bottom: 3px;*/
+    bottom: ($height - 1px);
+    background: $primarycolor;
+    height: 0px;
+    @include prefixed(transition-property, height);
+    @include prefixed(transition-duration, $duration);
+    @include prefixed(transition-timing-function, ease-out);
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    &:before {
+      height: $height;
+    }
+  }
+}

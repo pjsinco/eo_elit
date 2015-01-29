@@ -1,0 +1,54 @@
+$susy: (
+  global-box-sizing: border-box,
+  columns: 12,
+  /*container: 60em,*/
+  container: $site-width,
+//  debug: (
+//    /*image: show-columns,*/
+//    image: hide,
+//    color: rgba(#66f, .25),
+//    output: background,
+//    /*toggle: top right,*/
+//  ),
+);
+
+$gridpage: (
+  global-box-sizing: border-box,
+  columns: 12,
+  /*container: 60em,*/
+  container: $site-width,
+  gutters: .25,
+//  debug: (
+//    /*image: show-columns,*/
+//    image: hide,
+//    color: rgba(#66f, .25),
+//    output: overlay,
+//    toggle: top right,
+//  ),
+);
+
+$gridrow4: (
+  global-box-sizing: border-box,
+  columns: 4,
+  /*container: $site-width,*/
+  container: 94%,
+  gutters: .25,
+  debug: (
+    /*image: show-columns,*/
+    image: hide,
+    color: rgba(steelblue, .25),
+    output: overlay,
+    toggle: top left,
+  ),
+);
+
+$adleader: (
+  container-position: center,
+);
+
+$secondary: (
+  global-box-sizing: border-box,
+  columns: 2,
+  container: $article-max-width,
+  gutters: .25,
+);

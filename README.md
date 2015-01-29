@@ -116,7 +116,7 @@
     _section-title-hat.scss
     _social.scss
     _widget.scss
-    _site-branding.scss
+    ~~_site-branding.scss~~
     _super.scss
     _inside-the-aoa.scss
     _sticker.scss

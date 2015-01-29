@@ -1,0 +1,43 @@
+@mixin srt {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+@mixin center {
+  position: absolute;
+  margin: auto;
+  top: 0; right: 0; bottom: 0; left: 0;
+}
+
+@mixin border-before {
+  content: '';
+  position: absolute;
+  top: 0;
+  /*bottom: 0;*/
+  height: calc(100% - 1em);
+  /*z-index: -1;*/
+  z-index: 1;
+  border-left: 1px solid $mediumgray;
+}
+
+@mixin red-hover {
+  &:link, &:visited {
+    color: inherit;
+  }
+
+  &:hover, &:focus {
+    text-decoration: none;
+    color: $primarycolor;
+  }
+}
+
+@mixin red-hover-border {
+  &:hover, &:active {
+    text-decoration: none;
+    border-bottom: 1px solid $primarycolor;
+    padding-bottom: 4px;
+    color: $primarycolor;
+  }
+  
+}
