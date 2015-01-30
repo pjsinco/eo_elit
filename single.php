@@ -4,10 +4,21 @@
 
     <div id="main" class="content">
       <section id="primary" class="content__primary">
-        <?php get_template_part('content', 'single'); ?>
+
+        <?php while(have_posts()): the_post(); ?>
 
 
+          <?php get_template_part('content', 'single'); ?>
 
+          <?php 
+            if ( comments_open() || get_comments_number() ):
+              comments_template();
+            endif;
+          ?>
+
+        <?php endwhile; ?>
+
+      </section> <!-- #primary -->
 
 
 <!--       temp; make into a sidebar template? -->
@@ -39,5 +50,6 @@
           </ol>
         </aside>
       </section>
+    </div> <!-- #main -->
 
 <?php get_footer(); ?>

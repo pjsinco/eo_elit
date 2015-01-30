@@ -1,0 +1,35 @@
+.image {
+
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--super {
+    margin: 0 auto;
+    display: block;
+  }
+
+  &--primary {
+    max-width: $article-feature-image-max-width;
+    margin: 0 auto;
+    display: block;
+
+    @include breakpoint($screen $large-start) {
+      max-width: $article-max-width;
+    }
+
+  }
+
+  &--featured {
+
+  }
+
+  &--secondary {
+    margin-bottom: 1em;
+  }
+
+  &--caption {
+
+  }
+}

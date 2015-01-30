@@ -885,3 +885,24 @@ figure {
         width: 30%;
         float: right;
         margin-right: 0; } }
+
+/* line 3, sass/modules/_image.scss */
+.image__img {
+  max-width: 100%;
+  height: auto; }
+/* line 8, sass/modules/_image.scss */
+.image--super {
+  margin: 0 auto;
+  display: block; }
+/* line 13, sass/modules/_image.scss */
+.image--primary {
+  max-width: 48em;
+  margin: 0 auto;
+  display: block; }
+  @media screen and (min-width: 48em) {
+    /* line 13, sass/modules/_image.scss */
+    .image--primary {
+      max-width: 728px; } }
+/* line 28, sass/modules/_image.scss */
+.image--secondary {
+  margin-bottom: 1em; }
