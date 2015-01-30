@@ -28,13 +28,13 @@
 
           <div class="story">
             <header class="story-header">
-              <h5 class="story-header__kicker">Duis Arte</h5>
-              <h1 class="story-header__title">Media 101: How to position yourself as a medical expert</h1>
-              <h3 class="story-header__teaser">Do you see yourself as the next Dr. Sanjay Gupta? A seasoned expert shares words of wisdom on working with the media.</h3>
+              <h5 class="story-header__kicker"><?php echo get_post_meta($post->ID, 'elit_kicker', true); ?></h5>
+              <?php the_title('<h1 class="story-header__title">', '</h1>', true); ?>
+              <h3 class="story-header__teaser"><?php echo get_the_excerpt(); ?></h3>
               <div>
                 <div class="story-meta">
                   <span class="story-meta__by">By</span> 
-                  <span class="story-meta__author">Euismod Mollis Purus</span> 
+                  <span class="story-meta__author"><?php the_author(); ?></span> 
                   <span class="story-meta__date">Wednesday, Dec. 14, 2014</span>
                   <span class="meta__comment-link comment-link">
                     <a href="#comments" class="comment-link__link">
