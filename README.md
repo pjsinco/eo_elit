@@ -178,3 +178,5 @@
 
 * [wordpress responsive images plugin](https://wordpress.org/plugins/ricg-responsive-images/)
     * [a post on css-tricks with an update about it](http://css-tricks.com/hassle-free-responsive-images-for-wordpress/)
+
+* [9 Tips for WordPress Plugin Development](http://sixrevisions.com/wordpress/wordpress-plugin-development-tips/)
