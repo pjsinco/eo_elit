@@ -1175,3 +1175,39 @@ figure {
     font-size: .6em;
     letter-spacing: .09090909091em;
     color: #fff; }
+
+/* line 1, sass/modules/_caption.scss */
+.caption {
+  margin-top: .5em;
+  color: #808080;
+  max-width: 728px; }
+
+/* line 7, sass/modules/_caption.scss */
+.caption {
+  font-size: 1em;
+  line-height: 1.3; }
+  /* line 15, sass/modules/_caption.scss */
+  .caption--right {
+    text-align: right; }
+  /* line 19, sass/modules/_caption.scss */
+  .caption--left {
+    text-align: left; }
+  /* line 23, sass/modules/_caption.scss */
+  .caption--feature {
+    margin-left: 3%;
+    margin-right: 3%;
+    font-size: 1em; }
+    @media screen and (min-width: 48em) {
+      /* line 23, sass/modules/_caption.scss */
+      .caption--feature {
+        font-size: 1.125em; } }
+    @media screen and (min-width: 30em) {
+      /* line 23, sass/modules/_caption.scss */
+      .caption--feature {
+        margin-left: 5%;
+        margin-right: 5%; } }
+    @media screen and (min-width: 48em) {
+      /* line 23, sass/modules/_caption.scss */
+      .caption--feature {
+        margin-left: auto;
+        margin-right: auto; } }

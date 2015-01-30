@@ -4,20 +4,28 @@
  */
 ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <figure class="image--primary">
 
-<!-- removing picture element because it's not used by ricg picturefill plugin -->
-<!--             <picture> -->
+          <?php // if we have a featured image, show it ?>
+          <?php if ( has_post_thumbnail() ): ?>
+            <figure class="image--primary">
+
+            <!-- removing picture element because it's not used by ricg picturefill plugin -->
+            <!--<picture> -->
               <?php 
                 // let's get the img src of the featured image
                 $img_src = wp_get_attachment_url(get_post_thumbnail_id()); 
               ?>
               <img class="image__img" src="<?php echo $img_src; ?>" <?php echo tevkori_get_src_sizes( 179421, 'article-top-large' ); ?> />
-<!--             </picture> -->
-            <figcaption class="image__caption caption caption--feature caption--right">
-              <?php  ?>
-            </figcaption>
-          </figure>
+            <!--</picture> -->
+
+              <figcaption class="image__caption caption caption--feature caption--right">
+                <?php $thumb_id = (get_post_thumbnail_id()); ?>
+                <?php echo get_post($thumb_id)->post_excerpt; ?>
+              </figcaption>
+            </figure>
+          <?php endif; ?>
+
+
           <div class="story">
             <header class="story-header">
               <h5 class="story-header__kicker">Duis Arte</h5>
