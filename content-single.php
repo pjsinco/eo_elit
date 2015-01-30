@@ -10,7 +10,7 @@
                 // let's get the img src of the featured image
                 $img_src = wp_get_attachment_url(get_post_thumbnail_id()); 
               ?>
-              <img class="image__img" src="http://elit.dev/wp-content/uploads/2015/01/taylor.jpg" <?php echo tevkori_get_src_sizes( 179421, 'article-top-large' ); ?> />
+              <img class="image__img" src="http://elit.dev/wp-content/uploads/2015/01/taylor-413x275.jpg" <?php echo tevkori_get_src_sizes( 179421, 'article-top-large' ); ?> />
             </picture>
             <figcaption class="image__caption caption caption--feature caption--right">
               Sed Consectetur Lobortis, LL
