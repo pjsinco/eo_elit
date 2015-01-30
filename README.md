@@ -184,3 +184,22 @@
 * [How To Optimize Images For WordPress, A Complete Guide](http://www.wpexplorer.com/optimize-images-wordpress-guide/)
 
 * [support for ricg picturefill plugin](https://wordpress.org/support/plugin/ricg-responsive-images)
+
+###Fri Jan 30 07:09:27 2015 CST
+* installed kint debugger
+      ```
+      Dumping variables is easy:
+      
+      d($variable) will output a styled, collapsible container with your variable information
+      dd($variable) will do exactly as d() except halt execution of the script
+      s($variable) will output a simple, un-styled whitespace container
+      sd($variable) will do exactly as s() except halt execution of the script
+      Backtrace is also easy:
+      
+      Kint::trace() The displayed information for each step of the trace includes the source snippet, passed arguments and the object at the time of calling
+      We've also baked in a few functions that are WordPress specific:
+      
+      dump_wp_query()
+      dump_wp()
+      dump_post()
+      ```
