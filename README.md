@@ -203,3 +203,6 @@
       dump_wp()
       dump_post()
       ```
+
+* custom field: elit_kicker
+    * for adding the kicker to the post
