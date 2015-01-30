@@ -1,0 +1,69 @@
+%dashed-line-top {
+  border-top: 1px dashed $mediumgray;
+}
+
+%dashed-line-bottom {
+  border-bottom: 1px dashed $mediumgray;
+}
+
+.story-footer {
+  margin-top: 3em;
+  font-size: 1em;
+
+  @include breakpoint($screen $large-minor-start) {
+    @include span(last 7 of 8);
+  }
+
+  .with-top-rule {
+    @extend %dashed-line-top;
+    padding-top: 1em;
+  }
+
+  .with-bottom-rule {
+    @extend %dashed-line-bottom;
+    padding-bottom: 1em;
+  }
+
+  &__jump-link {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+
+    > a {
+      @extend %story-nav-link; 
+    }
+  }
+
+  &__section {
+    @include clearfix;
+    padding-top: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    padding-left: 0;
+    font-weight: 100;
+  }
+
+  &__img {
+    float: left;
+    margin-right: 1em;
+    @extend %clip-path-circle;
+  }
+
+  &__title {
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 100;
+    color: $font-color-lightest;
+  }
+
+  &__body {
+    font-style: italic;
+    font-weight: 400;
+    font-size: $font-size-base;
+    line-height: $bodylineheight;
+    color: $font-color-lighter;
+  }
+}

@@ -1,0 +1,78 @@
+.story {
+  /*@include container(94%);*/
+  width: 94%;
+  /*max-width: 40.9824375em;*/
+  max-width: $article-max-width;
+  @extend %center;
+  
+  @include breakpoint($screen $medium-start) {
+    /*@include container(90%);*/
+    width: $story-width-medium;
+  }
+
+  @include breakpoint($screen $large-start) {
+    width: 100%;
+    /*@include container(95%);*/
+    /*@include span(8 of $gridpage);*/
+  }
+
+  @include breakpoint($screen $large-minor-start) {
+    width: 100%;
+  }
+
+  &__social {
+    &--shiftable {
+
+    }
+
+    &--bottom {
+
+    }
+  }
+
+  &__body-text {
+    margin-top: 1em;
+
+    // dropcap
+    > p:first-child:first-letter {
+      margin-bottom: -.25em;
+      float: left;
+      font-size: 3em;
+      line-height: 1;
+      color: $primarycolor;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 3.5em;
+        margin-bottom: -.3125em;
+        line-height: .97;
+      }
+    }
+
+    > h2 {
+      margin-bottom: 0;
+      font-family: $secondaryfont;
+      font-size: 1.1875em;
+      line-height: $bodylineheight;
+      font-weight: 600;
+      color: $primarycolor;
+      
+      @include breakpoint($screen $large-start) {
+        line-height: $bodylineheight-bigger;
+      }
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      @include span(last 7 of 8);
+    }
+  }
+
+  &__box {
+    @include clearfix();
+    @include breakpoint($screen $medium-minor-start) {
+      margin-left: 1.5em;
+      margin-bottom: 1em;
+      width: 11.875em;
+      float: right;
+    }
+  }
+}

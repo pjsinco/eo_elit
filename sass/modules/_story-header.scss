@@ -1,0 +1,40 @@
+.story-header {
+
+  &__kicker {
+    margin-top: .625em;
+    margin-bottom: 0;
+    color: $primarycolor;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: .9em;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 1em;
+
+    }
+  }
+
+  &__title {
+    margin-top: 0.1em;
+    margin-bottom: 0;
+    font-size: 2em;
+    line-height: 1.25;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 2.625em;
+    }
+  }
+
+  &__teaser {
+    margin-top: .7em;
+    font-size: 1.125em;
+    line-height: 1.3;
+    font-weight: 600;
+    color: $font-color-lighter;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 1.25em;
+      line-height: 1.4;
+    }
+  }
+}

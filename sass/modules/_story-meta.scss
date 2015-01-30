@@ -1,0 +1,45 @@
+.story-meta {
+  position: relative;
+  padding-top: .5em;
+  padding-bottom: .3em;
+  border-top: 1px solid $lightgray;
+  border-bottom: 1px solid $lightgray;
+  font-size: .9em;
+  letter-spacing: .05em;
+  color: $verydark;
+
+  @include breakpoint($screen $large-start) {
+    font-size: 1em;
+  }
+
+  &__by {
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  &__author {
+    text-transform: uppercase;
+    line-height: 1.3;
+    font-weight: 700;
+  }
+
+  &__date {
+    position: relative;
+    display: block;
+    /*left: 60%;*/
+    /*width: 40%;*/
+    margin-top: .5em;
+    /*float: right;*/
+    letter-spacing: .05em;
+    font-size: 0.875em;
+    text-align: left;
+    line-height: 1;
+    color: $gray;
+    text-transform: uppercase;
+  }
+
+  &__comment-link {
+    position: relative;
+  }
+}
+

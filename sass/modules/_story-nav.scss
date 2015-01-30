@@ -1,0 +1,47 @@
+%story-nav-link {
+  color: $font-color;
+}
+
+.story-nav {
+  position: relative;
+  font-weight: 100;
+  line-height: 1.5;
+  /*text-transform: uppercase;*/
+  color: $font-color;
+
+
+  &__emph {
+    font-weight: 600;
+  }
+
+  &__more-in {
+    margin-top: 2em;
+    padding-top: .625em;
+    padding-bottom: .6em;
+    /*padding-bottom: .625em;*/
+    /*@extend %dashed-line-top;*/
+    /*@extend %dashed-line-bottom;*/
+    text-align: right;
+    text-transform: uppercase;
+
+    > a {
+      @extend %story-nav-link; 
+    }
+
+    @include breakpoint($screen $medium-minor-start) {
+      /*position: absolute;*/
+      /*top: 0;*/
+      /*right: 0;*/
+      /*text-align: right;*/
+      /*border: 0;*/
+    }
+  }
+  
+  &__title {
+    text-transform: uppercase;
+    color: $font-color-lightest;
+  }
+
+  &__prev-next {
+  }
+}
