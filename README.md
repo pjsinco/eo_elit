@@ -206,3 +206,5 @@
 
 * custom field: elit_kicker
     * for adding the kicker to the post
+
+* [removed unusued custom fields](http://resources.kevinspence.org/remove-custom-fields-wordpress/)
