@@ -37,6 +37,14 @@ function elit_setup() {
 	add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
 
+  /*
+   * Set our image sizes
+   */
+  add_image_size('article-top-large', 930, 620, true);
+  add_image_size('article-top-medium', 620, 413, true);
+  add_image_size('article-top-small', 413, 275, true);
+  add_image_size('super', 992, 661, true);
+
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),
 	) );
