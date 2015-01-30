@@ -182,3 +182,5 @@
 * [9 Tips for WordPress Plugin Development](http://sixrevisions.com/wordpress/wordpress-plugin-development-tips/)
 
 * [How To Optimize Images For WordPress, A Complete Guide](http://www.wpexplorer.com/optimize-images-wordpress-guide/)
+
+* [support for ricg picturefill plugin](https://wordpress.org/support/plugin/ricg-responsive-images)
