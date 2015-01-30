@@ -1,0 +1,65 @@
+.content {
+  position: relative;
+  /*@include clearfix();*/
+  @include breakpoint($screen $large-minor-start) {
+    @include container($gridpage);
+  }
+
+  /*padding-right: $outside-gutter-small;*/
+  /*padding-left: $outside-gutter-small;*/
+  /*margin-top: 1em;*/
+
+  
+  // CONVENIENCE
+  // this is just so there's a bar in chrome
+  // dev tools mobile view that corresponds
+  // to a width of 320px
+  // *take this out at some point*
+  @include breakpoint($screen $small-start) {
+    padding-top: 0;
+    /*padding-right: $outside-gutter-small;*/
+    padding-right: 0;
+    padding-bottom: 0;
+    /*padding-left: $outside-gutter-small;*/
+    padding-left: 0;
+  }
+  
+  &__primary {
+    position: relative;
+    @include breakpoint($screen $xlarge-start) {
+      @include span(8 of $gridpage);
+
+      &:after {
+        content: '';
+        border-right: 1px solid $lightgray;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -1.2em;
+        height: 100%;
+        
+      }
+    }
+  }
+
+  &__secondary {
+    width: 94%;
+    max-width: $article-max-width;
+    @extend %center;
+    
+    @include breakpoint($screen $medium-start) {
+      /*@include container(90%);*/
+      width: $story-width-medium;
+    }
+
+    @include breakpoint($screen $large-start) {
+      width: 94%;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      @include span(30% last of $gridpage);
+    }
+  }
+
+}
+

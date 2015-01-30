@@ -4,10 +4,18 @@
 
     <div id="main" class="content">
       <section id="primary" class="content__primary">
+        <?php get_template_part('content', 'single'); ?>
 
+
+
+
+
+<!--       temp; make into a sidebar template? -->
       <section id="secondary" class="content__secondary">
         <aside data-set="rover-don-parent" class="ad rover-don-parent-b"></aside>
         <aside data-set="rover-peggy-parent" class="ad rover-peggy-parent-b"></aside>
+
+<!--         temp; make a widget? -->
         <aside class="widget widget--latest">
           <h2 class="widget__title">Latest stories</h2>
           <ul class="widget__list">
@@ -18,6 +26,8 @@
             <li class="widget__list-item"><span class="widget__feature"><img src="img/smith160.jpg" width="80" height="107"></span><span class="widget__head"><a href="#" class="widget__link">'This could happen to you': Lessons learned from explosion in West, Texas</a></span></li>
           </ul>
         </aside>
+
+<!--         temp; make a widget? -->
         <aside class="widget widget--counter">
           <h2 class="widget__title">Popular</h2>
           <ol class="widget__list--counter">

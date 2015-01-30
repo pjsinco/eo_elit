@@ -175,3 +175,6 @@
 
 * [lines between text](http://css-tricks.com/fun-line-height/)
     * possible use in pull quotes
+
+* [wordpress responsive images plugin](https://wordpress.org/plugins/ricg-responsive-images/)
+    * [a post on css-tricks with an update about it](http://css-tricks.com/hassle-free-responsive-images-for-wordpress/)
