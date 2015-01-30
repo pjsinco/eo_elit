@@ -208,3 +208,16 @@
     * for adding the kicker to the post
 
 * [removed unusued custom fields](http://resources.kevinspence.org/remove-custom-fields-wordpress/)
+
+* [How to Display WordPress Post Thumbnails with Captions](http://www.wpbeginner.com/wp-tutorials/how-to-display-wordpress-post-thumbnails-with-captions/)
+    ```
+    WordPress stores each image as its own post. So the Title of the 
+    Image will be the title of the post, Caption will be the excerpt of 
+    the post, and Description will be the content of the post.
+    ```
+    
+    ```php
+    // ex.
+    <?php the_post_thumbnail();  
+    echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
+    ```
