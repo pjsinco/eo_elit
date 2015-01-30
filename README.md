@@ -172,3 +172,6 @@
 * TODO so we hardcoded our ehs script into sidebar-leaderboard.php. is there a better way to do it?
     * like maybe making the leaderboard a widget area and echoing the script with a filter?
         * or is it not that big of a deal to hard code this js snippet?
+
+* [lines between text](http://css-tricks.com/fun-line-height/)
+    * possible use in pull quotes
