@@ -12,7 +12,9 @@
 
   &--primary {
     max-width: $article-feature-image-max-width;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    margin-left: auto;
+    margin-right: auto;
     display: block;
 
     @include breakpoint($screen $large-start) {

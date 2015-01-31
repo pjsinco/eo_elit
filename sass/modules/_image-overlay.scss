@@ -6,6 +6,7 @@
 
   @include breakpoint($screen $xlarge-start) {
 
+
     &:hover {
       cursor: pointer;
     }
@@ -16,12 +17,20 @@
 
   }
 
+  &--space {
+    margin-bottom: 1em;
+
+    @include breakpoint($screen $xlarge-start) {
+      margin-bottom: 1.5em;
+    }
+  }
+
   &__body {
 
     @include breakpoint($screen $xlarge-start) {
     
       position: absolute;
-      bottom: .1875em;
+      bottom: .125em;
       max-width: $article-max-width;
       max-height: 0;
       overflow: hidden;
@@ -29,7 +38,7 @@
       background: rgba($verydark,.6);
       transition: max-height;
       transition-timing-function: ease;
-      transition-duration: $slowduration;
+      transition-duration: $slowerduration;
     }
   }
 

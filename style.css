@@ -902,13 +902,15 @@ figure {
 /* line 13, sass/modules/_image.scss */
 .image--primary {
   max-width: 48em;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  margin-left: auto;
+  margin-right: auto;
   display: block; }
   @media screen and (min-width: 48em) {
     /* line 13, sass/modules/_image.scss */
     .image--primary {
       max-width: 728px; } }
-/* line 28, sass/modules/_image.scss */
+/* line 30, sass/modules/_image.scss */
 .image--secondary {
   margin-bottom: 1em; }
 
@@ -1220,17 +1222,24 @@ figure {
   position: relative;
   overflow: hidden; }
   @media screen and (min-width: 64em) {
-    /* line 9, sass/modules/_image-overlay.scss */
+    /* line 10, sass/modules/_image-overlay.scss */
     .image-overlay:hover {
       cursor: pointer; }
-    /* line 13, sass/modules/_image-overlay.scss */
+    /* line 14, sass/modules/_image-overlay.scss */
     .image-overlay:hover .image-overlay__body {
       max-height: 200px; } }
+  /* line 20, sass/modules/_image-overlay.scss */
+  .image-overlay--space {
+    margin-bottom: 1em; }
+    @media screen and (min-width: 64em) {
+      /* line 20, sass/modules/_image-overlay.scss */
+      .image-overlay--space {
+        margin-bottom: 1.5em; } }
   @media screen and (min-width: 64em) {
-    /* line 19, sass/modules/_image-overlay.scss */
+    /* line 28, sass/modules/_image-overlay.scss */
     .image-overlay__body {
       position: absolute;
-      bottom: .1875em;
+      bottom: .125em;
       max-width: 728px;
       max-height: 0;
       overflow: hidden;
@@ -1240,9 +1249,9 @@ figure {
               transition: max-height;
       -webkit-transition-timing-function: ease;
               transition-timing-function: ease;
-      -webkit-transition-duration: 0.5s;
-              transition-duration: 0.5s; } }
-  /* line 36, sass/modules/_image-overlay.scss */
+      -webkit-transition-duration: 0.8s;
+              transition-duration: 0.8s; } }
+  /* line 45, sass/modules/_image-overlay.scss */
   .image-overlay__text {
     display: block;
     width: 94%;
@@ -1253,15 +1262,15 @@ figure {
     font-size: .875em;
     line-height: 1.2; }
     @media screen and (min-width: 30em) {
-      /* line 36, sass/modules/_image-overlay.scss */
+      /* line 45, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         width: 90%; } }
     @media screen and (min-width: 48em) {
-      /* line 36, sass/modules/_image-overlay.scss */
+      /* line 45, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         width: 100%; } }
     @media screen and (min-width: 64em) {
-      /* line 36, sass/modules/_image-overlay.scss */
+      /* line 45, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         margin: 0;
         padding: .75em;
