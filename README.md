@@ -221,3 +221,5 @@
     <?php the_post_thumbnail();  
     echo get_post(get_post_thumbnail_id())->post_excerpt; ?>
     ```
+
+* [animating height](http://css3.bradshawenterprises.com/animating_height/)
