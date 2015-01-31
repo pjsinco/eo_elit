@@ -1196,11 +1196,8 @@ figure {
   .caption--feature {
     margin-left: 3%;
     margin-right: 3%;
-    font-size: 1em; }
-    @media screen and (min-width: 48em) {
-      /* line 23, sass/modules/_caption.scss */
-      .caption--feature {
-        font-size: 1.125em; } }
+    font-size: 1em;
+    display: none; }
     @media screen and (min-width: 30em) {
       /* line 23, sass/modules/_caption.scss */
       .caption--feature {
@@ -1210,36 +1207,63 @@ figure {
       /* line 23, sass/modules/_caption.scss */
       .caption--feature {
         margin-left: auto;
-        margin-right: auto; } }
+        margin-right: auto;
+        font-size: 1.125em; } }
+    @media screen and (min-width: 64em) {
+      /* line 23, sass/modules/_caption.scss */
+      .caption--feature {
+        display: block; } }
 
 /* line 1, sass/modules/_image-overlay.scss */
 .image-overlay {
   /*@include clearfix;*/
   position: relative;
   overflow: hidden; }
-  /* line 7, sass/modules/_image-overlay.scss */
-  .image-overlay:hover {
-    cursor: pointer; }
-  /* line 11, sass/modules/_image-overlay.scss */
-  .image-overlay:hover .image-overlay__body {
-    max-height: 200px; }
-  /* line 15, sass/modules/_image-overlay.scss */
-  .image-overlay__body {
-    position: absolute;
-    bottom: .1875em;
-    max-width: 728px;
-    max-height: 0;
-    overflow: hidden;
-    color: #fff;
-    background: rgba(51, 51, 51, 0.6);
-    -webkit-transition: max-height;
-            transition: max-height;
-    -webkit-transition-timing-function: ease;
-            transition-timing-function: ease;
-    -webkit-transition-duration: 0.5s;
-            transition-duration: 0.5s; }
-  /* line 28, sass/modules/_image-overlay.scss */
+  @media screen and (min-width: 64em) {
+    /* line 9, sass/modules/_image-overlay.scss */
+    .image-overlay:hover {
+      cursor: pointer; }
+    /* line 13, sass/modules/_image-overlay.scss */
+    .image-overlay:hover .image-overlay__body {
+      max-height: 200px; } }
+  @media screen and (min-width: 64em) {
+    /* line 19, sass/modules/_image-overlay.scss */
+    .image-overlay__body {
+      position: absolute;
+      bottom: .1875em;
+      max-width: 728px;
+      max-height: 0;
+      overflow: hidden;
+      color: #fff;
+      background: rgba(51, 51, 51, 0.6);
+      -webkit-transition: max-height;
+              transition: max-height;
+      -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+      -webkit-transition-duration: 0.5s;
+              transition-duration: 0.5s; } }
+  /* line 36, sass/modules/_image-overlay.scss */
   .image-overlay__text {
     display: block;
-    padding: .75em;
-    line-height: 1.4; }
+    width: 94%;
+    margin-top: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    font-size: .875em;
+    line-height: 1.2; }
+    @media screen and (min-width: 30em) {
+      /* line 36, sass/modules/_image-overlay.scss */
+      .image-overlay__text {
+        width: 90%; } }
+    @media screen and (min-width: 48em) {
+      /* line 36, sass/modules/_image-overlay.scss */
+      .image-overlay__text {
+        width: 100%; } }
+    @media screen and (min-width: 64em) {
+      /* line 36, sass/modules/_image-overlay.scss */
+      .image-overlay__text {
+        margin: 0;
+        padding: .75em;
+        line-height: 1.4;
+        font-size: 1em; } }

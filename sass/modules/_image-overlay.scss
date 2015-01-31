@@ -4,31 +4,59 @@
   position: relative;
   overflow: hidden;
 
-  &:hover {
-    cursor: pointer;
-  }
+  @include breakpoint($screen $xlarge-start) {
 
-  &:hover .image-overlay__body {
-    max-height: 200px;
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .image-overlay__body {
+      max-height: 200px;
+    }
+
   }
 
   &__body {
-    position: absolute;
-    bottom: .1875em;
-    max-width: $article-max-width;
-    max-height: 0;
-    overflow: hidden;
-    color: $white;
-    background: rgba($verydark,.6);
-    transition: max-height;
-    transition-timing-function: ease;
-    transition-duration: $slowduration;
+
+    @include breakpoint($screen $xlarge-start) {
+    
+      position: absolute;
+      bottom: .1875em;
+      max-width: $article-max-width;
+      max-height: 0;
+      overflow: hidden;
+      color: $white;
+      background: rgba($verydark,.6);
+      transition: max-height;
+      transition-timing-function: ease;
+      transition-duration: $slowduration;
+    }
   }
 
   &__text {
     display: block;
-    padding: .75em;
-    line-height: 1.4;
+    width: 94%;
+    margin-top: .5em ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
+    font-size: .875em;
+    line-height: 1.2;
+
+    @include breakpoint($screen $medium-start) {
+      width: 90%;
+    }
+
+    @include breakpoint($screen $large-start) {
+      width: 100%;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      margin: 0;
+      padding: .75em;
+      line-height: 1.4;
+      font-size: 1em;
+    }
     
   }
 

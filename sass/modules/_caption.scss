@@ -24,10 +24,8 @@
     margin-left: ((100 - $story-width) / 2);
     margin-right: ((100 - $story-width) / 2);
     font-size: 1em;
+    display: none;
 
-    @include breakpoint($screen $large-start) {
-      font-size: 1.125em;
-    }
 
     @include breakpoint($screen $medium-start) {
       margin-left: ((100 - $story-width-medium) / 2);
@@ -37,6 +35,11 @@
     @include breakpoint($screen $large-start) {
       margin-left: auto;
       margin-right: auto;
+      font-size: 1.125em;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      display: block;
     }
   }
 
