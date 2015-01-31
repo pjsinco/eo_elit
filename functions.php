@@ -43,6 +43,8 @@ function elit_setup() {
   add_image_size('article-top-large', 930, 620, true);
   add_image_size('article-top-medium', 620, 413, true);
   add_image_size('article-top-small', 413, 275, true);
+  add_image_size('article-mid-large', 728, 485, true);
+  add_image_size('article-mid-small', 486, 324, true);
   add_image_size('super', 992, 661, true);
 
 	register_nav_menus( array(
@@ -203,3 +205,51 @@ function elit_add_async_to_picturefill_load($tag, $handle, $src) {
   
 }
 //add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 3);
+
+function elit_hiya_shortcode($atts) {
+  $a = shortcode_atts(
+    array(
+      'name' => 'Josie',
+      'occupation' => 'Guitar player',
+    ),
+    $atts
+  );
+
+  return 'hiya ' . $a['name'] . '. You are a ' . $a['occupation'] . '.';
+}
+add_shortcode('hiya', 'elit_hiya_shortcode');
+
+function elit_story_image_shortcode($atts, $content = null) {
+  
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+    ), $atts
+  );
+
+  $attachment = get_post( $a['id'] );
+
+  //d( wp_get_attachment_image_src($a['id'], 'article-mid-large', false ) );
+  //d( get_intermediate_image_sizes() );
+  $largest = wp_get_attachment_image_src( $a['id'], 'article-mid-large', false );
+  
+  // generates the string needed to use with the RICG Responsive Images plugin
+  
+  $ricg_responsive_str = '<figure class="image image--secondary">'; 
+  $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
+  $ricg_responsive_str .= tevkori_get_src_sizes( $a['id'], $largest[0]);
+  $ricg_responsive_str .= '/>';
+  $ricg_responsive_str .= 
+    '<figcaption class="image__caption caption caption--left">';
+  
+  $ricg_responsive_str .= $attachment->post_excerpt;
+  $ricg_responsive_str .= '</figcaption></figure>';
+
+  
+  return $ricg_responsive_str;
+
+}
+
+add_shortcode('story-image', 'elit_story_image_shortcode' );
+
+
