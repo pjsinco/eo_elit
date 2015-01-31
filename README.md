@@ -234,3 +234,5 @@
     2. scale
     3. rotation
     4. opacity
+
+* TODO we have a problem with double downloads using the RICG Responsive Images plugin
