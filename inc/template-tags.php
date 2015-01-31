@@ -29,25 +29,38 @@ function elit_posted_on() {
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
+		esc_html( get_the_date('l, M. j, Y') ),
 		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_html( get_the_modified_date('l, M. j, Y') )
 	);
 
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'elit' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	echo '<span class="story-meta__date">' . $time_string . '</span>';
+}
 
+function elit_comment_link() {
 
-//    <span class="story-meta__date">Wednesday, Dec. 14, 2014</span>
-//    <span class="meta__comment-link comment-link">
+  d(comments_open());
+  if ( comments_open() ) {
+    $comment_string = '<span class="meta__comment-link comment-link">';
+    $comment_string .='<a href="#comments" class="comment-link__link">';
+    $comment_string .='<span class="icon-comment">';
+    $comment_string .='<span class="text-replace">Comments</span>';
+    $comment_string .='</span>';
+    $comment_string .='<span class="comment-link__body">%s</span>';
+    $comment_string .='</a></span>';
 
+    $num_comments = get_comments_number();
 
-  d($posted_on);
+    if ( $num_comments == 0 ) {
+      $comment_label = '+';
+    } else {
+      $comment_label = (string)$num_comments;
+    }
 
-	echo '<span class="posted-on">' . $posted_on . '</span>';
+    $comment_string = sprintf($comment_string, $comment_label);
 
+    echo $comment_string;
+  }
 }
 
 

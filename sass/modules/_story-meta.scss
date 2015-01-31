@@ -12,6 +12,13 @@
     font-size: 1em;
   }
 
+  &__link {
+    color: inherit;
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
+  }
+
   &__by {
     font-style: italic;
     font-weight: 400;

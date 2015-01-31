@@ -42,15 +42,8 @@
               <div>
                 <div class="story-meta">
                   <?php elit_byline(); ?>
-                  <span class="story-meta__date">Wednesday, Dec. 14, 2014</span>
-                  <span class="meta__comment-link comment-link">
-                    <a href="#comments" class="comment-link__link">
-                      <span class="icon-comment">
-                        <span class="text-replace">Comments</span>
-                      </span> 
-                      <span class="comment-link__body">5</span>
-                    </a>
-                  </span>
+                  <?php elit_posted_on(); ?>
+                  <?php elit_comment_link(); ?>
                 </div> <!-- story-meta -->
               </div>
 
