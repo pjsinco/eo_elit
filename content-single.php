@@ -7,7 +7,7 @@
 
           <?php // if we have a featured image, show it ?>
           <?php if ( has_post_thumbnail() ): ?>
-            <figure class="image--primary">
+            <figure class="image--primary image-overlay">
 
             <!-- removing picture element because it's not used by ricg picturefill plugin -->
             <!--<picture> -->
@@ -16,13 +16,16 @@
                 $img_src = wp_get_attachment_url(get_post_thumbnail_id()); 
               ?>
               <img class="image__img" src="<?php echo $img_src; ?>" <?php echo tevkori_get_src_sizes( 179421, 'article-top-large' ); ?> />
+              <div class="image-overlay__body">
+                <span class="image-overlay__text">Terrie E. Taylor, DO, a pediatric malaria researcher in Malawi, says her interest in her work outweighs the dangers she faces. "The risks are manageable," she says. </span>
+              </div>
             <!--</picture> -->
 
-              <figcaption class="image__caption caption caption--feature caption--right">
-                <?php $thumb_id = (get_post_thumbnail_id()); ?>
-                <?php echo get_post($thumb_id)->post_excerpt; ?>
-              </figcaption>
             </figure>
+            <figcaption class="image__caption caption caption--feature caption--right">
+              <?php $thumb_id = (get_post_thumbnail_id()); ?>
+              <?php echo get_post($thumb_id)->post_excerpt; ?>
+            </figcaption>
           <?php endif; ?>
 
 

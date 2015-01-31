@@ -1,0 +1,35 @@
+.image-overlay {
+
+  /*@include clearfix;*/
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover .image-overlay__body {
+    max-height: 200px;
+  }
+
+  &__body {
+    position: absolute;
+    bottom: .1875em;
+    max-width: $article-max-width;
+    max-height: 0;
+    overflow: hidden;
+    color: $white;
+    background: rgba($verydark,.6);
+    transition: max-height;
+    transition-timing-function: ease;
+    transition-duration: $slowduration;
+  }
+
+  &__text {
+    display: block;
+    padding: .75em;
+    line-height: 1.4;
+    
+  }
+
+}
