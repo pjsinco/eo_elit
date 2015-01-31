@@ -1,0 +1,121 @@
+%social-padding {
+  padding: 0;
+}
+
+%link-padding {
+  padding-left: .4em;
+  padding-right: .4em;
+}
+
+.social {
+  @extend %social-padding;
+  margin-bottom: 0;
+  list-style-type: none;
+  line-height: 3;
+  text-align: center;
+  
+  &--shiftable {
+    margin-top: 1.5em;
+    line-height: 3;
+
+    @include breakpoint($screen $medium-start) {
+      @include span(1 of 8);
+    }
+
+    @include breakpoint($screen $large-start) {
+      line-height: 3.5;
+    }
+    
+
+    &__link {
+      @extend %link-padding;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      @include breakpoint($screen $medium-start) {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__icon {
+    display: inline-block;
+
+    /*@include breakpoint($screen $large-minor-start) {*/
+      /*display: block;*/
+    /*}*/
+  }
+  
+  &__link {
+    display: block;
+    @extend %link-padding;
+    
+
+    /*@include red-hover;*/
+
+    &:hover,
+    &:active {
+      text-decoration: none;
+    }
+    
+    @include breakpoint($screen $large-start) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+
+    &--white {
+      display: block;
+      @extend %link-padding;
+      
+      @include breakpoint($screen $large-start) {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
+
+      span[class*='icon-'] {
+        color: $white;
+      }
+    } // end &--white
+  } // end &__link
+
+  [class^="icon-"], [class*=" icon-"] {
+    font-size: 2em;
+  
+    @include breakpoint($screen $large-start) {
+      font-size: 2.5em; 
+    }
+  }
+
+  [class*='icon-facebook'] {
+    color: $facebook;
+  }
+
+  [class*='icon-twitter'] {
+    color: $twitter;
+  }
+
+  [class*='icon-linkedin'] {
+    color: $linkedin;
+  }
+
+  [class*='icon-gplus'] {
+    color: $gplus;
+  }
+
+  [class*='icon-pinterest'] {
+    color: $pinterest;
+  }
+
+  [class*='icon-youtube'] {
+    color: $youtube;
+  }
+
+  [class*='icon-email'] {
+    color: $mediumgray;
+  }
+
+
+  
+}
