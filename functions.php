@@ -202,4 +202,4 @@ function elit_add_async_to_picturefill_load($tag, $handle, $src) {
   return str_replace(' src', ' async="async" src', $tag);
   
 }
-add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 3);
+//add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 3);
