@@ -26,6 +26,7 @@
   }
 
   &__body {
+    color: $font-color-lighter;
 
     @include breakpoint($screen $xlarge-start) {
     

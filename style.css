@@ -335,34 +335,35 @@ article {
 p {
   margin-top: 0;
   margin-bottom: 1em;
-  font-size: 1.125em;
+  font-size: 1em;
   line-height: 1.4;
   color: #333; }
   @media screen and (min-width: 48em) {
     /* line 28, sass/base/_base.scss */
     p {
-      line-height: 1.65; } }
+      line-height: 1.65;
+      font-size: 1.125em; } }
 
-/* line 40, sass/base/_base.scss */
+/* line 41, sass/base/_base.scss */
 h1 {
   font-family: "adelle", Georgia, serif;
   font-weight: 600;
   color: #333; }
 
-/* line 46, sass/base/_base.scss */
+/* line 47, sass/base/_base.scss */
 ul, ol {
   /*list-style: none;*/
   margin-top: 0; }
 
-/* line 51, sass/base/_base.scss */
+/* line 52, sass/base/_base.scss */
 img {
   /*max-width: 100%;*/
   height: auto; }
 
-/* line 56, sass/base/_base.scss */
+/* line 57, sass/base/_base.scss */
 textarea {
   line-height: 1.4; }
-  /* line 59, sass/base/_base.scss */
+  /* line 60, sass/base/_base.scss */
   textarea:focus, input[type='text']:focus, textarea[type='text']:focus, input[type='email']:focus, textarea[type='email']:focus {
     border: 1px solid #ef3f23;
     outline: 0;
@@ -371,11 +372,11 @@ textarea {
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
 
-/* line 67, sass/base/_base.scss */
+/* line 68, sass/base/_base.scss */
 input {
   vertical-align: middle; }
 
-/* line 71, sass/base/_base.scss */
+/* line 72, sass/base/_base.scss */
 input, textarea {
   padding: .5em;
   margin-bottom: 1em;
@@ -390,7 +391,7 @@ input, textarea {
   border-color: #808080;
   color: #333; }
 
-/* line 95, sass/base/_base.scss */
+/* line 96, sass/base/_base.scss */
 figure {
   margin: 0; }
 
@@ -1249,23 +1250,26 @@ figure {
       /* line 20, sass/modules/_image-overlay.scss */
       .image-overlay--space {
         margin-bottom: 1.5em; } }
-  @media screen and (min-width: 64em) {
-    /* line 28, sass/modules/_image-overlay.scss */
-    .image-overlay__body {
-      position: absolute;
-      bottom: .125em;
-      max-width: 728px;
-      max-height: 0;
-      overflow: hidden;
-      color: #fff;
-      background: rgba(51, 51, 51, 0.6);
-      -webkit-transition: max-height;
-              transition: max-height;
-      -webkit-transition-timing-function: ease;
-              transition-timing-function: ease;
-      -webkit-transition-duration: 0.8s;
-              transition-duration: 0.8s; } }
-  /* line 45, sass/modules/_image-overlay.scss */
+  /* line 28, sass/modules/_image-overlay.scss */
+  .image-overlay__body {
+    color: #808080; }
+    @media screen and (min-width: 64em) {
+      /* line 28, sass/modules/_image-overlay.scss */
+      .image-overlay__body {
+        position: absolute;
+        bottom: .125em;
+        max-width: 728px;
+        max-height: 0;
+        overflow: hidden;
+        color: #fff;
+        background: rgba(51, 51, 51, 0.6);
+        -webkit-transition: max-height;
+                transition: max-height;
+        -webkit-transition-timing-function: ease;
+                transition-timing-function: ease;
+        -webkit-transition-duration: 0.8s;
+                transition-duration: 0.8s; } }
+  /* line 46, sass/modules/_image-overlay.scss */
   .image-overlay__text {
     display: block;
     width: 94%;
@@ -1276,15 +1280,15 @@ figure {
     font-size: .875em;
     line-height: 1.2; }
     @media screen and (min-width: 30em) {
-      /* line 45, sass/modules/_image-overlay.scss */
+      /* line 46, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         width: 90%; } }
     @media screen and (min-width: 48em) {
-      /* line 45, sass/modules/_image-overlay.scss */
+      /* line 46, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         width: 100%; } }
     @media screen and (min-width: 64em) {
-      /* line 45, sass/modules/_image-overlay.scss */
+      /* line 46, sass/modules/_image-overlay.scss */
       .image-overlay__text {
         margin: 0;
         padding: .75em;

@@ -86,3 +86,5 @@
               </ul>
             </header>
 
+            <div class="story__body-text">
+              <?php the_content(); ?>
