@@ -228,3 +228,9 @@
 * TODO AP-Style-ify our dates
 
 * [caption reveals on hover](http://www.hongkiat.com/blog/css3-image-captions/)
+
+* 4 things a browser can animate cheaply [via html5rocks](http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/)
+    1. position
+    2. scale
+    3. rotation
+    4. opacity
