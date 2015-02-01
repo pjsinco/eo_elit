@@ -1,0 +1,46 @@
+.pq {
+  display: none;
+  
+  @include breakpoint($screen $large-minor-start) {
+    /*@include clearfix();*/
+    font-family: $primaryfont;
+    color: $verydark;
+    display: block;
+    float: left;
+    position: relative;
+    right: span(1 of 7 wide);
+    width: span(3 of 7);
+    margin-right: -#{span(1 of 7) };
+    /*margin-right: -4em;*/
+    margin-bottom: 1em;
+
+  }
+
+  &:after {
+
+    @include breakpoint($screen $large-minor-start) {
+      content: "";
+      position: absolute;
+      top: .375em;
+      right: -.1875em;
+      height: calc(100% - .875em);
+      border-right: 1px solid $primarycolor;
+    }
+  
+  }
+
+  &__body {
+    padding-right: .5em;
+    margin-bottom: 0;
+    font-weight: 200;
+    font-style: italic;
+    font-size: 1.75em;
+    line-height: 1.2;
+    text-align: center;
+
+    @include breakpoint($screen $large-start) {
+      text-align: right;
+    }
+  }
+
+}

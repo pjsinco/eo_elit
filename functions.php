@@ -252,6 +252,29 @@ function elit_story_image_shortcode($atts, $content = null) {
 
 add_shortcode('story-image', 'elit_story_image_shortcode' );
 
+function elit_pull_quote_shortcode($atts, $content = null) {
+
+  $a = shortcode_atts(
+    array(
+      'quote' => '',
+      'speaker' => '',
+      'image-id' => '',
+    ), $atts
+  );
+
+  //we're using only speaker for now
+  $str = '<aside class="pq">';
+  $str .= '<div class="pq__body">';
+  $str .= $a['quote'];
+  $str .= '</div>';
+  $str .= '</aside>';
+
+  return $str;
+  
+}
+add_shortcode( 'pull-quote', 'elit_pull_quote_shortcode' );
+
+
 function elit_taxonomies() {
 
   /**

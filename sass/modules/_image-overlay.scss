@@ -35,8 +35,8 @@
       max-width: $article-max-width;
       max-height: 0;
       overflow: hidden;
-      color: $white;
-      background: rgba($verydark,.6);
+      color: $font-color;
+      background: rgba($white,.8);
       transition: max-height;
       transition-timing-function: ease;
       transition-duration: $slowerduration;
