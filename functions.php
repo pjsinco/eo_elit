@@ -257,20 +257,23 @@ function elit_pull_quote_shortcode($atts, $content = null) {
   $a = shortcode_atts(
     array(
       'quote' => '',
+      'style' => 'left',
       'speaker' => '',
       'image-id' => '',
     ), $atts
   );
 
+
   //we're using only speaker for now
-  $str = '<aside class="pq">';
+  $str = '<aside class="pq';
+  $str .= ('full' == $a['style']) ? '--full">' : '">';
   $str .= '<div class="pq__body">';
   $str .= $a['quote'];
   $str .= '</div>';
   $str .= '</aside>';
-
-  return $str;
   
+  return $str;
+
 }
 add_shortcode( 'pull-quote', 'elit_pull_quote_shortcode' );
 

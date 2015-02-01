@@ -1,19 +1,31 @@
-.pq {
+%pq-base {
+  position: relative;
   display: none;
-  
-  @include breakpoint($screen $large-minor-start) {
-    /*@include clearfix();*/
-    font-family: $primaryfont;
-    color: $verydark;
-    display: block;
-    float: left;
-    position: relative;
-    right: span(1 of 7 wide);
-    width: span(3 of 7);
-    margin-right: -#{span(1 of 7) };
-    /*margin-right: -4em;*/
-    margin-bottom: 1em;
+  margin-bottom: 1em;
+  font-family: $primaryfont;
+  color: $verydark;
 
+  @include breakpoint($screen $large-minor-start) {
+    display: block;
+  }
+}
+
+.pq {
+  @extend %pq-base;
+  right: span(1 of 7 wide);
+  width: span(3 of 7);
+  margin-right: -#{span(1 of 7) };
+  float: left;
+  text-align: right;
+  
+
+  &--full {
+    @extend %pq-base;
+    right: 0;
+    width: 100%;
+    padding-top: .75em;
+    text-align: left;
+    border-top: 1px solid $primarycolor;
   }
 
   &:after {
@@ -36,10 +48,10 @@
     font-style: italic;
     font-size: 1.75em;
     line-height: 1.2;
-    text-align: center;
+    text-align: inherit;
 
     @include breakpoint($screen $large-start) {
-      text-align: right;
+      /*text-align: right;*/
     }
   }
 
