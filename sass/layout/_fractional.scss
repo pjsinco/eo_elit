@@ -1,5 +1,29 @@
-%fractional-base
+%fractional-base {
+  position: relative;
+  display: none;
+  margin-bottom: 1em;
+
+  @include breakpoint($screen $large-minor-start) {
+    display: block;
+  }
+}
 
 .fractional {
+  right: span(1 of 7 wide);
+  width: span(3 of 7);
+  margin-right: -#{span(1 of 7) };
+  float: left;
 
+  @extend %fractional-base;
+
+  &--full {
+    @extend %fractional-base;
+    right: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-top: 1em;
+  }
 }

@@ -296,7 +296,10 @@ function elit_pull_quote_shortcode($atts, $content = null) {
 
   //we're using only speaker for now
   $str = '<aside class="pq';
-  $str .= ('full' == $a['style']) ? '--full">' : '">';
+
+  // so in this ternary operator, we're deciding whether we have full column width 
+  // or a just a fraction
+  $str .= ('full' == $a['style']) ? '--full fractional--full">' : ' fractional">';
   $str .= '<div class="pq__body">';
   $str .= $a['quote'];
   $str .= '</div>';
@@ -449,13 +452,16 @@ function elit_sidebar_shortcode($atts, $content = null) {
   $a = shortcode_atts(
     array(
       'id' => '',
+      'style' => 'left',
     ),
     $atts
   );
 
   $post = get_post($a['id']);
 
-  $str = '<aside class="story-sidebar">' . PHP_EOL;
+  $str = '<aside class="story-sidebar fractional';
+  // figure out whether our fractional class needs '--full'
+  $str .= (($a['style'] == 'left') ? '">' : '--full">') . PHP_EOL;
   $str .= '<h3 class="story-sidebar__head">' . $post->post_title; 
   $str .= '</h3>' . PHP_EOL;
   $str .= '<div class="story-sidebar__body">' . PHP_EOL; 

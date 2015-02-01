@@ -1,39 +1,26 @@
+// NOTE
+// this class works in conjunction with .fractional,
+// which sets the positioning
+
+
 %pq-base {
-  position: relative;
-  display: none;
-  margin-bottom: 1em;
   font-family: $primaryfont;
   color: $verydark;
 
-  @include breakpoint($screen $large-minor-start) {
-    display: block;
-  }
 }
 
 .pq {
   @extend %pq-base;
-  right: span(1 of 7 wide);
-  width: span(3 of 7);
-  margin-right: -#{span(1 of 7) };
-  float: left;
   text-align: right;
   
 
   &--full {
     @extend %pq-base;
-    right: 0;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    padding-top: 1em;
     text-align: left;
     border-top: 1px solid $primarycolor;
   }
 
   &:after {
-
     @include breakpoint($screen $large-minor-start) {
       content: "";
       position: absolute;
@@ -42,7 +29,6 @@
       height: calc(100% - .875em);
       border-right: 1px solid $primarycolor;
     }
-  
   }
 
   &__body {
@@ -53,10 +39,6 @@
     font-size: 1.75em;
     line-height: 1.2;
     text-align: inherit;
-
-    @include breakpoint($screen $large-start) {
-      /*text-align: right;*/
-    }
   }
 
 }
