@@ -407,12 +407,6 @@ function elit_advertisement_shortcode($atts, $content = null) {
 }
 add_shortcode('advertisement', 'elit_advertisement_shortcode');
 
-function elit_remove_meta_boxes() {
-
-  //remove_meta_box('categorydiv', 'aside', 'normal');
-}
-add_action( 'init' , 'elit_remove_meta_boxes' );
-
 function elit_register_post_types() {
 
   $labels = array(
@@ -432,8 +426,8 @@ function elit_register_post_types() {
 
   $args = array(
     'labels' => $labels,
-    //'public' => false,
-    'publicly_queryable' => false,
+    'public' => true,
+    'publicly_queryable' => true,
     'exclude_from_search' => true,
     'show_ui' => true,
     'show_in_menu' => true,
@@ -441,7 +435,7 @@ function elit_register_post_types() {
     'menu_position' => 5,
     'capability_type' => 'post',
     'hierarchical' => false,
-    //'rewrite' => array( 'slug' => 'sidebar'),
+    'rewrite' => array( 'slug' => 'story_sidebar'),
     'supports' => array( 'title', 'editor', 'author' ),
   );
 
