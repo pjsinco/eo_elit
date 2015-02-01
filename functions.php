@@ -412,3 +412,40 @@ function elit_remove_meta_boxes() {
   //remove_meta_box('categorydiv', 'aside', 'normal');
 }
 add_action( 'init' , 'elit_remove_meta_boxes' );
+
+function elit_register_post_types() {
+
+  $labels = array(
+    'name'               => 'Story sidebars',
+    'singular_name'      => 'Story sidebar',
+    'menu_name'          => 'Story sidebars',
+    'name_admin_bar'     => 'Story sidebar',
+    'add_new'            => 'Add new',
+    'add_new_item'       => 'Add new sidebar for a story',
+    'edit_item'          => 'Edit story sidebar',
+    'view_item'          => 'View story sidebar',
+    'all_items'          => 'All story sidebars',
+    'search_items'       => 'Search story sidebars',
+    'not_found'          => 'No story sidebars found',
+    'not_found_in_trash' => 'No story sidebars found in trash.',
+  );
+
+  $args = array(
+    'labels' => $labels,
+    //'public' => false,
+    'publicly_queryable' => false,
+    'exclude_from_search' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_admin_bar' => true,
+    'menu_position' => 5,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    //'rewrite' => array( 'slug' => 'sidebar'),
+    'supports' => array( 'title', 'editor', 'author' ),
+  );
+
+  register_post_type('elit_story_sidebar', $args);
+  
+}
+add_action( 'init' , 'elit_register_post_types' );
