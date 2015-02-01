@@ -1,20 +1,22 @@
+<?php get_header(); ?>
+
 <?php 
-get_header();
+  $args = array(
+    'post_type' => 'elit_story_sidebar',
+    'post_count' => 1,
+  );
+?>
 
-$args = array(
-  'post_type' => 'elit_story_sidebar',
-);
+<?php $sidebars = new WP_Query($args); ?>
+<?php $sidebars->the_post(); ?>
 
-$sidebars = new WP_Query($args);
+<aside class="story-sidebar">
+  
+  <h3 class="story-sidebar__head"> 
+    <?php the_title(); ?>
+  </h3>
 
-while ( $sidebars->have_posts() ) : $sidebars->the_post();
-
-  the_title();
-  the_content();
-
-endwhile;
-
-get_footer();
-
- ?>
+  <?php the_content(); ?>
+  
+<?php get_footer(); ?>
 

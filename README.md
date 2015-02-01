@@ -244,3 +244,5 @@
 * TODO social icon vertical list breaks up in firefox around 482px wide
 
 * [ ideas for list shortcodes ](http://themes.mysitemyway.com/awake/shortcodes/fancy-lists-shortcodes/)
+
+* [ good guide to creating and using custom post types](http://code.tutsplus.com/tutorials/a-guide-to-wordpress-custom-post-types-creation-display-and-meta-boxes--wp-27645)

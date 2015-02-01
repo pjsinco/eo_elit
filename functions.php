@@ -443,3 +443,31 @@ function elit_register_post_types() {
   
 }
 add_action( 'init' , 'elit_register_post_types' );
+
+function elit_sidebar_shortcode($atts, $content = null) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+    ),
+    $atts
+  );
+
+  $post = get_post($a['id']);
+
+  $str = '<aside class="story-sidebar">' . PHP_EOL;
+  $str .= '<h3 class="story-sidebar__head">' . $post->post_title; 
+  $str .= '</h3>' . PHP_EOL;
+  $str .= '<div class="story-sidebar__body">' . PHP_EOL; 
+  $str .= $post->post_content;
+  $str .= '</div>' . PHP_EOL;
+  $str .= '</aside>' . PHP_EOL;
+
+  return $str;
+
+  
+}
+add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
+
+// temporarily disable admin bar so we can see our susy grid display
+add_filter('show_admin_bar', '__return_false');
