@@ -1,0 +1,110 @@
+%parent-a {
+  display: block;
+}
+
+%parent-b {
+  display: none;
+}
+
+%parent-c {
+  display: none;
+}
+
+.rover {
+
+  &-don {
+    margin-bottom: 1em;
+    
+    @include breakpoint($screen $xlarge-start) {
+      margin-bottom: 0;
+    }
+
+    &-parent-a {
+      @extend %parent-a;
+
+      @include breakpoint($screen $xlarge-start) {
+        display: none;
+      }
+    }
+
+    &-parent-b {
+      @extend %parent-b;
+
+      @include breakpoint($screen $xlarge-start) {
+        display: block;
+      }
+    }
+
+    /*
+     * FRONT PAGE
+     */
+    &-parent-f-a {
+      @extend %parent-a;
+      margin-top: 2em;
+    
+      @include breakpoint($screen $large-start) {
+        margin-top: 1em;
+        display: none;
+      }
+
+      @include breakpoint($screen $xlarge-start) {
+        display: none;
+      }
+    }
+
+    &-parent-f-b {
+      @extend %parent-b;
+      margin-top: 2em;
+      
+      @include breakpoint($screen $large-start) {
+        display: inline-block;
+        margin-top: 1em;
+        margin-right: 1em;
+      }
+
+      @include breakpoint($screen $xlarge-start) {
+        display: none;
+        margin-right: 0;
+      }
+    }
+
+    &-parent-f-c {
+      @extend %parent-c;
+
+      @include breakpoint($screen $large-start) {
+        display: none;
+      }
+
+      @include breakpoint($screen $xlarge-start) {
+        display: block;
+        float: right;
+      }
+      
+    }
+  }  
+
+  &-peggy {
+    @extend .rover-don;
+
+    &-parent-a {
+      @extend .rover-don-parent-a;
+    }
+
+    &-parent-b {
+      @extend .rover-don-parent-b;
+    }
+
+    &-parent-f-a {
+      @extend .rover-don-parent-f-a;  
+    }
+
+    &-parent-f-b {
+      @extend .rover-don-parent-f-b;  
+    }
+
+    &-parent-f-c {
+      @extend .rover-don-parent-f-c;  
+    }
+  }
+
+}

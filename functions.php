@@ -57,7 +57,6 @@ function elit_setup() {
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link', 'gallery',
 	) );
-
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -85,17 +84,40 @@ add_action( 'widgets_init', 'elit_widgets_init' );
  * Enqueue scripts and styles.
  */
 function elit_scripts() {
-
 	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
 
-  wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), false, false);
-  wp_register_script('typekit-load', '//use.typekit.net/vdi5qvx.js', array(), false, false);
+  wp_register_script( 'modernizr', 
+    get_template_directory_uri() . '/js/modernizr.js', 
+    array(), false, false
+  );
+
+  wp_register_script('typekit-load', 
+    '//use.typekit.net/vdi5qvx.js', array(), false, false
+  );
+
   //wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
-  wp_register_script('nav', get_template_directory_uri() . '/js/nav.js', array('jquery'), false, true);
-  wp_register_script('ehs-head-tag', get_template_directory_uri() . '/js/ehs-head-tag.js', array(), false, false);
+
+  wp_register_script('nav', 
+    get_template_directory_uri() . '/js/nav.js', 
+    array('jquery'), false, true
+  );
+
+  wp_register_script('ehs-head-tag', 
+    get_template_directory_uri() . '/js/ehs-head-tag.js', 
+    array(), false, false
+  );
+
   //wp_register_script('ehs-ads', get_template_directory_uri() . '/js/ehs-ads.js', array('ehs-head-tag'), false, false);
-  wp_register_script('append-around', get_template_directory_uri() . '/js/appendAround.js', array('jquery'), false, true);
-  
+
+  wp_register_script('append-around', 
+    get_template_directory_uri() . '/js/appendAround.js', 
+    array('jquery'), false, true
+  );
+
+  wp_register_script('append-around-load', 
+    get_template_directory_uri() . '/js/append-around-load.js', 
+    array('append-around'), false, true
+  );
   
   wp_enqueue_script('modernizr');
   wp_enqueue_script('typekit-load');
@@ -103,6 +125,7 @@ function elit_scripts() {
   wp_enqueue_script('nav');
   wp_enqueue_script('ehs-head-tag');
   wp_enqueue_script('append-around');
+  wp_enqueue_script('append-around-load');
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -115,7 +138,6 @@ add_action( 'wp_enqueue_scripts', 'elit_scripts' );
 // http://www.wpbeginner.com/wp-themes/
 //    replace-default-wordpress-jquery-script-with-google-library/
 function elit_modify_jquery() {
-
   if (! is_admin()) {
     wp_deregister_script('jquery');
     wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', FALSE, '1.11.1', TRUE);
@@ -175,19 +197,24 @@ add_action('wp_head', 'elit_picture_elem_shim');
 /**
  * Add html5 shim
  */
-function elit_add_html5_shim() {
+function elit_html5_shim() {
   $output =  '<!--[if lt IE 9]>' . PHP_EOL;
   $output .= '<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>' . PHP_EOL;
   $output .= '<![endif]-->' . PHP_EOL;
 
   echo $output;
 }
-add_action('wp_head', 'elit_add_html5_shim');
+add_action('wp_head', 'elit_html5_shim');
 
-function elit_add_ehs_tag() {
+function elit_append_around() {
+  $output = '<script>' . PHP_EOL;
+  $output .= 'jQuery(".rover-don").appendAround();' . PHP_EOL;
+  $output .= 'jQuery(".rover-peggy").appendAround();' . PHP_EOL;
+  $output = '</script>' . PHP_EOL;
   
+  //echo $output;
 }
-add_action('' , 'function_name');
+//add_action( 'wp_footer', 'elit_append_around', 50 );
 
 /**
  *  Add async to loading of picturefill script
