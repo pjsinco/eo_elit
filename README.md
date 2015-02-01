@@ -242,3 +242,5 @@
     * [possible fix?](http://www.sitepoint.com/a-simple-css-drop-cap/)
 
 * TODO social icon vertical list breaks up in firefox around 482px wide
+
+* [ ideas for list shortcodes ](http://themes.mysitemyway.com/awake/shortcodes/fancy-lists-shortcodes/)
