@@ -240,3 +240,5 @@
 ###Sun Feb  1 05:21:36 2015 CST
 * TODO our drop cap is not rendering correctly in firefox
     * [possible fix?](http://www.sitepoint.com/a-simple-css-drop-cap/)
+
+* TODO social icon vertical list breaks up in firefox around 482px wide
