@@ -406,3 +406,9 @@ function elit_advertisement_shortcode($atts, $content = null) {
 
 }
 add_shortcode('advertisement', 'elit_advertisement_shortcode');
+
+function elit_remove_meta_boxes() {
+
+  //remove_meta_box('categorydiv', 'aside', 'normal');
+}
+add_action( 'init' , 'elit_remove_meta_boxes' );
