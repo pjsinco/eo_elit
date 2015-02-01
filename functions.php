@@ -94,12 +94,15 @@ function elit_scripts() {
   wp_register_script('nav', get_template_directory_uri() . '/js/nav.js', array('jquery'), false, true);
   wp_register_script('ehs-head-tag', get_template_directory_uri() . '/js/ehs-head-tag.js', array(), false, false);
   //wp_register_script('ehs-ads', get_template_directory_uri() . '/js/ehs-ads.js', array('ehs-head-tag'), false, false);
+  wp_register_script('append-around', get_template_directory_uri() . '/js/appendAround.js', array('jquery'), false, true);
+  
   
   wp_enqueue_script('modernizr');
   wp_enqueue_script('typekit-load');
   //wp_enqueue_script('picturefill');
   wp_enqueue_script('nav');
   wp_enqueue_script('ehs-head-tag');
+  wp_enqueue_script('append-around');
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -353,3 +356,26 @@ function elit_taxonomies() {
   register_taxonomy( 'pro_theme_series', 'post', $args);
 }
 add_action( 'init' , 'elit_taxonomies' );
+
+function elit_advertisement_shortcode($atts, $content = null) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+    ),
+    $atts
+  );
+
+  $str = '<aside data-set="rover-' . $a['id'] . '-parent" ';
+  $str .= 'class="ad ad__med-rect--article rover-' . $a['id'] . '-parent-a">';
+  $str .= '<div class="rover-' . $a['id'] . '">';
+  $str .= '<a href=';
+  $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';
+  $str .= ' target="_blank">';
+  $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
+  $str .= '</a></div></aside>';
+
+  return $str;
+
+}
+add_shortcode('advertisement', 'elit_advertisement_shortcode');

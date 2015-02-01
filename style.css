@@ -1412,12 +1412,16 @@ figure {
   /* line 22, sass/modules/_pq.scss */
   .pq--full {
     right: 0;
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
     padding-top: 1em;
     text-align: left;
     border-top: 1px solid #ef3f23; }
   @media screen and (min-width: 56em) {
-    /* line 31, sass/modules/_pq.scss */
+    /* line 35, sass/modules/_pq.scss */
     .pq:after {
       content: "";
       position: absolute;
@@ -1425,7 +1429,7 @@ figure {
       right: -.1875em;
       height: calc(100% - .875em);
       border-right: 1px solid #ef3f23; } }
-  /* line 44, sass/modules/_pq.scss */
+  /* line 48, sass/modules/_pq.scss */
   .pq__body {
     padding-right: .5em;
     margin-bottom: 0;
@@ -1435,7 +1439,7 @@ figure {
     line-height: 1.2;
     text-align: inherit; }
     @media screen and (min-width: 48em) {
-      /* line 44, sass/modules/_pq.scss */
+      /* line 48, sass/modules/_pq.scss */
       .pq__body {
         /*text-align: right;*/ } }
 
