@@ -249,3 +249,11 @@
 
 ###Mon Feb  2 07:47:24 2015 CST
 * [smashing mag on meta boxes](http://www.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/)
+
+* [User-friendly custom fields with Meta Boxes in WordPress](http://www.creativebloq.com/wordpress/user-friendly-custom-fields-meta-boxes-wordpress-5113004)
+
+* [How to Create Custom WordPress Write/Meta Boxes](http://code.tutsplus.com/tutorials/how-to-create-custom-wordpress-writemeta-boxes--wp-20336)
+
+* [remove post formats meta box](http://wordpress.stackexchange.com/questions/65653/how-do-i-remove-the-post-format-meta-box)
+
+
