@@ -308,7 +308,7 @@ function elit_pull_quote_shortcode($atts, $content = null) {
   return $str;
 
 }
-add_shortcode( 'pull-quote', 'elit_pull_quote_shortcode' );
+add_shortcode( 'pullquote', 'elit_pull_quote_shortcode' );
 
 
 function elit_taxonomies() {
@@ -439,7 +439,7 @@ function elit_register_post_types() {
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => array( 'slug' => 'story_sidebar'),
-    'supports' => array( 'title', 'editor', 'author' ),
+    'supports' => array( 'title', 'editor', 'revision', 'author' ),
   );
 
   register_post_type('elit_story_sidebar', $args);
@@ -459,6 +459,11 @@ function elit_sidebar_shortcode($atts, $content = null) {
 
   $post = get_post($a['id']);
 
+  // make sure the story-sidebar is published
+  if ( !$post || $post->post_status != 'publish') {
+    return false;
+  }
+
   $str = '<aside class="story-sidebar fractional';
   // figure out whether our fractional class needs '--full'
   $str .= (($a['style'] == 'left') ? '">' : '--full">') . PHP_EOL;
@@ -476,4 +481,4 @@ function elit_sidebar_shortcode($atts, $content = null) {
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
 // temporarily disable admin bar so we can see our susy grid display
-add_filter('show_admin_bar', '__return_false');
+//add_filter('show_admin_bar', '__return_false');

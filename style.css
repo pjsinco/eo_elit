@@ -1090,7 +1090,7 @@ figure {
 /* line 3, sass/modules/_story-header.scss */
 .story-header__kicker {
   margin-top: .625em;
-  margin-bottom: 0;
+  margin-bottom: .5em;
   color: #ef3f23;
   text-transform: uppercase;
   letter-spacing: .1em;
