@@ -248,3 +248,4 @@
 * [ good guide to creating and using custom post types](http://code.tutsplus.com/tutorials/a-guide-to-wordpress-custom-post-types-creation-display-and-meta-boxes--wp-27645)
 
 ###Mon Feb  2 07:47:24 2015 CST
+* [smashing mag on meta boxes](http://www.smashingmagazine.com/2011/10/04/create-custom-post-meta-boxes-wordpress/)
