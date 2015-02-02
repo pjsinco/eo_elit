@@ -37,12 +37,12 @@ function elit_posted_on() {
 	echo '<span class="story-meta__date">' . $time_string . '</span>';
 }
 
-function elit_comment_link() {
-
-  d(comments_open());
+function elit_comments_link() {
   if ( comments_open() ) {
     $comment_string = '<span class="meta__comment-link comment-link">';
-    $comment_string .='<a href="#comments" class="comment-link__link">';
+    //$comment_string .='<a href="' . get_comments_link() . '" ';
+    $comment_string .='<a href="#comments" ';
+    $comment_string .= 'class="comment-link__link">';
     $comment_string .='<span class="icon-comment">';
     $comment_string .='<span class="text-replace">Comments</span>';
     $comment_string .='</span>';
@@ -63,4 +63,51 @@ function elit_comment_link() {
   }
 }
 
+function elit_story_footer() {
 
+  // #1 let's get our social icons
+  get_template_part('social');
+
+
+  // #2 set up jump-to-comments
+  $comment_jump_before  = '<div class="story-footer__jump-link"><a href="#comments">';
+  $comment_jump_before .= '<span class="story-nav__emph">' ;
+  $comment_jump_after = '</span>';
+  $comment_jump_after = '<span class="icon-arrow-down"></span></a></div>';
+  
+  echo $comment_jump_before;
+  comments_number( 'Leave a comment ', '1 comment ', '% comments ');
+  echo $comment_jump_after;
+
+  
+  // #3 list our story tags
+  $before = '<div class="story-nav__title">Topics: ';
+  $before .= '<ul class="topics"><li class="topics__topic">';
+  $sep = '</li><li class="topics__topic">';
+  $after = '</li><ul></div>';
+
+  $tags_list = get_the_tag_list( $before, $sep, $after);
+
+  if ( $tags_list ) {
+    printf('<div class="story-nav">%1$s</div>', $tags_list);
+  }
+
+  // #4 output our about-the-author
+
+  $about  = '<div class="story-footer__section">';
+  $about .= '<div class="story-footer__title">About the author</div>';
+  //$about .= '<img src="img/milam112.jpg" alt="Elit Commodo Purus" width="95px" class="story-footer__img">'
+  //<div class="story-footer__body">Elit Commodo Purus, OMS IV, dolor sit amet, consectetur adipiscing elit. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</div>
+//</div>
+
+              //<div class="story-footer__section">
+                //<div class="story-footer__title">Credit</div>
+                //<div class="story-footer__body">Top of page: Photo of Dr. Caudle by <a href="#">Tristique Cras</a>.</div>
+              //</div>
+              //<div class="story-nav__more-in">More in <a href="#" class="story-nav__emph">Patient Care <span class="icon-arrow-right"></span></a></div>
+              //<div class="prev-next">
+                //<div class="prev-next__next"><a href="#" class="prev-next__title">Newer <span class="icon-arrow-right space-to-left"></span></a><a href="#" class="prev-next__link">New Year’s resolutions: 10 life hacks to increase physician productivity </a></div>
+                //<div class="prev-next__prev"><a href="#" class="prev-next__title"><span class="icon-arrow-left space-to-right"></span> Older</a><a href="#" class="prev-next__link">In Memoriam: Dec. 4, 2014</a></div>
+              //</div>
+  
+}

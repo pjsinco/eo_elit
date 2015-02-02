@@ -43,48 +43,20 @@
                 <div class="story-meta">
                   <?php elit_byline(); ?>
                   <?php elit_posted_on(); ?>
-                  <?php elit_comment_link(); ?>
+                  <?php elit_comments_link(); ?>
                 </div> <!-- story-meta -->
               </div>
 
-              <ul class="social social--shiftable">
-                <li class="social__icon">
-                  <a href="#" class="social--shiftable__link">
-                    <span class="icon-facebook">
-                      <span class="text-replace">Facebook</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="social__icon">
-                  <a href="#" class="social--shiftable__link">
-                    <span class="icon-twitter">
-                      <span class="text-replace">Twitter</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="social__icon">
-                  <a href="#" class="social--shiftable__link">
-                    <span class="icon-linkedin">
-                      <span class="text-replace">LinkedIn</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="social__icon">
-                  <a href="#" class="social--shiftable__link">
-                    <span class="icon-pinterest">
-                      <span class="text-replace">Pinterest</span>
-                    </span>
-                  </a>
-                </li>
-                <li class="social__icon">
-                  <a href="#" class="social--shiftable__link">
-                    <span class="icon-email">
-                      <span class="text-replace">Email</span>
-                    </span>
-                  </a>
-                </li>
-              </ul>
+              <?php get_template_part('social', 'shiftable'); ?>
             </header>
 
             <div class="story__body-text">
               <?php the_content(); ?>
+            </div> <!-- story__body-text -->
+            
+            <footer class="story-footer"> 
+              <?php elit_story_footer(); ?>
+            </footer>
+          </div> <!-- .story -->
+        </article>
+
