@@ -225,7 +225,7 @@
 * [animating height](http://css3.bradshawenterprises.com/animating_height/)
 
 ###Sat Jan 31 06:53:09 2015 CST
-* TODO AP-Style-ify our dates
+* TODO AP-Styleify our dates
 
 * [caption reveals on hover](http://www.hongkiat.com/blog/css3-image-captions/)
 
@@ -246,3 +246,5 @@
 * [ ideas for list shortcodes ](http://themes.mysitemyway.com/awake/shortcodes/fancy-lists-shortcodes/)
 
 * [ good guide to creating and using custom post types](http://code.tutsplus.com/tutorials/a-guide-to-wordpress-custom-post-types-creation-display-and-meta-boxes--wp-27645)
+
+###Mon Feb  2 07:47:24 2015 CST
