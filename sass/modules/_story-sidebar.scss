@@ -3,11 +3,73 @@
 // which sets the positioning
 
 %story-sidebar-base {
+  padding: 1em;
+  background: $extralightgray;
+  border-top: 4px solid $primarycolor;
+}
 
+%story-sidebar-body-base {
+  font-size: 1em;
+  line-height: 1.4;
+  color: $font-color-lighter;
 }
 
 .story-sidebar {
 
+  @extend %story-sidebar-base;
   
+  @include breakpoint($screen $large-start) {
+    position: relative;
+    top: .4375em;
+  }
+
+  @include breakpoint($screen $large-minor-start) {
+    border: 0;
+  }
+
+  &__head {
+
+    margin-top: 0;
+    margin-bottom: .5em;
+    position: relative;
+    padding-bottom: .5em;
+    font-weight: 600;
+    
+    &:after {
+      @include breakpoint($screen $large-minor-start) {
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -16px;
+        width: 110%;
+        border-bottom: 1px solid #ef3f23;
+      }
+    }
+
+  }
+
+  &__body {
+    @extend %story-sidebar-body-base;
+
+    & p, 
+    & ul {
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+    }
+
+  &__list {
+    list-style-position: inside;
+    padding-left: 0;
+
+  }
+  
+  &__list-item {
+    margin-bottom: .5em;
+  }
+  
+
+  }
 
 }

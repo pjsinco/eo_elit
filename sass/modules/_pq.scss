@@ -6,7 +6,11 @@
 %pq-base {
   font-family: $primaryfont;
   color: $verydark;
+  display: none;
 
+  @include breakpoint($screen $large-minor-start) {
+    display: block;
+  }
 }
 
 .pq {

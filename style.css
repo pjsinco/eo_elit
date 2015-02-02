@@ -398,28 +398,31 @@ figure {
 /* line 1, sass/layout/_fractional.scss */
 .fractional, .fractional--full {
   position: relative;
-  display: none;
   margin-bottom: 1em; }
-  @media screen and (min-width: 56em) {
-    /* line 1, sass/layout/_fractional.scss */
-    .fractional, .fractional--full {
-      display: block; } }
 
-/* line 11, sass/layout/_fractional.scss */
-.fractional {
-  right: 14.70588%;
-  width: 41.17647%;
-  margin-right: -11.76471%;
+@media screen and (min-width: 48em) {
+  /* line 7, sass/layout/_fractional.scss */
+  .fractional {
+    width: 41.17647%;
+    float: left;
+    margin-right: 3.38983%; } }
+@media screen and (min-width: 56em) {
+  /* line 7, sass/layout/_fractional.scss */
+  .fractional {
+    right: 14.70588%;
+    width: 41.17647%;
+    margin-right: -11.76471%;
+    float: left; } }
+/* line 25, sass/layout/_fractional.scss */
+.fractional--full {
+  right: 0;
+  width: 90%;
+  margin-right: 3em;
+  margin-top: 1em;
+  margin-top: 0;
+  margin-bottom: 2em;
+  padding-top: 1em;
   float: left; }
-  /* line 19, sass/layout/_fractional.scss */
-  .fractional--full {
-    right: 0;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    padding-top: 1em; }
 
 @-ms-viewport {
   width: device-width; }
@@ -1503,17 +1506,22 @@ figure {
 /* line 6, sass/modules/_pq.scss */
 .pq, .pq--full {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333; }
+  color: #333;
+  display: none; }
+  @media screen and (min-width: 56em) {
+    /* line 6, sass/modules/_pq.scss */
+    .pq, .pq--full {
+      display: block; } }
 
-/* line 12, sass/modules/_pq.scss */
+/* line 16, sass/modules/_pq.scss */
 .pq {
   text-align: right; }
-  /* line 17, sass/modules/_pq.scss */
+  /* line 21, sass/modules/_pq.scss */
   .pq--full {
     text-align: left;
     border-top: 1px solid #ef3f23; }
   @media screen and (min-width: 56em) {
-    /* line 23, sass/modules/_pq.scss */
+    /* line 27, sass/modules/_pq.scss */
     .pq:after {
       content: "";
       position: absolute;
@@ -1521,7 +1529,7 @@ figure {
       right: -.1875em;
       height: calc(100% - .875em);
       border-right: 1px solid #ef3f23; } }
-  /* line 34, sass/modules/_pq.scss */
+  /* line 38, sass/modules/_pq.scss */
   .pq__body {
     padding-right: .5em;
     margin-bottom: 0;
@@ -1596,6 +1604,57 @@ figure {
     .rover-don-parent-f-c, .rover-peggy-parent-f-c {
       display: block;
       float: right; } }
+
+/* line 5, sass/modules/_story-sidebar.scss */
+.story-sidebar {
+  padding: 1em;
+  background: #f5f5f5;
+  border-top: 4px solid #ef3f23; }
+
+/* line 11, sass/modules/_story-sidebar.scss */
+.story-sidebar__body {
+  font-size: 1em;
+  line-height: 1.4;
+  color: #808080; }
+
+@media screen and (min-width: 48em) {
+  /* line 17, sass/modules/_story-sidebar.scss */
+  .story-sidebar {
+    position: relative;
+    top: .4375em; } }
+@media screen and (min-width: 56em) {
+  /* line 17, sass/modules/_story-sidebar.scss */
+  .story-sidebar {
+    border: 0; } }
+/* line 30, sass/modules/_story-sidebar.scss */
+.story-sidebar__head {
+  margin-top: 0;
+  margin-bottom: .5em;
+  position: relative;
+  padding-bottom: .5em;
+  font-weight: 600; }
+  @media screen and (min-width: 56em) {
+    /* line 38, sass/modules/_story-sidebar.scss */
+    .story-sidebar__head:after {
+      content: "";
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: -16px;
+      width: 110%;
+      border-bottom: 1px solid #ef3f23; } }
+/* line 55, sass/modules/_story-sidebar.scss */
+.story-sidebar__body p, .story-sidebar__body ul {
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit; }
+/* line 62, sass/modules/_story-sidebar.scss */
+.story-sidebar__body__list {
+  list-style-position: inside;
+  padding-left: 0; }
+/* line 68, sass/modules/_story-sidebar.scss */
+.story-sidebar__body__list-item {
+  margin-bottom: .5em; }
 
 /* line 1, sass/theme/_index.scss */
 .updated:not(.published) {
