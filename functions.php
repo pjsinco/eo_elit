@@ -192,7 +192,7 @@ function elit_picture_elem_shim() {
   
   echo $output;
 }
-add_action('wp_head', 'elit_picture_elem_shim');
+//add_action('wp_head', 'elit_picture_elem_shim');
 
 /**
  * Add html5 shim
@@ -225,7 +225,6 @@ function elit_append_around() {
  *  https://developer.wordpress.org/reference/hooks/script_loader_tag/
  */
 function elit_add_async_to_picturefill_load($tag, $handle, $src) {
-
   // make sure we're looking at picturefill
   if ($handle !== 'picturefill') {
     return $tag;
@@ -250,7 +249,6 @@ function elit_hiya_shortcode($atts) {
 add_shortcode('hiya', 'elit_hiya_shortcode');
 
 function elit_story_image_shortcode($atts, $content = null) {
-  
   $a = shortcode_atts(
     array(
       'id' => '',
@@ -277,13 +275,11 @@ function elit_story_image_shortcode($atts, $content = null) {
 
   
   return $ricg_responsive_str;
-
 }
 
 add_shortcode('story-image', 'elit_story_image_shortcode' );
 
 function elit_pull_quote_shortcode($atts, $content = null) {
-
   $a = shortcode_atts(
     array(
       'quote' => '',
@@ -306,13 +302,11 @@ function elit_pull_quote_shortcode($atts, $content = null) {
   $str .= '</aside>';
   
   return $str;
-
 }
 add_shortcode( 'pullquote', 'elit_pull_quote_shortcode' );
 
 
 function elit_taxonomies() {
-
   /**
    * Create **School** taxonomy
    */
@@ -388,7 +382,6 @@ function elit_taxonomies() {
 add_action( 'init' , 'elit_taxonomies' );
 
 function elit_advertisement_shortcode($atts, $content = null) {
-
   $a = shortcode_atts(
     array(
       'id' => '',
@@ -406,12 +399,10 @@ function elit_advertisement_shortcode($atts, $content = null) {
   $str .= '</a></div></aside>';
 
   return $str;
-
 }
 add_shortcode('advertisement', 'elit_advertisement_shortcode');
 
 function elit_register_post_types() {
-
   $labels = array(
     'name'               => 'Story sidebars',
     'singular_name'      => 'Story sidebar',
@@ -443,12 +434,10 @@ function elit_register_post_types() {
   );
 
   register_post_type('elit_story_sidebar', $args);
-  
 }
 add_action( 'init' , 'elit_register_post_types' );
 
 function elit_sidebar_shortcode($atts, $content = null) {
-
   $a = shortcode_atts(
     array(
       'id' => '',
@@ -475,10 +464,99 @@ function elit_sidebar_shortcode($atts, $content = null) {
   $str .= '</aside>' . PHP_EOL;
 
   return $str;
-
-  
 }
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
+
+/**
+ * META BOX
+ *
+ * http://www.smashingmagazine.com/2011/10/04/
+ *   create-custom-post-meta-boxes-wordpress/
+ */
+add_action( 'load-post.php',      'elit_bio_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_bio_meta_box_setup' );
+
+function elit_bio_meta_box_setup() {
+  // add meta boxes
+  add_action( 'add_meta_boxes' , 'elit_add_bio_meta_box' );
+
+  // save post meta
+  add_action( 'save_post' , 'elit_save_bio_meta', 10, 2 );
+}
+
+function elit_add_bio_meta_box() {
+  wp_mail('psinco@osteopathic.org', 'hi from wp_mail', 'butterfly');
+  add_meta_box(
+    'elit-bio',
+    esc_html('Author bio'),
+    'elit_bio_meta_box',
+    'post',
+    'side',
+    'default'
+  );
+}
+
+function elit_bio_meta_box( $object, $box) {
+  wp_nonce_field( basename(__FILE__), 'elit_bio_nonce');
+
+  d( get_post_meta( $object->ID, 'elit_bio', true) );
+
+  // let's make our box
+  ?>
+  <p>
+    <label for="widefat">Include a brief author bio with the story</label>
+    <br />
+    <textarea class="widefat"  name="elit-bio" id="elit-bio" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_bio', true ) ); ?></textarea>
+  </p>
+<?php } ?>
+
+<?php
+
+
+
+function elit_save_bio_meta($post_id, $post) {
+
+  // verify the nonce
+  if ( !isset( $_POST['elit_bio_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_bio_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type);
+  
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-bio'] ) ? $_POST['elit-bio'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_bio';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
 
 // temporarily disable admin bar so we can see our susy grid display
 //add_filter('show_admin_bar', '__return_false');
