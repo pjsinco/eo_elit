@@ -238,6 +238,12 @@ function elit_add_async_to_picturefill_load($tag, $handle, $src) {
 }
 //add_filter('script_loader_tag', 'elit_add_async_to_picturefill_load', 10, 3);
 
+
+/**
+ * SHORTCODES
+ *
+ */
+
 function elit_hiya_shortcode($atts) {
   $a = shortcode_atts(
     array(
@@ -250,6 +256,50 @@ function elit_hiya_shortcode($atts) {
   return 'hiya ' . $a['name'] . '. You are a ' . $a['occupation'] . '.';
 }
 add_shortcode('hiya', 'elit_hiya_shortcode');
+
+function elit_related_shortcode($atts, $content = null) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+    ), $atts
+  );
+
+  $post = get_post( $a['id'] );
+
+  // make sure the related post is published
+  if ( !$post || $post->post_status != 'publish') {
+    return $post; 
+  }
+
+  
+
+  // build up our string to output
+  $output  = '<div class="story__box">';
+  $output .= '<div class="media">';
+  $output .= '<div class="media__title">Related</div>';
+
+  $thumb_id = get_post_thumbnail_id( $post->ID );
+  $thumb = get_post( $thumb_id );
+
+  if ( $thumb_id )  {
+    $thumb_url = wp_get_attachment_thumb_url( $thumb_id );
+    $output .= '<img class="media__img" src="' . $thumb_url . '" ';
+    $output .= 'alt="' . $thumb->post_content . '" width="140" />';
+  }
+
+  $output .= '<div class="media__body">';
+  $output .= '<h3 class="media__head">';
+  $output .= '<a href="' . get_permalink( $post->ID ) . '" ';
+  $output .= 'class="media__link">' . $post->post_title . '</a>';
+  $output .= '</h3>';
+  $output .= '</div>';
+  $output .= '</div>';
+  $output .= '</div>';
+  
+  return $output;
+}
+add_shortcode('related', 'elit_related_shortcode' );
 
 function elit_story_image_shortcode($atts, $content = null) {
   $a = shortcode_atts(
@@ -279,7 +329,6 @@ function elit_story_image_shortcode($atts, $content = null) {
   
   return $ricg_responsive_str;
 }
-
 add_shortcode('story-image', 'elit_story_image_shortcode' );
 
 function elit_pull_quote_shortcode($atts, $content = null) {
@@ -307,6 +356,58 @@ function elit_pull_quote_shortcode($atts, $content = null) {
   return $str;
 }
 add_shortcode( 'pullquote', 'elit_pull_quote_shortcode' );
+
+function elit_sidebar_shortcode($atts, $content = null) {
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+      'style' => 'left',
+    ),
+    $atts
+  );
+
+  $post = get_post($a['id']);
+
+  // make sure the story-sidebar is published
+  if ( !$post || $post->post_status != 'publish') {
+    return false;
+  }
+
+  $str = '<aside class="story-sidebar fractional';
+  // figure out whether our fractional class needs '--full'
+  $str .= (($a['style'] == 'left') ? '">' : '--full">') . PHP_EOL;
+  $str .= '<h3 class="story-sidebar__head">' . $post->post_title; 
+  $str .= '</h3>' . PHP_EOL;
+  $str .= '<div class="story-sidebar__body">' . PHP_EOL; 
+  $str .= $post->post_content;
+  $str .= '</div>' . PHP_EOL;
+  $str .= '</aside>' . PHP_EOL;
+
+  return $str;
+}
+add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
+
+function elit_advertisement_shortcode($atts, $content = null) {
+  $a = shortcode_atts(
+    array(
+      'id' => '',
+    ),
+    $atts
+  );
+
+  $str = '<aside data-set="rover-' . $a['id'] . '-parent" ';
+  $str .= 'class="ad ad__med-rect--article rover-' . $a['id'] . '-parent-a">';
+  $str .= '<div class="rover-' . $a['id'] . '">';
+  $str .= '<a href=';
+  $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';
+  $str .= ' target="_blank">';
+  $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
+  $str .= '</a></div></aside>';
+
+  return $str;
+}
+add_shortcode('advertisement', 'elit_advertisement_shortcode');
+
 
 
 function elit_taxonomies() {
@@ -384,27 +485,6 @@ function elit_taxonomies() {
 }
 add_action( 'init' , 'elit_taxonomies' );
 
-function elit_advertisement_shortcode($atts, $content = null) {
-  $a = shortcode_atts(
-    array(
-      'id' => '',
-    ),
-    $atts
-  );
-
-  $str = '<aside data-set="rover-' . $a['id'] . '-parent" ';
-  $str .= 'class="ad ad__med-rect--article rover-' . $a['id'] . '-parent-a">';
-  $str .= '<div class="rover-' . $a['id'] . '">';
-  $str .= '<a href=';
-  $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';
-  $str .= ' target="_blank">';
-  $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
-  $str .= '</a></div></aside>';
-
-  return $str;
-}
-add_shortcode('advertisement', 'elit_advertisement_shortcode');
-
 function elit_register_post_types() {
   $labels = array(
     'name'               => 'Story sidebars',
@@ -440,35 +520,6 @@ function elit_register_post_types() {
 }
 add_action( 'init' , 'elit_register_post_types' );
 
-function elit_sidebar_shortcode($atts, $content = null) {
-  $a = shortcode_atts(
-    array(
-      'id' => '',
-      'style' => 'left',
-    ),
-    $atts
-  );
-
-  $post = get_post($a['id']);
-
-  // make sure the story-sidebar is published
-  if ( !$post || $post->post_status != 'publish') {
-    return false;
-  }
-
-  $str = '<aside class="story-sidebar fractional';
-  // figure out whether our fractional class needs '--full'
-  $str .= (($a['style'] == 'left') ? '">' : '--full">') . PHP_EOL;
-  $str .= '<h3 class="story-sidebar__head">' . $post->post_title; 
-  $str .= '</h3>' . PHP_EOL;
-  $str .= '<div class="story-sidebar__body">' . PHP_EOL; 
-  $str .= $post->post_content;
-  $str .= '</div>' . PHP_EOL;
-  $str .= '</aside>' . PHP_EOL;
-
-  return $str;
-}
-add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
 /**
  * BIO META BOX
@@ -695,3 +746,14 @@ function elit_attachment_field_credit_save( $post, $attachment) {
   //'elit_attachment_field_credit_save',
   //10, 2 
 //);
+
+/**
+ * Filter to remove wp's dimension attributes on images
+ *
+ * http://wordpress.stackexchange.com/questions/22302/
+ *   how-do-you-remove-hard-coded-thumbnail-image-dimensions
+ */
+//add_filter('post_thumbnail_html', 'elit_remove_thumbnail_dimensions', 10, 3);
+//function elit_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+  //$html = preg_replace(' /')
+//}

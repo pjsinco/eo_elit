@@ -1,0 +1,47 @@
+.media {
+  float: left;
+  width: 100%;
+
+  &--rev {
+    float: right;
+  }
+
+  &__img {
+    margin-right: 1em;
+    float: left;
+
+    @include breakpoint($screen $medium-minor-start) {
+      margin-bottom: 1em;      
+    }
+  }
+
+  &__title {
+    padding-top: .5em;
+    margin-bottom: 1em;
+    border-top: 3px solid $lightgray;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $gray;
+
+    @include breakpoint($screen $medium-minor-start) {
+      font-size: .875em;
+    }
+  }
+
+  &__body {
+    color: $gray;
+    @include breakpoint($screen $medium-minor-start) {
+      width: 8.75em;
+    }
+  }
+  
+  &__head {
+    font-weight: normal;
+    font-size: 1.125em;
+    line-height: 1.22;
+  }
+
+  &__link {
+    color: inherit;
+  }
+}
