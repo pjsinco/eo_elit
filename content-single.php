@@ -7,28 +7,29 @@
 
           <?php // if we have a featured image, show it ?>
           <?php if ( has_post_thumbnail() ): ?>
-            <?php $thumb_id = (get_post_thumbnail_id()); ?>
-            <?php $thumb_content = get_post($thumb_id); ?>
+            <?php $featured_image_id = (get_post_thumbnail_id()); ?>
+            <?php $featured_image_content = get_post($featured_image_id); ?>
 
             <?php // if we don't have a label for the image, add some space below with image-overlay--space ?>
-            <figure class="image--primary <?php echo (($thumb_content->post_content) ? 'image-overlay' : 'image-overlay--space'); ?>">
+            <figure class="image--primary <?php echo (($featured_image_content->post_content) ? 'image-overlay' : 'image-overlay--space'); ?>">
             <!-- removing picture element because it's not used by ricg picturefill plugin -->
             <!--<picture> -->
-              <img class="image__img" src="<?php echo wp_get_attachment_url($thumb_id); ?>" <?php echo tevkori_get_src_sizes( 179421, 'article-top-large' ); ?> />
+              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'article-top-large' ); ?> />
+              <?php d($featured_image_id); ?>
 
             <?php // the caption overlay ?>
-            <?php if ($thumb_content->post_excerpt): ?>
+            <?php if ($featured_image_content->post_excerpt): ?>
               <div class="image-overlay__body">
-                <span class="image-overlay__text"><?php echo $thumb_content->post_excerpt; ?></span>
+                <span class="image-overlay__text"><?php echo $featured_image_content->post_excerpt; ?></span>
               </div>
             <!--</picture> -->
             <?php endif; ?>
             </figure>
 
             <?php // our label for the featured image  ?>
-            <?php if ($thumb_content->post_content): ?>
+            <?php if ($featured_image_content->post_content): ?>
             <figcaption class="image__caption caption caption--feature caption--right">
-              <?php echo $thumb_content->post_content; ?>
+              <?php echo $featured_image_content->post_content; ?>
             </figcaption>
             <?php endif; ?>
           <?php endif; ?>
