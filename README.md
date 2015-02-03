@@ -262,3 +262,5 @@
 * [debugging in php](http://www.phpknowhow.com/basics/basic-debugging/)
 
 * [set add'l fields in media uploader](http://www.wpbeginner.com/wp-tutorials/how-to-add-additional-fields-to-the-wordpress-media-uploader/)
+
+* [smashing on definitive guide to wp hooks](http://www.smashingmagazine.com/2011/10/07/definitive-guide-wordpress-hooks/)
