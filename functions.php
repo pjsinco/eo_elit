@@ -476,19 +476,20 @@ add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
  * http://www.smashingmagazine.com/2011/10/04/
  *   create-custom-post-meta-boxes-wordpress/
  */
-add_action( 'load-post.php',      'elit_bio_meta_box_setup' );
-add_action( 'load-post-new.php' , 'elit_bio_meta_box_setup' );
+add_action( 'load-post.php',      'elit_author_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_author_meta_box_setup' );
 
-function elit_bio_meta_box_setup() {
+function elit_author_meta_box_setup() {
   // add meta boxes
   add_action( 'add_meta_boxes' , 'elit_add_bio_meta_box' );
+  add_action( 'add_meta_boxes' , 'elit_add_author_photo_meta_box' );
 
   // save post meta
   add_action( 'save_post' , 'elit_save_bio_meta', 10, 2 );
+  add_action( 'save_post' , 'elit_save_author_photo_meta', 10, 2 );
 }
 
 function elit_add_bio_meta_box() {
-  wp_mail('psinco@osteopathic.org', 'hi from wp_mail', 'butterfly');
   add_meta_box(
     'elit-bio',
     esc_html('Author bio'),
@@ -499,10 +500,19 @@ function elit_add_bio_meta_box() {
   );
 }
 
+function elit_add_author_photo_meta_box() {
+  add_meta_box(
+    'elit-author-photo-id',
+    esc_html('Author photo ID'),
+    'elit_author_photo_meta_box',
+    'post',
+    'side',
+    'default'
+  );
+}
+
 function elit_bio_meta_box( $object, $box) {
   wp_nonce_field( basename(__FILE__), 'elit_bio_nonce');
-
-  d( get_post_meta( $object->ID, 'elit_bio', true) );
 
   // let's make our box
   ?>
@@ -510,6 +520,20 @@ function elit_bio_meta_box( $object, $box) {
     <label for="widefat">Include a brief author bio with the story</label>
     <br />
     <textarea class="widefat"  name="elit-bio" id="elit-bio" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_bio', true ) ); ?></textarea>
+  </p>
+
+<?php } ?>
+<?php 
+
+function elit_author_photo_meta_box( $object, $box) {
+  wp_nonce_field( basename(__FILE__), 'elit_author_photo_nonce');
+
+  // let's make our box
+  ?>
+  <p>
+    <label for="widefat">The ID of the author's photo</label>
+    <br />
+    <input class="widefat" type="text" name="elit-author-photo-id" id="elit-author-photo-id" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_author_photo_id', true ) ); ?>" />
   </p>
 <?php } ?>
 
@@ -557,8 +581,51 @@ function elit_save_bio_meta($post_id, $post) {
   }
 }
 
+function elit_save_author_photo_meta($post_id, $post) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_author_photo_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_author_photo_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type);
+  
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-author-photo-id'] ) ? $_POST['elit-author-photo-id'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_author_photo_id';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+
+} 
+
 /**
- * END BIO META BOX
+ * END AUTHOR META BOX
  */
 
 
