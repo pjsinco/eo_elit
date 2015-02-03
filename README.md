@@ -256,4 +256,4 @@
 
 * [remove post formats meta box](http://wordpress.stackexchange.com/questions/65653/how-do-i-remove-the-post-format-meta-box)
 
-
+###Tue Feb  3 05:07:21 2015 CST
