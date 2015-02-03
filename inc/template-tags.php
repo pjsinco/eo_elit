@@ -101,13 +101,18 @@ function elit_story_footer() {
     // get the id of the author's photo
     $author_photo_id = get_post_meta( get_the_id(), 'elit_author_photo_id', true );
 
+    // if we have an author photo id ...
     if ( $author_photo_id ) {
       $author_photo_src = wp_get_attachment_url( $author_photo_id );
-      $author_photo_content = get_post( $author_photo_id );
-      $about .= '<img class="story-footer__img" ';
-      $about .= 'src="' . wp_get_attachment_url( $author_photo_id ) . '" ';
-      $about .= 'alt = "' . $author_photo_content->post_excerpt . '" '  ;
-      $about .= ' width="' . wp_get_attachment_image_src($author_photo_id)[1] . '" />';
+
+      // ... and it's valid
+      if ($author_photo_src) {
+        $author_photo_content = get_post( $author_photo_id );
+        $about .= '<img class="story-footer__img" ';
+        $about .= 'src="' . wp_get_attachment_url( $author_photo_id ) . '" ';
+        $about .= 'alt = "' . $author_photo_content->post_excerpt . '" '  ;
+        $about .= ' width="' . wp_get_attachment_image_src($author_photo_id)[1] . '" />';
+      }
     }
     
     $about .= '<div class="story-footer__body">';
