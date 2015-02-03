@@ -27,6 +27,7 @@
     border: 0;
   }
 
+
   &__head {
 
     margin-top: 0;
@@ -59,15 +60,16 @@
       color: inherit;
     }
 
-  &__list {
-    list-style-position: inside;
-    padding-left: 0;
-
-  }
+    /*&__list {*/
+    ul {
+      list-style-position: inside;
+      padding-left: 0;
+    }
   
-  &__list-item {
-    margin-bottom: .5em;
-  }
+    /*&__list-item {*/
+    li {
+      margin-bottom: .5em;
+    }
   
 
   }

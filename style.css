@@ -1640,7 +1640,7 @@ figure {
   /* line 17, sass/modules/_story-sidebar.scss */
   .story-sidebar {
     border: 0; } }
-/* line 30, sass/modules/_story-sidebar.scss */
+/* line 31, sass/modules/_story-sidebar.scss */
 .story-sidebar__head {
   margin-top: 0;
   margin-bottom: .5em;
@@ -1648,7 +1648,7 @@ figure {
   padding-bottom: .5em;
   font-weight: 600; }
   @media screen and (min-width: 56em) {
-    /* line 38, sass/modules/_story-sidebar.scss */
+    /* line 39, sass/modules/_story-sidebar.scss */
     .story-sidebar__head:after {
       content: "";
       height: 100%;
@@ -1657,18 +1657,22 @@ figure {
       right: -16px;
       width: 110%;
       border-bottom: 1px solid #ef3f23; } }
-/* line 55, sass/modules/_story-sidebar.scss */
-.story-sidebar__body p, .story-sidebar__body ul {
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit; }
-/* line 62, sass/modules/_story-sidebar.scss */
-.story-sidebar__body__list {
-  list-style-position: inside;
-  padding-left: 0; }
-/* line 68, sass/modules/_story-sidebar.scss */
-.story-sidebar__body__list-item {
-  margin-bottom: .5em; }
+/* line 53, sass/modules/_story-sidebar.scss */
+.story-sidebar__body {
+  /*&__list {*/
+  /*&__list-item {*/ }
+  /* line 56, sass/modules/_story-sidebar.scss */
+  .story-sidebar__body p, .story-sidebar__body ul {
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit; }
+  /* line 64, sass/modules/_story-sidebar.scss */
+  .story-sidebar__body ul {
+    list-style-position: inside;
+    padding-left: 0; }
+  /* line 70, sass/modules/_story-sidebar.scss */
+  .story-sidebar__body li {
+    margin-bottom: .5em; }
 
 /* line 1, sass/modules/_topics.scss */
 .topics {
