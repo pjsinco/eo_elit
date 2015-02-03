@@ -259,3 +259,6 @@
 ###Tue Feb  3 05:07:21 2015 CST
 * [vvv and wp_mail()](http://www.allancollins.net/2014/06/12/wp_mail-sending-vvv-try/)
 
+* [debugging in php](http://www.phpknowhow.com/basics/basic-debugging/)
+
+* [set add'l fields in media uploader](http://www.wpbeginner.com/wp-tutorials/how-to-add-additional-fields-to-the-wordpress-media-uploader/)
