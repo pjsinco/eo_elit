@@ -4,6 +4,9 @@
  * elit functions and defs
  */
 
+// temporarily disable admin bar so we can see our susy grid display
+//add_filter('show_admin_bar', '__return_false');
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -468,7 +471,7 @@ function elit_sidebar_shortcode($atts, $content = null) {
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
 /**
- * META BOX
+ * BIO META BOX
  *
  * http://www.smashingmagazine.com/2011/10/04/
  *   create-custom-post-meta-boxes-wordpress/
@@ -511,11 +514,7 @@ function elit_bio_meta_box( $object, $box) {
 <?php } ?>
 
 <?php
-
-
-
 function elit_save_bio_meta($post_id, $post) {
-
   // verify the nonce
   if ( !isset( $_POST['elit_bio_nonce'] ) || 
     !wp_verify_nonce( $_POST['elit_bio_nonce'], basename( __FILE__ ) )
@@ -558,5 +557,74 @@ function elit_save_bio_meta($post_id, $post) {
   }
 }
 
-// temporarily disable admin bar so we can see our susy grid display
-//add_filter('show_admin_bar', '__return_false');
+/**
+ * END BIO META BOX
+ */
+
+
+
+
+/**
+ *                      * * * * * NOT USING * * * * *
+ *
+ * ADD PHOTOGRPHAER AND NAME FIELDS TO MEDIA UPLOADER
+ * http://www.wpbeginner.com/wp-tutorials/how-to-add-additional-fields-
+ *     to-the-wordpress-media-uploader/
+ *
+ *  @param $form_fields array, fields to include in the attachment form
+ *  @param $post object, attachment record in the db
+ *  @return $form_fields, modified form fields
+ */
+function elit_attachment_field_credit($form_fields, $post) {
+
+  $form_fields['elit-photographer-name'] = array (
+    'label' => 'Photographer name',
+    'input' => 'text',
+    'value' => get_post_meta( $post->ID, 'elit_photographer_name', true),
+    'helps' => 'If provided, photo credit will be displayed',
+  );
+
+  $form_fields['elit-photographer-url'] = array (
+    'label' => 'Photographer URL',
+    'input' => 'text',
+    'value' => get_post_meta( $post->ID, 'elit_photographer_url', true),
+    'helps' => 'Add the photographer\'s URL',
+  );
+
+  return $form_fields;
+}
+//add_filter( 'attachment_fields_to_edit', 'elit_attachment_field_credit', 10, 2 );
+
+/**
+ * Save values of photograher's name and url in media uploader
+ *
+ *  @param $post array, the post data for the db
+ *  @param $attachement array, attachment fields from post form
+ *  @return $post array, modified post data
+ */
+function elit_attachment_field_credit_save( $post, $attachment) {
+
+  if ( isset( $attachment['elit-photographer-name']) ) {
+    update_post_meta( 
+      $post['ID'], 
+      'elit_photographer_name', 
+      $attachment['elit-photographer-name']
+    );
+  }
+
+  if ( isset( $attachment['elit-photographer-url']) ) {
+    update_post_meta( 
+      $posti['ID'], 
+      'elit_photographer_url', 
+      $attachment['elit-photographer-url']
+    );
+  }
+
+  return $post;
+}
+
+//add_filter( 
+  //'attachment_fields_to_save', 
+  //'elit_attachment_field_credit_save',
+  //10, 2 
+//);
