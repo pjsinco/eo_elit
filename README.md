@@ -270,7 +270,7 @@
 ###Wed Feb  4 10:09:37 2015 CST
 * ~~TODO meta box for kicker~~
 
-* TODO  need credit at bottom of page for standalone feature images
+* TODO need credit at bottom of page for standalone feature images
 
 * scaffolding for a meta box
     ```php

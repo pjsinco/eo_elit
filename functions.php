@@ -707,7 +707,7 @@ function elit_kicker_meta_box( $object, $box ) {
   
   ?>
   <p>
-    <label for="widefat">A few words above the headline to summarize, tease, add additional information.</label>
+    <label for="widefat">A few words above the headline to summarize, tease, add additional information</label>
     <br />
     <input class="widefat" type="text" name="elit-kicker" id="elit-kicker" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_kicker', true ) ); ?>" />
   </p>
