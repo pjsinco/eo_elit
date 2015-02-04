@@ -268,7 +268,7 @@
 * [remove wp's hard-coded image width, height](http://wordpress.stackexchange.com/questions/22302/how-do-you-remove-hard-coded-thumbnail-image-dimensions)
 
 ###Wed Feb  4 10:09:37 2015 CST
-* TODO meta box for kicker 
+* ~~TODO meta box for kicker~~
 
 * TODO  need credit at bottom of page for standalone feature images
 
