@@ -64,7 +64,6 @@ function elit_comments_link() {
 }
 
 function elit_story_footer() {
-
   // #1 let's get our social icons
   get_template_part('social');
 
@@ -122,11 +121,22 @@ function elit_story_footer() {
     echo $about;
   }
 
+  $credit = get_post_meta( get_the_id(), 'elit_standalone_credit', true );
+  if ( $credit ) {
+
+    $credit_line  = '<div class="story-footer__section">';
+    $credit_line .= '<div class="story-footer__title">Credit</div>';
+    $credit_line .= '<div class="story-footer__body">';
+    $credit_line .= $credit;
+    $credit_line .= '</div></div>';
+
+    echo $credit_line;
+  }
+
   
               //<div class="story-nav__more-in">More in <a href="#" class="story-nav__emph">Patient Care <span class="icon-arrow-right"></span></a></div>
               //<div class="prev-next">
                 //<div class="prev-next__next"><a href="#" class="prev-next__title">Newer <span class="icon-arrow-right space-to-left"></span></a><a href="#" class="prev-next__link">New Year’s resolutions: 10 life hacks to increase physician productivity </a></div>
                 //<div class="prev-next__prev"><a href="#" class="prev-next__title"><span class="icon-arrow-left space-to-right"></span> Older</a><a href="#" class="prev-next__link">In Memoriam: Dec. 4, 2014</a></div>
               //</div>
-  
 }

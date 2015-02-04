@@ -914,7 +914,24 @@ function elit_save_standalone_credit_meta( $post_id, $post ) {
   }
   
 }
+// END STANDALONE CREDIT META BOX
+
 
 /**
- * END STANDALONE CREDIT META BOX
+ * ADD DASHBOARD WIDGET FOR DISPLAYING A LINK TO A POST
+ * ON THE OLD SITE
+ *
  */
+function elit_add_dashboard_widgets() {
+  wp_add_dashboard_widget(
+    'elit-link-to-original',
+    'Link to original',
+    'elit_link_to_original'
+  );
+}
+add_action( 'wp_dashboard_setup' , 'elit_add_dashboard_widgets' );
+
+function elit_link_to_original() {
+  d('hiya');
+  echo 'hello, world. I\m a dashboard widget.';
+}
