@@ -266,3 +266,38 @@
 * [smashing on definitive guide to wp hooks](http://www.smashingmagazine.com/2011/10/07/definitive-guide-wordpress-hooks/)
 
 * [remove wp's hard-coded image width, height](http://wordpress.stackexchange.com/questions/22302/how-do-you-remove-hard-coded-thumbnail-image-dimensions)
+
+###Wed Feb  4 10:09:37 2015 CST
+* TODO meta box for kicker 
+
+* TODO  need credit at bottom of page for standalone feature images
+
+* scaffolding for a meta box
+    ```php
+    /**
+     * KICKER META BOX
+     *
+     */
+    add_action( 'load-post.php' , 'elit_kicker_meta_box_setup' );
+    add_action( 'load-post-new.php' , 'elit_kicker_meta_box_setup' );
+    
+    function elit_kicker_meta_box_setup() {
+    
+    }
+    
+    function elit_add_kicker_meta_box() {
+      
+    }
+    
+    function elit_kicker_meta_box() {
+      
+    }
+    
+    function elit_save_kicker_meta() {
+      
+    }
+    
+    /**
+     * END KICKER META BOX
+     */
+    ```
