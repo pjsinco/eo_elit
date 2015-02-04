@@ -258,7 +258,6 @@ function elit_hiya_shortcode($atts) {
 add_shortcode('hiya', 'elit_hiya_shortcode');
 
 function elit_related_shortcode($atts, $content = null) {
-
   $a = shortcode_atts(
     array(
       'id' => '',
@@ -353,7 +352,7 @@ function elit_pull_quote_shortcode($atts, $content = null) {
   $str .= '</div>';
   $str .= '</aside>';
   
-  return $str;
+  return wptexturize($str);
 }
 add_shortcode( 'pullquote', 'elit_pull_quote_shortcode' );
 
