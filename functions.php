@@ -469,7 +469,7 @@ function elit_taxonomies() {
 
   $args = array(
     'labels'            => $labels,
-    'rewrite'           => array('slug' => 'genre'),
+    'rewrite'           => array('slug' => 'series'),
     'hierarchical'      => false,
     'public'            => true,
     'update_count_callback'            => '_update_post_term_count',
@@ -546,7 +546,7 @@ function elit_add_bio_meta_box() {
     'elit_bio_meta_box',
     'post',
     'side',
-    'default'
+    'low'
   );
 }
 
@@ -557,7 +557,7 @@ function elit_add_author_photo_meta_box() {
     'elit_author_photo_meta_box',
     'post',
     'side',
-    'default'
+    'low'
   );
 }
 
@@ -673,16 +673,98 @@ function elit_save_author_photo_meta($post_id, $post) {
   }
 
 } 
-
 /**
  * END AUTHOR META BOX
  */
 
 
+/**
+ * KICKER META BOX
+ *
+ */
+add_action( 'load-post.php', 'elit_kicker_meta_box_setup' );
+add_action( 'load-post-new.php', 'elit_kicker_meta_box_setup' );
+
+function elit_kicker_meta_box_setup() {
+  add_action( 'add_meta_boxes', 'elit_add_kicker_meta_box' );
+  add_action( 'save_post', 'elit_save_kicker_meta', 10, 2 );
+}
+
+function elit_add_kicker_meta_box() {
+  add_meta_box(
+    'elit-kicker',
+    esc_html( 'Headline kicker' ),
+    'elit_kicker_meta_box',
+    'post',
+    'side',
+    'default'
+  );
+}
+
+function elit_kicker_meta_box( $object, $box ) {
+
+  wp_nonce_field( basename(__FILE__), 'elit_kicker_nonce' );
+  
+  ?>
+  <p>
+    <label for="widefat">A few words above the headline to summarize, tease, add additional information.</label>
+    <br />
+    <input class="widefat" type="text" name="elit-kicker" id="elit-kicker" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_kicker', true ) ); ?>" />
+  </p>
+  <?php 
+
+}
+
+function elit_save_kicker_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_kicker_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_kicker_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-kicker'] ) ? $_POST['elit-kicker'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_kicker';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+  
+}
+
+/**
+ * END KICKER META BOX
+ */
 
 
 /**
  *                      * * * * * NOT USING * * * * *
+ *                    but let's keep it around as a demo
  *
  * ADD PHOTOGRPHAER AND NAME FIELDS TO MEDIA UPLOADER
  * http://www.wpbeginner.com/wp-tutorials/how-to-add-additional-fields-
