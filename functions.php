@@ -57,9 +57,10 @@ function elit_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
-	//add_theme_support( 'post-formats', array(
-		//'aside', 'image', 'video', 'quote', 'link', 'gallery',
-	//) );
+  add_theme_support( 'post-formats', array(
+    //'aside', 'image', 'video', 'quote', 'link', 'gallery',
+    'video',
+  ) );
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -117,10 +118,21 @@ function elit_scripts() {
     array('jquery'), false, true
   );
 
-  wp_register_script('append-around-load', 
-    get_template_directory_uri() . '/js/append-around-load.js', 
-    array('append-around'), false, true
+  //wp_register_script('append-around-load', 
+    //get_template_directory_uri() . '/js/append-around-load.js', 
+    //array('append-around'), false, true
+  //);
+
+  wp_register_script('fitvids', 
+    get_template_directory_uri() . '/js/jquery.fitvids.js', 
+    array('jquery'), false, true
   );
+
+  wp_register_script('main',
+    get_template_directory_uri() . '/js/main.js', 
+    array('jquery'), false, true
+  );
+
   
   wp_enqueue_script('modernizr');
   wp_enqueue_script('typekit-load');
@@ -128,14 +140,36 @@ function elit_scripts() {
   wp_enqueue_script('nav');
   wp_enqueue_script('ehs-head-tag');
   wp_enqueue_script('append-around');
-  wp_enqueue_script('append-around-load');
+  wp_enqueue_script('main');
+
+  // if we're on a video page, load FitVids to make the video responsive
+  if ( has_post_format( 'video' ) )  {
+    wp_enqueue_script('fitvids');
+    add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
+  }
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts' );
+
+/**
+ * Add our fitvids loader
+ *
+ * http://fitvidsjs.com/
+ */
+function elit_add_fitvids_script() {
+  $output = '<script>' . PHP_EOL;
+  $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
+  $output .= "  jQuery('.image--primary').fitVids();" . PHP_EOL;
+  $output .= "});";
+  $output .= '</script>' . PHP_EOL;
+
+  echo $output;
+}
 
 // use google's cdn for jquery and load it in the footer
 // http://www.wpbeginner.com/wp-themes/
