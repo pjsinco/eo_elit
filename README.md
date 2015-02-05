@@ -289,11 +289,11 @@
       
     }
     
-    function elit_kicker_meta_box() {
+    function elit_kicker_meta_box( $object, $box ) {
       
     }
     
-    function elit_save_kicker_meta() {
+    function elit_save_kicker_meta( $post_id, $post ) {
       
     }
     
