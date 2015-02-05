@@ -916,10 +916,41 @@ function elit_save_standalone_credit_meta( $post_id, $post ) {
 }
 // END STANDALONE CREDIT META BOX
 
+/**
+ * META BOX THAT DISPLAYS LINK TO POST ON THE OLD SITE
+ *
+ */
+add_action( 'load-post.php' , 'elit_origlink_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_origlink_meta_box_setup' );
+
+function elit_origlink_meta_box_setup() {
+
+  add_action( 'add_meta_boxes', 'elit_add_origlink_meta_box' );
+
+}
+function elit_add_origlink_meta_box() {
+  add_meta_box(
+    'elit-origlink',
+    esc_html( 'Link to original story' ),
+    'elit_origlink_meta_box',
+    'post',
+    'side',
+    'low'
+  );
+}
+
+function elit_origlink_meta_box( $object, $box ) {
+  ?>
+  <p>
+    <a href="<?php echo 'http://thedo.osteopathic.org/?p=' . $object->ID; ?>" target="_blank"><?php echo 'http://thedo.osteopathic.org/?p=' . $object->ID; ?></a>
+  </p>
+  <?php 
+}
+// end original-link meta box
+
 
 /**
- * ADD DASHBOARD WIDGET FOR DISPLAYING A LINK TO A POST
- * ON THE OLD SITE
+ * HELLO-WORLD THE DASHBOARD WIDGET 
  *
  */
 function elit_add_dashboard_widgets() {
