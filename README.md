@@ -307,3 +307,5 @@
 ###Thu Feb  5 09:24:18 2015 CST
 
 * [daux.io documentation generator](https://github.com/justinwalsh/daux.io)
+
+* [collapse metaboxes by default](http://wordpress.stackexchange.com/questions/4381/make-custom-metaboxes-collapse-by-default)
