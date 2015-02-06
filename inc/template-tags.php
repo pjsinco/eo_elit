@@ -107,10 +107,11 @@ function elit_story_footer() {
       // ... and it's valid
       if ($author_photo_src) {
         $author_photo_content = get_post( $author_photo_id );
+        $width = wp_get_attachment_image_src($author_photo_id);
         $about .= '<img class="story-footer__img" ';
         $about .= 'src="' . wp_get_attachment_url( $author_photo_id ) . '" ';
         $about .= 'alt = "' . $author_photo_content->post_excerpt . '" '  ;
-        $about .= ' width="' . wp_get_attachment_image_src($author_photo_id)[1] . '" />';
+        $about .= ' width="' . $width[1] . '" />';
       }
     }
     
