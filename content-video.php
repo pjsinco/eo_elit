@@ -4,9 +4,12 @@
  */
 ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <figure class="image--primary image-overlay--space">
-            <iframe width="728" height="410" src="https://www.youtube.com/embed/SbTcdzb1HR0?rel=0" frameborder="0" allowfullscreen></iframe>
-          </figure>
+          <?php $iframe = get_post_meta( $post->ID, 'elit_featured_video', true ); ?>
+          <?php if ( $iframe ): ?>
+            <figure class="image--primary image-overlay--space">
+              <?php echo $iframe; ?>
+            </figure>
+          <?php endif; ?>
 
           <div class="story">
             <header class="story-header">
@@ -29,7 +32,7 @@
             </div> <!-- story__body-text -->
             
             <footer class="story-footer"> 
-              <?php elit_story_footer(); ?>
+              <?php elit_story_footer(false); ?>
             </footer>
           </div> <!-- .story -->
         </article>

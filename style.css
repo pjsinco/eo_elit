@@ -1039,6 +1039,7 @@ figure {
 /* line 9, sass/modules/_story-footer.scss */
 .story-footer {
   margin-top: 3em;
+  clear: both;
   font-size: 1em; }
   @media screen and (min-width: 56em) {
     /* line 9, sass/modules/_story-footer.scss */
@@ -1046,20 +1047,20 @@ figure {
       width: 87.17949%;
       float: right;
       margin-right: 0; } }
-  /* line 17, sass/modules/_story-footer.scss */
+  /* line 18, sass/modules/_story-footer.scss */
   .story-footer .with-top-rule {
     padding-top: 1em; }
-  /* line 22, sass/modules/_story-footer.scss */
+  /* line 23, sass/modules/_story-footer.scss */
   .story-footer .with-bottom-rule {
     padding-bottom: 1em; }
-  /* line 27, sass/modules/_story-footer.scss */
+  /* line 28, sass/modules/_story-footer.scss */
   .story-footer__jump-link {
     margin-top: 2em;
     margin-bottom: 2em;
     display: block;
     text-align: center;
     text-transform: uppercase; }
-    /* line 34, sass/modules/_story-footer.scss */
+    /* line 35, sass/modules/_story-footer.scss */
     .story-footer__jump-link > a {
       -webkit-transition-property: color;
               transition-property: color;
@@ -1072,7 +1073,7 @@ figure {
       .story-footer__jump-link > a:hover, .story-footer__jump-link > a:focus {
         text-decoration: none;
         color: #ef3f23; }
-  /* line 42, sass/modules/_story-footer.scss */
+  /* line 43, sass/modules/_story-footer.scss */
   .story-footer__section {
     overflow: hidden;
     *zoom: 1;
@@ -1081,18 +1082,18 @@ figure {
     padding-bottom: 1em;
     padding-left: 0;
     font-weight: 100; }
-  /* line 51, sass/modules/_story-footer.scss */
+  /* line 52, sass/modules/_story-footer.scss */
   .story-footer__img {
     float: left;
     margin-right: 1em; }
-  /* line 57, sass/modules/_story-footer.scss */
+  /* line 58, sass/modules/_story-footer.scss */
   .story-footer__title {
     margin-bottom: 1em;
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 100;
     color: #b3b3b3; }
-  /* line 65, sass/modules/_story-footer.scss */
+  /* line 66, sass/modules/_story-footer.scss */
   .story-footer__body {
     font-style: italic;
     font-weight: 400;

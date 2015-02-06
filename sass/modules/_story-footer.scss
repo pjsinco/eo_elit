@@ -8,6 +8,7 @@
 
 .story-footer {
   margin-top: 3em;
+  clear: both;
   font-size: 1em;
 
   @include breakpoint($screen $large-minor-start) {

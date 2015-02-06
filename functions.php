@@ -982,6 +982,84 @@ function elit_origlink_meta_box( $object, $box ) {
 }
 // end original-link meta box
 
+/**
+ * META BOX FOR FEATURED VIDEO
+ *
+ */
+add_action( 'load-post.php' , 'elit_featured_video_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_featured_video_meta_box_setup' );
+
+function elit_featured_video_meta_box_setup() {
+  add_action( 'add_meta_boxes', 'elit_add_featured_video_meta_box' );
+  add_action( 'save_post', 'elit_save_featured_video_meta', 10, 2 );
+}
+
+function elit_add_featured_video_meta_box() {
+  add_meta_box(
+    'elit-featured-video',
+    esc_html( 'Featured video embed code' ),
+    'elit_featured_video_meta_box',
+    'post',
+    'side',
+    'low'
+  );
+  
+}
+
+function elit_featured_video_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_featured_video_nonce' );
+  ?>
+  <p>
+    <label for="widefat">The embed code for the YouTube video, sized to 728px wide. See our documentation for more details.</label>
+    <br />
+    <textarea class="widefat"  name="elit-featured-video" id="elit-featured-video" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_featured_video', true ) ); ?></textarea>
+  </p>
+  <?php 
+  
+}
+
+function elit_save_featured_video_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_featured_video_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_featured_video_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-featured-video'] ) ? $_POST['elit-featured-video'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_featured_video';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+  
+}
+
+
 
 /**
  * HELLO-WORLD THE DASHBOARD WIDGET 
