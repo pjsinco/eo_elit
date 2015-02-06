@@ -1,14 +1,12 @@
 <?php
 /**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Custom template tags!
  *
  * @package elit
  */
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Prints the byline for a story.
  */
 function elit_byline() {
 	$byline = '<span class="story-meta__by">By</span>';
@@ -21,6 +19,10 @@ function elit_byline() {
   echo $byline;
 }
 
+/**
+ * Prints the posted-on date; includes meta data about last-updated.
+ *
+ */
 function elit_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -37,6 +39,10 @@ function elit_posted_on() {
 	echo '<span class="story-meta__date">' . $time_string . '</span>';
 }
 
+/**
+ * Prints the comments link. Intended to use at the top of a story.
+ *
+ */
 function elit_comments_link() {
   if ( comments_open() ) {
     $comment_string = '<span class="meta__comment-link comment-link">';
@@ -63,10 +69,16 @@ function elit_comments_link() {
   }
 }
 
-function elit_story_footer() {
+/**
+ * Prints the footer of a story
+ *
+ * @param boolean $with_social Optional. Include the social icons.
+ */
+function elit_story_footer($with_social = true) {
   // #1 let's get our social icons
-  get_template_part('social');
-
+  if ( $with_social ) {
+    get_template_part( 'social' );
+  }
 
   // #2 set up jump-to-comments
   $comment_jump_before  = '<div class="story-footer__jump-link"><a href="#comments">';
