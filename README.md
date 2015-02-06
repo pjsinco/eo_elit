@@ -311,3 +311,4 @@
 * [collapse metaboxes by default](http://wordpress.stackexchange.com/questions/4381/make-custom-metaboxes-collapse-by-default)
 
 ###Fri Feb  6 11:10:25 2015 CST
+* [solution to admin-ajax not working?](http://docs.easydigitaldownloads.com/article/201-admin-ajax-blocked)
