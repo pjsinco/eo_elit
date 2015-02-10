@@ -1,8 +1,13 @@
 <?php 
-
 /*
  * elit functions and defs
  */
+
+  /* Change the Site URL */
+  /*
+  update_option('siteurl','http://thedodev.osteopathic.org');
+  update_option('home','http://thedodev.osteopathic.org');
+  */
 
 // temporarily disable admin bar so we can see our susy grid display
 //add_filter('show_admin_bar', '__return_false');
