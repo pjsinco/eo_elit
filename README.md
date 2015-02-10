@@ -333,6 +333,7 @@
     * BY JEFFREY Y. TSAI, OMS II	/ CONTRIBUTING WRITER
 
 * related-style sidebars
+    * http://elit.dev/2014/11/the-abcs-of-clinical-rotations-always-be-curious/
     * http://thedo.osteopathic.org/2014/10/love-game-team-physicians-highs-lows-craft/
 
 * tricky
