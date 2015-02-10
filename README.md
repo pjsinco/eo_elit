@@ -312,3 +312,34 @@
 
 ###Fri Feb  6 11:10:25 2015 CST
 * [solution to admin-ajax not working?](http://docs.easydigitaldownloads.com/article/201-admin-ajax-blocked)
+
+###Mon Feb  9 18:00:33 2015 CST
+
+* sidebars
+    * http://thedo.osteopathic.org/2014/04/msucom-unthsctcom-lead-do-schools-in-u-s-news-rankings/
+    * http://thedo.osteopathic.org/2014/04/beyond-the-stethoscope-dos-students-excel-in-nonmedical-pursuits/ -- with photo
+    * http://thedo.osteopathic.org/2014/05/caring-for-lgbt-patients-a-primer/
+    * http://thedo.osteopathic.org/2014/05/history-essay-contest-students-interns-and-residents-can-win-up-to-5000/ -- 2 sidebars
+    * http://thedo.osteopathic.org/2014/06/school-of-life-learning-from-my-patients-in-a-teaching-health-center/
+    * http://thedo.osteopathic.org/2014/07/humble-leader-cleveland-clinic-ready-take-aoa-president/
+    * http://thedo.osteopathic.org/2014/08/former-aoa-president-carlo-dimarco-remembered-leader-educator/
+    * http://thedo.osteopathic.org/2014/10/primary-care-physicians-need-know-hpv-vaccine/
+
+* authors
+    * BY TIMOTHY BEALS, OMS IV	/ CONTRIBUTING WRITER
+    * BY LINDSAY J. ERCOLE, OMS I	/ CONTRIBUTING WRITER
+    * BY JEREMY BERGER, OMS II	/ CONTRIBUTING WRITER
+    * BY CHRISTEN D. BRUMMETT, OMS II	/ CONTRIBUTING WRITER
+    * BY JEFFREY Y. TSAI, OMS II	/ CONTRIBUTING WRITER
+
+* related-style sidebars
+    * http://thedo.osteopathic.org/2014/10/love-game-team-physicians-highs-lows-craft/
+
+* tricky
+    * http://thedo.osteopathic.org/2014/07/qa-2014-grads-talk-specialties-policy-work-life-balance/
+
+* video
+    * http://thedo.osteopathic.org/2014/10/video-affordable-care-act-affected-practice/ -- embed video inside story
+    * http://thedo.osteopathic.org/2014/09/tedmed/
+    * http://thedo.osteopathic.org/2014/10/video-can-physicians-avoid-burnout/
+    * http://thedo.osteopathic.org/2014/10/video-concerned-ebola/
