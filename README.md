@@ -345,4 +345,7 @@
     * http://thedo.osteopathic.org/2014/10/video-concerned-ebola/
 
 ###Tue Feb 10 04:57:32 2015 CST
+* migration notes
+    * make sure subheads are h2
 
+* [Creating Custom Fields for Attachments in Wordpress] (http://net.tutsplus.com/tutorials/wordpress/creating-custom-fields-for-attachments-in-wordpress/)
