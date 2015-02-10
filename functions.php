@@ -909,7 +909,7 @@ function elit_standalone_credit_meta_box_setup() {
 function elit_add_standalone_credit_meta_box() {
   add_meta_box(
     'elit-standalone-credit',
-    esc_html( 'Credit for standalone image' ),
+    esc_html( 'Credit for featured image' ),
     'elit_standalone_credit_meta_box',
     'post',
     'side',
@@ -922,7 +922,7 @@ function elit_standalone_credit_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_standalone_credit_nonce' );
   ?>
   <p>
-    <label for="widefat">The credit line for the featured image when it has no caption</label>
+    <label for="widefat">The credit line for the featured image</label>
     <br />
     <textarea class="widefat"  name="elit-standalone-credit" id="elit-standalone-credit" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_standalone_credit', true ) ); ?></textarea>
   </p>
