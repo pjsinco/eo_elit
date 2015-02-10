@@ -343,3 +343,6 @@
     * http://thedo.osteopathic.org/2014/09/tedmed/
     * http://thedo.osteopathic.org/2014/10/video-can-physicians-avoid-burnout/
     * http://thedo.osteopathic.org/2014/10/video-concerned-ebola/
+
+###Tue Feb 10 04:57:32 2015 CST
+
