@@ -25,6 +25,6 @@
 <!--       temp; make into a sidebar template? -->
       <section id="secondary" class="content__secondary">
 
-<?php //get_sidebar('article'); ?>
+<?php get_sidebar('article'); ?>
 
 <?php get_footer(); ?>
