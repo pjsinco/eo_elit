@@ -347,5 +347,9 @@
 ###Tue Feb 10 04:57:32 2015 CST
 * migration notes
     * make sure subheads are h2
+    * prolly won't use all pullquotes
+        * see if you can shorten the ones we do use
+    * get used to squeezing the browser to check how things are falling
+    * use only one category per story
 
 * [Creating Custom Fields for Attachments in Wordpress] (http://net.tutsplus.com/tutorials/wordpress/creating-custom-fields-for-attachments-in-wordpress/)
