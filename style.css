@@ -332,7 +332,7 @@ article {
   overflow: hidden; }
 
 /* line 28, sass/base/_base.scss */
-p {
+p, li {
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 1em;
@@ -340,7 +340,7 @@ p {
   color: #333; }
   @media screen and (min-width: 48em) {
     /* line 28, sass/base/_base.scss */
-    p {
+    p, li {
       line-height: 1.65;
       font-size: 1.125em; } }
 
@@ -353,17 +353,19 @@ h1 {
 /* line 47, sass/base/_base.scss */
 ul, ol {
   /*list-style: none;*/
-  margin-top: 0; }
+  list-style-position: inside;
+  margin-top: 0;
+  padding-left: 0; }
 
-/* line 52, sass/base/_base.scss */
+/* line 59, sass/base/_base.scss */
 img {
   /*max-width: 100%;*/
   height: auto; }
 
-/* line 57, sass/base/_base.scss */
+/* line 64, sass/base/_base.scss */
 textarea {
   line-height: 1.4; }
-  /* line 60, sass/base/_base.scss */
+  /* line 67, sass/base/_base.scss */
   textarea:focus, input[type='text']:focus, textarea[type='text']:focus, input[type='email']:focus, textarea[type='email']:focus {
     border: 1px solid #ef3f23;
     outline: 0;
@@ -372,11 +374,11 @@ textarea {
     -webkit-transition-duration: 0.2s;
     transition-duration: 0.2s; }
 
-/* line 68, sass/base/_base.scss */
+/* line 75, sass/base/_base.scss */
 input {
   vertical-align: middle; }
 
-/* line 72, sass/base/_base.scss */
+/* line 79, sass/base/_base.scss */
 input, textarea {
   padding: .5em;
   margin-bottom: 1em;
@@ -391,7 +393,7 @@ input, textarea {
   border-color: #808080;
   color: #333; }
 
-/* line 96, sass/base/_base.scss */
+/* line 103, sass/base/_base.scss */
 figure {
   margin: 0; }
 
@@ -1254,7 +1256,7 @@ figure {
   .story__body-text {
     margin-top: 1em; }
     /* line 37, sass/modules/_story.scss */
-    .story__body-text > p:first-child:first-letter {
+    .story__body-text > p:first-child:first-letter, .story__body-text > li:first-child:first-letter {
       margin-bottom: -.25em;
       margin-right: .08333333333em;
       float: left;
@@ -1263,7 +1265,7 @@ figure {
       color: #ef3f23; }
       @media screen and (min-width: 48em) {
         /* line 37, sass/modules/_story.scss */
-        .story__body-text > p:first-child:first-letter {
+        .story__body-text > p:first-child:first-letter, .story__body-text > li:first-child:first-letter {
           font-size: 3.5em;
           margin-bottom: -.3125em;
           line-height: .97; } }
@@ -1663,14 +1665,14 @@ figure {
   /*&__list {*/
   /*&__list-item {*/ }
   /* line 56, sass/modules/_story-sidebar.scss */
-  .story-sidebar__body p, .story-sidebar__body ul {
+  .story-sidebar__body p, .story-sidebar__body li, .story-sidebar__body ul {
     font-size: inherit;
     line-height: inherit;
     color: inherit; }
   /* line 64, sass/modules/_story-sidebar.scss */
   .story-sidebar__body ul {
-    list-style-position: inside;
-    padding-left: 0; }
+    /*list-style-position: inside;*/
+    /*padding-left: 0;*/ }
   /* line 70, sass/modules/_story-sidebar.scss */
   .story-sidebar__body li {
     margin-bottom: .5em; }

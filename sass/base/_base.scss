@@ -46,7 +46,14 @@ h1 {
 
 ul, ol {
   /*list-style: none;*/
+  list-style-position: inside;
   margin-top: 0;
+  padding-left: 0;
+  
+}
+
+li {
+  @extend p;
 }
 
 img {
