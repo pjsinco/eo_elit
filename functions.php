@@ -347,6 +347,7 @@ function elit_story_image_shortcode($atts, $content = null) {
   );
 
   $attachment = get_post( $a['id'] );
+  $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
 
   //d( wp_get_attachment_image_src($a['id'], 'article-mid-large', false ) );
   //d( get_intermediate_image_sizes() );
@@ -362,6 +363,9 @@ function elit_story_image_shortcode($atts, $content = null) {
     '<figcaption class="image__caption caption caption--left">';
   
   $ricg_responsive_str .= $attachment->post_excerpt;
+
+  $ricg_responsive_str .= $credit ? " <small>($credit)</small>" : "";
+  
   $ricg_responsive_str .= '</figcaption></figure>';
 
   
@@ -801,10 +805,7 @@ function elit_save_kicker_meta( $post_id, $post ) {
 
 
 /**
- *                      * * * * * NOT USING * * * * *
- *                    but let's keep it around as a demo
- *
- * ADD PHOTOGRPHAER AND NAME FIELDS TO MEDIA UPLOADER
+ * ADD CREDIT LINE TO MEDIA UPLOADER
  * http://www.wpbeginner.com/wp-tutorials/how-to-add-additional-fields-
  *     to-the-wordpress-media-uploader/
  *
@@ -814,23 +815,32 @@ function elit_save_kicker_meta( $post_id, $post ) {
  */
 function elit_attachment_field_credit($form_fields, $post) {
 
-  $form_fields['elit-photographer-name'] = array (
-    'label' => 'Photographer name',
-    'input' => 'text',
-    'value' => get_post_meta( $post->ID, 'elit_photographer_name', true),
-    'helps' => 'If provided, photo credit will be displayed',
+  $form_fields['elit-image-credit'] = array (
+    'label' => 'Credit line',
+    'input' => 'textarea',
+    'application' => 'image',
+    'exclusions' => array('audio', 'video'),
+    'value' => get_post_meta( $post->ID, 'elit_image_credit', true),
+    'helps' => 'Example: "Photo by Jim Kirk" or "Photo provided by Dr. Quinn"',
   );
 
-  $form_fields['elit-photographer-url'] = array (
-    'label' => 'Photographer URL',
-    'input' => 'text',
-    'value' => get_post_meta( $post->ID, 'elit_photographer_url', true),
-    'helps' => 'Add the photographer\'s URL',
-  );
+//  $form_fields['elit-photographer-name'] = array (
+//    'label' => 'Photographer name',
+//    'input' => 'text',
+//    'value' => get_post_meta( $post->ID, 'elit_photographer_name', true),
+//    'helps' => 'If provided, photo credit will be displayed',
+//  );
+//
+//  $form_fields['elit-photographer-url'] = array (
+//    'label' => 'Photographer URL',
+//    'input' => 'text',
+//    'value' => get_post_meta( $post->ID, 'elit_photographer_url', true),
+//    'helps' => 'Add the photographer\'s URL',
+//  );
 
   return $form_fields;
 }
-//add_filter( 'attachment_fields_to_edit', 'elit_attachment_field_credit', 10, 2 );
+add_filter( 'attachment_fields_to_edit', 'elit_attachment_field_credit', 10, 2 );
 
 /**
  * Save values of photograher's name and url in media uploader
@@ -841,30 +851,37 @@ function elit_attachment_field_credit($form_fields, $post) {
  */
 function elit_attachment_field_credit_save( $post, $attachment) {
 
-  if ( isset( $attachment['elit-photographer-name']) ) {
+  if ( isset( $attachment['elit-image-credit']) ) {
     update_post_meta( 
       $post['ID'], 
-      'elit_photographer_name', 
-      $attachment['elit-photographer-name']
+      'elit_image_credit', 
+      $attachment['elit-image-credit']
     );
   }
-
-  if ( isset( $attachment['elit-photographer-url']) ) {
-    update_post_meta( 
-      $posti['ID'], 
-      'elit_photographer_url', 
-      $attachment['elit-photographer-url']
-    );
-  }
+//  if ( isset( $attachment['elit-photographer-name']) ) {
+//    update_post_meta( 
+//      $post['ID'], 
+//      'elit_photographer_name', 
+//      $attachment['elit-photographer-name']
+//    );
+//  }
+//
+//  if ( isset( $attachment['elit-photographer-url']) ) {
+//    update_post_meta( 
+//      $posti['ID'], 
+//      'elit_photographer_url', 
+//      $attachment['elit-photographer-url']
+//    );
+//  }
 
   return $post;
 }
 
-//add_filter( 
-  //'attachment_fields_to_save', 
-  //'elit_attachment_field_credit_save',
-  //10, 2 
-//);
+add_filter( 
+  'attachment_fields_to_save', 
+  'elit_attachment_field_credit_save',
+  10, 2 
+);
 
 /**
  * Filter to remove wp's dimension attributes on images

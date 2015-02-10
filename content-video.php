@@ -15,7 +15,7 @@
             <header class="story-header">
               <h5 class="story-header__kicker"><?php echo wptexturize( get_post_meta( $post->ID, 'elit_kicker', true ) ); ?></h5>
               <?php the_title('<h1 class="story-header__title">', '</h1>', true); ?>
-              <h3 class="story-header__teaser"><?php echo get_the_excerpt(); ?></h3>
+              <h3 class="story-header__teaser"><?php echo wptexturize( get_the_excerpt() ); ?></h3>
               <div>
                 <div class="story-meta">
                   <?php elit_byline(); ?>
