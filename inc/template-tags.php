@@ -9,14 +9,14 @@
  * Prints the byline for a story.
  */
 function elit_byline() {
-	$byline = '<span class="story-meta__by">By</span>';
-	$byline .= '<span class="story-meta__author"> ';
-  $byline .= '<a class="story-meta__link" href="' . 
-    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">';
-  $byline .= esc_html( get_the_author() );
-  $byline .= '</a></span>';
-  
-  echo $byline;
+?>
+	<span class="story-meta__by">By</span>
+	  <span class="story-meta__author"> 
+      <a class="story-meta__link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+        <?php echo esc_html( get_the_author() ); ?>
+      </a>
+    </span>
+<?php 
 }
 
 /**
