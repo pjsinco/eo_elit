@@ -9,14 +9,14 @@
  * Prints the byline for a story.
  */
 function elit_byline() {
-	$byline = '<span class="story-meta__by">By</span>';
-	$byline .= '<span class="story-meta__author"> ';
-  $byline .= '<a class="story-meta__link" href="' . 
-    esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">';
-  $byline .= esc_html( get_the_author() );
-  $byline .= '</a></span>';
-  
-  echo $byline;
+?>
+	<span class="story-meta__by">By</span>
+	  <span class="story-meta__author"> 
+      <a class="story-meta__link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+        <?php echo esc_html( get_the_author() ); ?>
+      </a>
+    </span>
+<?php 
 }
 
 /**
@@ -45,27 +45,21 @@ function elit_posted_on() {
  */
 function elit_comments_link() {
   if ( comments_open() ) {
-    $comment_string = '<span class="meta__comment-link comment-link">';
-    //$comment_string .='<a href="' . get_comments_link() . '" ';
-    $comment_string .='<a href="#comments" ';
-    $comment_string .= 'class="comment-link__link">';
-    $comment_string .='<span class="icon-comment">';
-    $comment_string .='<span class="text-replace">Comments</span>';
-    $comment_string .='</span>';
-    $comment_string .='<span class="comment-link__body">%s</span>';
-    $comment_string .='</a></span>';
-
-    $num_comments = get_comments_number();
-
-    if ( $num_comments == 0 ) {
-      $comment_label = '+';
-    } else {
-      $comment_label = (string)$num_comments;
-    }
-
-    $comment_string = sprintf($comment_string, $comment_label);
-
-    echo $comment_string;
+?> 
+    <span class="meta__comment-link comment-link">
+      <a href="<?php get_comments_link(); ?>" class="comment-link__link">
+        <span class="icon-comment">
+          <span class="text-replace">Comments</span>
+        </span>
+        <span class="comment-link__body">
+        <?php 
+          $num_comments = get_comments_number();
+          echo ($num_comments == 0) ? '+' : $num_comments;
+        ?>
+        </span>
+      </a>
+    </span>
+  <?php 
   }
 }
 
@@ -81,18 +75,19 @@ function elit_story_footer($with_social = true) {
   }
 
   // #2 set up jump-to-comments
-  $comment_jump_before  = '<div class="story-footer__jump-link"><a href="#comments">';
-  $comment_jump_before .= '<span class="story-nav__emph">' ;
-  $comment_jump_after = '</span>';
-  $comment_jump_after = '<span class="icon-arrow-down"></span></a></div>';
-  
-  echo $comment_jump_before;
-  comments_number( 'Leave a comment ', '1 comment ', '% comments ');
-  echo $comment_jump_after;
+  ?>
+  <div class="story-footer__jump-link">
+    <a href="<?php get_comments_link(); ?>">
+      <span class="story-nav__emph"></span>
+        <?php comments_number( 'Leave a comment ', '1 comment ', '% comments '); ?>
+      <span class="icon-arrow-down"></span>
+    </a>
+  </div>
 
   
+  <?php   
   // #3 list our story tags
-  $before = '<div class="story-nav__title">Topics: ';
+  $before = '<div class="story-nav__title">Topics ';
   $before .= '<ul class="topics"><li class="topics__topic">';
   $sep = '</li><li class="topics__topic">';
   $after = '</li><ul></div>';
@@ -147,9 +142,46 @@ function elit_story_footer($with_social = true) {
   }
 
   
-              //<div class="story-nav__more-in">More in <a href="#" class="story-nav__emph">Patient Care <span class="icon-arrow-right"></span></a></div>
-              //<div class="prev-next">
-                //<div class="prev-next__next"><a href="#" class="prev-next__title">Newer <span class="icon-arrow-right space-to-left"></span></a><a href="#" class="prev-next__link">New Year’s resolutions: 10 life hacks to increase physician productivity </a></div>
-                //<div class="prev-next__prev"><a href="#" class="prev-next__title"><span class="icon-arrow-left space-to-right"></span> Older</a><a href="#" class="prev-next__link">In Memoriam: Dec. 4, 2014</a></div>
-              //</div>
+  $story_nav  = '<div class="story-nav__more-in">More in ';
+  $story_nav .= '<a href="%1$s" class="story-nav__emph">%2$s&nbsp;';
+  $story_nav .= '<span class="icon-arrow-right"></span></a></div>';
+  $story_nav = sprintf( $story_nav, 
+    '#', // todo temp value
+    'Patient Care' // todo temp value
+  );
+
+  //echo $story_nav;
+
+
+  $next_post = get_next_post(false, 'inside-the-aoa');
+  if ( $next_post ) {
+    $next  = '<li class="prev-next__next">';
+    //$next .= '<a href="%1$s" class="prev-next__title">Newer ';
+    $next .= '<span class="prev-next__title">Newer</span>';
+    //$next .= '<span class="icon-arrow-right space-to-left"></span>';
+    $next .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
+    $next  = sprintf( $next,
+      get_permalink( $next_post->ID ),
+      get_permalink( $next_post->ID ),
+      $next_post->post_title
+    );
+  } else {
+    $next = '';
+  }
+
+  $prev_post = get_previous_post(false, 'inside-the-aoa');
+  $prev  = '<li class="prev-next__prev">';
+  //$prev .= '<a href="%1$s" class="prev-next__title">';
+  $prev .= '<span class="prev-next__title">Older</span>';
+  //$prev .= '<span class="icon-arrow-left space-to-right"></span>Older ';
+  $prev .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
+  $prev  = sprintf( $prev,
+    get_permalink( $prev_post->ID ),
+    get_permalink( $prev_post->ID ),
+    $prev_post->post_title
+  );
+
+  echo '<ul class="prev-next">' . $next . $prev . '</ul>';
+
 }
+

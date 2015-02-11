@@ -1,0 +1,113 @@
+%prev-next-base {
+  margin: 0;
+  padding: 0;
+  /*padding-right: 1em;*/
+  /*padding-bottom: 1em;*/
+  /*padding-left: 1em;*/
+
+
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  
+  
+}
+
+.prev-next {
+  position: relative;
+  margin-top: 2em;
+  padding-top: .5em;
+  /*margin-left: -6%;*/
+  /*margin-right: -6%;*/
+  @include clearfix;
+  /*background: $primarycolor;*/
+  border-top: 1px solid $font-color-lighter;
+  border-bottom: 1px solid $font-color-lighter;
+  color: $font-color;
+
+  [class*='icon-']:before {
+    color: $font-color;
+  }
+  
+  @include breakpoint($screen $large-start) { 
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  
+  &__prev {
+    @extend %prev-next-base;
+
+    @include breakpoint($screen $medium-start) { 
+      float: left;
+      width: 50%;
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        /*height: calc(100% - 43px);*/
+        height: 100%;
+        content: '';
+        /*border-right: 1px dashed $mediumgray;*/
+        /*border-right: 1px dashed $white;*/
+        transform: translatey(-50%);
+      }
+    }
+  }
+
+  &__next {
+    @extend %prev-next-base;
+
+    @include breakpoint($screen $medium-start) { 
+      float: right;
+      width: 50%;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid $font-color-lighter;
+      }
+    }
+  }
+
+  &__title {
+    display: inline-block;
+    padding-top: .25em;
+    padding-right: .25em;
+    /*padding-bottom: .625em;*/
+    padding-left: .25em;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .875em;
+    letter-spacing: .125em;
+    color: $primarycolor;
+  
+    /*border-bottom: 1px solid $primarycolor;*/
+  }
+
+  &__link {
+    /*margin-top: .5em;*/
+    padding: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    /*max-width: 80%;*/
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+    text-align: center;
+    line-height: $bodylineheight;
+    color: $font-color-lighter;
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
+
+    @include breakpoint($screen $medium-start) {
+      /*margin-top: 1em;*/
+    }
+  }
+}
