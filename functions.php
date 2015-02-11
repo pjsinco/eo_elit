@@ -1109,9 +1109,6 @@ function elit_honor_ssl_for_attachments( $url ) {
 
   $http = site_url( FALSE, 'http' );
   $https = site_url( FALSE, 'https' );
-  //d($_SERVER['HTTPS'] == 'on');
-  d($http);
-  d($https);
 
   if ( isset( $_SERVER['HTTPS'] ) ) {
     
