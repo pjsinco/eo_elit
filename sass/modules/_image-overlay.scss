@@ -18,6 +18,7 @@
   }
 
   &--space {
+    @extend .image-overlay;
     margin-bottom: 1em;
 
     @include breakpoint($screen $xlarge-start) {
@@ -33,6 +34,7 @@
       position: absolute;
       bottom: .125em;
       max-width: $article-max-width;
+      width: 100%;
       max-height: 0;
       overflow: hidden;
       color: $font-color;

@@ -11,7 +11,9 @@
             <?php $featured_image_content = get_post($featured_image_id); ?>
 
             <?php // if we don't have a label for the image, add some space below with image-overlay--space ?>
-            <figure class="image--primary <?php echo (($featured_image_content->post_content) ? 'image-overlay' : 'image-overlay--space'); ?>">
+            <figure class="image--primary 
+              <?php echo (($featured_image_content->post_excerpt) ? 'image-overlay ' : ''); ?>
+              <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
             <!-- removing picture element because it's not used by ricg picturefill plugin -->
             <!--<picture> -->
               <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'article-top-large' ); ?> />
