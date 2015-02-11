@@ -397,6 +397,10 @@ input, textarea {
 figure {
   margin: 0; }
 
+/* line 107, sass/base/_base.scss */
+strong {
+  font-weight: 600; }
+
 /* line 1, sass/layout/_fractional.scss */
 .fractional, .fractional--full {
   position: relative;
