@@ -1,8 +1,10 @@
 %prev-next-base {
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
   /*padding-right: 1em;*/
-  padding-bottom: 1em;
+  /*padding-bottom: 1em;*/
   /*padding-left: 1em;*/
+
 
   display: inline-block;
   width: 100%;
@@ -14,11 +16,13 @@
 .prev-next {
   position: relative;
   margin-top: 2em;
-  /*padding-top: 1em;*/
+  padding-top: .5em;
   /*margin-left: -6%;*/
   /*margin-right: -6%;*/
   @include clearfix;
   /*background: $primarycolor;*/
+  border-top: 1px solid $font-color-lighter;
+  border-bottom: 1px solid $font-color-lighter;
   color: $font-color;
 
   [class*='icon-']:before {
@@ -36,7 +40,7 @@
 
     @include breakpoint($screen $medium-start) { 
       float: left;
-      width: 46%;
+      width: 50%;
 
       &:after {
         position: absolute;
@@ -46,8 +50,8 @@
         height: 100%;
         content: '';
         /*border-right: 1px dashed $mediumgray;*/
-        border-right: 1px dashed $white;
-        transform: translateY(-50%);
+        /*border-right: 1px dashed $white;*/
+        transform: translatey(-50%);
       }
     }
   }
@@ -57,8 +61,16 @@
 
     @include breakpoint($screen $medium-start) { 
       float: right;
-      width: 46%;
+      width: 50%;
 
+      &:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid $font-color-lighter;
+      }
     }
   }
 
@@ -70,7 +82,7 @@
     padding-left: .25em;
     width: 100%;
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 400;
     font-size: .875em;
     letter-spacing: .125em;
     color: $primarycolor;
@@ -79,10 +91,11 @@
   }
 
   &__link {
-    margin-top: .5em;
+    /*margin-top: .5em;*/
+    padding: 1em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 80%;
+    /*max-width: 80%;*/
     display: block;
     font-size: 1.125em;
     font-weight: 100;

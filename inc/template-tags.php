@@ -150,7 +150,7 @@ function elit_story_footer($with_social = true) {
     'Patient Care' // todo temp value
   );
 
-  echo $story_nav;
+  //echo $story_nav;
 
 
   $next_post = get_next_post(false, 'inside-the-aoa');

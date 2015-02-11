@@ -1767,39 +1767,42 @@ figure {
 
 /* line 1, sass/modules/_prev-next.scss */
 .prev-next__prev, .prev-next__next {
-  padding-top: 0;
+  margin: 0;
+  padding: 0;
   /*padding-right: 1em;*/
-  padding-bottom: 1em;
+  /*padding-bottom: 1em;*/
   /*padding-left: 1em;*/
   display: inline-block;
   width: 100%;
   text-align: center; }
 
-/* line 14, sass/modules/_prev-next.scss */
+/* line 16, sass/modules/_prev-next.scss */
 .prev-next {
   position: relative;
   margin-top: 2em;
-  /*padding-top: 1em;*/
+  padding-top: .5em;
   /*margin-left: -6%;*/
   /*margin-right: -6%;*/
   overflow: hidden;
   *zoom: 1;
   /*background: $primarycolor;*/
+  border-top: 1px solid #808080;
+  border-bottom: 1px solid #808080;
   color: #333; }
-  /* line 24, sass/modules/_prev-next.scss */
+  /* line 28, sass/modules/_prev-next.scss */
   .prev-next [class*='icon-']:before {
     color: #333; }
   @media screen and (min-width: 48em) {
-    /* line 14, sass/modules/_prev-next.scss */
+    /* line 16, sass/modules/_prev-next.scss */
     .prev-next {
       margin-left: 0;
       margin-right: 0; } }
   @media screen and (min-width: 30em) {
-    /* line 34, sass/modules/_prev-next.scss */
+    /* line 38, sass/modules/_prev-next.scss */
     .prev-next__prev {
       float: left;
-      width: 46%; }
-      /* line 41, sass/modules/_prev-next.scss */
+      width: 50%; }
+      /* line 45, sass/modules/_prev-next.scss */
       .prev-next__prev:after {
         position: absolute;
         top: 50%;
@@ -1808,16 +1811,24 @@ figure {
         height: 100%;
         content: '';
         /*border-right: 1px dashed $mediumgray;*/
-        border-right: 1px dashed #fff;
-        -webkit-transform: translateY(-50%);
-            -ms-transform: translateY(-50%);
-                transform: translateY(-50%); } }
+        /*border-right: 1px dashed $white;*/
+        -webkit-transform: translatey(-50%);
+            -ms-transform: translatey(-50%);
+                transform: translatey(-50%); } }
   @media screen and (min-width: 30em) {
-    /* line 55, sass/modules/_prev-next.scss */
+    /* line 59, sass/modules/_prev-next.scss */
     .prev-next__next {
       float: right;
-      width: 46%; } }
-  /* line 65, sass/modules/_prev-next.scss */
+      width: 50%; }
+      /* line 66, sass/modules/_prev-next.scss */
+      .prev-next__next:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid #808080; } }
+  /* line 77, sass/modules/_prev-next.scss */
   .prev-next__title {
     display: inline-block;
     padding-top: .25em;
@@ -1826,17 +1837,18 @@ figure {
     padding-left: .25em;
     width: 100%;
     text-transform: uppercase;
-    font-weight: 200;
+    font-weight: 400;
     font-size: .875em;
     letter-spacing: .125em;
     color: #ef3f23;
     /*border-bottom: 1px solid $primarycolor;*/ }
-  /* line 81, sass/modules/_prev-next.scss */
+  /* line 93, sass/modules/_prev-next.scss */
   .prev-next__link {
-    margin-top: .5em;
+    /*margin-top: .5em;*/
+    padding: 1em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 80%;
+    /*max-width: 80%;*/
     display: block;
     font-size: 1.125em;
     font-weight: 100;
@@ -1855,7 +1867,7 @@ figure {
       text-decoration: none;
       color: #ef3f23; }
     @media screen and (min-width: 30em) {
-      /* line 81, sass/modules/_prev-next.scss */
+      /* line 93, sass/modules/_prev-next.scss */
       .prev-next__link {
         /*margin-top: 1em;*/ } }
 
