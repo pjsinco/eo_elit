@@ -364,4 +364,7 @@
 ###Wed Feb 11 06:00:27 2015 CST
 * [Responsible Social Share Links](https://jonsuh.com/blog/social-share-links/)
 
+* use wp get attachment url over https: -- see the codex filter ref for wp_get_attacment_url
+
+
 
