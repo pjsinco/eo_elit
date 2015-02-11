@@ -8,6 +8,7 @@
   width: 100%;
   text-align: center;
   
+  
 }
 
 .prev-next {
@@ -65,13 +66,16 @@
     display: inline-block;
     padding-top: .25em;
     padding-right: .25em;
-    padding-bottom: .625em;
+    /*padding-bottom: .625em;*/
     padding-left: .25em;
     width: 100%;
     text-transform: uppercase;
-    color: $font-color;
-    border-bottom: 1px dashed $mediumgray;
-    
+    font-weight: 200;
+    font-size: .875em;
+    letter-spacing: .125em;
+    color: $primarycolor;
+  
+    /*border-bottom: 1px solid $primarycolor;*/
   }
 
   &__link {
@@ -85,6 +89,9 @@
     text-align: center;
     line-height: $bodylineheight;
     color: $font-color-lighter;
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
 
     @include breakpoint($screen $medium-start) {
       /*margin-top: 1em;*/

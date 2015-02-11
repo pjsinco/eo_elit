@@ -155,10 +155,11 @@ function elit_story_footer($with_social = true) {
 
   $next_post = get_next_post(false, 'inside-the-aoa');
   if ( $next_post ) {
-    $next  = '<div class="prev-next__next">';
-    $next .= '<a href="%1$s" class="prev-next__title">Newer ';
-    $next .= '<span class="icon-arrow-right space-to-left"></span>';
-    $next .= '</a><a href="%2$s" class="prev-next__link">%3$s </a></div>';
+    $next  = '<li class="prev-next__next">';
+    //$next .= '<a href="%1$s" class="prev-next__title">Newer ';
+    $next .= '<span class="prev-next__title">Newer</span>';
+    //$next .= '<span class="icon-arrow-right space-to-left"></span>';
+    $next .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
     $next  = sprintf( $next,
       get_permalink( $next_post->ID ),
       get_permalink( $next_post->ID ),
@@ -169,18 +170,18 @@ function elit_story_footer($with_social = true) {
   }
 
   $prev_post = get_previous_post(false, 'inside-the-aoa');
-  $prev  = '<div class="prev-next__prev">';
-  $prev .= '<a href="%1$s" class="prev-next__title">';
-  $prev .= '<span class="icon-arrow-left space-to-right"></span>Older ';
-  $prev .= '</a><a href="%2$s" class="prev-next__link">%3$s </a></div>';
+  $prev  = '<li class="prev-next__prev">';
+  //$prev .= '<a href="%1$s" class="prev-next__title">';
+  $prev .= '<span class="prev-next__title">Older</span>';
+  //$prev .= '<span class="icon-arrow-left space-to-right"></span>Older ';
+  $prev .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
   $prev  = sprintf( $prev,
     get_permalink( $prev_post->ID ),
     get_permalink( $prev_post->ID ),
     $prev_post->post_title
   );
 
-  echo '<div class="prev-next">' . $next . $prev . '</div>';
-
+  echo '<ul class="prev-next">' . $next . $prev . '</ul>';
 
 }
 

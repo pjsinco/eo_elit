@@ -1218,6 +1218,19 @@ figure {
     /*@extend %dashed-line-bottom;*/
     text-align: right;
     text-transform: uppercase; }
+    /* line 28, sass/modules/_story-nav.scss */
+    .story-nav__more-in > a {
+      -webkit-transition-property: color;
+              transition-property: color;
+      -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s; }
+      /* line 25, sass/utilities/_mixins.scss */
+      .story-nav__more-in > a:link, .story-nav__more-in > a:visited {
+        color: inherit; }
+      /* line 29, sass/utilities/_mixins.scss */
+      .story-nav__more-in > a:hover, .story-nav__more-in > a:focus {
+        text-decoration: none;
+        color: #ef3f23; }
     @media screen and (min-width: 36em) {
       /* line 18, sass/modules/_story-nav.scss */
       .story-nav__more-in {
@@ -1226,7 +1239,7 @@ figure {
         /*right: 0;*/
         /*text-align: right;*/
         /*border: 0;*/ } }
-  /* line 41, sass/modules/_story-nav.scss */
+  /* line 44, sass/modules/_story-nav.scss */
   .story-nav__title {
     text-transform: uppercase;
     color: #b3b3b3; }
@@ -1762,7 +1775,7 @@ figure {
   width: 100%;
   text-align: center; }
 
-/* line 13, sass/modules/_prev-next.scss */
+/* line 14, sass/modules/_prev-next.scss */
 .prev-next {
   position: relative;
   margin-top: 2em;
@@ -1773,20 +1786,20 @@ figure {
   *zoom: 1;
   /*background: $primarycolor;*/
   color: #333; }
-  /* line 23, sass/modules/_prev-next.scss */
+  /* line 24, sass/modules/_prev-next.scss */
   .prev-next [class*='icon-']:before {
     color: #333; }
   @media screen and (min-width: 48em) {
-    /* line 13, sass/modules/_prev-next.scss */
+    /* line 14, sass/modules/_prev-next.scss */
     .prev-next {
       margin-left: 0;
       margin-right: 0; } }
   @media screen and (min-width: 30em) {
-    /* line 33, sass/modules/_prev-next.scss */
+    /* line 34, sass/modules/_prev-next.scss */
     .prev-next__prev {
       float: left;
       width: 46%; }
-      /* line 40, sass/modules/_prev-next.scss */
+      /* line 41, sass/modules/_prev-next.scss */
       .prev-next__prev:after {
         position: absolute;
         top: 50%;
@@ -1800,22 +1813,25 @@ figure {
             -ms-transform: translateY(-50%);
                 transform: translateY(-50%); } }
   @media screen and (min-width: 30em) {
-    /* line 54, sass/modules/_prev-next.scss */
+    /* line 55, sass/modules/_prev-next.scss */
     .prev-next__next {
       float: right;
       width: 46%; } }
-  /* line 64, sass/modules/_prev-next.scss */
+  /* line 65, sass/modules/_prev-next.scss */
   .prev-next__title {
     display: inline-block;
     padding-top: .25em;
     padding-right: .25em;
-    padding-bottom: .625em;
+    /*padding-bottom: .625em;*/
     padding-left: .25em;
     width: 100%;
     text-transform: uppercase;
-    color: #333;
-    border-bottom: 1px dashed #b3b3b3; }
-  /* line 77, sass/modules/_prev-next.scss */
+    font-weight: 200;
+    font-size: .875em;
+    letter-spacing: .125em;
+    color: #ef3f23;
+    /*border-bottom: 1px solid $primarycolor;*/ }
+  /* line 81, sass/modules/_prev-next.scss */
   .prev-next__link {
     margin-top: .5em;
     margin-left: auto;
@@ -1826,9 +1842,20 @@ figure {
     font-weight: 100;
     text-align: center;
     line-height: 1.4;
-    color: #808080; }
+    color: #808080;
+    -webkit-transition-property: color;
+            transition-property: color;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s; }
+    /* line 25, sass/utilities/_mixins.scss */
+    .prev-next__link:link, .prev-next__link:visited {
+      color: inherit; }
+    /* line 29, sass/utilities/_mixins.scss */
+    .prev-next__link:hover, .prev-next__link:focus {
+      text-decoration: none;
+      color: #ef3f23; }
     @media screen and (min-width: 30em) {
-      /* line 77, sass/modules/_prev-next.scss */
+      /* line 81, sass/modules/_prev-next.scss */
       .prev-next__link {
         /*margin-top: 1em;*/ } }
 
