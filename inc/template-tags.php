@@ -182,10 +182,19 @@ function elit_story_footer($with_social = true) {
       $prev_post->post_title
     );
   } else {
-    $next = '';
+    $prev = '';
   }
 
-  echo '<ul class="prev-next">' . $next . $prev . '</ul>';
+  if ( $prev || $next ) {
+    echo '<ul class="prev-next">';
+    if ( $next ) {
+      echo $next;
+    } 
+    if ( $prev ) {
+      echo $prev;
+    }
+  echo '</ul>';
+  }
 
 }
 
