@@ -360,3 +360,7 @@
     * use only one category per story
 
 * [Creating Custom Fields for Attachments in Wordpress] (http://net.tutsplus.com/tutorials/wordpress/creating-custom-fields-for-attachments-in-wordpress/)
+
+###Wed Feb 11 06:00:27 2015 CST
+* [Responsible Social Share Links](https://jonsuh.com/blog/social-share-links/)
+
