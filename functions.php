@@ -923,7 +923,7 @@ function elit_standalone_credit_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_standalone_credit_nonce' );
   ?>
   <p>
-    <label for="widefat">The credit line for the featured image</label>
+    <label for="widefat"><em>Ex.:</em> Top of page: Photo provided by Tonya Hawthorne, DO</label>
     <br />
     <textarea class="widefat"  name="elit-standalone-credit" id="elit-standalone-credit" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_standalone_credit', true ) ); ?></textarea>
   </p>
@@ -1033,7 +1033,7 @@ function elit_featured_video_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_featured_video_nonce' );
   ?>
   <p>
-    <label for="widefat">The embed code for the YouTube video, sized to 728px wide. See our documentation for more details.</label>
+    <label for="widefat">The embed code for the YouTube video, sized to 728px wide.</label>
     <br />
     <textarea class="widefat"  name="elit-featured-video" id="elit-featured-video" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_featured_video', true ) ); ?></textarea>
   </p>
