@@ -1112,8 +1112,13 @@ function elit_honor_ssl_for_attachments( $url ) {
   d($http);
   d($https);
 
-  return ( $_SERVER['HTTPS'] == 'on' ) ? 
-    str_replace( $http, $https, $url) : $url;
+  if ( isset( $_SERVER['HTTPS'] ) ) {
+    
+    return ( $_SERVER['HTTPS'] == 'on' ) ? 
+      str_replace( $http, $https, $url) : $url;
 
+  } else {
+    return $url;
+  }
 
 }
