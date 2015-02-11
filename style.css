@@ -1752,6 +1752,86 @@ figure {
   .media__link {
     color: inherit; }
 
+/* line 1, sass/modules/_prev-next.scss */
+.prev-next__prev, .prev-next__next {
+  padding-top: 0;
+  /*padding-right: 1em;*/
+  padding-bottom: 1em;
+  /*padding-left: 1em;*/
+  display: inline-block;
+  width: 100%;
+  text-align: center; }
+
+/* line 13, sass/modules/_prev-next.scss */
+.prev-next {
+  position: relative;
+  margin-top: 2em;
+  /*padding-top: 1em;*/
+  /*margin-left: -6%;*/
+  /*margin-right: -6%;*/
+  overflow: hidden;
+  *zoom: 1;
+  /*background: $primarycolor;*/
+  color: #333; }
+  /* line 23, sass/modules/_prev-next.scss */
+  .prev-next [class*='icon-']:before {
+    color: #333; }
+  @media screen and (min-width: 48em) {
+    /* line 13, sass/modules/_prev-next.scss */
+    .prev-next {
+      margin-left: 0;
+      margin-right: 0; } }
+  @media screen and (min-width: 30em) {
+    /* line 33, sass/modules/_prev-next.scss */
+    .prev-next__prev {
+      float: left;
+      width: 46%; }
+      /* line 40, sass/modules/_prev-next.scss */
+      .prev-next__prev:after {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        /*height: calc(100% - 43px);*/
+        height: 100%;
+        content: '';
+        /*border-right: 1px dashed $mediumgray;*/
+        border-right: 1px dashed #fff;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); } }
+  @media screen and (min-width: 30em) {
+    /* line 54, sass/modules/_prev-next.scss */
+    .prev-next__next {
+      float: right;
+      width: 46%; } }
+  /* line 64, sass/modules/_prev-next.scss */
+  .prev-next__title {
+    display: inline-block;
+    padding-top: .25em;
+    padding-right: .25em;
+    padding-bottom: .625em;
+    padding-left: .25em;
+    width: 100%;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 1px dashed #b3b3b3; }
+  /* line 77, sass/modules/_prev-next.scss */
+  .prev-next__link {
+    margin-top: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    display: block;
+    font-size: 1.125em;
+    font-weight: 100;
+    text-align: center;
+    line-height: 1.4;
+    color: #808080; }
+    @media screen and (min-width: 30em) {
+      /* line 77, sass/modules/_prev-next.scss */
+      .prev-next__link {
+        /*margin-top: 1em;*/ } }
+
 /* line 1, sass/theme/_index.scss */
 .updated:not(.published) {
   display: none; }

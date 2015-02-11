@@ -147,9 +147,35 @@ function elit_story_footer($with_social = true) {
   }
 
   
-              //<div class="story-nav__more-in">More in <a href="#" class="story-nav__emph">Patient Care <span class="icon-arrow-right"></span></a></div>
-              //<div class="prev-next">
-                //<div class="prev-next__next"><a href="#" class="prev-next__title">Newer <span class="icon-arrow-right space-to-left"></span></a><a href="#" class="prev-next__link">New Year’s resolutions: 10 life hacks to increase physician productivity </a></div>
-                //<div class="prev-next__prev"><a href="#" class="prev-next__title"><span class="icon-arrow-left space-to-right"></span> Older</a><a href="#" class="prev-next__link">In Memoriam: Dec. 4, 2014</a></div>
-              //</div>
+  $story_nav  = '<div class="story-nav__more-in">More in ';
+  $story_nav .= '<a href="%1$s" class="story-nav__emph">%2$s&nbsp;';
+  $story_nav .= '<span class="icon-arrow-right"></span></a></div>';
+  $story_nav = sprintf( $story_nav, 
+    '#', // todo temp value
+    'Patient Care' // todo temp value
+  );
+
+  echo $story_nav;
+
+
+  $next  = '<div class="prev-next__next">';
+  $next .= '<a href="%1$s" class="prev-next__title">Newer ';
+  $next .= '<span class="icon-arrow-right space-to-left"></span>';
+  $next .= '</a><a href="#" class="prev-next__link">%2$s </a></div>';
+  $next  = sprintf( $next,
+    '#', // todo temp value
+    'New Year’s resolutions: 10 life hacks to increase physician productivity' // todo temp value
+  );
+
+  $prev  = '<div class="prev-next__prev">';
+  $prev .= '<a href="%1$s" class="prev-next__title">Older ';
+  $prev .= '<span class="icon-arrow-right space-to-right"></span>';
+  $prev .= '</a><a href="#" class="prev-next__link">%2$s </a></div>';
+  $prev  = sprintf( $prev,
+    '#', // todo temp value
+    'In Memoriam: Dec. 4, 2014' // todo temp value
+  );
+
+  echo '<div class="prev-next">' . $next . $prev . '</div>';
+
 }
