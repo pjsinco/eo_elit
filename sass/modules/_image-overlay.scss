@@ -4,21 +4,17 @@
   position: relative;
   overflow: hidden;
 
-  @include breakpoint($screen $xlarge-start) {
+    @include breakpoint($screen $xlarge-start) {
+      &:hover {
+        cursor: pointer;
+      }
 
-
-    &:hover {
-      cursor: pointer;
+      &:hover .image-overlay__body {
+        max-height: 200px;
+      }
     }
-
-    &:hover .image-overlay__body {
-      max-height: 200px;
-    }
-
-  }
 
   &--space {
-    @extend .image-overlay;
     margin-bottom: 1em;
 
     @include breakpoint($screen $xlarge-start) {
@@ -71,5 +67,6 @@
     }
     
   }
+
 
 }
