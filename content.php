@@ -60,6 +60,13 @@
             <footer class="story-footer"> 
               <?php elit_story_footer(); ?>
             </footer>
+            <?php 
+              if ( comments_open() || get_comments_number() ):
+                comments_template();
+              endif;
+            ?>
+
+
           </div> <!-- .story -->
         </article>
 
