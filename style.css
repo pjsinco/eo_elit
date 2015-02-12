@@ -1424,12 +1424,15 @@ strong {
     font-weight: 400;
     text-transform: uppercase;
     font-size: 1em;
+    text-align: right;
     /*letter-spacing: -.03em;*/
-    color: #ef3f23; }
-  /* line 24, sass/modules/_comments.scss */
+    color: #808080; }
+  /* line 25, sass/modules/_comments.scss */
   .comments__count {
-    font-weight: 400; }
-  /* line 28, sass/modules/_comments.scss */
+    font-weight: 800;
+    font-size: 2em;
+    color: #ef3f23; }
+  /* line 31, sass/modules/_comments.scss */
   .comments__respond {
     margin-top: 3em;
     padding: 1em;
