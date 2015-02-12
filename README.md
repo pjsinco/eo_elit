@@ -369,3 +369,5 @@
 ###Thu Feb 12 06:37:19 2015 CST
 * [How To Remove HTML Tags From WordPress Comment Form?](http://www.inkthemes.com/how-to-remove-html-tags-from-wordpress-comment-form/)
 
+* [Adding Custom Fields to a Custom Post Type, the Right Way](http://blog.teamtreehouse.com/adding-custom-fields-to-a-custom-post-type-the-right-way)
+
