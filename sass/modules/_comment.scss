@@ -66,6 +66,9 @@
     > a {
       letter-spacing: .05em;
       color: inherit;
+      transition-property: color;
+      transition-duration: $mediumduration;
+      @include red-hover;
     }
   }
 
@@ -75,6 +78,10 @@
 
     > a {
       color: inherit;
+      transition-property: color;
+      transition-duration: $mediumduration;
+      @include red-hover;
+      
     }
   }
 

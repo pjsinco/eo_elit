@@ -57,13 +57,45 @@ if ( post_password_required() ) {
   	<?php endif; // have_comments() ?>
   
   	<?php
-  		// If comments are closed and there are comments, let's leave a little note, shall we?
+  		// If comments are closed and there are comments, leave a little note
   		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
   	?>
   		<p class="no-comments"><?php _e( 'Comments are closed.', 'elit' ); ?></p>
   	<?php endif; ?>
   
-  	<?php comment_form(); ?>
+  		<div class="comments__respond">
+    <?php 
+      $commenter = wp_get_current_commenter();
+      $req = get_option( 'require_name_email' );
+      $fields = array(
+        'author' => 
+          '<p class="comment-form__author">
+            <label for="author" class="comment-form__label">Your name' .
+              ($req ? '<span class="comment-form__required">*</span>' : '' ) .  '</span> 
+            </label>
+            <input name="author" type="text" size="30" id="author" value="' . esc_attr( $commenter['comment_author'] ) . '">
+          </p>',
+
+        'email' =>
+          '<p class="comment-form__email">
+            <label for="email" class="comment-form__label">Your email' .
+              ($req ? '<span class="comment-form__required">*</span>' : '' ) .  '</span> 
+            </label>
+            <input name="email" type="text" size="30" id="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '">
+          </p>',
+        
+      );
+
+      $args = array(
+        'fields' => $fields,
+        'comment_notes_before' => '',
+        'comment_notes_after' => '',
+        'title_reply' => 'Leave a comment',
+        'label_submit' => 'Submit comment',
+      );
+    ?>
+  	<?php comment_form( $args ); ?>
+  		</div>
   
   </div><!-- #comments -->
 </div><!-- #comments__wrapper -->
