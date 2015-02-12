@@ -1322,19 +1322,31 @@ strong {
   display: inline-block;
   top: .5em;
   right: 0;
-  text-align: right; }
-  /* line 8, sass/modules/_comment-link.scss */
+  text-align: right;
+  color: #808080; }
+  /* line 9, sass/modules/_comment-link.scss */
   .comment-link__link {
     font-size: 2.5em;
-    color: #808080; }
-  /* line 14, sass/modules/_comment-link.scss */
+    -webkit-transition-property: color;
+            transition-property: color;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s; }
+    /* line 25, sass/utilities/_mixins.scss */
+    .comment-link__link:link, .comment-link__link:visited {
+      color: inherit; }
+    /* line 29, sass/utilities/_mixins.scss */
+    .comment-link__link:hover, .comment-link__link:focus {
+      text-decoration: none;
+      color: #ef3f23; }
+  /* line 18, sass/modules/_comment-link.scss */
   .comment-link__body {
     /*position: absolute;*/
     position: relative;
     float: right;
     /*top: .18181818em;*/
     top: -1.65em;
-    left: .3em;
+    /*left: .3em;*/
+    left: .375em;
     width: 100%;
     text-align: center;
     font-size: .6em;
