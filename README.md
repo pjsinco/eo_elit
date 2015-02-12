@@ -366,5 +366,6 @@
 
 * use wp get attachment url over https: -- see the codex filter ref for wp_get_attacment_url
 
-
+###Thu Feb 12 06:37:19 2015 CST
+* [How To Remove HTML Tags From WordPress Comment Form?](http://www.inkthemes.com/how-to-remove-html-tags-from-wordpress-comment-form/)
 

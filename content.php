@@ -60,6 +60,7 @@
             <footer class="story-footer"> 
               <?php elit_story_footer(); ?>
             </footer>
+
           </div> <!-- .story -->
         </article>
 

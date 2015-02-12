@@ -1,0 +1,66 @@
+.comment-form {
+  @include clearfix;
+
+  &__notes {
+    font-size: .75em;
+  }
+
+  label {
+    float: left;
+    font-size: .875em;
+    color: $font-color-lighter;
+
+    @include breakpoint($screen $medium-minor-start) {
+       padding-top: .5em;
+       padding-bottom: .5em;
+    }
+
+    @include breakpoint($screen $large-start) {
+      font-size: 1em;
+    }
+  }
+
+  input[type=text] {
+    float: right;
+    width: 100%;
+
+    @include breakpoint($screen $medium-minor-start) {
+      max-width: 75%;      
+    }
+  }
+
+  textarea {
+    width: 100%;
+    @include breakpoint($screen $medium-minor-start) {
+      max-width: 75%;      
+      float: right;
+    }
+
+  }
+
+  > p {
+    margin-top: 1em;
+
+    @include breakpoint($screen $medium-minor-start) {
+      clear: both;      
+    }
+  }
+
+  &__submit {
+    padding: .5em;
+    width: 10em;
+    float: right;
+    background: $primarycolor;
+    color: $white;
+    
+  }
+
+}
+
+.form-submit {
+
+  .submit {
+    @extend .comment-form__submit;
+  }
+
+}

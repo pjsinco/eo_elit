@@ -1,0 +1,46 @@
+.comments__wrapper {
+  @extend %story-base;
+}
+.comments {
+
+  margin-top: 3em;
+  color: #333;
+  @include breakpoint($screen $large-minor-start) {
+    @include span(last 7 of 8);
+  }
+
+
+  &__list {
+    margin-top: .5em;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &__title {
+    margin-bottom: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 1em;
+    text-align: right;
+    /*letter-spacing: -.03em;*/
+    color: $font-color-lighter;
+  }
+ 
+  &__count {
+    font-weight: 800;
+    font-size: 2em;
+    color: $primarycolor;
+  }
+
+  &__respond {
+    margin-top: 3em;
+    padding: 1em;
+    background: $extralightgray;
+  }
+}
+
+.comment-reply-title {
+  font-weight: 400;
+  color: $primarycolor;
+  margin-top: 0;
+}
