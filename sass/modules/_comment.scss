@@ -74,4 +74,13 @@
       color: $font-color-lightest;
     }
   }
+
+  &__edit {
+    
+  }
+}
+
+.children {
+  @extend .comment__children;
+  @extend .comments__list;
 }

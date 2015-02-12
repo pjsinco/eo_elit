@@ -230,7 +230,25 @@ function elit_comment( $comment, $args, $depth ) {
         <footer class="comment__meta">
           <div class="comment__author">
             <h3 class="comment__author-name"><?php echo $comment->comment_author; ?></h3>
-        
+            </h3>
+          </div>
+          <?php if ( $comment->comment_approved == '0' ): ?>
+            <em>Your comment is awaiting moderation.</em><br />
+          <?php endif; ?>
+          <div class="comment__metadata">
+            <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
+              <time datetime="<?php comment_time( 'c' ); ?>" pubdate>
+                <?php printf( '%1$s at %2$s', get_comment_date( ' M. j, Y, ' ), get_comment_time() ); ?>   
+              </time>
+            </a>
+            <?php edit_comment_link( '(Edit)', '<span class="comment__edit">', '</span>' ); ?>
+          </div> <!-- comment__metadata -->
+        </footer> <!-- comment__meta -->
+
+        <div class="comment__content">
+          <?php comment_text(); ?>
+        </div>
+
         <div class="comment__reply">
           <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
         </div>

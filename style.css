@@ -1352,7 +1352,7 @@ strong {
   border-top: 3px solid #ef3f23;
   font-size: 1em; }
   /* line 11, sass/modules/_comment.scss */
-  .comment__children {
+  .comment__children, .children {
     position: relative;
     right: -.625em;
     bottom: -.625em; }
@@ -1412,7 +1412,7 @@ strong {
       float: right;
       margin-right: 0; } }
   /* line 13, sass/modules/_comments.scss */
-  .comments__list {
+  .comments__list, .children {
     margin-top: .5em;
     padding-left: 0;
     list-style: none; }
