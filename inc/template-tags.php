@@ -208,9 +208,6 @@ function elit_story_footer($with_social = true) {
  *    the-wordpress-theme-comments-template/
  */
 function elit_comment( $comment, $args, $depth ) {
-  d($comment);
-  d($args);
-  d($depth);
   $GLOBALS['comment'] = $comment;
   switch ( $comment->comment_type ) :
     case 'pingback':
