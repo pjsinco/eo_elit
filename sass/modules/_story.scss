@@ -1,7 +1,5 @@
-.story {
-  /*@include container(94%);*/
+%story-base {
   width: 94%;
-  /*max-width: 40.9824375em;*/
   max-width: $article-max-width;
   @extend %center;
   
@@ -15,6 +13,11 @@
     /*@include container(95%);*/
     /*@include span(8 of $gridpage);*/
   }
+
+}
+
+.story {
+  @extend %story-base;
 
   @include breakpoint($screen $large-minor-start) {
     width: 100%;
