@@ -1349,57 +1349,55 @@ strong {
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  border-top: 3px solid #ef3f23; }
-  /* line 10, sass/modules/_comment.scss */
+  border-top: 3px solid #ef3f23;
+  font-size: 1em; }
+  /* line 11, sass/modules/_comment.scss */
   .comment__children {
     position: relative;
     right: -.625em;
     bottom: -.625em; }
-  /* line 17, sass/modules/_comment.scss */
+  /* line 18, sass/modules/_comment.scss */
   .comment__body {
     position: relative; }
-  /* line 21, sass/modules/_comment.scss */
+  /* line 22, sass/modules/_comment.scss */
   .comment__avatar {
     float: left;
     margin-right: 1em; }
-  /* line 27, sass/modules/_comment.scss */
+  /* line 28, sass/modules/_comment.scss */
   .comment--first {
     margin-top: 0; }
-  /* line 33, sass/modules/_comment.scss */
+  /* line 34, sass/modules/_comment.scss */
   .comment__author > h3 {
     /*margin-bottom: 0;*/ }
-  /* line 38, sass/modules/_comment.scss */
+  /* line 39, sass/modules/_comment.scss */
   .comment__author-name {
     margin-top: 0;
     margin-bottom: 0;
     font-weight: 400;
     font-family: "adelle", Georgia, serif;
     color: #333; }
-  /* line 46, sass/modules/_comment.scss */
+  /* line 47, sass/modules/_comment.scss */
   .comment__content {
     clear: both;
     margin-top: 1em;
     font-size: 1em; }
-    /* line 51, sass/modules/_comment.scss */
-    .comment__content p, .comment__content li, .comment__content ul, .comment__content li {
-      font-size: inherit; }
-  /* line 56, sass/modules/_comment.scss */
+  /* line 54, sass/modules/_comment.scss */
   .comment__meta {
     padding-bottom: 1em;
     border-bottom: 1px dashed #b3b3b3;
     line-height: 1.3; }
-  /* line 62, sass/modules/_comment.scss */
+  /* line 60, sass/modules/_comment.scss */
   .comment__metadata {
     text-transform: uppercase;
     font-size: .875em; }
-    /* line 66, sass/modules/_comment.scss */
+    /* line 64, sass/modules/_comment.scss */
     .comment__metadata > a {
       letter-spacing: .05em;
       color: #b3b3b3; }
-  /* line 72, sass/modules/_comment.scss */
+  /* line 70, sass/modules/_comment.scss */
   .comment__reply {
     text-align: right; }
-    /* line 75, sass/modules/_comment.scss */
+    /* line 73, sass/modules/_comment.scss */
     .comment__reply > a {
       color: #b3b3b3; }
 

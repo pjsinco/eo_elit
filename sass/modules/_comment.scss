@@ -6,6 +6,7 @@
   border-right: 1px solid $lightgray;
   border-bottom: 1px solid $lightgray;
   border-top: 3px solid $primarycolor;
+  font-size: 1em;
 
   &__children {
     position: relative;
@@ -48,9 +49,6 @@
     margin-top: 1em;
     font-size: 1em;
 
-    p, ul, li {
-      font-size: inherit;
-    }
   }
 
   &__meta {

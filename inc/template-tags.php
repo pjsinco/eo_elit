@@ -69,6 +69,7 @@ function elit_comments_link() {
  * @param boolean $with_social Optional. Include the social icons.
  */
 function elit_story_footer($with_social = true) {
+
   // #1 let's get our social icons
   if ( $with_social ) {
     get_template_part( 'social' );
@@ -196,5 +197,53 @@ function elit_story_footer($with_social = true) {
   echo '</ul>';
   }
 
+}
+
+/**
+ * Marks up each comment just the way we like.
+ *
+ * Used as a callback by wp_list_comments()
+ * 
+ * help http://themeshaper.com/2012/11/04/
+ *    the-wordpress-theme-comments-template/
+ */
+function elit_comment( $comment, $args, $depth ) {
+  d($comment);
+  d($args);
+  d($depth);
+  $GLOBALS['comment'] = $comment;
+  switch ( $comment->comment_type ) :
+    case 'pingback':
+    case 'trackback':
+  ?>
+    <li class="post pingback">
+      <p>
+        Pingback: <?php comment_author_link(); ?> <?php edit_comment_link( '(Edit)' ); ?>
+
+  <?php  
+    
+      break;
+    default:
+  ?>
+    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+      <article id="comment-<?php comment_ID(); ?>" class="comment__body">
+        <footer class="comment__meta">
+          <div class="comment__author">
+            <h3 class="comment__author-name"><?php echo $comment->comment_author; ?></h3>
+        
+        <div class="comment__reply">
+          <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+        </div>
+      </article>
+
+
+
+
+
+  <?php 
+  endswitch;
+
+
+  
 }
 
