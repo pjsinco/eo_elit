@@ -371,3 +371,4 @@
 
 * [Adding Custom Fields to a Custom Post Type, the Right Way](http://blog.teamtreehouse.com/adding-custom-fields-to-a-custom-post-type-the-right-way)
 
+* [how to include a plugin with a theme](http://wordpress.stackexchange.com/questions/160255/how-to-include-plugin-without-activation)
