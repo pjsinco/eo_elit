@@ -54,7 +54,7 @@ function elit_setup() {
   add_image_size('article-top-small', 413, 275, true);
   add_image_size('article-mid-large', 728, 485, true);
   add_image_size('article-mid-small', 486, 324, true);
-  //add_image_size('super', 992, 661, true);
+  add_image_size('super', 992, 661, true);
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),
@@ -527,42 +527,6 @@ function elit_taxonomies() {
   register_taxonomy( 'pro_theme_series', 'post', $args);
 }
 add_action( 'init' , 'elit_taxonomies' );
-
-function elit_register_post_types() {
-  $labels = array(
-    'name'               => 'Story sidebars',
-    'singular_name'      => 'Story sidebar',
-    'menu_name'          => 'Story sidebars',
-    'name_admin_bar'     => 'Story sidebar',
-    'add_new'            => 'Add new',
-    'add_new_item'       => 'Add new sidebar for a story',
-    'edit_item'          => 'Edit story sidebar',
-    'view_item'          => 'View story sidebar',
-    'all_items'          => 'All story sidebars',
-    'search_items'       => 'Search story sidebars',
-    'not_found'          => 'No story sidebars found',
-    'not_found_in_trash' => 'No story sidebars found in trash.',
-  );
-
-  $args = array(
-    'labels' => $labels,
-    'public' => true,
-    'publicly_queryable' => true,
-    'exclude_from_search' => true,
-    'show_ui' => true,
-    'show_in_menu' => true,
-    'show_in_admin_bar' => true,
-    'menu_position' => 5,
-    'capability_type' => 'post',
-    'hierarchical' => false,
-    'rewrite' => array( 'slug' => 'story_sidebar'),
-    'supports' => array( 'title', 'editor', 'revision', 'author' ),
-  );
-
-  register_post_type('elit_story_sidebar', $args);
-}
-add_action( 'init' , 'elit_register_post_types' );
-
 
 /**
  * BIO META BOX
