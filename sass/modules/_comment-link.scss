@@ -4,10 +4,14 @@
   top: .5em;
   right: 0;
   text-align: right;
+  color: $gray;
 
   &__link {
     font-size: 2.5em;
-    color: $gray;
+    
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
 
   }
 
@@ -17,7 +21,8 @@
     float: right;
     /*top: .18181818em;*/
     top: -1.65em;
-    left: .3em;
+    /*left: .3em;*/
+    left: .375em;
 
     width: 100%;
     text-align: center;
