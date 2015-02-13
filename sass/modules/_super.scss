@@ -1,3 +1,48 @@
+%super-date-base {
+  font-size: .875em;
+  text-transform: uppercase;
+}
+
+%super-body-base {
+  position: relative;
+  /*top: -1em;*/
+  top: -.25em;
+  padding: 5% 3%;
+  margin-bottom: 1em;
+  width: 100%;
+  /*max-width: $article-max-width;*/
+  @extend %center;
+  background: $verydark;
+  /*border: 1px solid $primarycolor;*/
+  border-top: 3px solid $primarycolor;
+  /*border-right: 1px solid $mediumgray;*/
+  border-bottom: 3px solid $primarycolor;
+  /*border-left: 1px solid $mediumgray;*/
+  color: $white;
+
+  @include breakpoint($screen $medium-start) {
+    padding: 3%;
+  }
+
+  @include breakpoint($screen $overlay-start) {
+    position: absolute;
+    top: inherit;
+    bottom: 2.125em;
+    left: 0;
+    width: 50%;
+    transform: translateY(-10%);
+    float: right;
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    border: $superfigborderwidth solid transparent;
+    /*border: 1px solid $white;*/
+    transition: border .25s ease;
+    color: inherit;
+  }
+}
+
 .super {
   
   position: relative;
@@ -9,7 +54,8 @@
   }
 
   @include breakpoint($screen $overlay-start) {
-    &:hover .super__body {
+    &:hover .super__body,
+    &:hover .super__body--alt, {
       /*border: 3px solid $primarycolor;*/
       border-top: $superfigborderwidth solid $primarycolor;
       border-right: $superfigborderwidth solid $primarycolor;
@@ -30,44 +76,20 @@
   }
 
   &__body {
-    position: relative;
-    /*top: -1em;*/
-    top: -.25em;
-    padding: 5% 3%;
-    margin-bottom: 1em;
-    width: 100%;
-    /*max-width: $article-max-width;*/
-    @extend %center;
-    background: $verydark;
-    /*border: 1px solid $primarycolor;*/
-    border-top: 3px solid $primarycolor;
-    /*border-right: 1px solid $mediumgray;*/
-    border-bottom: 3px solid $primarycolor;
-    /*border-left: 1px solid $mediumgray;*/
-    color: $white;
-  
-    @include breakpoint($screen $medium-start) {
-      padding: 3%;
+    @extend %super-body-base;
+    @include breakpoint($screen $overlay-start) {
+      background: rgba(0,0,0,.6);
+
+    }
+  }
+
+  &__body--alt {
+    @extend %super-body-base;
+    @include breakpoint($screen $overlay-start) {
+      background: rgba($white,.8);
+      color: $verydark;
     }
 
-    @include breakpoint($screen $overlay-start) {
-      position: absolute;
-      top: inherit;
-      bottom: 2.125em;
-      left: 0;
-      width: 50%;
-      transform: translateY(-10%);
-      float: right;
-      padding-top: 1em;
-      padding-right: 2em;
-      padding-bottom: 1em;
-      padding-left: 2em;
-      border: $superfigborderwidth solid transparent;
-      background: rgba(0,0,0,.6);
-      /*border: 1px solid $white;*/
-      transition: border .25s ease;
-      color: inherit;
-    }
   }
 
   &__tag {
@@ -98,9 +120,13 @@
   }
 
   &__date {
-    font-size: .875em;
-    text-transform: uppercase;
-    color: $font-color-lightest;
+    @extend %super-date-base;
+    color: $mediumgray;
+
+    &--alt {
+      @extend %super-date-base;
+      color: $gray;
+    }
   }
 
   &__head {
