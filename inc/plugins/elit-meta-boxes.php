@@ -419,3 +419,166 @@ function elit_save_featured_video_meta( $post_id, $post ) {
     delete_post_meta( $post_id, $meta_key, $meta_value );
   }
 }
+
+/**
+ * SUPER OVERLAY COLOR META BOX
+ *
+ * Specify the background color for the Super's overlay
+ */
+add_action( 'load-post.php' , 'elit_super_overlay_color_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_super_overlay_color_meta_box_setup' );
+
+function elit_super_overlay_color_meta_box_setup() {
+  add_action( 'add_meta_boxes' , 'elit_add_super_overlay_color_meta_box' );
+  add_action( 'save_post' , 'elit_save_super_overlay_color_meta', 10, 2 );
+}
+
+function elit_add_super_overlay_color_meta_box() {
+  add_meta_box(
+    'elit-super-overlay-color',
+    esc_html( 'Overlay color' ),
+    'elit_super_overlay_color_meta_box',
+    'elit_super',
+    'side',
+    'default'
+  );
+}
+
+function elit_super_overlay_color_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_super_overlay_color_nonce' );
+  ?>
+  <p>
+    <label for="widefat">The hexadecimal value for the overlay base color.</label>
+    <br />
+    <input class="widefat" type="text" name="elit-super-overlay-color" id="elit-super-overlay-color" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_super_overlay_color', true ) ); ?>" />
+  </p>
+  <?php 
+}
+
+function elit_save_super_overlay_color_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_super_overlay_color_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_super_overlay_color_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-super-overlay-color'] ) ? $_POST['elit-super-overlay-color'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_super_overlay_color';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
+
+
+/**
+ * SUPER OVERLAY QUADRANT META BOX
+ *
+ * Specify the quadrant for the overlay: 
+ *   top-left, top-right, bottom-left, bottom-right
+ */
+add_action( 'load-post.php' , 'elit_super_overlay_quadrant_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_super_overlay_quadrant_meta_box_setup' );
+
+function elit_super_overlay_quadrant_meta_box_setup() {
+  add_action( 'add_meta_boxes' , 'elit_add_super_overlay_quadrant_meta_box' );
+  add_action( 'save_post' , 'elit_save_super_overlay_quadrant_meta', 10, 2 );
+}
+
+function elit_add_super_overlay_quadrant_meta_box() {
+  add_meta_box(
+    'elit-super-overlay-quadrant',
+    esc_html( 'Overlay quadrant' ),
+    'elit_super_overlay_quadrant_meta_box',
+    'elit_super',
+    'side',
+    'default'
+  );
+}
+
+function elit_super_overlay_quadrant_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_super_overlay_quadrant_nonce' );
+  $quadrant = get_post_meta( $object->ID, 'elit_super_overlay_quadrant', true );
+  d($quadrant);
+  ?>
+  <p>
+    <label for="widefat">The quadrant in which the overlay should appear.</label>
+    <br />
+    <br />
+    <select name="elit-super-overlay-quadrant" id="elit-super-overlay-quadrant">
+      <option value="top-left" <?php if ( $quadrant ) : selected( $quadrant, 'top-left' ); endif;?>>Top-left</option>
+      <option value="top-right" <?php if ( $quadrant ) : selected( $quadrant, 'top-right' ); endif;?>>Top-right</option>
+      <option value="bottom-left" <?php if ( $quadrant ) : selected( $quadrant, 'bottom-left' ); endif;?>>Bottom-left</option>
+      <option value="bottom-right" <?php if ( $quadrant ) : selected( $quadrant, 'bottom-right' ); endif;?>>Bottom-right</option>
+      
+    </select>
+  </p>
+  <?php 
+}
+
+function elit_save_super_overlay_quadrant_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_super_overlay_quadrant_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_super_overlay_quadrant_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-super-overlay-quadrant'] ) ? $_POST['elit-super-overlay-quadrant'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_super_overlay_quadrant';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
