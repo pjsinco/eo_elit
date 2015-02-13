@@ -71,10 +71,11 @@ function elit_setup() {
   //   /how-to-include-plugin-without-activation
   define( 'elit_inc_path', TEMPLATEPATH . '/inc/' );
   define( 'elit_inc_url', get_template_directory_uri() . '/inc/' );
-  require_once elit_inc_path . 'plugins/elit-custom-post-types.php';
-  require_once elit_inc_path . 'plugins/elit-meta-boxes.php';
-  require_once elit_inc_path . 'plugins/elit-shortcodes.php';
-  require_once elit_inc_path . 'plugins/elit-taxonomies.php';
+  require_once elit_inc_path . 'elit-custom-post-types.php';
+  require_once elit_inc_path . 'elit-meta-boxes.php';
+  require_once elit_inc_path . 'elit-shortcodes.php';
+  require_once elit_inc_path . 'elit-taxonomies.php';
+  require_once elit_inc_path . 'elit-super.php';
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -433,3 +434,5 @@ function elit_notify_of_post_status_change($new_status, $old_status, $post) {
   }
 }
 add_action('transition_post_status', 'elit_notify_of_post_status_change', 10, 3);
+
+
