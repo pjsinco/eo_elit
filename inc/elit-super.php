@@ -72,11 +72,15 @@ function elit_add_super_overlay_color_meta_box() {
 
 function elit_super_overlay_color_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_super_overlay_color_nonce' );
+  $color = get_post_meta( $object->ID, 'elit_super_overlay_color', true );
   ?>
   <p>
     <label for="widefat">The hexadecimal value for the overlay base color.</label>
     <br />
-    <input class="widefat" type="text" name="elit-super-overlay-color" id="elit-super-overlay-color" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_super_overlay_color', true ) ); ?>" />
+    <select name="elit-super-overlay-color" id="elit-super-overlay-color">
+      <option value="dark" <?php if ( $color ) : selected( $color, 'dark' ); endif;?>>Dark</option>
+      <option value="light" <?php if ( $color ) : selected( $color, 'light' ); endif;?>>Light</option>
+    </select>
   </p>
   <?php 
 }
@@ -129,49 +133,49 @@ function elit_save_super_overlay_color_meta( $post_id, $post ) {
  * Specify the quadrant for the overlay: 
  *   top-left, top-right, bottom-left, bottom-right
  */
-add_action( 'load-post.php' , 'elit_super_overlay_quadrant_meta_box_setup' );
-add_action( 'load-post-new.php' , 'elit_super_overlay_quadrant_meta_box_setup' );
+add_action( 'load-post.php' , 'elit_super_quadrant_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_super_quadrant_meta_box_setup' );
 
-function elit_super_overlay_quadrant_meta_box_setup() {
-  add_action( 'add_meta_boxes' , 'elit_add_super_overlay_quadrant_meta_box' );
-  add_action( 'save_post' , 'elit_save_super_overlay_quadrant_meta', 10, 2 );
+function elit_super_quadrant_meta_box_setup() {
+  add_action( 'add_meta_boxes' , 'elit_add_super_quadrant_meta_box' );
+  add_action( 'save_post' , 'elit_save_super_quadrant_meta', 10, 2 );
 }
 
-function elit_add_super_overlay_quadrant_meta_box() {
+function elit_add_super_quadrant_meta_box() {
   add_meta_box(
-    'elit-super-overlay-quadrant',
+    'elit-super-quadrant',
     esc_html( 'Overlay quadrant' ),
-    'elit_super_overlay_quadrant_meta_box',
+    'elit_super_quadrant_meta_box',
     'elit_super',
     'side',
     'low'
   );
 }
 
-function elit_super_overlay_quadrant_meta_box( $object, $box ) {
-  wp_nonce_field( basename(__FILE__), 'elit_super_overlay_quadrant_nonce' );
-  $quadrant = get_post_meta( $object->ID, 'elit_super_overlay_quadrant', true );
+function elit_super_quadrant_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_super_quadrant_nonce' );
+  $quadrant = get_post_meta( $object->ID, 'elit_super_quadrant', true );
   d($quadrant);
   ?>
   <p>
     <label for="widefat">The area of the image in which the overlay should appear.</label>
     <br />
     <br />
-    <select name="elit-super-overlay-quadrant" id="elit-super-overlay-quadrant">
-      <option value="top-left" <?php if ( $quadrant ) : selected( $quadrant, 'top-left' ); endif;?>>Top-left</option>
-      <option value="top-right" <?php if ( $quadrant ) : selected( $quadrant, 'top-right' ); endif;?>>Top-right</option>
-      <option value="bottom-left" <?php if ( $quadrant ) : selected( $quadrant, 'bottom-left' ); endif;?>>Bottom-left</option>
-      <option value="bottom-right" <?php if ( $quadrant ) : selected( $quadrant, 'bottom-right' ); endif;?>>Bottom-right</option>
+    <select name="elit-super-quadrant" id="elit-super-quadrant">
+      <option value="t-l" <?php if ( $quadrant ) : selected( $quadrant, 't-l' ); endif;?>>Top-left</option>
+      <option value="t-r" <?php if ( $quadrant ) : selected( $quadrant, 't-r' ); endif;?>>Top-right</option>
+      <option value="b-l" <?php if ( $quadrant ) : selected( $quadrant, 'b-l' ); endif;?>>Bottom-left</option>
+      <option value="b-r" <?php if ( $quadrant ) : selected( $quadrant, 'b-r' ); endif;?>>Bottom-right</option>
       
     </select>
   </p>
   <?php 
 }
 
-function elit_save_super_overlay_quadrant_meta( $post_id, $post ) {
+function elit_save_super_quadrant_meta( $post_id, $post ) {
   // verify the nonce
-  if ( !isset( $_POST['elit_super_overlay_quadrant_nonce'] ) || 
-    !wp_verify_nonce( $_POST['elit_super_overlay_quadrant_nonce'], basename( __FILE__ ) )
+  if ( !isset( $_POST['elit_super_quadrant_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_super_quadrant_nonce'], basename( __FILE__ ) )
   ) {
       // instead of just returning, we return the $post_id
       // so other hooks can continue to use it
@@ -188,10 +192,10 @@ function elit_save_super_overlay_quadrant_meta( $post_id, $post ) {
 
   // get the posted data and sanitize it
   $new_meta_value = 
-    ( isset($_POST['elit-super-overlay-quadrant'] ) ? $_POST['elit-super-overlay-quadrant'] : '' );
+    ( isset($_POST['elit-super-quadrant'] ) ? $_POST['elit-super-quadrant'] : '' );
 
   // set the meta key
-  $meta_key = 'elit_super_overlay_quadrant';
+  $meta_key = 'elit_super_quadrant';
 
   // get the meta value as a string
   $meta_value = get_post_meta( $post_id, $meta_key, true);
@@ -365,13 +369,13 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
 
     //$gowith = get_post( $new_meta_value );
     if ( $gowith ) {
-      add_post_meta( $post_id, 'elit_super_title', $gowith->post_title );
-      add_post_meta( $post_id, 'elit_super_body', $gowith->post_excerpt );
-      add_post_meta( $post_id, 'elit_super_date', get_the_date( 'M. j, Y', $gowith->ID ) );
-
-      $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker', true );
+      add_post_meta( $post_id, 'elit_super_title', $gowith->post_title, true );
+      add_post_meta( $post_id, 'elit_super_body', $gowith->post_excerpt, true );
+      add_post_meta( $post_id, 'elit_super_date', get_the_date( 'M. j, Y', $gowith->ID ), true );
+      add_post_meta( $post_id, 'elit_super_link', get_permalink( $gowith->ID ), true );
+      $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker' );
       if ( $gowith_kicker ) {
-        add_post_meta( $post_id, 'elit_super_kicker', $gowith_kicker );
+        add_post_meta( $post_id, 'elit_super_kicker', $gowith_kicker, true );
       }
     } 
   } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
@@ -383,6 +387,7 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
       update_post_meta( $post_id, 'elit_super_title', $gowith->post_title );
       update_post_meta( $post_id, 'elit_super_body', $gowith->post_excerpt );
       update_post_meta( $post_id, 'elit_super_date', get_the_date( 'M. j, Y', $gowith->ID ) );
+      update_post_meta( $post_id, 'elit_super_link', get_permalink( $gowith->ID ) );
 
       $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker', true );
       if ( $gowith_kicker ) {
@@ -405,11 +410,8 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
     delete_post_meta( $post_id, 'elit_super_title' );
     delete_post_meta( $post_id, 'elit_super_body' );
     delete_post_meta( $post_id, 'elit_super_date' );
-
-    $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker', true );
-    if ( $gowith_kicker ) {
-      delete_post_meta( $post_id, 'elit_super_kicker' );
-    }
+    delete_post_meta( $post_id, 'elit_super_link' );
+    delete_post_meta( $post_id, 'elit_super_kicker' );
   } 
 }
 

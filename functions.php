@@ -49,12 +49,12 @@ function elit_setup() {
   /*
    * Set our image sizes
    */
-  add_image_size( 'article-top-large', 930, 620, true );
-  add_image_size( 'article-top-medium', 620, 413, true );
-  add_image_size( 'article-top-small', 413, 275, true );
-  add_image_size( 'article-mid-large', 728, 485, true );
-  add_image_size( 'article-mid-small', 486, 324, true );
-  add_image_size( 'super', 992, 661, true);
+  add_image_size( 'elit-article-top-large', 930, 620, true );
+  add_image_size( 'elit-article-top-medium', 620, 413, true );
+  add_image_size( 'elit-article-top-small', 413, 275, true );
+  add_image_size( 'elit-article-mid-large', 728, 485, true );
+  add_image_size( 'elit-article-mid-small', 486, 324, true );
+  add_image_size( 'elit-super', 992, 661, true);
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),

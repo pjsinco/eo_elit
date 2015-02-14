@@ -277,7 +277,7 @@ th {
  *
  */
 /* line 1, sass/utilities/_stuff.scss */
-.content__secondary, .story, .comments__wrapper, .super__body, .super__body--alt {
+.content__secondary, .story, .comments__wrapper, .super__body, .super__body--t-l, .super__body--t-r, .super__body--b-l, .super__body--b-r {
   margin: 0 auto; }
 
 /* line 5, sass/utilities/_stuff.scss */
@@ -2082,7 +2082,7 @@ strong {
   text-transform: uppercase; }
 
 /* line 6, sass/modules/_super.scss */
-.super__body, .super__body--alt {
+.super__body, .super__body--t-l, .super__body--t-r, .super__body--b-l, .super__body--b-r {
   position: relative;
   /*top: -1em;*/
   top: -.25em;
@@ -2099,15 +2099,16 @@ strong {
   color: #fff; }
   @media screen and (min-width: 30em) {
     /* line 6, sass/modules/_super.scss */
-    .super__body, .super__body--alt {
+    .super__body, .super__body--t-l, .super__body--t-r, .super__body--b-l, .super__body--b-r {
       padding: 3%; } }
   @media screen and (min-width: 48em) {
     /* line 6, sass/modules/_super.scss */
-    .super__body, .super__body--alt {
+    .super__body, .super__body--t-l, .super__body--t-r, .super__body--b-l, .super__body--b-r {
       position: absolute;
       top: inherit;
       bottom: 2.125em;
       left: 0;
+      right: inherit;
       width: 50%;
       -webkit-transform: translateY(-10%);
           -ms-transform: translateY(-10%);
@@ -2123,24 +2124,28 @@ strong {
               transition: border .25s ease;
       color: inherit; } }
 
-/* line 46, sass/modules/_super.scss */
+/* line 47, sass/modules/_super.scss */
 .super {
   position: relative;
   color: #333; }
   @media screen and (min-width: 48em) {
-    /* line 46, sass/modules/_super.scss */
+    /* line 47, sass/modules/_super.scss */
     .super {
       padding-bottom: 1em;
       color: #fff; } }
   @media screen and (min-width: 48em) {
-    /* line 57, sass/modules/_super.scss */
-    .super:hover .super__body, .super:hover .super__body--alt {
-      /*border: 3px solid $primarycolor;*/
+    /* line 58, sass/modules/_super.scss */
+    .super:hover .super__body--t-l, .super:hover .super__body--b-l, .super:hover .super__body--t-r, .super:hover .super__body--b-r {
       border-top: 1px solid #ef3f23;
-      border-right: 1px solid #ef3f23;
-      border-bottom: 1px solid #ef3f23; } }
+      border-bottom: 1px solid #ef3f23; }
+    /* line 62, sass/modules/_super.scss */
+    .super:hover .super__body--t-l, .super:hover .super__body--b-l {
+      border-right: 1px solid #ef3f23; }
+    /* line 68, sass/modules/_super.scss */
+    .super:hover .super__body--t-r, .super:hover .super__body--b-r {
+      border-left: 1px solid #ef3f23; } }
   @media screen and (min-width: 64em) {
-    /* line 46, sass/modules/_super.scss */
+    /* line 47, sass/modules/_super.scss */
     .super {
       max-width: 62em;
       margin-left: auto;
@@ -2173,20 +2178,56 @@ strong {
           background-origin: content-box;
           background-clip: content-box;
           background-position: left top; } }
-  /* line 72, sass/modules/_super.scss */
+  /* line 81, sass/modules/_super.scss */
   .super__figure {
     /*@include span(9 of $gridpage);*/
     position: relative; }
   @media screen and (min-width: 48em) {
-    /* line 78, sass/modules/_super.scss */
+    /* line 87, sass/modules/_super.scss */
     .super__body {
+      top: inherit;
+      bottom: 2.125em;
+      left: 0;
+      right: inherit;
       background: rgba(0, 0, 0, 0.6); } }
   @media screen and (min-width: 48em) {
-    /* line 86, sass/modules/_super.scss */
+    /* line 96, sass/modules/_super.scss */
+    .super__body--t-l {
+      top: 10%;
+      bottom: inherit;
+      left: 0;
+      right: inherit;
+      background: rgba(0, 0, 0, 0.6); } }
+  @media screen and (min-width: 48em) {
+    /* line 107, sass/modules/_super.scss */
+    .super__body--t-r {
+      top: 10%;
+      bottom: inherit;
+      left: inherit;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); } }
+  @media screen and (min-width: 48em) {
+    /* line 118, sass/modules/_super.scss */
+    .super__body--b-l {
+      top: inherit;
+      bottom: 5%;
+      left: 0;
+      right: inherit;
+      background: rgba(0, 0, 0, 0.6); } }
+  @media screen and (min-width: 48em) {
+    /* line 129, sass/modules/_super.scss */
+    .super__body--b-r {
+      top: inherit;
+      bottom: 5%;
+      left: inherit;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6); } }
+  @media screen and (min-width: 48em) {
+    /* line 141, sass/modules/_super.scss */
     .super__body--alt {
       background: rgba(255, 255, 255, 0.8);
       color: #333; } }
-  /* line 95, sass/modules/_super.scss */
+  /* line 149, sass/modules/_super.scss */
   .super__tag {
     position: absolute;
     display: none;
@@ -2199,10 +2240,10 @@ strong {
     background: rgba(0, 0, 0, 0.1);
     color: #f5f5f5; }
     @media screen and (min-width: 48em) {
-      /* line 95, sass/modules/_super.scss */
+      /* line 149, sass/modules/_super.scss */
       .super__tag {
         display: block; } }
-  /* line 112, sass/modules/_super.scss */
+  /* line 166, sass/modules/_super.scss */
   .super__kicker {
     display: inline-block;
     margin-right: .625em;
@@ -2211,13 +2252,13 @@ strong {
     text-transform: uppercase;
     font-size: .875em;
     color: #ef3f23; }
-  /* line 122, sass/modules/_super.scss */
+  /* line 176, sass/modules/_super.scss */
   .super__date {
     color: #b3b3b3; }
-    /* line 126, sass/modules/_super.scss */
+    /* line 180, sass/modules/_super.scss */
     .super__date--alt {
       color: #808080; }
-  /* line 132, sass/modules/_super.scss */
+  /* line 186, sass/modules/_super.scss */
   .super__head {
     margin-top: .25em;
     margin-bottom: .125em;
@@ -2226,22 +2267,22 @@ strong {
     line-height: 1.2;
     color: inherit; }
     @media screen and (min-width: 48em) {
-      /* line 132, sass/modules/_super.scss */
+      /* line 186, sass/modules/_super.scss */
       .super__head {
         margin-top: .25em;
         margin-bottom: .25em;
         /*line-height: 1.2;*/
         font-size: 2em; } }
-  /* line 148, sass/modules/_super.scss */
+  /* line 202, sass/modules/_super.scss */
   .super__body-text {
     margin-bottom: 0;
     font-size: 1em;
     line-height: 1.5;
     color: inherit; }
-  /* line 155, sass/modules/_super.scss */
+  /* line 209, sass/modules/_super.scss */
   .super__link {
     color: inherit; }
-    /* line 158, sass/modules/_super.scss */
+    /* line 212, sass/modules/_super.scss */
     .super__link:hover, .super__link:active {
       text-decoration: none; }
 
