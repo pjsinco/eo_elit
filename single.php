@@ -27,5 +27,7 @@
       <section id="secondary" class="content__secondary">
 
 <?php get_sidebar('article'); ?>
+      </section>
+    </div> <!-- #main -->
 
 <?php get_footer(); ?>
