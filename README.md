@@ -386,3 +386,16 @@
 * [smashing on loop hacks](http://www.smashingmagazine.com/2009/06/10/10-useful-wordpress-loop-hacks/)
 
 * [passing variables to get_template_part()](http://keithdevon.com/passing-variables-to-get_template_part-in-wordpress/)
+
+* So, we can define a variable somewhere, like in functions.php, and grab it somewhere else using the ```global``` keyword ([source](https://wordpress.org/support/topic/passing-php-variable-between-template-files)). Ex.:
+
+in functions.php
+```php
+$some_var = 'foo';
+```
+    
+in footer.php (for example)  
+```php
+global $some_var;
+```
+
