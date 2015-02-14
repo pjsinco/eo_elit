@@ -7,6 +7,7 @@
 
           <?php // if we have a featured image, show it ?>
           <?php if ( has_post_thumbnail() ): ?>
+            <?php d(wp_get_post_terms( $post->ID, 'elit_school' ) ); ?>
             <?php $featured_image_id = (get_post_thumbnail_id()); ?>
             <?php $featured_image_content = get_post($featured_image_id); ?>
 

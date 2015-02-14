@@ -75,7 +75,7 @@ function elit_super_overlay_color_meta_box( $object, $box ) {
   $color = get_post_meta( $object->ID, 'elit_super_overlay_color', true );
   ?>
   <p>
-    <label for="widefat">The hexadecimal value for the overlay base color.</label>
+    <label for="widefat">The shade of the overlay.</label>
     <br />
     <select name="elit-super-overlay-color" id="elit-super-overlay-color">
       <option value="dark" <?php if ( $color ) : selected( $color, 'dark' ); endif;?>>Dark</option>
@@ -373,7 +373,7 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
       add_post_meta( $post_id, 'elit_super_body', $gowith->post_excerpt, true );
       add_post_meta( $post_id, 'elit_super_date', get_the_date( 'M. j, Y', $gowith->ID ), true );
       add_post_meta( $post_id, 'elit_super_link', get_permalink( $gowith->ID ), true );
-      $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker' );
+      $gowith_kicker = get_post_meta( $gowith->ID, 'elit_kicker', true );
       if ( $gowith_kicker ) {
         add_post_meta( $post_id, 'elit_super_kicker', $gowith_kicker, true );
       }
