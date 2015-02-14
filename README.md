@@ -377,3 +377,5 @@
 
 ###Fri Feb 13 06:37:10 2015 CST
 * [Integrating With WordPress’ UI: Meta Boxes on Custom Pages](http://code.tutsplus.com/articles/integrating-with-wordpress-ui-meta-boxes-on-custom-pages--wp-26843)
+
+* [remove yoast seo from custom post type](https://wordpress.org/support/topic/remove-seo-from-custom-post-types)
