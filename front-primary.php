@@ -15,8 +15,13 @@
     'orderby' => 'date',
     // ignore sticky posts
     'post__not_in' => get_option( 'sticky_posts' ),
+    'meta_query' => array(
+      array(
+        'key' => 'elit_featurable',
+        'compare' => 'NOT EXISTS',
+      )
+    )
   );
-  d( get_option('sticky_posts'));
 
   $primary = new WP_Query( $args );
   d( $primary );
