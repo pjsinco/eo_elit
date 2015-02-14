@@ -450,11 +450,8 @@ function elit_featurable_meta_box( $object, $box ) {
 
   ?>
   <p>
-    <label for="widefat">This story is not a feature.</label>
-    <br />
-    <br />
     <input class="widefat" type="checkbox" name="elit-featurable" id="elit-featurable" value="no" <?php if ( $featurable ): checked( $featurable, 'no' ); endif; ?>" />
-    Unfeature
+    This story is not a feature
   </p>
   <?php 
 }
@@ -489,7 +486,6 @@ function elit_save_featurable_meta( $post_id, $post ) {
 
   // if a new meta value was added and there was no previous value, add it
   if ( $new_meta_value && $meta_value == '' ) {
-    //add_post_meta( $post_id, 'elit_foo', 'bar');
     add_post_meta( $post_id, $meta_key, $new_meta_value, true);
   } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
     // so the new meta value doesn't match the old one, so we're updating
