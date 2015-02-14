@@ -1,0 +1,216 @@
+%super-date-base {
+  font-size: .875em;
+  text-transform: uppercase;
+}
+
+%super-body-base {
+  position: relative;
+  /*top: -1em;*/
+  top: -.25em;
+  padding: 5% 3%;
+  margin-bottom: 1em;
+  width: 100%;
+  /*max-width: $article-max-width;*/
+  @extend %center;
+  background: $verydark;
+  /*border: 1px solid $primarycolor;*/
+  border-top: 3px solid $primarycolor;
+  /*border-right: 1px solid $mediumgray;*/
+  border-bottom: 3px solid $primarycolor;
+  /*border-left: 1px solid $mediumgray;*/
+  color: $white;
+
+  @include breakpoint($screen $medium-start) {
+    padding: 3%;
+  }
+
+  @include breakpoint($screen $overlay-start) {
+    position: absolute;
+    top: inherit;
+    bottom: 2.125em;
+    left: 0;
+    right: inherit;
+    width: 50%;
+    transform: translateY(-10%);
+    float: right;
+    padding-top: 1em;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    padding-left: 2em;
+    border: $superfigborderwidth solid transparent;
+    /*border: 1px solid $white;*/
+    transition: border .25s ease;
+    color: inherit;
+  }
+}
+
+.super {
+  
+  position: relative;
+  color: $font-color;
+
+  @include breakpoint($screen $overlay-start) {
+    padding-bottom: 1em;
+    color: $white;
+  }
+
+  @include breakpoint($screen $overlay-start) {
+    %super-hover-base {
+      border-top: $superfigborderwidth solid $primarycolor;
+      border-bottom: $superfigborderwidth solid $primarycolor;
+    }
+    &:hover .super__body--t-l,
+    &:hover .super__body--b-l {
+      @extend %super-hover-base;
+      border-right: $superfigborderwidth solid $primarycolor;
+    }
+
+    &:hover .super__body--t-r,
+    &:hover .super__body--b-r {
+      @extend %super-hover-base;
+      border-left: $superfigborderwidth solid $primarycolor;
+    }
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    @include container($gridpage);
+    padding-bottom: 1.5em;
+    /*border-bottom: 1px solid $mediumgray;*/
+  }
+
+  &__figure {
+    /*@include span(9 of $gridpage);*/
+    position: relative;
+
+  }
+
+  &__body {
+    @extend %super-body-base;
+    @include breakpoint($screen $overlay-start) {
+      top: inherit;
+      bottom: 2.125em;
+      left: 0;
+      right: inherit;
+      background: rgba(0,0,0,.6);
+    }
+    &--t-l {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: 10%;
+        bottom: inherit;
+        left: 0;
+        right: inherit;
+        background: rgba(0,0,0,.6);
+      }
+
+    }
+    &--t-r {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: 10%;
+        bottom: inherit;
+        left: inherit;
+        right: 0;
+        background: rgba(0,0,0,.6);
+      }
+
+    }
+    &--b-l {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        bottom: 5%;
+        left: 0;
+        right: inherit;
+        background: rgba(0,0,0,.6);
+      }
+    }
+
+    &--b-r {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        bottom: 5%;
+        left: inherit;
+        right: 0;
+        background: rgba(0,0,0,.6);
+      }
+    }
+  }
+
+  &__body--alt {
+    @include breakpoint($screen $overlay-start) {
+      background: rgba($white,.8);
+      color: $verydark;
+    }
+  }
+
+
+  &__tag {
+    position: absolute;
+    display: none;
+    top: 3%;
+    left: 3%;
+    padding: .5em;
+    border: 1px solid $extralightgray;
+    font-weight: 400;
+    font-size: .875em;
+    background: rgba(0,0,0,.1);
+    color: $extralightgray;
+
+    @include breakpoint($screen $overlay-start) {
+      display: block;
+    }
+  }
+
+  &__kicker {
+    display: inline-block;
+    margin-right: .625em;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    font-size: .875em;
+    color: $primarycolor;
+  }
+
+  &__date {
+    @extend %super-date-base;
+    color: $mediumgray;
+
+    &--alt {
+      @extend %super-date-base;
+      color: $gray;
+    }
+  }
+
+  &__head {
+    margin-top: .25em;
+    margin-bottom: .125em;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.2;
+    color: inherit;
+
+    @include breakpoint($screen $overlay-start) {
+      margin-top: .25em;
+      margin-bottom: .25em;
+      /*line-height: 1.2;*/
+      font-size: 2em;
+    }
+  }
+
+  &__body-text {
+    margin-bottom: 0;
+    font-size: 1em;
+    line-height: 1.5;
+    color: inherit;
+  }
+
+  &__link {
+    color: inherit;
+    
+    &:hover, &:active {
+      text-decoration: none;
+    }
+  }
+}

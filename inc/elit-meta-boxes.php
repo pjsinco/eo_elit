@@ -419,3 +419,4 @@ function elit_save_featured_video_meta( $post_id, $post ) {
     delete_post_meta( $post_id, $meta_key, $meta_value );
   }
 }
+

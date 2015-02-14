@@ -372,3 +372,8 @@
 * [Adding Custom Fields to a Custom Post Type, the Right Way](http://blog.teamtreehouse.com/adding-custom-fields-to-a-custom-post-type-the-right-way)
 
 * [how to include a plugin with a theme](http://wordpress.stackexchange.com/questions/160255/how-to-include-plugin-without-activation)
+
+* [15 commandments of front-end perf](https://alexsexton.com/blog/2015/02/the-15-commandments-of-front-end-performance/)
+
+###Fri Feb 13 06:37:10 2015 CST
+* [Integrating With WordPress’ UI: Meta Boxes on Custom Pages](http://code.tutsplus.com/articles/integrating-with-wordpress-ui-meta-boxes-on-custom-pages--wp-26843)

@@ -16,7 +16,7 @@
               <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
             <!-- removing picture element because it's not used by ricg picturefill plugin -->
             <!--<picture> -->
-              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-article-top-large' ); ?> />
+              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'article-top-large' ); ?> />
               <?php d($featured_image_id); ?>
 
             <?php // the caption overlay ?>
