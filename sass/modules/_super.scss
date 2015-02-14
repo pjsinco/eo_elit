@@ -119,14 +119,13 @@
       @extend %super-body-base;
       @include breakpoint($screen $overlay-start) {
         top: inherit;
-        //bottom: 2.125em;
         bottom: 5%;
         left: 0;
         right: inherit;
         background: rgba(0,0,0,.6);
       }
-
     }
+
     &--b-r {
       @extend %super-body-base;
       @include breakpoint($screen $overlay-start) {
@@ -134,6 +133,7 @@
         bottom: 5%;
         left: inherit;
         right: 0;
+        background: rgba(0,0,0,.6);
       }
     }
   }
