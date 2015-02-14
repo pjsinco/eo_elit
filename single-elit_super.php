@@ -9,8 +9,6 @@
 <?php get_header(); ?>
 
     <div id="main" class="content">
-      <?php get_template_part('front', 'elit_super'); ?>
-
-    </div> <!-- #main -->
+      <?php get_template_part( 'front', 'elit_super_preview' ); ?>
 
 <?php get_footer(); ?>
