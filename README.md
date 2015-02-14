@@ -384,3 +384,5 @@
 * [exclude sticky posts from wp_query](http://wordpress.stackexchange.com/questions/958/excluding-sticky-posts-from-the-loop-and-from-wp-query-in-wordpress)
 
 * [smashing on loop hacks](http://www.smashingmagazine.com/2009/06/10/10-useful-wordpress-loop-hacks/)
+
+* [passing variables to get_template_part()](http://keithdevon.com/passing-variables-to-get_template_part-in-wordpress/)
