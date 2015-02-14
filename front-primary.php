@@ -13,7 +13,10 @@
   $args = array(
     'posts_per_page' => 3,
     'orderby' => 'date',
+    // ignore sticky posts
+    'post__not_in' => get_option( 'sticky_posts' ),
   );
+  d( get_option('sticky_posts'));
 
   $primary = new WP_Query( $args );
   d( $primary );
