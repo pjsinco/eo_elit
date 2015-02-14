@@ -41,7 +41,7 @@ function elit_taxonomies() {
     'show_tagcloud'     => false,
   );
 
-  register_taxonomy( 'pro_theme_school', 'post', $args);
+  register_taxonomy( 'elit_school', 'post', $args);
 
   /**
    * Create **Series** taxonomy
@@ -77,6 +77,6 @@ function elit_taxonomies() {
     'show_tagcloud'     => false,
   );
 
-  register_taxonomy( 'pro_theme_series', 'post', $args);
+  register_taxonomy( 'elit_series', 'post', $args);
 }
 add_action( 'init' , 'elit_taxonomies' );
