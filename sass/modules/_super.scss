@@ -29,6 +29,7 @@
     top: inherit;
     bottom: 2.125em;
     left: 0;
+    right: inherit;
     width: 50%;
     transform: translateY(-10%);
     float: right;
@@ -54,12 +55,20 @@
   }
 
   @include breakpoint($screen $overlay-start) {
-    &:hover .super__body,
-    &:hover .super__body--alt, {
-      /*border: 3px solid $primarycolor;*/
+    %super-hover-base {
       border-top: $superfigborderwidth solid $primarycolor;
-      border-right: $superfigborderwidth solid $primarycolor;
       border-bottom: $superfigborderwidth solid $primarycolor;
+    }
+    &:hover .super__body--t-l,
+    &:hover .super__body--b-l {
+      @extend %super-hover-base;
+      border-right: $superfigborderwidth solid $primarycolor;
+    }
+
+    &:hover .super__body--t-r,
+    &:hover .super__body--b-r {
+      @extend %super-hover-base;
+      border-left: $superfigborderwidth solid $primarycolor;
     }
   }
 
@@ -78,19 +87,64 @@
   &__body {
     @extend %super-body-base;
     @include breakpoint($screen $overlay-start) {
+      top: inherit;
+      bottom: 2.125em;
+      left: 0;
+      right: inherit;
       background: rgba(0,0,0,.6);
+    }
+    &--t-l {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: 10%;
+        bottom: inherit;
+        left: 0;
+        right: inherit;
+        background: rgba(0,0,0,.6);
+      }
 
+    }
+    &--t-r {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: 10%;
+        bottom: inherit;
+        left: inherit;
+        right: 0;
+        background: rgba(0,0,0,.6);
+      }
+
+    }
+    &--b-l {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        //bottom: 2.125em;
+        bottom: 5%;
+        left: 0;
+        right: inherit;
+        background: rgba(0,0,0,.6);
+      }
+
+    }
+    &--b-r {
+      @extend %super-body-base;
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        bottom: 5%;
+        left: inherit;
+        right: 0;
+      }
     }
   }
 
   &__body--alt {
-    @extend %super-body-base;
     @include breakpoint($screen $overlay-start) {
       background: rgba($white,.8);
       color: $verydark;
     }
-
   }
+
 
   &__tag {
     position: absolute;
