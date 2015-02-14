@@ -17,7 +17,7 @@
           'post_type' => 'elit_super',
           'posts_per_page' => 1,
         );
-        $super = get_posts( $args );
+        $super_post = get_posts( $args );
 
  ?>
       <?php get_template_part( 'front', 'elit_super' ); ?>

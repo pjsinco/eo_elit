@@ -11,8 +11,8 @@
   // we need to exclude the super from the posts we grab for 
   // the front-primary
 
-  global $super;
-  $super_exclude_id = get_post_meta( $super[0]->ID, 'elit_super_gowith', true );
+  global $super_post;
+  $super_exclude_id = get_post_meta( $super_post[0]->ID, 'elit_super_gowith', true );
 
   $args = array(
     'posts_per_page' => 3,
