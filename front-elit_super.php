@@ -5,12 +5,7 @@
 ?>
 
   <?php 
-    $args = array(
-      'post_type' => 'elit_super',
-      'post_count' => 1,
-    );
-
-    $super = get_posts( $args );
+    global $super;
     if ( $super ): $super_meta = get_post_meta( $super[0]->ID ); endif;
     if ( has_post_thumbnail( $super[0]->ID ) ):
       $featured_image_id = get_post_thumbnail_id( $super[0]->ID );

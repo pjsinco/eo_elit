@@ -8,13 +8,17 @@
 
 ?>
 <?php 
+  // we need to exclude the super from the posts we grab for 
+  // the front-primary
 
+  global $super;
+  $super_exclude_id = get_post_meta( $super[0]->ID, 'elit_super_gowith', true );
 
   $args = array(
     'posts_per_page' => 3,
     'orderby' => 'date',
     // ignore sticky posts
-    'post__not_in' => get_option( 'sticky_posts' ),
+    'post__not_in' => array( $super_exclude_id ),
     'meta_query' => array(
       array(
         'key' => 'elit_featurable',
