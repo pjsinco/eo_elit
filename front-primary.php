@@ -7,6 +7,9 @@
  */
 
 ?>
+      <div class="row">
+        <div class="size-2-of-3 module">
+
 <?php 
   // we need to exclude the super from the posts we grab for 
   // the front-primary
@@ -35,8 +38,6 @@
       $meta = get_post_meta( $post->ID );
       d( $meta ); ?>
 
-      <div class="row">
-        <div class="size-2-of-3 module">
           <article class="f-item--major">
             <figure class="f-item__fig--major">
               <a href="<?php the_permalink(); ?>">
@@ -56,21 +57,14 @@
               <p class="f-item__body-text--major"><?php the_excerpt(); ?></p>
             </div>
           </article>
-        </div> <!-- size-2-of-3 module -->
 <?php endwhile; endif; ?>
-        <!-- this is don's natural home-->
-        <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-a">
-          <div class="rover-don">
-            <a href="http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest" target="_blank">
-              <script>EHS_AD("t", "r", "300x250"); </script>
-            </a>
-          </div>
-        </aside>
+        </div> <!-- size-2-of-3 module -->
+
+        <?php get_template_part('front_ad', 'don_home'); ?>
 
         <div class="size-1-of-3--last">
           <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-c"></aside>
           <aside data-set="rover-peggy-parent" class="ad ad__med-rect--front rover-peggy-parent-f-c"></aside>
-        </div>
+        </div> <!-- size-1-of-3-last -->
       </div><!-- .row -->
-
 

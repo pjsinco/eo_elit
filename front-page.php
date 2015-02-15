@@ -26,7 +26,7 @@
 
       <?php get_template_part( 'front', 'primary' ); ?>
 
-      <?php get_template_part( 'front', 'secondary' ); ?>
+      <?php get_template_part( 'front', 'secondary_fours' ); ?>
 
     </div> <!-- #main -->
 
