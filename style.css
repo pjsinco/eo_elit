@@ -246,6 +246,7 @@ th {
 /*
  * COLORS
  */
+/*$verydark: #333;*/
 /*$gray: #6b7574;*/
 /*
  * TYPOGRAPHY
@@ -264,7 +265,7 @@ th {
 /*
  * Special
  */
-/* line 97, sass/utilities/_variables.scss */
+/* line 98, sass/utilities/_variables.scss */
 .story-footer__img, .comment__avatar {
   -webkit-clip-path: ellipse(50% 50% at 50% 50%);
           clip-path: ellipse(50% 50% at 50% 50%); }
@@ -337,7 +338,7 @@ p, li {
   margin-bottom: 1em;
   font-size: 1em;
   line-height: 1.4;
-  color: #333; }
+  color: #2a2a2a; }
   @media screen and (min-width: 48em) {
     /* line 28, sass/base/_base.scss */
     p, li {
@@ -348,7 +349,7 @@ p, li {
 h1 {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 800;
-  color: #333; }
+  color: #2a2a2a; }
 
 /* line 47, sass/base/_base.scss */
 ul, ol {
@@ -391,7 +392,7 @@ input, textarea {
   border-bottom-style: solid;
   border-width: 1px;
   border-color: #808080;
-  color: #333; }
+  color: #2a2a2a; }
 
 /* line 103, sass/base/_base.scss */
 figure {
@@ -658,7 +659,7 @@ strong {
     /* line 53, sass/modules/_nav.scss */
     .nav__item--link {
       display: block;
-      color: #333; }
+      color: #2a2a2a; }
       @media screen and (min-width: 50.5625em) {
         /* line 53, sass/modules/_nav.scss */
         .nav__item--link {
@@ -1152,7 +1153,7 @@ strong {
   border-bottom: 1px solid #ddd;
   font-size: .9em;
   letter-spacing: .05em;
-  color: #333; }
+  color: #2a2a2a; }
   @media screen and (min-width: 48em) {
     /* line 1, sass/modules/_story-meta.scss */
     .story-meta {
@@ -1209,7 +1210,7 @@ strong {
   font-weight: 100;
   line-height: 1.5;
   /*text-transform: uppercase;*/
-  color: #333; }
+  color: #2a2a2a; }
   /* line 14, sass/modules/_story-nav.scss */
   .story-nav__emph {
     font-weight: 600; }
@@ -1611,7 +1612,7 @@ strong {
         width: 100%;
         max-height: 0;
         overflow: hidden;
-        color: #333;
+        color: #2a2a2a;
         background: rgba(255, 255, 255, 0.8);
         -webkit-transition: max-height;
                 transition: max-height;
@@ -1742,7 +1743,7 @@ strong {
 /* line 6, sass/modules/_pq.scss */
 .pq, .pq--full {
   font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
+  color: #2a2a2a;
   display: none; }
   @media screen and (min-width: 56em) {
     /* line 6, sass/modules/_pq.scss */
@@ -1917,7 +1918,7 @@ strong {
   .topics a {
     padding: .5em;
     background: #f5f5f5;
-    color: #333;
+    color: #2a2a2a;
     -webkit-transition-property: background;
             transition-property: background;
     -webkit-transition-duration: 0.2s;
@@ -1993,10 +1994,10 @@ strong {
   /*background: $primarycolor;*/
   border-top: 1px solid #808080;
   border-bottom: 1px solid #808080;
-  color: #333; }
+  color: #2a2a2a; }
   /* line 28, sass/modules/_prev-next.scss */
   .prev-next [class*='icon-']:before {
-    color: #333; }
+    color: #2a2a2a; }
   @media screen and (min-width: 48em) {
     /* line 16, sass/modules/_prev-next.scss */
     .prev-next {
@@ -2090,7 +2091,7 @@ strong {
   margin-bottom: 1em;
   width: 100%;
   /*max-width: $article-max-width;*/
-  background: #333;
+  background: #2a2a2a;
   /*border: 1px solid $primarycolor;*/
   border-top: 3px solid #ef3f23;
   /*border-right: 1px solid $mediumgray;*/
@@ -2127,7 +2128,7 @@ strong {
 /* line 47, sass/modules/_super.scss */
 .super {
   position: relative;
-  color: #333; }
+  color: #2a2a2a; }
   @media screen and (min-width: 48em) {
     /* line 47, sass/modules/_super.scss */
     .super {
@@ -2226,7 +2227,7 @@ strong {
     /* line 141, sass/modules/_super.scss */
     .super__body--alt {
       background: rgba(255, 255, 255, 0.8);
-      color: #333; } }
+      color: #2a2a2a; } }
   /* line 149, sass/modules/_super.scss */
   .super__tag {
     position: absolute;
@@ -2383,9 +2384,9 @@ strong {
   margin-left: 0;
   font-size: 1.1em;
   line-height: 1.4;
-  font-weight: 400;
-  font-family: "adelle", Georgia, serif;
-  color: #333; }
+  font-weight: 600;
+  font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #2a2a2a; }
 
 /* line 83, sass/modules/_f-item.scss */
 .f-item__body-text, .f-item__body-text--major, .f-item__body-text--minor {
@@ -2480,15 +2481,15 @@ strong {
 @media screen and (min-width: 48em) {
   /* line 215, sass/modules/_f-item.scss */
   .f-item__head--major {
-    font-size: 1.25em;
-    line-height: 1.5; } }
-/* line 229, sass/modules/_f-item.scss */
+    font-size: 1.375em;
+    line-height: 1.45; } }
+/* line 230, sass/modules/_f-item.scss */
 .f-item__link {
   color: inherit;
   display: block;
   /*@include breakpoint($screen $xlarge-start) {*/ }
   @media screen and (min-width: 48em) {
-    /* line 229, sass/modules/_f-item.scss */
+    /* line 230, sass/modules/_f-item.scss */
     .f-item__link {
       -webkit-transition: color .25s ease;
               transition: color .25s ease; }
@@ -2500,15 +2501,16 @@ strong {
         text-decoration: none;
         color: #ef3f23; } }
 @media screen and (min-width: 48em) {
-  /* line 240, sass/modules/_f-item.scss */
+  /* line 241, sass/modules/_f-item.scss */
   .f-item__body-text {
     color: #808080; } }
 @media screen and (min-width: 48em) {
-  /* line 247, sass/modules/_f-item.scss */
+  /* line 248, sass/modules/_f-item.scss */
   .f-item__body-text--major {
-    font-size: 1.125em; } }
+    font-size: 1.125em;
+    font-weight: 200; } }
 @media screen and (min-width: 36em) {
-  /* line 264, sass/modules/_f-item.scss */
+  /* line 266, sass/modules/_f-item.scss */
   .f-item__date--major {
     display: inline-block; } }
 
