@@ -54,7 +54,7 @@
               <h2 class="f-item__head--major">
                 <a href="<?php the_permalink(); ?>" class="f-item__link"><?php the_title(); ?></a>
               </h2>
-              <p class="f-item__body-text--major"><?php the_excerpt(); ?></p>
+              <p class="f-item__body-text--major"><?php echo wptexturize( get_the_excerpt() ); ?></p>
             </div>
           </article>
 <?php endwhile; endif; ?>
