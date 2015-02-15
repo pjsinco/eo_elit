@@ -38,7 +38,7 @@
 <?php endwhile; endif; ?>
         </div> <!-- size-2-of-3 module -->
 
-        <?php get_template_part('front_ad', 'don_home'); ?>
+        <?php get_template_part('ad', 'don_home_front'); ?>
 
         <div class="size-1-of-3--last">
           <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-c"></aside>
