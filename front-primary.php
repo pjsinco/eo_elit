@@ -9,35 +9,13 @@
 ?>
       <div class="row">
         <div class="size-2-of-3 module">
-
 <?php 
-  // we need to exclude the super from the posts we grab for 
-  // the front-primary
-
-  global $super_post;
-  $super_exclude_id = get_post_meta( $super_post[0]->ID, 'elit_super_gowith', true );
-
-  $args = array(
-    'posts_per_page' => 3,
-    'orderby' => 'date',
-    // ignore sticky posts
-    'post__not_in' => array( $super_exclude_id ),
-    'meta_query' => array(
-      array(
-        'key' => 'elit_featurable',
-        'compare' => 'NOT EXISTS',
-      )
-    )
-  );
-
-  $primary = new WP_Query( $args );
-  d( $primary );
   if ( $primary->have_posts() ): 
     while ( $primary->have_posts() ):
       $primary->the_post();
+      $do_not_dupe[] = $post->ID;
       $meta = get_post_meta( $post->ID );
-      d( $meta ); ?>
-
+?>
           <article class="f-item--major">
             <figure class="f-item__fig--major">
               <a href="<?php the_permalink(); ?>">
@@ -67,4 +45,3 @@
           <aside data-set="rover-peggy-parent" class="ad ad__med-rect--front rover-peggy-parent-f-c"></aside>
         </div> <!-- size-1-of-3-last -->
       </div><!-- .row -->
-

@@ -6,6 +6,19 @@
  */
 ?>
 
+<?php 
+
+// $do_not_dupe is initialized on front-page.php;
+// we fill it on front-primary.php
+//d($do_not_dupe);
+//$args = array(
+  //'post_status' => 'publish',
+  //'orderby' => 'date',
+  //'post__not_in' => array( $do_not_dupe ),
+  //'posts_per_page' => 3,
+//);
+
+?>
       <div class="row">
         <div class="size-1-of-1">
           <div class="section-title-hat"><span class="section-title-hat__text">More Stories</span> <a href="#" class="section-title__link"><span class="section-title--muted">All stories <span class="icon-arrow-right"></span></span></a>
