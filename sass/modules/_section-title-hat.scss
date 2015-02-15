@@ -1,0 +1,46 @@
+.section-title-hat {
+
+  position: relative;
+  margin-bottom: .5333333333em;
+  padding-bottom: .2em;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.875em;
+  border-bottom: 2px solid $primarycolor;
+  color: $primarycolor;
+
+  @include breakpoint($screen $large-start) {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 1.5em;
+    padding-top: .5em;
+    padding-bottom: .3888888889em;
+    text-align: left;
+    font-weight: 400;
+    font-size: 1em;
+    border-bottom: 0;
+    border-top: 1px solid $primarycolor;
+    text-transform: uppercase;
+    color: $font-color-lighter;
+
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+
+    @include breakpoint($screen $large-start) {
+      
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: .5em;
+        top: -1em;
+        left: -.1875em;
+        transform: skew(32deg);
+        background-color: $primarycolor;
+      }
+    }
+  }
+}

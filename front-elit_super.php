@@ -1,18 +1,20 @@
-<?php get_header(); ?>
+<?php 
+/**
+ * @package elit
+ */
+?>
 
   <?php 
-    $args = array(
-      'post_type' => 'elit_super',
-      'post_count' => 1,
-    );
-
-    $super = get_posts( $args );
-    if ( $super ): $super_meta = get_post_meta( $super[0]->ID ); endif;
-    if ( has_post_thumbnail( $super[0]->ID ) ):
-      $featured_image_id = get_post_thumbnail_id( $super[0]->ID );
-
+    if ( is_preview() || is_single() ) {
+      $super = get_post( );
+    } else {
+      global $super_post;
+      $super = $super_post[0];
+    }
+    if ( $super ): $super_meta = get_post_meta( $super->ID ); endif;
+    if ( has_post_thumbnail( $super->ID ) ):
+      $featured_image_id = get_post_thumbnail_id( $super->ID );
   ?>
-    <div id="main" class="content">
       <div class="row--bleed-xl no-m-b">
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
@@ -33,8 +35,4 @@
           </div>
         </div>
       </div>
-    </div>
-
   <?php endif; ?>
-
-<?php get_footer(); ?>

@@ -1,0 +1,25 @@
+%f-row-base {
+  @include clearfix;
+  width: 94%;
+  @extend %center;
+}
+
+.f-row {
+  /*@extend .featured__primary;*/
+  @extend %f-row-base;
+  position: relative;
+  
+  @include breakpoint($screen $large-start) {
+    margin-bottom: 2em;
+  }
+  
+  @include breakpoint($screen $xlarge-start) {
+    margin-top: 0;
+    width: inherit;
+  }
+
+  &--thirds {
+
+  }
+
+}

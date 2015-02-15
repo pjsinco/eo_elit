@@ -1,0 +1,292 @@
+/*%f-item-base {*/
+  /*@include clearfix;*/
+  /*width: 94%;*/
+  /*@extend %center;*/
+/*}*/
+
+%border-bottom {
+  border-bottom: 1px solid $mediumgray;
+}
+
+%f-fig-base {
+  display: inline-block;
+  position: relative;
+  /*top: 1.6875em;*/
+  right: 0;
+  margin-left: .5em;
+  float: right;
+  max-width: 6.25em;
+
+  // this stops tiny weird stuff happening around an element
+  // when we apply a transform
+  // https://github.com/IanLunn/Hover/wiki/Hacks-Explained
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  @include breakpoint($screen $medium-minor-start) {
+    /*position: static;*/
+    margin-left: 0;
+    margin-right: .5em;
+    float: left;
+    /*top: 1.6875em;*/
+  }
+
+  @include breakpoint($screen $large-start) {
+    max-width: inherit;
+    @include underline-reveal(4px);
+  }
+
+}
+%f-item-base {
+  /*position: relative;*/
+  margin-bottom: 1em;
+  text-align: left;
+
+  &:not(:last-of-type) {
+    @extend %border-bottom;
+    padding-bottom: 1em;
+  }
+
+
+}
+
+%kicker-base {
+  display: block;
+  margin-top: 0;
+  margin-right: .25em;
+  margin-bottom: .5em;
+  letter-spacing: .1em;
+  font-size: .875em;
+  text-transform: uppercase;
+  line-height: 1.3;
+  font-weight: 400;
+  color: $primarycolor;
+
+  @include breakpoint($screen $medium-minor-start) {
+    display: inline-block;
+    line-height: 1;
+  }
+}
+
+%head-base {
+  margin-top: 0;
+  margin-bottom: .25em;
+  /*margin-left: 6.1em;*/
+  margin-left: 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: $secondaryfont;
+  color: $font-color;
+
+}
+
+%body-text-base {
+  /*margin-left: 0;*/
+  margin-bottom: 0;
+  font-size: 1em;
+  line-height: 1.3;
+
+  @include breakpoint($screen $large-start) {
+    margin-bottom: 0;
+    margin-left: 0;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+}
+
+%date-base {
+  display: none;
+  font-size: .875em;
+  color: $font-color-lighter;
+
+}
+
+.f-item {
+  
+  @extend %f-item-base;
+
+  @include breakpoint($screen $large-start) {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-bottom: 0;
+    text-align: center;
+    &:not(:last-child) {
+      border: 0;
+    }
+  }
+
+  @include breakpoint($screen $big-menu-start) {
+    /*margin-bottom: 1em;*/
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    /*margin-bottom: 1.5em;*/
+  }
+
+  &--full {
+    @extend %f-item-base;
+    
+    @include breakpoint($screen $large-start) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      
+    }
+  }
+
+  &--major {
+    @extend %f-item-base;
+
+    @include breakpoint($screen $large-start) {
+      &:not(:last-of-type) {
+        padding-bottom: 1em;
+      }
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      margin-bottom: 1.5em;
+      /*padding-bottom: 1.5em;*/
+      &:not(:last-of-type) {
+        padding-bottom: 1.5em;
+      }
+    }
+  }
+
+  &--minor {
+    @extend %f-item-base;
+    top: .375em;
+  }
+
+  &__item {
+
+  }
+
+  &__fig {
+    @extend %f-fig-base;
+    top: .1875em;
+    
+    @include breakpoint($screen $large-start) {
+      float: none;
+      margin-bottom: .5em;
+    }
+
+    &--major {
+      @extend %f-fig-base;
+      top: .1875em;
+    }
+
+    &--minor {
+      @extend %f-fig-base;
+      top: .375em;
+
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 64px;
+        content: '';
+        background-color: $overlayblue;
+        opacity: .5;
+      
+      }
+    }
+  } // .f-item__fig
+
+  &__body {
+    @include breakpoint($screen $large-start) {
+      clear: left;
+    }
+
+    &--major {
+      @include breakpoint($screen $large-start) {
+        // the width of an image + a little more space
+        margin-left: 15.890625em; 
+      }
+    }
+
+    &--minor {
+
+    }
+  }
+
+  &__head {
+    @extend %head-base;
+
+    &--major {
+      @extend %head-base;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 1.25em;
+        line-height: 1.5;
+      }
+    }
+
+    &--minor {
+      @extend %head-base;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    display: block;
+
+    /*@include breakpoint($screen $xlarge-start) {*/
+    @include breakpoint($screen $large-start) {
+      transition: color .25s ease;
+      @include red-hover;
+    }
+  }
+
+  &__body-text {
+    @extend %body-text-base;
+
+    @include breakpoint($screen $large-start) {
+      color: $font-color-lighter;
+    }
+
+    &--major {
+      @extend %body-text-base;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 1.125em;
+      }
+    }
+
+    &--minor {
+      @extend %body-text-base;
+    }
+  }
+
+  &__date {
+    @extend %date-base;
+
+      
+    &--major {
+      @extend %date-base;
+
+      @include breakpoint($screen $medium-minor-start) {
+        display: inline-block;
+      }
+    }
+
+    &--minor {
+      @extend %date-base;
+    }
+  }
+
+  &__kicker {
+    @extend %kicker-base;
+
+    &--major {
+      @extend %kicker-base;
+    }
+
+    &--minor {
+      @extend %kicker-base;
+    }
+  } // .f-item__kicker
+      
+}
+
+
+

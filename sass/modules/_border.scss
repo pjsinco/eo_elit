@@ -1,0 +1,70 @@
+.border {
+
+  &-2-of-4 {
+    @include breakpoint($screen $xlarge-start) {
+      &:before {
+        @include border-before;
+        left: span(3 of $gridpage) + (.5 * gutter($gridpage));
+      }
+    }
+  }
+
+  &-3-of-4 {
+    @include breakpoint($screen $xlarge-start) {
+      &:before {
+        @include border-before;
+        left: (2 * (span(3 of $gridpage))) + (3 * (.5 * gutter($gridpage)));
+      }
+    }
+
+  }
+
+  &-4-of-4 {
+    @include breakpoint($screen $xlarge-start) {
+      &:before {
+        @include border-before;
+        left: (3 * (span(3 of $gridpage))) + (5* (.5 * gutter($gridpage)));
+      }
+    }
+
+  }
+
+  &-2-of-3 {
+
+    @include breakpoint($screen $large-start) {
+      &:before {
+        @include border-before;    
+        left: span(4 of $gridpage) + (.5 * gutter($gridpage));
+      }
+    }
+  }
+
+  &-3-of-3 {
+    @include breakpoint($screen $large-start) {
+      &:before {
+        @include border-before;    
+        left: (2 * (span(4 of $gridpage))) + (3 * (.5 * gutter($gridpage)));
+      }
+    }
+
+  }
+
+//  &-v-before {
+//    @include breakpoint($screen $large-start) {
+//      // make our vertical rule betweetn items
+//      &:before {
+//        content: '';
+//        position: absolute;
+//        top: 0;
+//        bottom: 0;
+//        z-index: -1;
+//        width: span(4 of $gridpage);
+//        left: span(4 of $gridpage);
+//        border-left: 12px solid fuchsia;
+//        background: #fff;
+//      }
+//    }
+//  } // &-v-before
+
+
+}

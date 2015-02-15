@@ -379,3 +379,23 @@
 * [Integrating With WordPress’ UI: Meta Boxes on Custom Pages](http://code.tutsplus.com/articles/integrating-with-wordpress-ui-meta-boxes-on-custom-pages--wp-26843)
 
 * [remove yoast seo from custom post type](https://wordpress.org/support/topic/remove-seo-from-custom-post-types)
+
+###Sat Feb 14 09:49:19 2015 CST
+* [exclude sticky posts from wp_query](http://wordpress.stackexchange.com/questions/958/excluding-sticky-posts-from-the-loop-and-from-wp-query-in-wordpress)
+
+* [smashing on loop hacks](http://www.smashingmagazine.com/2009/06/10/10-useful-wordpress-loop-hacks/)
+
+* [passing variables to get_template_part()](http://keithdevon.com/passing-variables-to-get_template_part-in-wordpress/)
+
+* So, we can define a variable somewhere, like in functions.php, and grab it somewhere else using the ```global``` keyword ([source](https://wordpress.org/support/topic/passing-php-variable-between-template-files)). Ex.:
+
+in functions.php
+```php
+$some_var = 'foo';
+```
+    
+in footer.php (for example)  
+```php
+global $some_var;
+```
+
