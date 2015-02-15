@@ -74,8 +74,8 @@
   margin-left: 0;
   font-size: 1.1em;
   line-height: 1.4;
-  font-weight: 400;
-  font-family: $secondaryfont;
+  font-weight: 600;
+  font-family: $primaryfont;
   color: $font-color;
 
 }
@@ -216,8 +216,9 @@
       @extend %head-base;
 
       @include breakpoint($screen $large-start) {
-        font-size: 1.25em;
-        line-height: 1.5;
+        //font-size: 1.25em;
+        font-size: 1.375em;
+        line-height: 1.45;
       }
     }
 
@@ -249,6 +250,7 @@
 
       @include breakpoint($screen $large-start) {
         font-size: 1.125em;
+        font-weight: 200;
       }
     }
 
