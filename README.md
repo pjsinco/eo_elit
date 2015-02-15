@@ -398,4 +398,4 @@ in footer.php (for example)
 ```php
 global $some_var;
 ```
-
+###Sun Feb 15 08:52:23 2015 CST
