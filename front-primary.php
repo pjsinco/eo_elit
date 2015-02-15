@@ -33,8 +33,7 @@
     while ( $primary->have_posts() ):
       $primary->the_post();
       $meta = get_post_meta( $post->ID );
-      d( $meta );
-?>
+      d( $meta ); ?>
 
       <div class="row">
         <div class="size-2-of-3 module">
@@ -57,21 +56,21 @@
               <p class="f-item__body-text--major"><?php the_excerpt(); ?></p>
             </div>
           </article>
+        </div> <!-- size-2-of-3 module -->
+<?php endwhile; endif; ?>
+        <!-- this is don's natural home-->
+        <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-a">
+          <div class="rover-don">
+            <a href="http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest" target="_blank">
+              <script>EHS_AD("t", "r", "300x250"); </script>
+            </a>
+          </div>
+        </aside>
 
-<?php 
-    endwhile;
-  endif;
-?>
-          <!-- this is don's natural home-->
-          <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-a">
-            <div class="rover-don"><a href="#"><img src="img/medium-rect-0.gif" alt="medium-rectangle"></a>
-            </div>
-          </aside>
-          <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-b"></aside>
-          <aside data-set="rover-peggy-parent" class="ad ad__med-rect--front rover-peggy-parent-f-b"></aside>
-        </div>
         <div class="size-1-of-3--last">
           <aside data-set="rover-don-parent" class="ad ad__med-rect--front rover-don-parent-f-c"></aside>
           <aside data-set="rover-peggy-parent" class="ad ad__med-rect--front rover-peggy-parent-f-c"></aside>
         </div>
-      </div>
+      </div><!-- .row -->
+
+

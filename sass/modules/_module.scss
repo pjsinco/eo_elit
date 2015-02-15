@@ -1,0 +1,8 @@
+.module {
+
+  margin-bottom: 1em;
+
+  @include breakpoint($screen $large-minor-start) {
+    margin-bottom: 2em;
+  }
+}
