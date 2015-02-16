@@ -76,7 +76,6 @@ function elit_setup() {
   require_once elit_inc_path . 'elit-shortcodes.php';
   require_once elit_inc_path . 'elit-taxonomies.php';
   require_once elit_inc_path . 'elit-super.php';
-  require_once elit_inc_path . 'elit-social-pick.php';
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
