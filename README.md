@@ -407,3 +407,10 @@ global $some_var;
 * [A Look at the WordPress HTTP API: A Practical Example of wp_remote_get](http://code.tutsplus.com/tutorials/a-look-at-the-wordpress-http-api-a-practical-example-of-wp_remote_get--wp-32109)
 
 * [Parsing Twitter Feeds with PHP](http://blog.jacobemerick.com/web-development/parsing-twitter-feeds-with-php/)
+
+* [wp_remote_get(), downloading and saving files](http://wordpress.stackexchange.com/questions/50094/wp-remote-get-downloading-and-saving-files)
+
+* [Unit Tests for WordPress Plugins – An Introduction](https://pippinsplugins.com/unit-tests-wordpress-plugins-introduction/)
+
+* [Plugin Unit Tests](https://github.com/wp-cli/wp-cli/wiki/Plugin-Unit-Tests)
+
