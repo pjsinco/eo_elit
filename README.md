@@ -414,3 +414,15 @@ global $some_var;
 
 * [Plugin Unit Tests](https://github.com/wp-cli/wp-cli/wiki/Plugin-Unit-Tests)
 
+* Unit testing our plugin with vvv
+    1. ```cd /Users/psinco/vagrant-local```
+    2. ```vagrant ssh```
+    3. ```cd /srv/www/elit/htdocs```
+    4. ```wp scaffold plugin-tests elit-social-pick```
+        * Note: ```elit-social-pick``` is the name of our plugin
+    5. ```cd $(wp plugin path --dir elit-social-pick)```
+    6. ```bash bin/install-wp-tests.sh wordpress_test root root localhost latest```
+
+* [How can I add an image upload field directly to a custom write panel?](http://wordpress.stackexchange.com/questions/4307/how-can-i-add-an-image-upload-field-directly-to-a-custom-write-panel/4413#4413)
+
+* [Simon's test tweet](https://twitter.com/simonfraser75/status/564818451735519232)
