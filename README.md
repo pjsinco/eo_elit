@@ -402,3 +402,8 @@ global $some_var;
 * [WORDPRESS META BOXES: A COMPREHENSIVE DEVELOPER’S GUIDE](http://themefoundation.com/wordpress-meta-boxes-guide/)
 
 * [twitter-api-php](https://github.com/J7mbo/twitter-api-php)
+
+###Mon Feb 16 04:27:42 2015 CST
+* [A Look at the WordPress HTTP API: A Practical Example of wp_remote_get](http://code.tutsplus.com/tutorials/a-look-at-the-wordpress-http-api-a-practical-example-of-wp_remote_get--wp-32109)
+
+* [Parsing Twitter Feeds with PHP](http://blog.jacobemerick.com/web-development/parsing-twitter-feeds-with-php/)
