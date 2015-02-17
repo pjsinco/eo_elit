@@ -434,4 +434,7 @@ global $some_var;
 
 * [Add Page Templates to WordPress with a Plugin](http://www.wpexplorer.com/wordpress-page-templates-plugin/)
 
+* [How to git diff between branches](http://stackoverflow.com/questions/9834689/comparing-two-branches-in-git): ```git diff branch_1..branch_2```
+
+* [How to go back, say, 2 versions:](http://stackoverflow.com/questions/3559076/git-how-to-get-back-to-most-recent-version)```checkout -b temp_branch HEAD~2```
 
