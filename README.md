@@ -425,6 +425,9 @@ global $some_var;
 
 * [How can I add an image upload field directly to a custom write panel?](http://wordpress.stackexchange.com/questions/4307/how-can-i-add-an-image-upload-field-directly-to-a-custom-write-panel/4413#4413)
 
+    * See also: [wp_handle_sideload](http://codex.wordpress.org/Function_Reference/wp_handle_sideload)
+
 * [Simon's test tweet](https://twitter.com/simonfraser75/status/564818451735519232)
 
 ###Tue Feb 17 03:55:18 2015 CST
+
