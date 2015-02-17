@@ -1,0 +1,142 @@
+.social-pick {
+
+  @include clearfix;
+  position: relative;
+  /*top: -1.6875em;*/
+  top: 0;
+  width: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 1em;
+  margin-left: auto;
+  padding: 3% 3%;
+  /*background: lighten($primarycolor, 43%);*/
+  background: transparent;
+  border-bottom: 1px dashed $primarycolor;
+  line-height: 1.4;
+  text-align: left;
+
+  &:after {
+    content: '@';
+    position: absolute;
+    /*top: .2027777778em;*/
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    text-align: center;
+    line-height: 0;
+    /*font-size: 22.5em;*/
+    /*font-size: 21em;*/
+    font-size: 16em;
+    font-weight: 900;
+    /*color: $white;*/
+    color: lighten($primarycolor, 43%);
+
+    @include breakpoint($screen $large-start) {
+      display: none;
+    }
+  }
+  
+  @include breakpoint($screen $large-start) {
+    padding-top: 1em;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    width: 94%;
+    border-bottom: 0;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    width: 100%;
+  }
+  
+  &__meta {
+    @include clearfix;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint($screen $large-start) {
+      @include span(4 of $gridpage);
+      text-align: right;
+    }
+  }
+
+  &__link {
+    color: $primarycolor;
+    /*color: inherit;*/
+    @include breakpoint($screen $large-start) {
+      color: inherit;
+    }
+  }
+
+  &__date {
+    float: right;
+    color: $font-color-lighter;  
+
+    @include breakpoint($screen $large-start) {
+      float: none;
+      line-height: 1.2;
+    }
+    
+    @include breakpoint($screen $large-minor-start) {
+      text-transform: uppercase;
+      line-height: 2.5;
+    }
+  }
+
+  &__author {
+    float: left;
+    font-size: 1.25em;
+    color: $primarycolor;
+    word-wrap: break-word;
+
+    > a {
+      color: inherit;
+    }
+
+    @include breakpoint($screen $large-start) {
+      float: none;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      font-size: 1.75em;
+      line-height: 1.2;
+    }
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    margin-top: .5em;
+    color: $font-color;
+    
+
+    @include breakpoint($screen $large-start) {
+      @include span(8 last of $gridpage);
+      margin-top: 0;
+      top: .25em;
+      color: $font-color-lighter;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      top: 0;
+    }
+  }
+
+  &__body-text {
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-size: 1em;
+    color: inherit;
+
+    @include breakpoint($screen $large-minor-start) {
+      line-height: 1.2;
+      font-size: 1.75em;
+      font-weight: 100;
+      
+    }
+  }
+
+}
