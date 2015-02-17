@@ -2919,6 +2919,275 @@ strong {
     border-left: 1px solid #b3b3b3;
     left: 66.94915%; } }
 
+/* line 1, sass/modules/_social-pick-red.scss */
+.social-pick-red {
+  position: relative;
+  text-align: left;
+  color: #fff;
+  /*@include breakpoint($screen $large-minor-start) {*/ }
+  @media screen and (min-width: 56em) {
+    /* line 1, sass/modules/_social-pick-red.scss */
+    .social-pick-red {
+      padding: 0;
+      width: 98%;
+      float: right;
+      /*height: 3.4375em;*/ } }
+  /* line 17, sass/modules/_social-pick-red.scss */
+  .social-pick-red__link {
+    color: inherit; }
+  /* line 30, sass/modules/_social-pick-red.scss */
+  .social-pick-red__img {
+    float: right;
+    height: 100%;
+    padding-top: .75em;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: .75em;
+    margin-right: .75em;
+    z-index: 1; }
+    /* line 40, sass/modules/_social-pick-red.scss */
+    .social-pick-red__img > img {
+      border: 2px solid #fff;
+      border-radius: 50%; }
+    @media screen and (min-width: 56em) {
+      /* line 30, sass/modules/_social-pick-red.scss */
+      .social-pick-red__img {
+        float: none;
+        position: absolute;
+        top: 50%;
+        left: -2em;
+        padding: 0;
+        height: auto;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%); } }
+    @media screen and (min-width: 56em) {
+      /* line 30, sass/modules/_social-pick-red.scss */
+      .social-pick-red__img {
+        left: -1em; } }
+  /* line 77, sass/modules/_social-pick-red.scss */
+  .social-pick-red__author {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: .75em;
+    padding-right: .75em;
+    width: 100%;
+    line-height: 2;
+    font-weight: 600;
+    font-size: 1.25em;
+    text-align: left;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #fff; }
+    @media screen and (min-width: 56em) {
+      /* line 77, sass/modules/_social-pick-red.scss */
+      .social-pick-red__author {
+        position: relative;
+        left: 2.125em;
+        top: 50%;
+        z-index: 1;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        padding-right: 0;
+        display: inline-block;
+        float: left;
+        max-width: 36%;
+        width: auto;
+        height: 100%;
+        overflow: hidden;
+        border: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 2.3; }
+        /* line 109, sass/modules/_social-pick-red.scss */
+        .social-pick-red__author > a {
+          display: inline-block;
+          padding-right: .4em;
+          border-right: 1px solid #fff; } }
+    @media screen and (min-width: 56em) and (min-width: 56em) {
+      /* line 109, sass/modules/_social-pick-red.scss */
+      .social-pick-red__author > a {
+        height: 3.4375em; } }
+
+    @media screen and (min-width: 64em) {
+      /* line 77, sass/modules/_social-pick-red.scss */
+      .social-pick-red__author {
+        padding-left: .8181818182em;
+        left: 2.318181818em;
+        font-size: 1.375em; } }
+  /* line 128, sass/modules/_social-pick-red.scss */
+  .social-pick-red__date {
+    margin-bottom: .25em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: #ef3f23; }
+    @media screen and (min-width: 56em) {
+      /* line 128, sass/modules/_social-pick-red.scss */
+      .social-pick-red__date {
+        text-align: right; } }
+  /* line 139, sass/modules/_social-pick-red.scss */
+  .social-pick-red__body {
+    position: relative;
+    min-height: 6.375em;
+    background: #ef3f23;
+    border-radius: 4px;
+    color: inherit; }
+    /* line 147, sass/modules/_social-pick-red.scss */
+    .social-pick-red__body:after {
+      display: block;
+      width: 0;
+      content: '';
+      position: absolute;
+      bottom: -.9375em;
+      left: 1.5em;
+      -webkit-transform: rotate(180deg);
+          -ms-transform: rotate(180deg);
+              transform: rotate(180deg);
+      border-width: 0 16px 16px;
+      border-style: solid;
+      border-color: #ef3f23 transparent; }
+      @media screen and (min-width: 56em) {
+        /* line 147, sass/modules/_social-pick-red.scss */
+        .social-pick-red__body:after {
+          bottom: -.9375em;
+          left: auto;
+          right: 16.5em; } }
+    @media screen and (min-width: 43em) {
+      /* line 139, sass/modules/_social-pick-red.scss */
+      .social-pick-red__body {
+        /*height: 6.375em;*/ } }
+    @media screen and (min-width: 56em) {
+      /* line 139, sass/modules/_social-pick-red.scss */
+      .social-pick-red__body {
+        /*position: absolute;*/
+        position: relative;
+        /*width: 96%;*/
+        padding-right: .5em;
+        /*top: 0;*/
+        /*right: 0;*/
+        /*height: 100%;*/
+        height: 3.4375em;
+        min-height: 0;
+        /*top: 50%;*/
+        padding-right: .5em;
+        /*transform: translateY(-50%);*/ } }
+  /* line 187, sass/modules/_social-pick-red.scss */
+  .social-pick-red__body-text {
+    margin-bottom: .5em;
+    padding-top: .75em;
+    padding-right: .75em;
+    padding-bottom: .75em;
+    padding-left: .75em;
+    font-size: 1em;
+    line-height: 1.37;
+    color: inherit; }
+    @media screen and (min-width: 56em) {
+      /* line 187, sass/modules/_social-pick-red.scss */
+      .social-pick-red__body-text {
+        position: relative;
+        top: 50%;
+        left: 4.25em;
+        max-width: 93%;
+        margin-left: 0;
+        padding: 0;
+        text-align: left;
+        line-height: 1.2;
+        -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        font-size: .875em; } }
+  /* line 213, sass/modules/_social-pick-red.scss */
+  .social-pick-red__note {
+    overflow: hidden;
+    *zoom: 1;
+    margin-top: .25em;
+    margin-bottom: 2em;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: #b3b3b3; }
+    @media screen and (min-width: 36em) {
+      /* line 213, sass/modules/_social-pick-red.scss */
+      .social-pick-red__note {
+        margin-bottom: 1em; } }
+    @media screen and (min-width: 48em) {
+      /* line 213, sass/modules/_social-pick-red.scss */
+      .social-pick-red__note {
+        margin-bottom: 0; } }
+    /* line 234, sass/modules/_social-pick-red.scss */
+    .social-pick-red__note p, .social-pick-red__note li {
+      position: relative;
+      bottom: -1.666666667em;
+      margin-bottom: .5em;
+      width: 5em;
+      float: right;
+      font-size: .75em;
+      font-weight: 400;
+      text-align: right;
+      line-height: 1.2;
+      color: inherit; }
+      @media screen and (min-width: 30em) {
+        /* line 234, sass/modules/_social-pick-red.scss */
+        .social-pick-red__note p, .social-pick-red__note li {
+          /*position: absolute;*/
+          /*right: 13.75em;*/
+          bottom: -.125em;
+          margin-bottom: .25em;
+          font-size: 1em;
+          /*text-align: right;*/ } }
+      @media screen and (min-width: 56em) {
+        /* line 234, sass/modules/_social-pick-red.scss */
+        .social-pick-red__note p, .social-pick-red__note li {
+          top: .1428571429em;
+          font-size: .875em; } }
+    /* line 261, sass/modules/_social-pick-red.scss */
+    .social-pick-red__note [class*='icon-'] {
+      font-size: 2.5em;
+      vertical-align: top;
+      line-height: 1.2;
+      color: #b3b3b3; }
+      @media screen and (min-width: 56em) {
+        /* line 261, sass/modules/_social-pick-red.scss */
+        .social-pick-red__note [class*='icon-'] {
+          font-size: 2em; } }
+    /* line 272, sass/modules/_social-pick-red.scss */
+    .social-pick-red__note > ul {
+      float: right;
+      text-align: right; }
+      /* line 276, sass/modules/_social-pick-red.scss */
+      .social-pick-red__note > ul .social__link {
+        padding-left: .5em;
+        padding-right: 0;
+        text-decoration: none;
+        /*transition: color .25s ease;*/ }
+        /* line 283, sass/modules/_social-pick-red.scss */
+        .social-pick-red__note > ul .social__link > * {
+          -webkit-transition: color .25s ease;
+                  transition: color .25s ease; }
+          /* line 25, sass/utilities/_mixins.scss */
+          .social-pick-red__note > ul .social__link > *:link, .social-pick-red__note > ul .social__link > *:visited {
+            color: inherit; }
+          /* line 29, sass/utilities/_mixins.scss */
+          .social-pick-red__note > ul .social__link > *:hover, .social-pick-red__note > ul .social__link > *:focus {
+            text-decoration: none;
+            color: #ef3f23; }
+      @media screen and (min-width: 30em) {
+        /* line 272, sass/modules/_social-pick-red.scss */
+        .social-pick-red__note > ul {
+          display: inline-block;
+          float: right;
+          clear: none; } }
+    /* line 297, sass/modules/_social-pick-red.scss */
+    .social-pick-red__note .icon-facebook:before {
+      color: inherit; }
+  /* line 303, sass/modules/_social-pick-red.scss */
+  .social-pick-red__icons {
+    display: block;
+    border-top: 1px solid #fff;
+    font-size: 2em;
+    text-align: right; }
+
 /* line 1, sass/theme/_index.scss */
 .updated:not(.published) {
   display: none; }
