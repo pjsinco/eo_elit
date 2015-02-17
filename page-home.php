@@ -13,11 +13,13 @@
     <div id="main" class="content">
       <?php 
 
-        /**
-         * SET UP SUPER
+        /**************************************************************
+         *
+         *                         SET UP SUPER
          * we're going to pull this var into several templates with 
          * the global keyword
-         */
+         *
+         *************************************************************/
 
         $args = array(
           'post_type' => 'elit_super',
@@ -75,6 +77,20 @@
         wp_reset_postdata();
 
 
+        /**************************************************************
+         *
+         *                    SET UP SOCIAL-PICK
+         *
+         *
+         *************************************************************/
+        $args = array(
+          'post_type' => 'elit_social_pick',
+          'posts_per_page' => 1,
+          'post_status' => 'publish',
+        );
+        $social = get_posts( $args );
+
+        get_template_part( 'front', 'elit_social_pick' );
 
         ?>
     </div> <!-- #main -->
