@@ -430,4 +430,6 @@ global $some_var;
 * [Simon's test tweet](https://twitter.com/simonfraser75/status/564818451735519232)
 
 ###Tue Feb 17 03:55:18 2015 CST
+* [How To: Upload Media via URL Programmatically in WordPress](http://theme.fm/2011/10/how-to-upload-media-via-url-programmatically-in-wordpress-2657/)
+
 
