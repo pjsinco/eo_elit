@@ -378,7 +378,7 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
         add_post_meta( $post_id, 'elit_super_kicker', $gowith_kicker, true );
       }
 
-      elit_super_update_post_title( $post_id, $gowith->post_title );
+      //elit_super_update_post_title( $post_id, $gowith->post_title );
     } 
   } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
     // so the new meta value doesn't match the old one, so we're updating

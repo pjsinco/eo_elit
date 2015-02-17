@@ -391,12 +391,12 @@ add_action( 'wp_dashboard_setup' , 'elit_add_dashboard_widgets' );
 
 function elit_link_to_original() {
   d('hiya');
-  echo 'hello, world. I\m a dashboard widget.';
+  echo 'hello. I\'m a dashboard widget.';
 }
 
 // http://codex.wordpress.org/Plugin_API/Filter_Reference/
 //   wp_get_attachment_url
-add_filter( 'wp_get_attachment_url', 'elit_honor_ssl_for_attachments' );
+//add_filter( 'wp_get_attachment_url', 'elit_honor_ssl_for_attachments' );
 function elit_honor_ssl_for_attachments( $url ) {
   $http = site_url( FALSE, 'http' );
   $https = site_url( FALSE, 'https' );
