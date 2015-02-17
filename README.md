@@ -398,4 +398,31 @@ in footer.php (for example)
 ```php
 global $some_var;
 ```
+###Sun Feb 15 08:52:23 2015 CST
+* [WORDPRESS META BOXES: A COMPREHENSIVE DEVELOPER’S GUIDE](http://themefoundation.com/wordpress-meta-boxes-guide/)
 
+* [twitter-api-php](https://github.com/J7mbo/twitter-api-php)
+
+###Mon Feb 16 04:27:42 2015 CST
+* [A Look at the WordPress HTTP API: A Practical Example of wp_remote_get](http://code.tutsplus.com/tutorials/a-look-at-the-wordpress-http-api-a-practical-example-of-wp_remote_get--wp-32109)
+
+* [Parsing Twitter Feeds with PHP](http://blog.jacobemerick.com/web-development/parsing-twitter-feeds-with-php/)
+
+* [wp_remote_get(), downloading and saving files](http://wordpress.stackexchange.com/questions/50094/wp-remote-get-downloading-and-saving-files)
+
+* [Unit Tests for WordPress Plugins – An Introduction](https://pippinsplugins.com/unit-tests-wordpress-plugins-introduction/)
+
+* [Plugin Unit Tests](https://github.com/wp-cli/wp-cli/wiki/Plugin-Unit-Tests)
+
+* Unit testing our plugin with vvv
+    1. ```cd /Users/psinco/vagrant-local```
+    2. ```vagrant ssh```
+    3. ```cd /srv/www/elit/htdocs```
+    4. ```wp scaffold plugin-tests elit-social-pick```
+        * Note: ```elit-social-pick``` is the name of our plugin
+    5. ```cd $(wp plugin path --dir elit-social-pick)```
+    6. ```bash bin/install-wp-tests.sh wordpress_test root root localhost latest```
+
+* [How can I add an image upload field directly to a custom write panel?](http://wordpress.stackexchange.com/questions/4307/how-can-i-add-an-image-upload-field-directly-to-a-custom-write-panel/4413#4413)
+
+* [Simon's test tweet](https://twitter.com/simonfraser75/status/564818451735519232)

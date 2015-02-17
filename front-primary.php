@@ -19,9 +19,13 @@
           <article class="f-item--major">
             <figure class="f-item__fig--major">
               <a href="<?php the_permalink(); ?>">
-                <?php if ( has_post_thumbnail() ): ?>
-                  <?php $thumb_id = get_post_thumbnail_id(); ?>
-                  <?php $thumb_url = wp_get_attachment_image_src( $thumb_id, 'medium' ); ?>
+                <?php 
+                  $thumb_id = ( 
+                    has_post_thumbnail() ? get_post_thumbnail_id() : $meta['elit_thumb'][0]
+                  );
+                  if ( $thumb_id ): 
+                    $thumb_url = wp_get_attachment_image_src( $thumb_id, 'medium' );
+                ?>
                 <img src="<?php echo $thumb_url[0]; ?>" alt="<?php get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ?>" class="image__img">
                 <?php endif; ?>
               </a>
