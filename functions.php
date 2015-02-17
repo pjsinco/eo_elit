@@ -397,7 +397,7 @@ function elit_link_to_original() {
 
 // http://codex.wordpress.org/Plugin_API/Filter_Reference/
 //   wp_get_attachment_url
-//add_filter( 'wp_get_attachment_url', 'elit_honor_ssl_for_attachments' );
+add_filter( 'wp_get_attachment_url', 'elit_honor_ssl_for_attachments' );
 function elit_honor_ssl_for_attachments( $url ) {
   $http = site_url( FALSE, 'http' );
   $https = site_url( FALSE, 'https' );
