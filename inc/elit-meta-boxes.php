@@ -526,7 +526,7 @@ function elit_thumb_meta_box( $object, $box ) {
 
   ?>
   <p>
-    <label for="widefat">The thumbnail image to use with this story. Not needed if a Feature Image is selected.</label>
+    <label for="widefat">The thumbnail image to use with this story. Not needed if a Featured Image is selected.</label>
     <br />
     <input class="widefat" type="text" name="elit-thumb" id="elit-thumb" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_thumb', true ) ); ?>" />
   </p>
