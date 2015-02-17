@@ -432,4 +432,6 @@ global $some_var;
 ###Tue Feb 17 03:55:18 2015 CST
 * [How To: Upload Media via URL Programmatically in WordPress](http://theme.fm/2011/10/how-to-upload-media-via-url-programmatically-in-wordpress-2657/)
 
+* [Add Page Templates to WordPress with a Plugin](http://www.wpexplorer.com/wordpress-page-templates-plugin/)
+
 
