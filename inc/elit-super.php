@@ -310,10 +310,10 @@ function elit_super_gowith_meta_box_setup() {
 function elit_add_super_gowith_meta_box() {
   add_meta_box(
     'elit-super-gowith',
-    esc_html( 'Goes with' ),
+    esc_html( 'The ID of the article this Super will link to' ),
     'elit_super_gowith_meta_box',
     'elit_super',
-    'side',
+    'normal',
     'default'
   );
 }
@@ -322,7 +322,7 @@ function elit_super_gowith_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_super_gowith_nonce' );
   ?>
   <p>
-    <label for="widefat">The ID of the article for the Super</label>
+<!--     <label for="widefat">The ID of the article this Super will link to</label> -->
     <br />
     <input class="widefat" type="text" name="elit-super-gowith" id="elit-super-gowith" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_super_gowith', true ) ); ?>" />
   </p>
@@ -377,6 +377,8 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
       if ( $gowith_kicker ) {
         add_post_meta( $post_id, 'elit_super_kicker', $gowith_kicker, true );
       }
+
+      elit_super_update_post_title( $post_id, $gowith->post_title );
     } 
   } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
     // so the new meta value doesn't match the old one, so we're updating
@@ -419,3 +421,14 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
 // this post type doesn't support titles, 
 // so it defaults to 'Auto Draft'
 
+
+function elit_super_update_post_title( $post_id, $tweet_date, $name ) {
+  // we also need to to add the post title
+  //$date = date( 'l, F jS', strtotime( $tweet_date ) );
+  $args = array(
+    'ID' => $post_id,
+    'post_title' => sprintf( '@%1$s\'s tweet from %2$s', $name, $date ),
+  );
+  wp_update_post( $args );
+  
+}
