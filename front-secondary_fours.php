@@ -19,12 +19,11 @@
           // border-n-of-4 in each article's wrapping div
           $counter = 0;
           $cols = 4;
-          if ( $secondary->have_posts() ):
-            while ( $secondary->have_posts() ):
-              $secondary->the_post();
-              $meta = get_post_meta( $post->ID );
-              ++$counter;
-              d($meta);
+          while ( $secondary->have_posts() ):
+            $secondary->the_post();
+            $meta = get_post_meta( $post->ID );
+            ++$counter;
+            d($meta);
         ?>
         <div class="unit size-1-of-4 f-item<?php echo ($counter > 1) ? " border-$counter-of-$cols" : ''; ?>">
           <article>
@@ -51,6 +50,6 @@
             </div>
           </article>
         </div>
-        <?php endwhile; endif; ?>
+        <?php endwhile; ?>
 
       </div> <!-- .row .module -->

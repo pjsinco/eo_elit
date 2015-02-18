@@ -13,11 +13,13 @@
     <div id="main" class="content">
       <?php 
 
-        /**
-         * SET UP SUPER
+        /**************************************************************
+         *
+         *                         SET UP SUPER
          * we're going to pull this var into several templates with 
          * the global keyword
-         */
+         *
+         *************************************************************/
 
         $args = array(
           'post_type' => 'elit_super',
@@ -25,10 +27,12 @@
           'post_status' => 'publish',
         );
         $super_post = get_posts( $args );
-        get_template_part( 'front', 'elit_super' );
+        if ( $super_post ) {
+          get_template_part( 'front', 'elit_super' );
     
-        // we're going to exclude the super other loop queries on this page
-        $super_exclude_id = get_post_meta( $super_post[0]->ID, 'elit_super_gowith', true );
+          // we're going to exclude the super other loop queries on this page
+          $super_exclude_id = get_post_meta( $super_post[0]->ID, 'elit_super_gowith', true );
+        }
      ?>
 
       <?php  
@@ -51,12 +55,12 @@
         );
 
         $primary = new WP_Query( $args );
-
-        // by using locate_template(), front-primary.php will have access
-        // to the vars we've created in this file
-        include( locate_template( 'front-primary.php' ) );
-        wp_reset_postdata();
-
+        if ( $primary->have_posts() ) {
+          // by using locate_template(), front-primary.php will have access
+          // to the vars we've created in this file
+          include( locate_template( 'front-primary.php' ) );
+          wp_reset_postdata();
+        }
 
         /**************************************************************
          *
@@ -70,11 +74,27 @@
           'posts_per_page' => 4,
         );
         $secondary = new WP_Query ( $args );
+        if ( $secondary->have_posts() ) {
+          include( locate_template( 'front-secondary_fours.php' ) ); 
+          wp_reset_postdata();
+        }
 
-        include( locate_template( 'front-secondary_fours.php' ) ); 
-        wp_reset_postdata();
+        /**************************************************************
+         *
+         *                    SET UP SOCIAL-PICK
+         *
+         *
+         *************************************************************/
+        $args = array(
+          'post_type' => 'elit_social_pick',
+          'posts_per_page' => 1,
+          'post_status' => 'publish',
+        );
+        $social = get_posts( $args );
 
-
+        if ( $social ) {
+          get_template_part( 'front', 'elit_social_pick' );
+        }
 
         ?>
     </div> <!-- #main -->
