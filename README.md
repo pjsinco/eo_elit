@@ -438,3 +438,5 @@ global $some_var;
 
 * [How to go back, say, 2 versions:](http://stackoverflow.com/questions/3559076/git-how-to-get-back-to-most-recent-version)```checkout -b temp_branch HEAD~2```
 
+###Wed Feb 18 16:02:45 2015 CST
+* [Building Responsive Visualizations with D3.js](https://blog.safaribooksonline.com/2014/02/17/building-responsible-visualizations-d3-js/)
