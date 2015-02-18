@@ -1,0 +1,16 @@
+.unit {
+
+  padding-bottom: 2em;
+  margin-bottom: 1em;
+
+  &--no-space {
+    @include breakpoint($screen $xlarge-start) {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    padding-bottom: 0;
+  }
+}
