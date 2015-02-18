@@ -5,7 +5,6 @@
 ?>
 
 <?php 
-
   if ( is_preview() || is_single() ) {
     $social_pick = get_post();
   } else {
@@ -20,7 +19,6 @@
   $args = array(
     'class' => 'image__img',
   );
-
 ?>
       <div class="row">
         <div class="size-1-of-1 social-pick-red module">
