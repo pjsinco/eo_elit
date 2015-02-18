@@ -13,20 +13,24 @@
     $social_pick = $social[0];
   }
 
-  if ( $social_pick ): $social_pick_meta = get_post_meta( $social_pick->ID ); endif;
+  if ( $social_pick ): $meta = get_post_meta( $social_pick->ID ); endif;
 
   d( $social_pick );
-  d( $social_pick_meta );
+  d( $meta );
+  $args = array(
+    'class' => 'image__img',
+  );
 
 ?>
       <div class="row">
         <div class="size-1-of-1 social-pick-red module">
-          <div class="social-pick-red__date">Jan. 15 on Twitter</div>
+          <div class="social-pick-red__date"><?php echo $meta['elit_social_pick_date'][0] ?> on Twitter</div>
           <div class="social-pick-red__body">
-            <div class="social-pick-red__img"><img src="img/minoritydoctor-bigger.jpg" class="image__img"></div>
-            <div class="social-pick-red__author"><a href="#" class="social-pick-red__link">@minoritydoctor</a></div>
-            <p class="social-pick-red__body-text">Done with all my exams for this week, so now I finally have time to study for next week's big exam :-/ <a href="#" class="social-pick-red__link">#medschoolproblems</a>
-            </p>
+            <div class="social-pick-red__img">
+              <?php echo get_the_post_thumbnail( $social_pick->ID, 'full', array( 'class' => 'image__img' ) ); ?>
+            </div>
+            <div class="social-pick-red__author"><a href="https://twitter.com/<?php echo $meta['elit_social_pick_screen_name'][0]; ?>" class="social-pick-red__link">@<?php echo $meta['elit_social_pick_screen_name'][0]; ?></a></div>
+            <p class="social-pick-red__body-text"><?php echo $meta['elit_social_pick_tweet'][0]; ?></p>
           </div>
           <div class="social-pick-red__note"> 
             <ul class="social"> 
