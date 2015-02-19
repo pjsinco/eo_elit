@@ -21,7 +21,7 @@ get_header(); ?>
         </header>
         <?php while( have_posts() ): the_post(); ?>
 
-          <pre><small><?php the_title(); ?></small></pre>
+          <pre><small><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></small></pre>
           <?php //get_template_part('content', get_post_format()); ?>
           <?php // get_template_part('content', 'single'); ?>
 
