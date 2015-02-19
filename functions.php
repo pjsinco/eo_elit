@@ -48,12 +48,17 @@ function elit_setup() {
   /*
    * Set our image sizes
    */
-  add_image_size( 'elit-article-top-large', 930, 620, true );
-  add_image_size( 'elit-article-top-medium', 620, 413, true );
-  add_image_size( 'elit-article-top-small', 413, 275, true );
-  add_image_size( 'elit-article-mid-large', 728, 485, true );
-  add_image_size( 'elit-article-mid-small', 486, 324, true );
-  add_image_size( 'elit-super', 992, 661, true);
+  //add_image_size( 'elit-article-top-large', 930, 620, true );
+  add_image_size( 'elit-super', 992, false );
+  add_image_size( 'elit-large', 768, false );
+  add_image_size( 'elit-medium', 480, false ); 
+  add_image_size( 'elit-mug', 180 ); // vertical; mugshot
+
+  // these precisely cropped because they often
+  // need to align on the front page
+  add_image_size( 'elit-small', 234, 156, true);
+  add_image_size( 'elit-thumb', 160, 107, true);
+  add_image_size( 'elit-tiny', 100, 69, true);
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),

@@ -1,3 +1,7 @@
+%image-base {
+  margin-bottom: 1em;
+}
+
 .image {
 
   &__img {
@@ -28,10 +32,18 @@
   }
 
   &--secondary {
-    margin-bottom: 1em;
+    @extend %image-base;
   }
 
-  &--caption {
-
+  &--tertiary {
+    @extend %image-base;
+    max-width: 7em;
+    float: right;
+    margin-left: 1em;
+  
+    @include breakpoint($screen $medium-start) {
+      max-width: 9em;
+    }
   }
+
 }

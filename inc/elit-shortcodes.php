@@ -66,31 +66,38 @@ function elit_story_image_shortcode($atts, $content = null) {
   $a = shortcode_atts(
     array(
       'id' => '',
+      'size' => 'full',
     ), $atts
   );
 
   $attachment = get_post( $a['id'] );
-  $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
+  $size = $a['size'];
 
-  //d( wp_get_attachment_image_src($a['id'], 'article-mid-large', false ) );
-  //d( get_intermediate_image_sizes() );
-  $largest = wp_get_attachment_image_src( $a['id'], 'article-mid-large', false );
+  if ( $size == 'mug' ) {
+    $largest = wp_get_attachment_image_src( $a['id'], 'elit-mug', false );
+    $caption = $attachment->post_content;
+    $credit = null;
+    $image_size = 'tertiary';
+  } else {
+    $largest = wp_get_attachment_image_src( $a['id'], 'article-mid-large', false );
+    $caption = $attachment->post_excerpt;
+    $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
+    $image_size = 'secondary';
+  }
   
   // generates the string needed to use with the RICG Responsive Images plugin
-  
-  $ricg_responsive_str = '<figure class="image image--secondary">'; 
+  $ricg_responsive_str = '<figure class="image image--' . $image_size . '">';
   $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
-  $ricg_responsive_str .= tevkori_get_srcset_string( $a['id'], $largest[0]);
+  if ( $size != 'mug' ) {
+    // we'll need srcset if we're not serving up a mugshot
+    $ricg_responsive_str .= tevkori_get_srcset_string( $a['id'], $largest[0] );
+  } 
   $ricg_responsive_str .= '/>';
-  $ricg_responsive_str .= 
-    '<figcaption class="image__caption caption caption--left">';
-  
-  $ricg_responsive_str .= $attachment->post_excerpt;
+  $ricg_responsive_str .= '<figcaption class="caption">';
 
+  $ricg_responsive_str .= $caption;
   $ricg_responsive_str .= $credit ? " <small>($credit)</small>" : "";
-  
   $ricg_responsive_str .= '</figcaption></figure>';
-
   
   return $ricg_responsive_str;
 }

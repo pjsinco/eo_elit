@@ -19,7 +19,7 @@
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
               <figure class="super__figure">
-                <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-article-super' ); ?> />
+                <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-super' ); ?> />
                 <figcaption class="super__tag">Placeholder</figcaption>
               </figure></a>
             <div class="super__body--<?php echo $super_meta['elit_super_quadrant'][0]; ?> <?php echo ($super_meta['elit_super_overlay_color'][0] == 'light' ? 'super__body--alt' : ''); ?>">
