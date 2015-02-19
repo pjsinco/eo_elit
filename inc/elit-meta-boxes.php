@@ -510,7 +510,7 @@ function elit_thumb_meta_box_setup() {
 
 function elit_add_thumb_meta_box() {
   add_meta_box(
-    'elit-thumb',
+    'elit-thumb-meta',
     esc_html( 'Thumbnail image ID' ),
     'elit_thumb_meta_box',
     'post',
@@ -528,7 +528,7 @@ function elit_thumb_meta_box( $object, $box ) {
   <p>
     <label for="widefat">The ID of the thumbnail image to use with this story. Not needed if a Featured Image is selected.</label>
     <br />
-    <input class="widefat" type="text" name="elit-thumb" id="elit-thumb" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_thumb', true ) ); ?>" />
+    <input class="widefat" type="text" name="elit-thumb-meta" id="elit-thumb-meta" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_thumb', true ) ); ?>" />
   </p>
   <?php 
 }
@@ -553,7 +553,7 @@ function elit_save_thumb_meta( $post_id, $post ) {
 
   // get the posted data and sanitize it
   $new_meta_value = 
-    ( isset($_POST['elit-thumb'] ) ? $_POST['elit-thumb'] : '' );
+    ( isset($_POST['elit-thumb-meta'] ) ? $_POST['elit-thumb-meta'] : '' );
 
   // set the meta key
   $meta_key = 'elit_thumb';
