@@ -80,7 +80,7 @@ function elit_story_image_shortcode($atts, $content = null) {
   
   $ricg_responsive_str = '<figure class="image image--secondary">'; 
   $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
-  $ricg_responsive_str .= tevkori_get_src_sizes( $a['id'], $largest[0]);
+  $ricg_responsive_str .= tevkori_get_srcset_string( $a['id'], $largest[0]);
   $ricg_responsive_str .= '/>';
   $ricg_responsive_str .= 
     '<figcaption class="image__caption caption caption--left">';
