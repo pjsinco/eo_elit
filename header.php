@@ -42,22 +42,22 @@
         <nav role="navigation" id="site-nav" class="nav">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Patient Care</a>
+              <a href="<?php echo get_category_link( 3 ); ?>" class="nav__item--link">Patient Care</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Innovation</a>
+              <a href="<?php echo get_category_link( 4 ); ?>" class="nav__item--link">Innovation</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Training</a>
+              <a href="<?php echo get_category_link( 5 ); ?>" class="nav__item--link">Training</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Profession</a>
+              <a href="<?php echo get_category_link( 6 ); ?>" class="nav__item--link">Profession</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Policy</a>
+              <a href="<?php echo get_category_link( 7 ); ?>" class="nav__item--link">Policy</a>
             </li>
             <li class="nav__item">
-              <a href="#" class="nav__item--link">Lifestyle</a>
+              <a href="<?php echo get_category_link( 8 ); ?>" class="nav__item--link">Lifestyle</a>
             </li>
             <li class="nav__item nav__item--last">
               <section class="site-search">

@@ -257,8 +257,57 @@ function elit_comment( $comment, $args, $depth ) {
 
   <?php 
   endswitch;
+}
 
 
+/**
+ * Display the archive title
+ *
+ * Based strongly on the same function in the Underscores theme
+ */
+function elit_the_archive_title( $before = '', $after = '' ) {
+  if ( is_category() ) {
+    $title = sprintf( '%s', single_cat_title( '', false ) );
+  } elseif ( is_tag() ) {
+    $title = sprintf( 'Topic: %s', single_cat_title( '', false ) );
+  } elseif ( is_author() ) {
+    $title = sprintf( 'Articles by %s', get_the_author() );
+  } elseif ( is_year() ) {
+    $title = sprintf( 'Year: %s', get_the_date( 'Y' ) );
+  } elseif ( is_month() ) {
+    $title = sprintf( 'Month: %s', get_the_date( 'F Y' ) );
+  } elseif ( is_day() ) {
+    $title = sprintf( 'Day: %s', get_the_date( 'F j, Y' ) );
+  } elseif ( is_post_type_archive() ) {
+    $title = sprintf( 'Archives: %s', post_type_archive_title( '', false ) );
+  } elseif ( is_tax( 'post_format' ) ) {
+    if ( is_tax( 'post_format', 'post_format_video' ) ) {
+      $title = 'Videos';
+    }
+  } elseif ( is_tax() ) {
+    $tax = get_taxonomy( get_queried_object()->taxonomy );
+    $title = sprintf( 
+      '%1$s: %2$s', 
+      $tax->labels->singular_name, 
+      single_term_title( '', false ) );
+  } else {
+    $title = ( 'Archives' );
+  }
+
+  /**
+   * Filter the archive title
+   *
+   * @param string $title Archive title to be displayed
+   */
+  $title = apply_filters( 'get_the_archive_title', $title );
+  if ( ! empty( $title ) ) {
+    echo $before . $title . $after;
+  }
+}
+
+function elit_the_archive_description( $before = '', $after = '' ) {
   
 }
+
+  
 
