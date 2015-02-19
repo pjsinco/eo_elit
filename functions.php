@@ -436,7 +436,7 @@ add_action('transition_post_status', 'elit_notify_of_post_status_change', 10, 3)
 
 function elit_ten_posts_on_archive( $query ) {
   if ( $query->is_archive() && $query->is_main_query() ) {
-    $query->set( 'post_per_page', -1 );
+    $query->set( 'posts_per_page', -1 );
   }
 }
 add_action( 'pre_get_posts' , 'elit_ten_posts_on_archive' );
