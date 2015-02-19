@@ -440,3 +440,6 @@ global $some_var;
 
 ###Wed Feb 18 16:02:45 2015 CST
 * [Building Responsive Visualizations with D3.js](https://blog.safaribooksonline.com/2014/02/17/building-responsible-visualizations-d3-js/)
+
+###Thu Feb 19 13:18:15 2015 CST
+
