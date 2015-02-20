@@ -301,16 +301,14 @@ function elit_add_async_to_picturefill_load($tag, $handle, $src) {
  *  @return $form_fields, modified form fields
  */
 function elit_attachment_field_credit($form_fields, $post) {
-
   $form_fields['elit-image-credit'] = array (
     'label' => 'Credit line',
     'input' => 'textarea',
     'application' => 'image',
     'exclusions' => array('audio', 'video'),
     'value' => get_post_meta( $post->ID, 'elit_image_credit', true),
-    'helps' => 'Example: "Photo by Jim Kirk" or "Photo provided by Dr. Quinn"',
+    'helps' => 'Example: "Photo by Jim Kirk" or "Photo provided by Dr. Quinn" or "Image by Thinkstock" or "Thinkstock" (for in-article images)',
   );
-
 //  $form_fields['elit-photographer-name'] = array (
 //    'label' => 'Photographer name',
 //    'input' => 'text',
