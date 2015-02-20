@@ -1,5 +1,15 @@
 %parent-a {
   display: block;
+  clear: right;
+
+  @include breakpoint($screen $medium-minor-start) {
+    margin-left: 1em;
+    float: right;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    display: none;
+  }
 }
 
 %parent-b {
@@ -11,9 +21,19 @@
 }
 
 .rover {
-
   &-don {
     margin-bottom: 1em;
+
+    @include breakpoint($screen $large-start) {
+      margin-left: auto;
+      margin-right: auto;
+      width: 82%;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      width: 100%;
+    }
+    
     
     @include breakpoint($screen $xlarge-start) {
       margin-bottom: 0;
@@ -22,9 +42,6 @@
     &-parent-a {
       @extend %parent-a;
 
-      @include breakpoint($screen $xlarge-start) {
-        display: none;
-      }
     }
 
     &-parent-b {
@@ -106,5 +123,4 @@
       @extend .rover-don-parent-f-c;  
     }
   }
-
 }

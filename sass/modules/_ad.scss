@@ -15,16 +15,18 @@
     @extend %ad-pos;
     @extend %med-rect;
 
-    @include breakpoint($screen $medium-minor-start $xlarge-start) {
+    /*@include breakpoint($screen $medium-minor-start $xlarge-start) {*/
+    @include breakpoint($screen $large-start) {
       float: right;
-      margin-left: 1em;
+      width: 50%;
+      clear: left;
+      /*margin-left: 1em;*/
     };
   }
 
   &__med-rect--front {
     @extend %ad-pos;
     @extend %med-rect;
-
   }
 
   &__img {
@@ -71,7 +73,6 @@
     width: 94%;
     margin: 0 auto;
     text-align: center;
-    
   }
 
 }
