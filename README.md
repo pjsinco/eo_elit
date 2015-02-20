@@ -443,3 +443,5 @@ global $some_var;
 
 ###Thu Feb 19 13:18:15 2015 CST
 
+###Fri Feb 20 04:16:43 2015 CST
+* [Stop WordPress automatically adding <br> tags to post content](http://wordpress.stackexchange.com/questions/130075/stop-wordpress-automatically-adding-br-tags-to-post-content)
