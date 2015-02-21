@@ -183,7 +183,7 @@ add_action( 'wp_enqueue_scripts', 'elit_scripts' );
 function elit_add_fitvids_script() {
   $output = '<script>' . PHP_EOL;
   $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
-  $output .= "  jQuery('.image--primary').fitVids();" . PHP_EOL;
+  $output .= "  jQuery('#video').fitVids();" . PHP_EOL;
   $output .= "});";
   $output .= '</script>' . PHP_EOL;
 

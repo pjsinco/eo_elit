@@ -180,5 +180,30 @@ function elit_advertisement_shortcode($atts, $content = null) {
 }
 add_shortcode('advertisement', 'elit_advertisement_shortcode');
 
+function elit_story_video_shortcode($atts, $content = null) {
+  // we're going to need fitvids
+  wp_enqueue_script('fitvids');
+  add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
+
+  $a = shortcode_atts(
+    array(
+      'embed' => '',
+      'caption' => '',
+    ), $atts
+  );
+
+  $markup  = "<figure class='image image--secondary' id='video'>";
+  $markup .= $a['embed'];
+  if ( $a['caption'] ) {
+    $markup .= '<figcaption class="caption">';
+    $markup .= $a['caption'];
+    $markup .= '</figcaption>';
+  }
+  $markup .= '</figure>';
+
+  return $markup;
+}
+add_shortcode('story-video', 'elit_story_video_shortcode' );
+
 
 
