@@ -445,3 +445,8 @@ global $some_var;
 
 ###Fri Feb 20 04:16:43 2015 CST
 * [Stop WordPress automatically adding <br> tags to post content](http://wordpress.stackexchange.com/questions/130075/stop-wordpress-automatically-adding-br-tags-to-post-content)
+
+###Sat Feb 21 06:31:02 2015 CST
+* [How do I get a YouTube video thumbnail from the YouTube API?](http://stackoverflow.com/questions/2068344/how-do-i-get-a-youtube-video-thumbnail-from-the-youtube-api)
+
+* [Toggle a meta box in admin based on a JS event](http://wordpress.stackexchange.com/questions/18122/toggle-admin-metabox-based-upon-chosen-page-template)
