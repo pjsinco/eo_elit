@@ -113,7 +113,23 @@
          *
          *
          *************************************************************/
-
+        // TODO temporary; we'll replace this with a widgetable area
+?>
+      <div class="row">
+        <div class="size-1-of-3 module">
+          <div class="section-title-hat"><span class="section-title-hat__text">Most read</span></div>
+          <aside class="widget--counter widget--front">
+            <ol class="widget__list--counter">
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">New Year's resolutions: 10 life hacks to increase physician productivity</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">'Grey's Anatomy' vs. real-life residency: You already know how this turns out</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Anesthesiology’s allure: High pay, flexibility, intellectual stimulation</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">How I survived the first 2 years of medical school</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Making the cut: How to specialize in general surgery</a></li>
+            </ol>
+          </aside>
+        </div>
+<?php
+        
 
 
         /**************************************************************
@@ -122,6 +138,42 @@
          *
          *
          *************************************************************/
+        // TODO temporary; also note we're closing the row div started 
+        //    in prev section
+?>
+        <div class="size-2-of-3--last inside-the-aoa module">
+          <div class="section-title-hat"><span class="section-title-hat__text">Inside the AOA</span></div>
+          <article class="f-item--minor">
+            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa1bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
+            <div class="f-item__body--minor">
+              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">New CMS Medicare Enrollment Guidelines Target Debt, Fraud</a></h2>
+              <p class="f-item__body-text--minor">Physicians with unpaid Medicare debts, can be denied Medicare reenrollment under new CMS guidelines.</p>
+            </div>
+          </article>
+          <article class="f-item--minor">
+            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa2bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
+            <div class="f-item__body--minor">
+              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Physician payment reform update</a></h2>
+              <p class="f-item__body-text--minor">It's not likely that legislation will be enacted into law before the 113th Congress adjourns.</p>
+            </div>
+          </article>
+          <article class="f-item--minor">
+            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa3bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
+            <div class="f-item__body--minor">
+              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Participating in OCC and the PQRS? This incentive's for you</a></h2>
+              <p class="f-item__body-text--minor">Taking part in OCC and Physician Quality Reporting System could earn you an extra 0.5% incentive payment.</p>
+            </div>
+          </article>
+          <article class="f-item--minor">
+            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa4bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
+            <div class="f-item__body--minor">
+              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Donec id elit non mi porta gravida at eget metus</a></h2>
+              <p class="f-item__body-text--minor">Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod.</p>
+            </div>
+          </article>
+        </div>
+
+      </div><!-- .row -->
 
         ?>
     </div> <!-- #main -->
