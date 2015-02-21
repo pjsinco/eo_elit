@@ -71,6 +71,7 @@
 
   &__list--counter {
     @extend %list-base;
+    padding-left: 2.5em;
     counter-reset: list-counter;
   }
 
