@@ -45,9 +45,6 @@
               <a href="<?php echo get_category_link( 4 ); ?>" class="nav__item--link">Patient Care</a>
             </li>
             <li class="nav__item">
-              <a href="<?php echo get_category_link( 2 ); ?>" class="nav__item--link">Innovation</a>
-            </li>
-            <li class="nav__item">
               <a href="<?php echo get_category_link( 7 ); ?>" class="nav__item--link">Training</a>
             </li>
             <li class="nav__item">
@@ -58,6 +55,9 @@
             </li>
             <li class="nav__item">
               <a href="<?php echo get_category_link( 3 ); ?>" class="nav__item--link">Lifestyle</a>
+            </li>
+            <li class="nav__item">
+              <a href="<?php echo get_category_link( 45 ); ?>" class="nav__item--link">Inside the AOA</a>
             </li>
             <li class="nav__item nav__item--last">
               <section class="site-search">
