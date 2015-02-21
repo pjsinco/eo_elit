@@ -2271,7 +2271,7 @@ strong {
     padding-bottom: 1em; }
 
 /* line 53, sass/modules/_f-item.scss */
-.f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor {
+.f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor, .spotlight__kicker {
   display: block;
   margin-top: 0;
   margin-right: .25em;
@@ -2284,16 +2284,16 @@ strong {
   color: #ef3f23; }
   @media screen and (min-width: 36em) {
     /* line 53, sass/modules/_f-item.scss */
-    .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor {
+    .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor, .spotlight__kicker {
       display: inline-block;
       line-height: 1; } }
   @media screen and (min-width: 48em) {
     /* line 53, sass/modules/_f-item.scss */
-    .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor {
+    .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor, .spotlight__kicker {
       margin-right: 0; } }
 
 /* line 75, sass/modules/_f-item.scss */
-.f-item__head, .f-item__head--major, .f-item__head--minor {
+.f-item__head, .f-item__head--major, .spotlight__head, .f-item__head--minor {
   margin-top: 0;
   margin-bottom: .25em;
   /*margin-left: 6.1em;*/
@@ -2305,21 +2305,21 @@ strong {
   color: #2a2a2a; }
 
 /* line 88, sass/modules/_f-item.scss */
-.f-item__body-text, .f-item__body-text--major, .f-item__body-text--minor {
+.f-item__body-text, .f-item__body-text--major, .spotlight__body-text, .f-item__body-text--minor {
   /*margin-left: 0;*/
   margin-bottom: 0;
   font-size: 1em;
   line-height: 1.3; }
   @media screen and (min-width: 48em) {
     /* line 88, sass/modules/_f-item.scss */
-    .f-item__body-text, .f-item__body-text--major, .f-item__body-text--minor {
+    .f-item__body-text, .f-item__body-text--major, .spotlight__body-text, .f-item__body-text--minor {
       margin-bottom: 0;
       margin-left: 0;
       line-height: 1.4;
       font-weight: 400; } }
 
 /* line 102, sass/modules/_f-item.scss */
-.f-item__date, .f-item__date--major, .f-item__date--minor {
+.f-item__date, .f-item__date--major, .f-item__date--minor, .spotlight__date {
   display: none;
   font-size: .875em;
   color: #808080; }
@@ -2396,7 +2396,7 @@ strong {
     margin-left: 15.890625em; } }
 @media screen and (min-width: 48em) {
   /* line 220, sass/modules/_f-item.scss */
-  .f-item__head--major {
+  .f-item__head--major, .spotlight__head {
     font-size: 1.375em;
     line-height: 1.45; } }
 /* line 235, sass/modules/_f-item.scss */
@@ -2422,7 +2422,7 @@ strong {
     color: #808080; } }
 @media screen and (min-width: 48em) {
   /* line 253, sass/modules/_f-item.scss */
-  .f-item__body-text--major {
+  .f-item__body-text--major, .spotlight__body-text {
     font-size: 1.125em;
     font-weight: 200; } }
 @media screen and (min-width: 36em) {
@@ -3090,6 +3090,46 @@ strong {
     border-top: 1px solid #fff;
     font-size: 2em;
     text-align: right; }
+
+/* line 1, sass/modules/_spotlight.scss */
+.spotlight {
+  position: relative;
+  overflow: hidden;
+  *zoom: 1; }
+  /* line 5, sass/modules/_spotlight.scss */
+  .spotlight__feature-wrapper {
+    overflow: hidden;
+    *zoom: 1;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    max-width: 40.9375em; }
+    @media screen and (min-width: 56em) {
+      /* line 5, sass/modules/_spotlight.scss */
+      .spotlight__feature-wrapper {
+        margin-left: 0;
+        margin-bottom: .4375em;
+        margin-right: 0;
+        /*max-width: 65%;*/
+        /*max-width: (span(8 of $gridpage) - gutter($gridpage));*/
+        max-width: 66.10169%; } }
+  /* line 23, sass/modules/_spotlight.scss */
+  .spotlight__body {
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (min-width: 48em) {
+      /* line 23, sass/modules/_spotlight.scss */
+      .spotlight__body {
+        max-width: 85%; } }
+    @media screen and (min-width: 56em) {
+      /* line 23, sass/modules/_spotlight.scss */
+      .spotlight__body {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        /*width: 33%;*/
+        width: 32.20339%;
+        text-align: left; } }
 
 /* line 1, sass/modules/_unit.scss */
 .unit {

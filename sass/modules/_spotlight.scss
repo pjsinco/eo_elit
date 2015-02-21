@@ -1,0 +1,60 @@
+.spotlight {
+  position: relative;
+  @include clearfix;
+
+  &__feature-wrapper {
+    @include clearfix;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    max-width: 40.9375em;
+
+    @include breakpoint($screen $large-minor-start) {
+      margin-left: 0;
+      margin-bottom: .4375em;
+      margin-right: 0;
+      /*max-width: 65%;*/
+      /*max-width: (span(8 of $gridpage) - gutter($gridpage));*/
+      max-width: span(8 of $gridpage);
+    }
+  
+  }
+
+  &__body {
+
+    margin-left: auto;
+    margin-right: auto;
+
+    @include breakpoint($screen $large-start) {
+      max-width: 85%;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      /*width: 33%;*/
+      width: span(4 of $gridpage);
+      text-align: left;
+    }
+
+  }
+
+  &__kicker {
+    @extend %kicker-base;
+  }
+
+  &__date {
+    @extend %date-base;
+  }
+
+  &__head {
+    @extend .f-item__head--major;
+
+  }
+
+  &__body-text {
+    @extend .f-item__body-text--major;
+  }
+
+}
