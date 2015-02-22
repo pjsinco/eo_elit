@@ -94,7 +94,8 @@
               from {$wpdb->prefix}posts
               where {$wpdb->prefix}posts.ID IN (" . implode( ',', $stickies ) . ")
               AND {$wpdb->prefix}posts.post_type = 'post' 
-              AND {$wpdb->prefix}posts.post_status = 'publish')
+              AND {$wpdb->prefix}posts.post_status = 'publish'
+              order by post_date DESC)
               UNION
         ";
         }
