@@ -75,11 +75,13 @@
         // http://www.devdevote.com/cms/wordpress-hacks/
         //    use-sql-querys-in-the-loop-with-template-tags/
         $stickies = get_option( 'sticky_posts' );
+        $num_posts = 3; 
 
         // NOTE: The categories we're selecting (3,4,5,6,7) are the IDs of the 
         // the categories on the live site. 
         // They correspond to Lifestyle (3), Patient Care (4), 
         // Policy (5), Profession (6), Training (7)
+        
         $query = "
           select *
           from 
@@ -88,16 +90,16 @@
         if ( $stickies ) {
         // we'll add our UNION query only if we have sticky posts
         $query .= "
-              SELECT {$wpdb->prefix}posts.*
+              (SELECT {$wpdb->prefix}posts.*
               from {$wpdb->prefix}posts
               where {$wpdb->prefix}posts.ID IN (" . implode( ',', $stickies ) . ")
               AND {$wpdb->prefix}posts.post_type = 'post' 
-              AND {$wpdb->prefix}posts.post_status = 'publish'
+              AND {$wpdb->prefix}posts.post_status = 'publish')
               UNION
         ";
         }
         $query .= "
-              SELECT {$wpdb->prefix}posts.* 
+              (SELECT {$wpdb->prefix}posts.* 
               FROM {$wpdb->prefix}posts 
                 INNER JOIN {$wpdb->prefix}term_relationships 
                   ON ({$wpdb->prefix}posts.ID = {$wpdb->prefix}term_relationships.object_id) 
@@ -110,7 +112,7 @@
                 AND ({$wpdb->prefix}posts.post_status = 'publish' OR {$wpdb->prefix}posts.post_status = 'private')
                 AND ({$wpdb->prefix}postmeta.post_id IS NULL)
               order by post_date DESC
-              limit 0, 3
+              limit 0, ". ( $num_posts - count( $stickies ) ) . ")
             ) as t;
         ";
         global $wpdb;
