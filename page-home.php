@@ -75,6 +75,7 @@
         // http://www.devdevote.com/cms/wordpress-hacks/
         //    use-sql-querys-in-the-loop-with-template-tags/
         $stickies = get_option( 'sticky_posts' );
+        $prefix= '';
         $query = "
           select *
           from 
@@ -83,32 +84,31 @@
         if ( $stickies ) {
         // we'll add our UNION query only if we have sticky posts
         $query .= "
-              SELECT wp_posts.*
-              from wp_posts
-              where wp_posts.ID IN (" . implode( ',', $stickies ) . ")
-              AND wp_posts.post_type = 'post' 
-              AND wp_posts.post_status = 'publish'
+              SELECT {$prefix}wp_posts.*
+              from {$prefix}wp_posts
+              where {$prefix}wp_posts.ID IN (" . implode( ',', $stickies ) . ")
+              AND {$prefix}wp_posts.post_type = 'post' 
+              AND {$prefix}wp_posts.post_status = 'publish'
               UNION
         ";
         }
         $query .= "
-              SELECT wp_posts.* 
-              FROM wp_posts 
-                INNER JOIN wp_term_relationships 
-                  ON (wp_posts.ID = wp_term_relationships.object_id) 
-                LEFT JOIN wp_postmeta 
-                  ON (wp_posts.ID = wp_postmeta.post_id AND wp_postmeta.meta_key = 'elit_featurable' ) 
+              SELECT {$prefix}wp_posts.* 
+              FROM {$prefix}wp_posts 
+                INNER JOIN {$prefix}wp_term_relationships 
+                  ON ({$prefix}wp_posts.ID = {$prefix}wp_term_relationships.object_id) 
+                LEFT JOIN {$prefix}wp_postmeta 
+                  ON ({$prefix}wp_posts.ID = {$prefix}wp_postmeta.post_id AND {$prefix}wp_postmeta.meta_key = 'elit_featurable' ) 
               WHERE 1=1 
-                AND wp_posts.ID NOT IN (" . implode( ',', $do_not_dupe ) . ") 
-                AND wp_term_relationships.term_taxonomy_id IN (3,5,6,7,8)
-                AND wp_posts.post_type = 'post' 
-                AND wp_posts.post_status = 'publish'
-                OR wp_posts.post_status = 'private' AND wp_postmeta.post_id IS NULL
+                AND {$prefix}wp_posts.ID NOT IN (" . implode( ',', $do_not_dupe ) . ") 
+                AND {$prefix}wp_term_relationships.term_taxonomy_id IN (3,5,6,7,8)
+                AND {$prefix}wp_posts.post_type = 'post' 
+                AND {$prefix}wp_posts.post_status = 'publish'
+                OR {$prefix}wp_posts.post_status = 'private' AND {$prefix}wp_postmeta.post_id IS NULL
               order by post_date DESC
               limit 0, 3
             ) as t;
         ";
-
         global $wpdb;
         $query_results = $wpdb->get_results( $query, OBJECT );
 
