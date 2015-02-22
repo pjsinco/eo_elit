@@ -58,7 +58,7 @@ function elit_setup() {
   // need to align on the front page
   add_image_size( 'elit-small', 234, 156, true);
   add_image_size( 'elit-thumb', 160, 107, true);
-  add_image_size( 'elit-tiny', 100, 69, true);
+  add_image_size( 'elit-tiny', 100, 66, true);
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'elit' ),

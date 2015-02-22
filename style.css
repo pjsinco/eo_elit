@@ -2539,8 +2539,13 @@ strong {
     top: .1875em; }
   /* line 182, sass/modules/_f-item.scss */
   .f-item__fig--minor {
-    top: .375em; }
-    /* line 186, sass/modules/_f-item.scss */
+    /*top: .375em;*/
+    top: 0; }
+    @media screen and (min-width: 36em) {
+      /* line 182, sass/modules/_f-item.scss */
+      .f-item__fig--minor {
+        top: .1875em; } }
+    /* line 190, sass/modules/_f-item.scss */
     .f-item__fig--minor:after {
       position: absolute;
       top: 0;
@@ -2551,25 +2556,29 @@ strong {
       background-color: #105acd;
       opacity: .5; }
 @media screen and (min-width: 48em) {
-  /* line 200, sass/modules/_f-item.scss */
+  /* line 203, sass/modules/_f-item.scss */
   .f-item__body {
     clear: left; } }
 @media screen and (min-width: 48em) {
-  /* line 205, sass/modules/_f-item.scss */
+  /* line 208, sass/modules/_f-item.scss */
   .f-item__body--major {
     margin-left: 15.890625em; } }
+@media screen and (min-width: 36em) {
+  /* line 215, sass/modules/_f-item.scss */
+  .f-item__body--minor {
+    margin-left: 7em; } }
 @media screen and (min-width: 48em) {
-  /* line 220, sass/modules/_f-item.scss */
+  /* line 225, sass/modules/_f-item.scss */
   .f-item__head--major, .spotlight__head {
     font-size: 1.375em;
     line-height: 1.45; } }
-/* line 235, sass/modules/_f-item.scss */
+/* line 240, sass/modules/_f-item.scss */
 .f-item__link {
   color: inherit;
   display: block;
   /*@include breakpoint($screen $xlarge-start) {*/ }
   @media screen and (min-width: 48em) {
-    /* line 235, sass/modules/_f-item.scss */
+    /* line 240, sass/modules/_f-item.scss */
     .f-item__link {
       -webkit-transition: color .25s ease;
               transition: color .25s ease; }
@@ -2581,16 +2590,16 @@ strong {
         text-decoration: none;
         color: #ef3f23; } }
 @media screen and (min-width: 48em) {
-  /* line 246, sass/modules/_f-item.scss */
+  /* line 251, sass/modules/_f-item.scss */
   .f-item__body-text {
     color: #808080; } }
 @media screen and (min-width: 48em) {
-  /* line 253, sass/modules/_f-item.scss */
+  /* line 258, sass/modules/_f-item.scss */
   .f-item__body-text--major, .spotlight__body-text {
     font-size: 1.125em;
     font-weight: 200; } }
 @media screen and (min-width: 36em) {
-  /* line 271, sass/modules/_f-item.scss */
+  /* line 276, sass/modules/_f-item.scss */
   .f-item__date--major {
     display: inline-block; } }
 

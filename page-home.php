@@ -45,26 +45,6 @@
         $do_not_dupe = array( (int) $super_exclude_id );
         $stickies = get_option( 'sticky_post' );
         $num_posts = 3;
-        $args = array(
-          //'posts_per_page' => ( $num_posts - count( $stickies ) ),
-          'posts_per_page' => 3,
-          'post__not_in' => $do_not_dupe,
-          'ignore_sticky_posts' => 0,
-          //'category_name' => 'lifestyle,patient-care,policy,profession,training',
-          'meta_query' => array(
-            //'relation' => 'OR',
-            array(
-              'key' => 'elit_featurable',
-              'compare' => 'NOT EXISTS',
-            ),
-            //array(
-              //'key' => 'elit_pin_inside_the_aoa',
-              //'compare' => '=',
-              //'value' => '1',
-            //)
-          ),
-        );
-
 
         // Our desired query:
         // Get the 3 most recent posts in any category except 
@@ -81,7 +61,6 @@
         // the categories on the live site. 
         // They correspond to Lifestyle (3), Patient Care (4), 
         // Policy (5), Profession (6), Training (7)
-        
         $query = "
           select *
           from 
@@ -119,7 +98,6 @@
         global $wpdb;
         $query_results = $wpdb->get_results( $query, OBJECT );
 
-        //if ( $primary->have_posts() ) {
         if ( $query_results ) {
           // by using locate_template(), front-primary.php will have access
           // to the vars we've created in this file
@@ -206,18 +184,15 @@
         // TODO temporary; also note we're closing the row div started 
         //    in prev section
       
-        $sticky = get_option( 'sticky_posts' );
-        d( $sticky );
         $args = array(
-          //'ignore_sticky_posts' => 1,
           'posts_per_page' => 4,
-          'post__not_in' => $sticky,
+          'post__not_in' => array_merge( $stickies, $do_not_dupe ),
           'category_name' => 'inside-the-aoa',
         );
-        $inside = new WP_Query( $args );
-        if ( $inside ) {
-          d( $inside );
-          d( get_option( 'sticky_posts') );
+        $inside_the_aoa = new WP_Query( $args );
+        if ( $inside_the_aoa ) {
+          include( locate_template( 'front-inside_the_aoa.php' ) ); 
+          wp_reset_postdata();
         }
 ?>
 
