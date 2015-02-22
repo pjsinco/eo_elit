@@ -10,9 +10,10 @@
       <div class="row">
         <div class="size-2-of-3 module">
 <?php 
-  while ( $primary->have_posts() ):
-    $primary->the_post();
-d(is_sticky());
+  foreach ( $query_results as $post ) {
+
+    setup_postdata( $post );
+
     $do_not_dupe[] = $post->ID;
     $meta = get_post_meta( $post->ID );
 ?>
@@ -39,7 +40,7 @@ d(is_sticky());
             <p class="f-item__body-text--major"><?php echo wptexturize( get_the_excerpt() ); ?></p>
           </div>
         </article>
-<?php endwhile; ?>
+<?php } ?>
         </div> <!-- size-2-of-3 module -->
 
         <?php get_template_part('ad', 'don_home_front'); ?>
