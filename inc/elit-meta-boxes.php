@@ -578,9 +578,10 @@ function elit_save_thumb_meta( $post_id, $post ) {
 /**
  * PIN-INSIDE-THE-AOA META BOX
  *
+ *       NOT USED
  */
-add_action( 'load-post.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
-add_action( 'load-post-new.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
+//add_action( 'load-post.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
+//add_action( 'load-post-new.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
 
 function elit_pin_inside_the_aoa_meta_box_setup() {
   add_action( 'add_meta_boxes', 'elit_add_pin_inside_the_aoa_meta_box' );
@@ -651,7 +652,7 @@ function elit_save_pin_inside_the_aoa_meta( $post_id, $post ) {
   }
 }
 
-add_action( 'admin_footer' , 'elit_pin_inside_javascript' );
+//add_action( 'admin_footer' , 'elit_pin_inside_javascript' );
 function elit_pin_inside_javascript() {
   
 ?>
@@ -709,7 +710,7 @@ function elit_pin_inside_javascript() {
   </script>
 <?php 
 }
-add_action( 'wp_ajax_elit_pin_inside_action' , 'elit_pin_inside_action_callback' );
+//add_action( 'wp_ajax_elit_pin_inside_action' , 'elit_pin_inside_action_callback' );
 function elit_pin_inside_action_callback() {
 
   if ( $_POST['post_id'] ) {
