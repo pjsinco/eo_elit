@@ -259,7 +259,7 @@ function elit_add_standalone_credit_meta_box() {
     'elit_standalone_credit_meta_box',
     'post',
     'side',
-    'low'
+    'default'
   );
 }
 
@@ -420,6 +420,8 @@ function elit_save_featured_video_meta( $post_id, $post ) {
   }
 }
 
+
+
 /**
  * FEATURABLE META BOX
  *
@@ -573,3 +575,148 @@ function elit_save_thumb_meta( $post_id, $post ) {
   }
 }
 
+/**
+ * PIN-INSIDE-THE-AOA META BOX
+ *
+ */
+add_action( 'load-post.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
+add_action( 'load-post-new.php', 'elit_pin_inside_the_aoa_meta_box_setup' );
+
+function elit_pin_inside_the_aoa_meta_box_setup() {
+  add_action( 'add_meta_boxes', 'elit_add_pin_inside_the_aoa_meta_box' );
+  add_action( 'save_post', 'elit_save_pin_inside_the_aoa_meta', 10, 2 );
+}
+
+function elit_add_pin_inside_the_aoa_meta_box() {
+  add_meta_box(
+    'elit-pin-inside-the-aoa',
+    esc_html( 'Pin this \'Inside the AOA\' story' ),
+    'elit_pin_inside_the_aoa_meta_box',
+    'post',
+    'side',
+    'default'
+  );
+}
+
+function elit_pin_inside_the_aoa_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_pin_inside_the_aoa_nonce' );
+
+  $pinned = get_post_meta( $object->ID, 'elit_pin_inside_the_aoa', true );
+
+  ?>
+  <p>
+    <input class="widefat" type="checkbox" name="elit-pin-inside-the-aoa" id="elit-pin-inside" value="1" <?php if ( $pinned ): checked( $pinned, 1 ); endif; ?> />
+    This 'Inside the AOA' story will be pinned to the top of the feature story list
+  </p>
+  <?php 
+}
+
+function elit_save_pin_inside_the_aoa_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_pin_inside_the_aoa_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_pin_inside_the_aoa_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-pin-inside-the-aoa'] ) ? $_POST['elit-pin-inside-the-aoa'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_pin_inside_the_aoa';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
+
+add_action( 'admin_footer' , 'elit_pin_inside_javascript' );
+function elit_pin_inside_javascript() {
+  
+?>
+
+  <script type="text/javascript" charset="utf-8">
+    (function($) {
+    
+      $(document).ready(function() {
+    
+        // the category checkbox for "Inside the AOA"
+        var $category = $('#in-category-191');
+      
+        // the metabox for Pin this Inside the AOA story
+        var  $pin = $('#elit-pin-inside-the-aoa');
+
+        // the checkbox in our metabox
+        var $pinCheckbox = $('#elit-pin-inside')
+
+        var  $postId = $('#post_ID').val();
+    
+        if ( !$category.attr( 'checked' ) ) {
+     
+          // if 'Inside the AOA' isn't selected as a category,
+          // hide the 'Pin' meta box right off the bat
+          $pin.hide();
+        }
+      
+        $category.change(function() {
+          var data = {
+            // our callback inside elit-meta-boxes.php
+            'action': 'elit_pin_inside_action',
+
+            // we need to know whether the checkbox to pin is checked
+            //'checked': $pinCheckbox.prop('checked'),
+            'post_id': $postId
+          };
+
+
+          // we want to uncheck the checkbox and delete the post meta
+          // for elit_pin_inside_the_aoa
+          $.post(ajaxurl, data, function(response) {
+
+            $pinCheckbox.prop('checked', false);
+
+            if ( $category.attr( 'checked' ) ) {
+              //$pinCheckbox.prop('checked', false);
+              $pin.show();
+            } else {
+              $pin.hide();
+            }
+          });
+        });
+      });
+    })(jQuery);
+  </script>
+<?php 
+}
+add_action( 'wp_ajax_elit_pin_inside_action' , 'elit_pin_inside_action_callback' );
+function elit_pin_inside_action_callback() {
+
+  if ( $_POST['post_id'] ) {
+    delete_post_meta( $_POST['post_id'], 'elit_pin_inside_the_aoa');
+    echo 'success';
+  } else {
+    echo 'failure';
+  }
+  wp_die();
+}

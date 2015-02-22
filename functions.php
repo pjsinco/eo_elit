@@ -176,6 +176,19 @@ function elit_scripts() {
 add_action( 'wp_enqueue_scripts', 'elit_scripts' );
 
 /**
+ * Enqueue admin scripts and styles.
+ */
+function elit_admin_scripts() {
+  wp_register_script( 'elit-admin-inside-the-aoa',
+    get_template_directory_uri() . '/js/elit-admin-inside-the-aoa.js',
+    array('jquery'), false, true
+  );
+
+  wp_enqueue_script( 'elit-admin-inside-the-aoa' );
+}
+//add_action( 'admin_enqueue_scripts' , 'elit_admin_scripts' );
+
+/**
  * Add our fitvids loader
  *
  * http://fitvidsjs.com/

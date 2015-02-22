@@ -12,6 +12,7 @@
 <?php 
   while ( $primary->have_posts() ):
     $primary->the_post();
+d(is_sticky());
     $do_not_dupe[] = $post->ID;
     $meta = get_post_meta( $post->ID );
 ?>

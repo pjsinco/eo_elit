@@ -46,12 +46,28 @@
         $args = array(
           'posts_per_page' => 3,
           'post__not_in' => $do_not_dupe,
+          //'post__in' => get_option( 'sticky_posts' ),
+          //'category_name' => 'lifestyle,patient-care,policy,profession,training',
           'meta_query' => array(
             array(
               'key' => 'elit_featurable',
               'compare' => 'NOT EXISTS',
-            )
-          )
+            ),
+          ),
+          'tax_query' => array(
+            'relation' => 'AND',
+            array(
+              'taxonomy' => 'category',
+              'field' => 'slug',
+              'terms' => array(
+                'lifestyle', 
+                'patient-care',
+                'policy',
+                'profession',
+                'training',
+              ),
+            ),
+          ),
         );
 
         $primary = new WP_Query( $args );
@@ -140,42 +156,27 @@
          *************************************************************/
         // TODO temporary; also note we're closing the row div started 
         //    in prev section
+      
+        $sticky = get_option( 'sticky_posts' );
+        d( $sticky );
+        $args = array(
+          //'ignore_sticky_posts' => 1,
+          'posts_per_page' => 4,
+          'post__not_in' => $sticky,
+          'category_name' => 'inside-the-aoa',
+        );
+        $inside = new WP_Query( $args );
+        if ( $inside ) {
+          d( $inside );
+          d( get_option( 'sticky_posts') );
+        }
 ?>
-        <div class="size-2-of-3--last inside-the-aoa module">
-          <div class="section-title-hat"><span class="section-title-hat__text">Inside the AOA</span></div>
-          <article class="f-item--minor">
-            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa1bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
-            <div class="f-item__body--minor">
-              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">New CMS Medicare Enrollment Guidelines Target Debt, Fraud</a></h2>
-              <p class="f-item__body-text--minor">Physicians with unpaid Medicare debts, can be denied Medicare reenrollment under new CMS guidelines.</p>
-            </div>
-          </article>
-          <article class="f-item--minor">
-            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa2bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
-            <div class="f-item__body--minor">
-              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Physician payment reform update</a></h2>
-              <p class="f-item__body-text--minor">It's not likely that legislation will be enacted into law before the 113th Congress adjourns.</p>
-            </div>
-          </article>
-          <article class="f-item--minor">
-            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa3bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
-            <div class="f-item__body--minor">
-              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Participating in OCC and the PQRS? This incentive's for you</a></h2>
-              <p class="f-item__body-text--minor">Taking part in OCC and Physician Quality Reporting System could earn you an extra 0.5% incentive payment.</p>
-            </div>
-          </article>
-          <article class="f-item--minor">
-            <figure class="f-item__fig--minor"><a href="#"><img src="img/insideaoa4bw@160.jpg" width="96" height="64" class="image__img"></a></figure>
-            <div class="f-item__body--minor">
-              <h2 class="f-item__head--minor"><a href="#" class="f-item__link">Donec id elit non mi porta gravida at eget metus</a></h2>
-              <p class="f-item__body-text--minor">Maecenas faucibus mollis interdum. Etiam porta sem malesuada magna mollis euismod.</p>
-            </div>
-          </article>
-        </div>
 
       </div><!-- .row -->
 
-        ?>
+
+
+
     </div> <!-- #main -->
 
 <?php get_footer(); ?>
