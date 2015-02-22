@@ -102,8 +102,8 @@
                 AND {$wpdb->prefix}posts.ID NOT IN (" . implode( ',', $do_not_dupe ) . ") 
                 AND {$wpdb->prefix}term_relationships.term_taxonomy_id IN (3,5,6,7,8)
                 AND {$wpdb->prefix}posts.post_type = 'post' 
-                AND {$wpdb->prefix}posts.post_status = 'publish'
-                OR {$wpdb->prefix}posts.post_status = 'private' AND {$wpdb->prefix}postmeta.post_id IS NULL
+                AND ({$wpdb->prefix}posts.post_status = 'publish' OR {$wpdb->prefix}posts.post_status = 'private')
+                AND ({$wpdb->prefix}postmeta.post_id IS NULL)
               order by post_date DESC
               limit 0, 3
             ) as t;
