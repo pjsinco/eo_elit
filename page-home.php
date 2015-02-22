@@ -75,6 +75,11 @@
         // http://www.devdevote.com/cms/wordpress-hacks/
         //    use-sql-querys-in-the-loop-with-template-tags/
         $stickies = get_option( 'sticky_posts' );
+
+        // NOTE: The categories we're selecting (3,4,5,6,7) are the IDs of the 
+        // the categories on the live site. 
+        // They correspond to Lifestyle (3), Patient Care (4), 
+        // Policy (5), Profession (6), Training (7)
         $query = "
           select *
           from 
@@ -100,7 +105,7 @@
                   ON ({$wpdb->prefix}posts.ID = {$wpdb->prefix}postmeta.post_id AND {$wpdb->prefix}postmeta.meta_key = 'elit_featurable' ) 
               WHERE 1=1 
                 AND {$wpdb->prefix}posts.ID NOT IN (" . implode( ',', $do_not_dupe ) . ") 
-                AND {$wpdb->prefix}term_relationships.term_taxonomy_id IN (3,5,6,7,8)
+                AND {$wpdb->prefix}term_relationships.term_taxonomy_id IN (3,4,5,6,7)
                 AND {$wpdb->prefix}posts.post_type = 'post' 
                 AND ({$wpdb->prefix}posts.post_status = 'publish' OR {$wpdb->prefix}posts.post_status = 'private')
                 AND ({$wpdb->prefix}postmeta.post_id IS NULL)
