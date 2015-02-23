@@ -159,22 +159,26 @@ function elit_sidebar_shortcode($atts, $content = null) {
 }
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
-function elit_advertisement_shortcode($atts, $content = null) {
-  $a = shortcode_atts(
-    array(
-      'id' => '',
-    ),
-    $atts
-  );
+function elit_advertisement_shortcode() {
+//  $a = shortcode_atts(
+//    array(
+//      'id' => '',
+//    ),
+//    $atts
+//  );
+  $ids = array( 'don', 'peggy' );
+  $str = '';
 
-  $str = '<aside data-set="rover-' . $a['id'] . '-parent" ';
-  $str .= 'class="ad ad__med-rect--article rover-' . $a['id'] . '-parent-a">';
-  $str .= '<div class="rover-' . $a['id'] . '">';
-  $str .= '<a href=';
-  $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';
-  $str .= ' target="_blank">';
-  $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
-  $str .= '</a></div></aside>';
+  foreach ( $ids as $id ) {
+    $str .= '<aside data-set="rover-' . $id . '-parent" ';
+    $str .= 'class="ad ad__med-rect--article rover-' . $id . '-parent-a">';
+    $str .= '<div class="rover-' . $id . '">';
+    $str .= '<a href=';
+    $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';
+    $str .= ' target="_blank">';
+    $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
+    $str .= '</a></div></aside>';
+  }
 
   return $str;
 }
@@ -204,6 +208,3 @@ function elit_story_video_shortcode($atts, $content = null) {
   return $markup;
 }
 add_shortcode('story-video', 'elit_story_video_shortcode' );
-
-
-
