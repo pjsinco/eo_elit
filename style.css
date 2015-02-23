@@ -2545,40 +2545,30 @@ strong {
       /* line 182, sass/modules/_f-item.scss */
       .f-item__fig--minor {
         top: .1875em; } }
-    /* line 190, sass/modules/_f-item.scss */
-    .f-item__fig--minor:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 64px;
-      content: '';
-      background-color: #105acd;
-      opacity: .5; }
 @media screen and (min-width: 48em) {
-  /* line 203, sass/modules/_f-item.scss */
+  /* line 193, sass/modules/_f-item.scss */
   .f-item__body {
     clear: left; } }
 @media screen and (min-width: 48em) {
-  /* line 208, sass/modules/_f-item.scss */
+  /* line 198, sass/modules/_f-item.scss */
   .f-item__body--major {
     margin-left: 15.890625em; } }
 @media screen and (min-width: 36em) {
-  /* line 215, sass/modules/_f-item.scss */
+  /* line 205, sass/modules/_f-item.scss */
   .f-item__body--minor {
     margin-left: 7em; } }
 @media screen and (min-width: 48em) {
-  /* line 225, sass/modules/_f-item.scss */
+  /* line 215, sass/modules/_f-item.scss */
   .f-item__head--major, .spotlight__head {
     font-size: 1.375em;
     line-height: 1.45; } }
-/* line 240, sass/modules/_f-item.scss */
+/* line 230, sass/modules/_f-item.scss */
 .f-item__link {
   color: inherit;
   display: block;
   /*@include breakpoint($screen $xlarge-start) {*/ }
   @media screen and (min-width: 48em) {
-    /* line 240, sass/modules/_f-item.scss */
+    /* line 230, sass/modules/_f-item.scss */
     .f-item__link {
       -webkit-transition: color .25s ease;
               transition: color .25s ease; }
@@ -2589,17 +2579,30 @@ strong {
       .f-item__link:hover, .f-item__link:focus {
         text-decoration: none;
         color: #ef3f23; } }
+  /* line 240, sass/modules/_f-item.scss */
+  .f-item__link--minor {
+    display: block; }
+    /* line 243, sass/modules/_f-item.scss */
+    .f-item__link--minor:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      content: '';
+      background-color: #105acd;
+      opacity: .5; }
 @media screen and (min-width: 48em) {
-  /* line 251, sass/modules/_f-item.scss */
+  /* line 256, sass/modules/_f-item.scss */
   .f-item__body-text {
     color: #808080; } }
 @media screen and (min-width: 48em) {
-  /* line 258, sass/modules/_f-item.scss */
+  /* line 263, sass/modules/_f-item.scss */
   .f-item__body-text--major, .spotlight__body-text {
     font-size: 1.125em;
     font-weight: 200; } }
 @media screen and (min-width: 36em) {
-  /* line 276, sass/modules/_f-item.scss */
+  /* line 281, sass/modules/_f-item.scss */
   .f-item__date--major {
     display: inline-block; } }
 

@@ -17,7 +17,7 @@ d( $inside_the_aoa );
             <?php $meta = get_post_meta( $post->ID ); ?>
           <article class="f-item--minor">
             <figure class="f-item__fig--minor">
-              <a href="<?php the_permalink(); ?>">
+              <a class="f-item__link--minor" href="<?php the_permalink(); ?>">
                 <?php $thumb_id = (
                   has_post_thumbnail() ? 
                     get_post_thumbnail_id() : 
