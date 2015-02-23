@@ -452,3 +452,8 @@ global $some_var;
 * [Toggle a meta box in admin based on a JS event](http://wordpress.stackexchange.com/questions/18122/toggle-admin-metabox-based-upon-chosen-page-template)
 
 ###Sun Feb 22 05:37:07 2015 CST
+* [Some ```posts_where``` filter examples]
+    * [Show only sticky posts on home page in WordPress](http://polyetilen.lt/en/show-only-sticky-posts-on-home-page-in-wordpress)
+    * [How to correctly call custom field dates into a posts_where filter using SQL statements](http://wordpress.stackexchange.com/questions/5546/how-to-correctly-call-custom-field-dates-into-a-posts-where-filter-using-sql-sta)
+
+###Mon Feb 23 06:11:39 2015 CST
