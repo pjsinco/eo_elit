@@ -457,3 +457,4 @@ global $some_var;
     * [How to correctly call custom field dates into a posts_where filter using SQL statements](http://wordpress.stackexchange.com/questions/5546/how-to-correctly-call-custom-field-dates-into-a-posts-where-filter-using-sql-sta)
 
 ###Mon Feb 23 06:11:39 2015 CST
+* [How To Perform Mass Search And Replace In WordPress](http://www.hongkiat.com/blog/how-to-search-and-replace-wordpress-in-blog-post/)
