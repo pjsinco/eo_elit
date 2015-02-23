@@ -1854,7 +1854,7 @@ strong {
   .comment__children, .children {
     position: relative;
     right: -.625em;
-    bottom: -1.625em;
+    bottom: -.625em;
     /*bottom: -.625em;*/ }
   /* line 19, sass/modules/_comment.scss */
   .comment__body {
