@@ -163,11 +163,11 @@
           <div class="section-title-hat"><span class="section-title-hat__text">Most read</span></div>
           <aside class="widget--counter widget--front">
             <ol class="widget__list--counter">
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">New Year's resolutions: 10 life hacks to increase physician productivity</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">'Grey's Anatomy' vs. real-life residency: You already know how this turns out</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Anesthesiology’s allure: High pay, flexibility, intellectual stimulation</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">How I survived the first 2 years of medical school</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Making the cut: How to specialize in general surgery</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
+              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
             </ol>
           </aside>
         </div>
