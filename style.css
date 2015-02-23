@@ -1726,7 +1726,7 @@ strong {
   margin-top: 0.1em;
   margin-bottom: 0;
   font-size: 2em;
-  line-height: 1.1; }
+  line-height: 1.2; }
   @media screen and (min-width: 48em) {
     /* line 17, sass/modules/_story-header.scss */
     .story-header__title {
