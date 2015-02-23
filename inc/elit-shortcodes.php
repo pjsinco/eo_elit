@@ -159,13 +159,7 @@ function elit_sidebar_shortcode($atts, $content = null) {
 }
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
-function elit_advertisement_shortcode() {
-//  $a = shortcode_atts(
-//    array(
-//      'id' => '',
-//    ),
-//    $atts
-//  );
+function elit_advertisements_shortcode() {
   $ids = array( 'don', 'peggy' );
   $str = '';
 
@@ -182,7 +176,7 @@ function elit_advertisement_shortcode() {
 
   return $str;
 }
-add_shortcode('advertisement', 'elit_advertisement_shortcode');
+add_shortcode('advertisements', 'elit_advertisements_shortcode');
 
 function elit_story_video_shortcode($atts, $content = null) {
   // we're going to need fitvids
