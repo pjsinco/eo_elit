@@ -48,7 +48,6 @@ function elit_setup() {
   /*
    * Set our image sizes
    */
-  //add_image_size( 'elit-article-top-large', 930, 620, true );
   add_image_size( 'elit-super', 992, false );
   add_image_size( 'elit-large', 768, false );
   add_image_size( 'elit-medium', 480, false ); 
