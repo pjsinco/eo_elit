@@ -2450,7 +2450,7 @@ strong {
     /* line 53, sass/modules/_f-item.scss */
     .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor, .spotlight__kicker {
       display: inline-block;
-      line-height: 1; } }
+      /*line-height: 1;*/ } }
   @media screen and (min-width: 48em) {
     /* line 53, sass/modules/_f-item.scss */
     .f-item__kicker, .f-item__kicker--major, .f-item__kicker--minor, .spotlight__kicker {
