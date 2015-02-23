@@ -27,10 +27,10 @@
               <span class="super__date<?php echo ($super_meta['elit_super_overlay_color'][0] == 'light' ? '--alt' : ''); ?>"><?php echo $super_meta['elit_super_date'][0]; ?></span>
               <h1 class="super__head">
                 <a href="<?php echo $super_meta['elit_super_link'][0]; ?>" class="super__link">
-                  <?php echo $super_meta['elit_super_title'][0]; ?>
+                  <?php echo wptexturize( $super_meta['elit_super_title'][0] ); ?>
                 </a>
               </h1>
-              <p class="super__body-text"><?php echo $super_meta['elit_super_body'][0]; ?></p>
+              <p class="super__body-text"><?php echo wptexturize( $super_meta['elit_super_body'][0] ); ?></p>
             </div>
           </div>
         </div>
