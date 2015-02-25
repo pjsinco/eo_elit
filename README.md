@@ -458,3 +458,6 @@ global $some_var;
 
 ###Mon Feb 23 06:11:39 2015 CST
 * [How To Perform Mass Search And Replace In WordPress](http://www.hongkiat.com/blog/how-to-search-and-replace-wordpress-in-blog-post/)
+
+###Wed Feb 25 11:58:03 2015 CST
+* [How to Make A Sidebar Widget To Display Recent Custom Posts](http://premium.wpmudev.org/blog/how-to-make-a-sidebar-widget-to-display-recent-custom-posts-by-jared-williams/)
