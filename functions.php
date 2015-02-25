@@ -79,6 +79,8 @@ function elit_setup() {
   require_once elit_inc_path . 'elit-shortcodes.php';
   require_once elit_inc_path . 'elit-taxonomies.php';
   require_once elit_inc_path . 'elit-super.php';
+  require_once elit_inc_path . 'template-tags.php';
+  require_once elit_inc_path . 'elit-widget-play.php'; // TODO temporary
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -239,7 +241,7 @@ add_action('init' , 'elit_modify_jquery');
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+//require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
