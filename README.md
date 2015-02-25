@@ -461,3 +461,5 @@ global $some_var;
 
 ###Wed Feb 25 11:58:03 2015 CST
 * [How to Make A Sidebar Widget To Display Recent Custom Posts](http://premium.wpmudev.org/blog/how-to-make-a-sidebar-widget-to-display-recent-custom-posts-by-jared-williams/)
+
+* [Simple Recent Posts Widget](https://pippinsplugins.com/simple-recent-posts-widget/)
