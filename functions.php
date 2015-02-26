@@ -134,6 +134,15 @@ function elit_unregister_default_widgets() {
 	//unregister_widget('WP_Nav_Menu_Widget');
 }
 add_action( 'widgets_init', 'elit_unregister_default_widgets' );
+
+/**
+ * Register our menus
+ *
+ */
+function elit_register_main_menu() {
+  register_nav_menu( 'main-menu', 'Main menu' );
+}
+add_action( 'init' , 'elit_register_main_menu' );
  
 /**
  * Enqueue scripts and styles.
