@@ -107,13 +107,13 @@ function elit_story_footer($with_social = true) {
 //  );
 
   // #4 output our about-the-author if we have the info
-  if ( author_can( get_the_ID(), 'publish_posts' ) && 
-    empty( get_post_meta( get_the_id(), 'elit_bio', true ) ) ) {
-      $author_bio  = get_the_author_meta( 'description' ); 
-      $author_bio .= '<span class="story-footer__note">';
-      $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
-      $author_bio .= '<span class="icon-email"></span>&nbsp;Email '; 
-      $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
+  $bio = get_post_meta (get_the_ID(), 'elit_bio', true);
+  if ( author_can( get_the_ID(), 'publish_posts' ) && empty( $bio ) ) {
+    $author_bio  = get_the_author_meta( 'description' ); 
+    $author_bio .= '<span class="story-footer__note">';
+    $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
+    $author_bio .= '<span class="icon-email"></span>&nbsp;Email '; 
+    $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
       
   } else {
     $author_bio = get_post_meta( get_the_id(), 'elit_bio', true );
