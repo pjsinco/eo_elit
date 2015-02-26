@@ -50,7 +50,7 @@ function elit_comments_link() {
       <a href="#comments" class="comment-link__link">
         <?php 
           $num_comments = get_comments_number();
-          //$num_comments = ($num_comments == 0) ? '+' : $num_comments;
+          $num_comments = ($num_comments == 0) ? '+' : $num_comments;
         ?>
         <span class="icon-comment comment-link__num" data-comments-num="<?php echo $num_comments; ?>"></span>
         <span class="comment-link__body">
