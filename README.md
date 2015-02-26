@@ -463,3 +463,10 @@ global $some_var;
 * [How to Make A Sidebar Widget To Display Recent Custom Posts](http://premium.wpmudev.org/blog/how-to-make-a-sidebar-widget-to-display-recent-custom-posts-by-jared-williams/)
 
 * [Simple Recent Posts Widget](https://pippinsplugins.com/simple-recent-posts-widget/)
+
+###Thu Feb 26 08:15:41 2015 CST
+* Choropleth maps
+    * (http://bl.ocks.org/NPashaP/a74faf20b492ad377312)
+    * (https://vida.io/documents/4vZ9mRGyepoyQxFcK)
+    * [NYTimes](http://www.nytimes.com/2014/06/26/upshot/where-are-the-hardest-places-to-live-in-the-us.html?referrer=&abt=0002&abg=1)
+
