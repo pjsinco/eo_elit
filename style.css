@@ -1325,10 +1325,25 @@ strong {
     float: right;
     margin-left: 1em;
     font-size: .7777777777em;
-    line-height: 1.8; }
+    line-height: 1.8;
+    text-transform: uppercase; }
+    /* line 81, sass/modules/_story-footer.scss */
+    .story-footer__note > a {
+      -webkit-transition-property: color;
+              transition-property: color;
+      -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+      color: inherit; }
+      /* line 25, sass/utilities/_mixins.scss */
+      .story-footer__note > a:link, .story-footer__note > a:visited {
+        color: inherit; }
+      /* line 29, sass/utilities/_mixins.scss */
+      .story-footer__note > a:hover, .story-footer__note > a:focus {
+        text-decoration: none;
+        color: #ef3f23; }
 
 /* line 1, sass/modules/_story-nav.scss */
-.story-footer__jump-link > a, .story-nav__more-in > a {
+.story-footer__jump-link > a, .story-footer__note > a, .story-nav__more-in > a {
   /*color: $font-color;*/
   color: inherit; }
 
