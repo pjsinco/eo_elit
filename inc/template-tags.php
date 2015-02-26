@@ -110,8 +110,10 @@ function elit_story_footer($with_social = true) {
   if ( author_can( get_the_ID(), 'publish_posts' ) && 
     empty( get_post_meta( get_the_id(), 'elit_bio', true ) ) ) {
       $author_bio  = get_the_author_meta( 'description' ); 
-      $author_bio .= '<a href="mailto:#"><small>&nbsp;<span class="icon-email"></span>&nbsp;Email ' . 
-        get_the_author_meta( 'first_name' ) . '</small></a>';
+      $author_bio .= '<span class="story-footer__note">';
+      $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
+      $author_bio .= '<span class="icon-email"></span>&nbsp;Email '; 
+      $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
       
   } else {
     $author_bio = get_post_meta( get_the_id(), 'elit_bio', true );

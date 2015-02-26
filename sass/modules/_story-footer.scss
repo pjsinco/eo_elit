@@ -70,4 +70,11 @@
     line-height: $bodylineheight;
     color: $font-color-lighter;
   }
+
+  &__note {
+    float: right;
+    margin-left: 1em;
+    font-size: .7777777777em;
+    line-height: 1.8;
+  }
 }

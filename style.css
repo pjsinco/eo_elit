@@ -1320,6 +1320,12 @@ strong {
     font-size: 1.125em;
     line-height: 1.4;
     color: #808080; }
+  /* line 74, sass/modules/_story-footer.scss */
+  .story-footer__note {
+    float: right;
+    margin-left: 1em;
+    font-size: .7777777777em;
+    line-height: 1.8; }
 
 /* line 1, sass/modules/_story-nav.scss */
 .story-footer__jump-link > a, .story-nav__more-in > a {
