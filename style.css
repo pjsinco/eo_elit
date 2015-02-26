@@ -1298,36 +1298,35 @@ strong {
     overflow: hidden;
     *zoom: 1;
     padding-top: 1em;
-    padding-right: 1em;
     padding-bottom: 1em;
     padding-left: 0;
     font-weight: 100; }
-  /* line 52, sass/modules/_story-footer.scss */
+  /* line 51, sass/modules/_story-footer.scss */
   .story-footer__img {
     float: left;
     margin-right: 1em; }
-  /* line 58, sass/modules/_story-footer.scss */
+  /* line 57, sass/modules/_story-footer.scss */
   .story-footer__title {
     margin-bottom: 1em;
     text-transform: uppercase;
     font-size: 1em;
     font-weight: 100;
     color: #b3b3b3; }
-  /* line 66, sass/modules/_story-footer.scss */
+  /* line 65, sass/modules/_story-footer.scss */
   .story-footer__body {
     font-style: italic;
     font-weight: 400;
     font-size: 1.125em;
     line-height: 1.4;
     color: #808080; }
-  /* line 74, sass/modules/_story-footer.scss */
+  /* line 73, sass/modules/_story-footer.scss */
   .story-footer__note {
     float: right;
     margin-left: 1em;
     font-size: .7777777777em;
     line-height: 2;
     text-transform: uppercase; }
-    /* line 81, sass/modules/_story-footer.scss */
+    /* line 80, sass/modules/_story-footer.scss */
     .story-footer__note > a {
       -webkit-transition-property: color;
               transition-property: color;

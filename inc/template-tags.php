@@ -88,10 +88,10 @@ function elit_story_footer($with_social = true) {
   
   <?php   
   // #3 list our story tags
-  $before = '<div class="story-nav__title">Topics ';
+  $before = '<div class="story-footer__title">Topics</div>';
   $before .= '<ul class="topics"><li class="topics__topic">';
   $sep = '</li><li class="topics__topic">';
-  $after = '</li><ul></div>';
+  $after = '</li><ul>';
 
   $tags_list = get_the_tag_list( $before, $sep, $after);
 
