@@ -46,16 +46,14 @@ function elit_posted_on() {
 function elit_comments_link() {
   if ( comments_open() ) {
 ?> 
-    <span class="meta__comment-link comment-link">
+    <span class="comment-link">
       <a href="#comments" class="comment-link__link">
-        <span class="icon-comment">
-          <span class="text-replace">Comments</span>
-        </span>
-        <span class="comment-link__body">
         <?php 
           $num_comments = get_comments_number();
-          echo ($num_comments == 0) ? '+' : $num_comments;
+          //$num_comments = ($num_comments == 0) ? '+' : $num_comments;
         ?>
+        <span class="icon-comment comment-link__num" data-comments-num="<?php echo $num_comments; ?>"></span>
+        <span class="comment-link__body">
         </span>
       </a>
     </span>

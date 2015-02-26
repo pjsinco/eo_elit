@@ -1594,6 +1594,17 @@ strong {
     font-size: .6em;
     letter-spacing: .09090909091em;
     color: #fff; }
+  /* line 36, sass/modules/_comment-link.scss */
+  .comment-link__num:after {
+    content: attr(data-comments-num);
+    position: absolute;
+    width: 100%;
+    top: .06666666667em;
+    left: 0;
+    text-align: center;
+    font-size: .75em;
+    font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff; }
 
 /* line 1, sass/modules/_topics.scss */
 .topics {
