@@ -21,8 +21,8 @@
   /*margin-right: -6%;*/
   @include clearfix;
   /*background: $primarycolor;*/
-  border-top: 1px solid $font-color-lighter;
-  border-bottom: 1px solid $font-color-lighter;
+  border-top: 1px solid $lightgray;
+  border-bottom: 1px solid $lightgray;
   color: $font-color;
 
   [class*='icon-']:before {
@@ -69,7 +69,7 @@
         height: 100%;
         top: 0;
         left: 50%;
-        border-left: 1px solid $font-color-lighter;
+        border-left: 1px solid $lightgray;
       }
     }
   }

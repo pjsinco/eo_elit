@@ -1658,8 +1658,8 @@ strong {
   overflow: hidden;
   *zoom: 1;
   /*background: $primarycolor;*/
-  border-top: 1px solid #808080;
-  border-bottom: 1px solid #808080;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   color: #2a2a2a; }
   /* line 28, sass/modules/_prev-next.scss */
   .prev-next [class*='icon-']:before {
@@ -1699,7 +1699,7 @@ strong {
         height: 100%;
         top: 0;
         left: 50%;
-        border-left: 1px solid #808080; } }
+        border-left: 1px solid #ddd; } }
   /* line 77, sass/modules/_prev-next.scss */
   .prev-next__title {
     display: inline-block;
