@@ -50,9 +50,12 @@
       letter-spacing: .1em;
       font-size: 0.8125em;
     }
-    &--link {
+
+    /*&--link {*/
+    > a {
       display: block;
       color: $verydark;
+
       @include breakpoint($screen $big-menu-start) {
         color: $font-color-lighter;
         transition-property: color;

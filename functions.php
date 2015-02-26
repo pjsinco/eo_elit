@@ -60,9 +60,9 @@ function elit_setup() {
   add_image_size( 'elit-thumb', 160, 107, true);
   add_image_size( 'elit-tiny', 100, 66, true);
 
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'elit' ),
-	) );
+	//register_nav_menus( array(
+		//'primary' => __( 'Primary Menu', 'elit' ),
+	//) );
 
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
@@ -142,7 +142,7 @@ add_action( 'widgets_init', 'elit_unregister_default_widgets' );
 function elit_register_main_menu() {
   register_nav_menu( 'main-menu', 'Main menu' );
 }
-add_action( 'init' , 'elit_register_main_menu' );
+add_action( 'after_setup_theme' , 'elit_register_main_menu' );
  
 /**
  * Enqueue scripts and styles.

@@ -40,36 +40,16 @@
       </section>
       <section class="site-navigation"><a href="#site-nav" class="nav__link--toggle"><span class="icon-menu"></span></a>
         <nav role="navigation" id="site-nav" class="nav">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 4 ); ?>" class="nav__item--link">Patient Care</a>
-            </li>
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 7 ); ?>" class="nav__item--link">Training</a>
-            </li>
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 6 ); ?>" class="nav__item--link">Profession</a>
-            </li>
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 5 ); ?>" class="nav__item--link">Policy</a>
-            </li>
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 3 ); ?>" class="nav__item--link">Lifestyle</a>
-            </li>
-            <li class="nav__item">
-              <a href="<?php echo get_category_link( 45 ); ?>" class="nav__item--link">Inside the AOA</a>
-            </li>
-            <li class="nav__item nav__item--last">
-              <section class="site-search">
-                <form action="/search" id="search-form" class="site-search__form">
-                  <label id="search-label" for="q" class="site-search__label">
-                    <input type="search" name="q" placeholder="Enter search terms" id="q" class="site-search__input">
-                  </label>
-                  <input type="submit" class="site-search__button--hide">
-                </form>
-              </section>
-            </li>
-          </ul>
+          <?php 
+            $args = array(
+              'theme_location' => 'main-menu',
+              'menu' => 'main-menu',
+              'container' => false,
+              'menu_class' => 'nav__list',
+              'depth' => 0,
+            );
+          ?>
+          <?php wp_nav_menu( $args ); ?>
         </nav>
       </section>
     </header>
