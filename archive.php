@@ -34,7 +34,7 @@ get_header(); ?>
 
 
 
-<?php get_sidebar('article'); ?>
+<?php get_sidebar('archive'); ?>
       </section>
     </div> <!-- #main -->
 
