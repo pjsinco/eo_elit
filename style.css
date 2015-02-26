@@ -1484,7 +1484,10 @@ strong {
       display: block; } }
   /* line 58, sass/modules/_rover.scss */
   .rover-don-parent-f-a, .rover-peggy-parent-f-a {
-    margin-top: 2em; }
+    float: none;
+    margin-top: 2em;
+    margin-left: auto;
+    margin-left: auto; }
     @media screen and (min-width: 48em) {
       /* line 58, sass/modules/_rover.scss */
       .rover-don-parent-f-a, .rover-peggy-parent-f-a {
@@ -1494,26 +1497,26 @@ strong {
       /* line 58, sass/modules/_rover.scss */
       .rover-don-parent-f-a, .rover-peggy-parent-f-a {
         display: none; } }
-  /* line 72, sass/modules/_rover.scss */
+  /* line 76, sass/modules/_rover.scss */
   .rover-don-parent-f-b, .rover-peggy-parent-f-b {
     margin-top: 2em; }
     @media screen and (min-width: 48em) {
-      /* line 72, sass/modules/_rover.scss */
+      /* line 76, sass/modules/_rover.scss */
       .rover-don-parent-f-b, .rover-peggy-parent-f-b {
         display: inline-block;
         margin-top: 1em;
         margin-right: 1em; } }
     @media screen and (min-width: 64em) {
-      /* line 72, sass/modules/_rover.scss */
+      /* line 76, sass/modules/_rover.scss */
       .rover-don-parent-f-b, .rover-peggy-parent-f-b {
         display: none;
         margin-right: 0; } }
   @media screen and (min-width: 48em) {
-    /* line 88, sass/modules/_rover.scss */
+    /* line 92, sass/modules/_rover.scss */
     .rover-don-parent-f-c, .rover-peggy-parent-f-c {
       display: none; } }
   @media screen and (min-width: 64em) {
-    /* line 88, sass/modules/_rover.scss */
+    /* line 92, sass/modules/_rover.scss */
     .rover-don-parent-f-c, .rover-peggy-parent-f-c {
       display: block;
       float: right; } }

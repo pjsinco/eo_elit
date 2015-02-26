@@ -197,6 +197,8 @@
 ?>
 
       </div><!-- .row -->
+    
+      <?php get_template_part( 'ad', 'peggy_home_front' ); ?>
 
 
 

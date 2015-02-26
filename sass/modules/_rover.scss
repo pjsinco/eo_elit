@@ -57,7 +57,11 @@
      */
     &-parent-f-a {
       @extend %parent-a;
+      float: none;
       margin-top: 2em;
+      margin-left: auto;
+      margin-left: auto;
+
     
       @include breakpoint($screen $large-start) {
         margin-top: 1em;
