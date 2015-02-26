@@ -44,6 +44,7 @@ function elit_setup() {
 	 */
 	add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
+  add_theme_support( 'menus' );
 
   /*
    * Set our image sizes
