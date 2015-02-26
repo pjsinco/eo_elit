@@ -3513,6 +3513,16 @@ strong {
     float: right;
     margin-right: 0; } }
 
+/**
+ *  Styles for auto-generated WordPress classes
+ *
+ */
+@media screen and (min-width: 50.5625em) {
+  /* line 6, sass/modules/_wp.scss */
+  .current-menu-item, .current-menu-parent, .current-post-parent {
+    color: #ef3f23;
+    font-weight: 600; } }
+
 /* line 1, sass/theme/_index.scss */
 .updated:not(.published) {
   display: none; }
