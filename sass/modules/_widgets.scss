@@ -1,0 +1,12 @@
+.widgets {
+
+  &--article {
+
+    &__wrapper {
+
+      @include breakpoint($screen $large-minor-start $xlarge-start-minus-1) {
+        @include span(last 7 of 8);
+      }
+    }
+  }
+}

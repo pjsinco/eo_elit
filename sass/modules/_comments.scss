@@ -1,5 +1,7 @@
 .comments__wrapper {
+  @include clearfix;
   @extend %story-base;
+  margin-bottom: 2em;
 }
 .comments {
 

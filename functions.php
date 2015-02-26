@@ -79,8 +79,8 @@ function elit_setup() {
   require_once elit_inc_path . 'elit-shortcodes.php';
   require_once elit_inc_path . 'elit-taxonomies.php';
   require_once elit_inc_path . 'elit-super.php';
-  require_once elit_inc_path . 'template-tags.php';
-  require_once elit_inc_path . 'elit-widget-play.php'; // TODO temporary
+  require_once elit_inc_path . 'template-tags.php'; 
+  require_once elit_inc_path . 'elit-widgets.php'; 
 }
 endif; // elit_setup
 add_action( 'after_setup_theme', 'elit_setup' );
@@ -91,17 +91,27 @@ add_action( 'after_setup_theme', 'elit_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function elit_widgets_init() {
+
 	register_sidebar( array(
 		'name'          => __( 'Article-Sidebar', 'elit' ),
 		'id'            => 'article-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+    'after_widget'  => '</aside>',
+		'before_title'  => '<div class="section-title-hat"><span class="section-title-hat__text">',
+		'after_title'   => '</span></div>',
 	) );
 }
 add_action( 'widgets_init', 'elit_widgets_init' );
+
+/*
+  <div class="section-title-hat">
+    <span class="section-title-hat__text">
+      More Stories
+    </span>
+    </span>/a>
+
+*/
 
 /**
  * Remove widgets we don't need.
