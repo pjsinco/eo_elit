@@ -3521,7 +3521,7 @@ strong {
   /* line 6, sass/modules/_wp.scss */
   .current-menu-item, .current-menu-parent, .current-post-parent {
     color: #ef3f23;
-    font-weight: 600; } }
+    font-weight: 800; } }
 
 /* line 1, sass/theme/_index.scss */
 .updated:not(.published) {
