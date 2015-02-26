@@ -15,6 +15,11 @@
     @extend %ad-pos;
     @extend %med-rect;
 
+    @include breakpoint($screen $medium-minor-start) {
+      margin-left: 1em;
+      float: right;
+    }
+
     /*@include breakpoint($screen $medium-minor-start $xlarge-start) {*/
     @include breakpoint($screen $large-start) {
       float: right;
@@ -22,6 +27,23 @@
       clear: left;
       /*margin-left: 1em;*/
     };
+  }
+
+  &__med-rect-h--article {
+    @extend %ad-pos;
+    @extend %med-rect;
+
+    @include breakpoint($screen $medium-minor-minor-start) {
+      float: right;
+      width: 50%;
+      clear: left !important;
+      /*margin-left: 1em;*/
+    };
+
+    @include breakpoint($screen $large-minor-start) {
+      width: 50%;
+    }
+
   }
 
   &__med-rect--front {

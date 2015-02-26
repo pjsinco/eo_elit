@@ -3,8 +3,8 @@
   clear: right;
 
   @include breakpoint($screen $medium-minor-start) {
-    margin-left: 1em;
-    float: right;
+    /*margin-left: 1em;*/
+    /*float: right;*/
   }
 
   @include breakpoint($screen $xlarge-start) {

@@ -159,13 +159,22 @@ function elit_sidebar_shortcode($atts, $content = null) {
 }
 add_shortcode('story-sidebar', 'elit_sidebar_shortcode');
 
-function elit_advertisements_shortcode() {
+function elit_advertisements_shortcode( $atts, $content = null ) {
+  $a = shortcode_atts(
+    array(
+      'align' => 'v',
+    ),
+    $atts
+  );
+
   $ids = array( 'don', 'peggy' );
   $str = '';
 
+
   foreach ( $ids as $id ) {
     $str .= '<aside data-set="rover-' . $id . '-parent" ';
-    $str .= 'class="ad ad__med-rect--article rover-' . $id . '-parent-a">';
+    $str .= 'class="ad ad__med-rect' . ($a['align'] == 'h' ? '-h' : '');
+    $str .= '--article rover-' . $id . '-parent-a">';
     $str .= '<div class="rover-' . $id . '">';
     $str .= '<a href=';
     $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest"';

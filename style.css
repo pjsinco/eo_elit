@@ -872,11 +872,11 @@ strong {
         /*padding: .5em 0 .5em 2em;*/ }
 
 /* line 1, sass/modules/_ad.scss */
-.ad__med-rect--article, .ad__med-rect--front, .ad--wide-shallow {
+.ad__med-rect--article, .ad__med-rect-h--article, .ad__med-rect--front, .ad--wide-shallow {
   margin: 0 auto; }
 
 /* line 5, sass/modules/_ad.scss */
-.ad__med-rect--article, .ad__med-rect--front {
+.ad__med-rect--article, .ad__med-rect-h--article, .ad__med-rect--front {
   width: 300px; }
 
 /* line 9, sass/modules/_ad.scss */
@@ -886,6 +886,11 @@ strong {
   /* line 14, sass/modules/_ad.scss */
   .ad__med-rect--article {
     /*@include breakpoint($screen $medium-minor-start $xlarge-start) {*/ }
+    @media screen and (min-width: 36em) {
+      /* line 14, sass/modules/_ad.scss */
+      .ad__med-rect--article {
+        margin-left: 1em;
+        float: right; } }
     @media screen and (min-width: 48em) {
       /* line 14, sass/modules/_ad.scss */
       .ad__med-rect--article {
@@ -893,16 +898,27 @@ strong {
         width: 50%;
         clear: left;
         /*margin-left: 1em;*/ } }
-  /* line 32, sass/modules/_ad.scss */
+  @media screen and (min-width: 43em) {
+    /* line 32, sass/modules/_ad.scss */
+    .ad__med-rect-h--article {
+      float: right;
+      width: 50%;
+      clear: left !important;
+      /*margin-left: 1em;*/ } }
+  @media screen and (min-width: 56em) {
+    /* line 32, sass/modules/_ad.scss */
+    .ad__med-rect-h--article {
+      width: 50%; } }
+  /* line 54, sass/modules/_ad.scss */
   .ad__img {
     display: block;
     margin: 0 auto; }
-  /* line 37, sass/modules/_ad.scss */
+  /* line 59, sass/modules/_ad.scss */
   .ad--wide-shallow {
     display: inline-block;
     text-align: center;
     width: 100%; }
-  /* line 44, sass/modules/_ad.scss */
+  /* line 66, sass/modules/_ad.scss */
   .ad:before {
     color: #808080;
     content: "Advertisement";
@@ -917,7 +933,7 @@ strong {
     font-size: .5em;
     letter-spacing: .25em;
     text-align: center; }
-  /* line 60, sass/modules/_ad.scss */
+  /* line 82, sass/modules/_ad.scss */
   .ad:after {
     padding-bottom: .5em;
     margin-top: .5em;
@@ -927,7 +943,7 @@ strong {
     max-width: 62em;
     display: block;
     /*border-bottom: 1px solid $lightgray;*/ }
-  /* line 71, sass/modules/_ad.scss */
+  /* line 93, sass/modules/_ad.scss */
   .ad__group--front {
     overflow: hidden;
     *zoom: 1;
@@ -1445,8 +1461,8 @@ strong {
   @media screen and (min-width: 36em) {
     /* line 1, sass/modules/_rover.scss */
     .rover-don-parent-a, .rover-peggy-parent-a, .rover-don-parent-f-a, .rover-peggy-parent-f-a {
-      margin-left: 1em;
-      float: right; } }
+      /*margin-left: 1em;*/
+      /*float: right;*/ } }
   @media screen and (min-width: 64em) {
     /* line 1, sass/modules/_rover.scss */
     .rover-don-parent-a, .rover-peggy-parent-a, .rover-don-parent-f-a, .rover-peggy-parent-f-a {
