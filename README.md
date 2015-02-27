@@ -473,3 +473,5 @@ global $some_var;
     * [Let’s Make a Bubble Map](http://bost.ocks.org/mike/bubble-map/)
 * [Codepen: Positioning a Tooltip on a SVG](http://codepen.io/recursiev/pen/zpJxs)
 
+###Fri Feb 27 08:26:00 2015 CST
+* [How to Make Your WordPress Site Blazing Fast](http://www.onextrapixel.com/2015/02/21/how-to-make-your-wordpress-site-blazing-fast/)
