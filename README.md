@@ -475,3 +475,6 @@ global $some_var;
 
 ###Fri Feb 27 08:26:00 2015 CST
 * [How to Make Your WordPress Site Blazing Fast](http://www.onextrapixel.com/2015/02/21/how-to-make-your-wordpress-site-blazing-fast/)
+
+* Enabled gzip, etc. in .htaccess on the live site.
+    * Is it working?
