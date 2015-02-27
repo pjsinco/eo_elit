@@ -7,10 +7,11 @@
 .fractional {
   @extend %fractional-base;
 
-  @include breakpoint($screen $large-start) {
+  /*@include breakpoint($screen $large-start) {*/
+  @include breakpoint($screen $medium-start) {
     width: span(3 of 7);
-    float: left;
-    margin-right: (2 * gutter($gridpage));
+    float: right;
+    margin-left: (2 * gutter($gridpage));
   }
 
   @include breakpoint($screen $large-minor-start) {

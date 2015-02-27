@@ -78,15 +78,22 @@ function elit_story_image_shortcode($atts, $content = null) {
     $caption = $attachment->post_content;
     $credit = null;
     $image_size = 'tertiary';
+  } elseif ( $size == 'small' ) {
+    $largest = wp_get_attachment_image_src( $a['id'], 'elit-medium', false );
+    $caption = $attachment->post_excerpt;
+    $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
+    $image_size = 'secondary';
+
   } else {
-    $largest = wp_get_attachment_image_src( $a['id'], 'article-mid-large', false );
+    $largest = wp_get_attachment_image_src( $a['id'], 'elit-large', false );
     $caption = $attachment->post_excerpt;
     $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
     $image_size = 'secondary';
   }
   
   // generates the string needed to use with the RICG Responsive Images plugin
-  $ricg_responsive_str = '<figure class="image image--' . $image_size . '">';
+  $ricg_responsive_str = '<figure class="image image--' . $image_size . 
+    ( $a['size'] == 'small' ? ' fractional' : '' ) . '">';
   $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
   if ( $size != 'mug' ) {
     // we'll need srcset if we're not serving up a mugshot
