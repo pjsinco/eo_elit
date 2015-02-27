@@ -173,9 +173,9 @@ function elit_scripts() {
 
   //wp_register_script('ehs-ads', get_template_directory_uri() . '/js/ehs-ads.js', array('ehs-head-tag'), false, false);
 
-  wp_register_script('append-around', 
+  wp_register_script( 'append-around', 
     get_template_directory_uri() . '/js/appendAround.js', 
-    array('jquery'), false, true
+    array( 'jquery' ), false, true
   );
 
   //wp_register_script('append-around-load', 
@@ -183,28 +183,28 @@ function elit_scripts() {
     //array('append-around'), false, true
   //);
 
-  wp_register_script('fitvids', 
+  wp_register_script( 'fitvids', 
     get_template_directory_uri() . '/js/jquery.fitvids.js', 
-    array('jquery'), false, true
+    array( 'jquery' ), false, true
   );
 
   wp_register_script('main',
     get_template_directory_uri() . '/js/main.js', 
-    array('jquery'), false, true
+    array( 'jquery' ), false, true
   );
 
   
-  wp_enqueue_script('modernizr');
-  wp_enqueue_script('typekit-load');
+  wp_enqueue_script( 'modernizr' );
+  //wp_enqueue_script('typekit-load');
   //wp_enqueue_script('picturefill');
   //wp_enqueue_script('nav');
-  wp_enqueue_script('ehs-head-tag');
-  wp_enqueue_script('append-around');
-  wp_enqueue_script('main');
+  wp_enqueue_script( 'ehs-head-tag' );
+  wp_enqueue_script( 'append-around' );
+  wp_enqueue_script( 'main' );
 
   // if we're on a video page, load FitVids to make the video responsive
   if ( has_post_format( 'video' ) || is_front_page() )  {
-    wp_enqueue_script('fitvids');
+    wp_enqueue_script( 'fitvids' );
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }
 
@@ -284,11 +284,17 @@ add_action('init' , 'elit_modify_jquery');
  * https://typekit.com/account/kits
  */
 function elit_load_typekit() {
-  $output  = '<script>' . PHP_EOL;
-  $output .= 'try{Typekit.load();}catch(e){}' . PHP_EOL;
-  $output .= '</script>' . PHP_EOL;
-  
-  echo $output;
+?>
+  <script>
+  (function(d) {
+    var config = {
+      kitId: 'vdi5qvx',
+      scriptTimeout: 3000
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<?php
 }
 add_action('wp_head', 'elit_load_typekit');
 
