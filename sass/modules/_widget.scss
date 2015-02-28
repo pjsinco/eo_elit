@@ -61,14 +61,14 @@
   &--front {
     @extend %widget-base;
     margin-top: 0;
-    margin-left: $out-gutter-pct;
-    margin-right: $out-gutter-pct;
+    /*margin-left: $out-gutter-pct;*/
+    /*margin-right: $out-gutter-pct;*/
+    overflow: visible;
 
     @include breakpoint($screen $large-start) {
       margin-left: 0;
       margin-right: 0;
     }
-    
   }
 
   &__list {

@@ -152,24 +152,14 @@
 
         /**************************************************************
          *
-         *                    SET UP POPULAR
+         *                    SET UP WIDGET
          *
          *
          *************************************************************/
-        // TODO temporary; we'll replace this with a widgetable area
 ?>
       <div class="row">
         <div class="size-1-of-3 module">
-          <div class="section-title-hat"><span class="section-title-hat__text">Most read</span></div>
-          <aside class="widget--counter widget--front">
-            <ol class="widget__list--counter">
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
-              <li class="widget-f__list-item--counter"><a href="#" class="widget__link">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</a></li>
-            </ol>
-          </aside>
+          <?php if ( ! dynamic_sidebar( 'front-page-standalone' ) ); ?>
         </div>
 <?php
         

@@ -478,3 +478,5 @@ global $some_var;
 
 * Enabled gzip, etc. in .htaccess on the live site.
     * Is it working?
+
+###Sat Feb 28 09:35:32 2015 CST

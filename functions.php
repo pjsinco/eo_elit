@@ -92,11 +92,22 @@ add_action( 'after_setup_theme', 'elit_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function elit_widgets_init() {
+
 	register_sidebar( array(
-		'name'          => __( 'Article-Sidebar', 'elit' ),
+		'name'          => 'Article-Sidebar',
 		'id'            => 'article-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+		'before_title'  => '<div class="section-title-hat"><span class="section-title-hat__text">',
+		'after_title'   => '</span></div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Front-Page-Standalone',
+		'id'            => 'front-page-standalone',
+		'description'   => 'A front-page stand-alone widget, like \'Popular\'',
+		'before_widget' => '<aside id="%1$s" class="widget--counter widget--front %2$s">',
     'after_widget'  => '</aside>',
 		'before_title'  => '<div class="section-title-hat"><span class="section-title-hat__text">',
 		'after_title'   => '</span></div>',
