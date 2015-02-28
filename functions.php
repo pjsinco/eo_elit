@@ -92,7 +92,6 @@ add_action( 'after_setup_theme', 'elit_setup' );
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function elit_widgets_init() {
-
 	register_sidebar( array(
 		'name'          => __( 'Article-Sidebar', 'elit' ),
 		'id'            => 'article-sidebar',
@@ -115,7 +114,7 @@ add_action( 'widgets_init', 'elit_widgets_init' );
 */
 
 /**
- * Remove widgets we don't need.
+ * Remove default WP widgets we don't need.
  *
  */
 function elit_unregister_default_widgets() {

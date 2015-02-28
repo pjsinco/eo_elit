@@ -19,11 +19,11 @@ $gridpage: (
   container: $site-width,
   gutters: .25,
   debug: (
-    image: show-columns,
-    /*image: hide,*/
-    color: rgba(#66f, .25),
-    output: overlay,
-    toggle: top right,
+    /*image: show-columns,*/
+    image: hide,
+    /*color: rgba(#66f, .25),*/
+    /*output: overlay,*/
+    /*toggle: top right,*/
   ),
 );
 
@@ -34,11 +34,11 @@ $gridrow4: (
   container: 94%,
   gutters: .25,
   debug: (
-    image: show-columns,
-    /*image: hide,*/
-    color: rgba(steelblue, .25),
-    output: overlay,
-    toggle: top left,
+    /*image: show-columns,*/
+    image: hide,
+    /*color: rgba(steelblue, .25),*/
+    /*output: overlay,*/
+    /*toggle: top left,*/
   ),
 );
 
