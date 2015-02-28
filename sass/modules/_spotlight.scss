@@ -2,6 +2,11 @@
   position: relative;
   @include clearfix;
 
+  @include breakpoint($screen $xlarge-start) {
+    margin-bottom: 2em;
+    
+  }
+
   &__feature-wrapper {
     @include clearfix;
     margin-left: auto;
