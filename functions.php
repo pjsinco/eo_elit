@@ -45,6 +45,10 @@ function elit_setup() {
 	add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
   add_theme_support( 'menus' );
+	add_theme_support( 'html5', array(
+		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
+	) );
+  add_theme_support( 'post-formats', array( 'video', ) );
 
   /*
    * Set our image sizes
@@ -59,15 +63,6 @@ function elit_setup() {
   add_image_size( 'elit-small', 234, 156, true);
   add_image_size( 'elit-thumb', 160, 107, true);
   add_image_size( 'elit-tiny', 100, 66, true);
-
-	//register_nav_menus( array(
-		//'primary' => __( 'Primary Menu', 'elit' ),
-	//) );
-
-	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
-  add_theme_support( 'post-formats', array( 'video', ) );
 
   // let's load our plugins (although they're not really plugins)
   // help--
