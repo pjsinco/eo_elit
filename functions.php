@@ -153,6 +153,33 @@ function elit_register_main_menu() {
   register_nav_menu( 'main-menu', 'Main menu' );
 }
 add_action( 'after_setup_theme' , 'elit_register_main_menu' );
+
+/**
+ * Add a search box to the Main menu
+ *
+ * help:
+ * http://www.wpbeginner.com/wp-themes/
+ *    how-to-add-custom-items-to-specific-wordpress-menus/
+ */
+add_filter( 'wp_nav_menu_items', 'elit_add_search_box_to_menu', 10, 2 );
+function elit_add_search_box_to_menu( $items, $args ) {
+  d( $items );
+  d( $args );
+  if ( $args->theme_location == 'main-menu' ) {
+
+    $search  = '<li class="nav__item nav__item--last">';
+    $search .= '<section class="site-search">';
+    $search .= '<form action="/search" id="search-form" class="site-search__form">';
+    $search .= '<label id="search-label" for="q" class="site-search__label">';
+    $search .= '<input type="search" name="q" placeholder="Enter search terms" id="q" class="site-search__input"/>';
+    $search .= '</label><input type="submit" class="site-search__button--hide"/>';
+    $search .= '</form></section></li>';
+  
+    $items .= $search;
+  }
+
+  return $items;
+}
  
 /**
  * Enqueue scripts and styles.
