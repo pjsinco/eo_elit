@@ -1,8 +1,7 @@
-.banner {
+%top-and-bottom {
   @include container($gridpage);
   position: relative;
   margin-bottom: 1em;
-  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.15),0 -5px 3px 10px #fff;
 
   @include breakpoint($screen $big-menu-start $xlarge-start-minus-1) {
     margin-left: 1em;
@@ -12,8 +11,17 @@
   
   @include breakpoint($screen $big-menu-start) {
     margin-top: 1em;
-    box-shadow: none;
     margin-bottom: 1em;
+  }
+
+}
+
+.banner {
+  @extend %top-and-bottom;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0,0.15),0 -5px 3px 10px #fff;
+
+  @include breakpoint($screen $big-menu-start) {
+    box-shadow: none;
   }
 }
 
