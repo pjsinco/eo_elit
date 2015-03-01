@@ -32,7 +32,7 @@
             </div> <!-- story__body-text -->
             
             <footer class="story-footer"> 
-              <?php elit_story_footer(false); ?>
+              <?php elit_story_footer(true); ?>
             </footer>
           </div> <!-- .story -->
         </article>
