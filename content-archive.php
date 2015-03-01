@@ -13,7 +13,7 @@
   <?php $meta = get_post_meta( $post->ID ); ?>
            
 <article class="f-item--minor">
-  <figure class="f-item__fig">
+  <figure class="f-item__fig--minor">
     <a  href="<?php the_permalink(); ?>">
       <?php $thumb_id = (
         has_post_thumbnail() ? 
@@ -27,7 +27,7 @@
       <?php endif; ?>
     </a>
   </figure>
-  <div class="f-item__body">
+  <div class="f-item__body--minor">
     <h5 class="f-item__kicker"><?php echo $meta['elit_kicker'][0]; ?></h5>
     <h2 class="f-item__head">
       <a href="<?php the_permalink(); ?>" class="f-item__link">
