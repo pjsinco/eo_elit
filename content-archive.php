@@ -6,11 +6,9 @@
   <?php $counter = 0; ?>
 <?php while( have_posts() ): ?>
 
+  <?php (d($wp_query)); ?>
   <?php the_post(); ?>
 
-  <?php if ( $counter == 2 ): ?>
-    <?php echo do_shortcode("[advertisements align='h']"); ?>
-  <?php endif; ?>
 
   <?php $meta = get_post_meta( $post->ID ); ?>
            
@@ -42,4 +40,7 @@
   </div>
 </article>
 <?php $counter++; ?>
+  <?php if ( $counter == 2 || ( $wp_query->post_count == 1 ) ): ?>
+    <?php echo do_shortcode("[advertisements align='h']"); ?>
+  <?php endif; ?>
 <?php endwhile; ?>
