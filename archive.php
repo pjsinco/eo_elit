@@ -13,18 +13,22 @@ get_header(); ?>
 
     <div id="main" class="content">
       <section id="primary" class="content__primary">
-        <div class="elit-archive">
+        <div class="row">
+          <div class="elit-archive">
 
         <?php if( have_posts() ): ?>
-          <header>
-            <?php elit_the_archive_title( '<pre>', '</pre>' ); ?>
-          </header>
+            <div class="size-1-of-1">
+              <div class="section-title--archive">
+                <?php elit_the_archive_title( '', '' ); ?>
+              </div>
+            </div>
 
             <?php get_template_part('content', 'archive'); ?>
         <?php endif; ?>
 
 
-        </div> <!-- .elit-archive -->
+          </div> <!-- .elit-archive -->
+        </div> <!-- .row -->
       </section> <!-- #primary -->
 
 <!--       temp; make into a sidebar template? -->

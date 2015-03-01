@@ -1,5 +1,4 @@
-.section-title-hat {
-
+%section-title-hat-base {
   position: relative;
   margin-bottom: .5333333333em;
   padding-bottom: .2em;
@@ -8,6 +7,11 @@
   font-size: 1.875em;
   border-bottom: 2px solid $primarycolor;
   color: $primarycolor;
+}
+
+.section-title-hat {
+
+  @extend %section-title-hat-base;
 
   @include breakpoint($screen $large-start) {
     margin-right: auto;

@@ -1,16 +1,11 @@
 %title-base {
   position: relative;
-  /*padding-bottom: .3888888889em;*/
   margin-bottom: .5333333333em;
   padding-bottom: .2em;
-  /*letter-spacing: .05em;*/
   text-align: left;
   font-weight: 600;
-  /*font-size: 1.125em;*/
   font-size: 1.875em;
   border-bottom: 2px solid $primarycolor;
-  /*color: $font-color-lighter;*/
-  /*color: $font-color;*/
   color: $primarycolor;
 
   @include breakpoint($screen $large-start) {
@@ -33,12 +28,10 @@
 
 
 .section-title {
-
   @extend %title-base;
 
   &__link {
     @include clearfix;
-
   }
 
   &--muted {
@@ -63,13 +56,6 @@
       }
     }
 
-    /*@include red-hover;*/
-
-    /*> a {*/
-      /*color: inherit;*/
-      /*font-size: inherit;*/
-    /*}*/
-
     // style social icons
     span:not([class*='icon-arrow']) {
       margin-left: .5em;
@@ -85,19 +71,9 @@
       display: inline-block;
       /*border-bottom: 3px solid $primarycolor;*/
     }
-
   }
 
-
-//  &__border {
-//    /*position: absolute;*/
-//    /*left: 0;*/
-//    /*top: 1.375em;*/
-//    /*content: '';*/
-//    /*width: 100%;*/
-//    display: block;
-//    border: 0;
-//    height: 0;
-//    border-bottom: 3px solid $primarycolor;
-//  }
+  &--archive {
+    @extend %section-title-hat-base;
+  }
 }

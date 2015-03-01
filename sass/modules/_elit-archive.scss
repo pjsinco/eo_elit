@@ -1,29 +1,30 @@
 .elit-archive {
 
-  max-width: $site-width;
-  width: 94%;
-  /*max-width: $article-max-width;*/
-  @extend %center;
-  
-  @include breakpoint($screen $medium-start) {
-    /*@include container(90%);*/
-    /*width: $story-width-medium;*/
-  }
-
-  @include breakpoint($screen $large-start) {
-  }
-  
-  @include breakpoint($screen $big-menu-start $xlarge-start-minus-1) {
-    width: 96%;
-    /*margin-left: 1em;*/
-    /*margin-left: auto;*/
-    /*margin-right: 1em;*/
-    /*margin-right: auto;*/
-  }
-
-  @include breakpoint($screen $xlarge-start) {
-    width: 100%;
-    
-  }
+//  max-width: $site-width;
+//  width: 94%;
+//  /*max-width: $article-max-width;*/
+//  @extend %center;
+//  
+//  @include breakpoint($screen $medium-start) {
+//    /*@include container(90%);*/
+//    /*width: $story-width-medium;*/
+//  }
+//
+//  @include breakpoint($screen $large-start) {
+//  }
+//  
+//  /*@include breakpoint($screen $big-menu-start $xlarge-start-minus-1) {*/
+//  @include breakpoint($screen $big-menu-start) {
+//    /*width: 96%;*/
+//    width: 100%;
+//    /*margin-left: 1em;*/
+//    /*margin-left: auto;*/
+//    /*margin-right: 1em;*/
+//    /*margin-right: auto;*/
+//  }
+//
+//  /*@include breakpoint($screen $xlarge-start) {*/
+//    /*width: 100%;*/
+//  /*}*/
 
 }
