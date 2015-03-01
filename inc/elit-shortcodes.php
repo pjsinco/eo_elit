@@ -177,7 +177,6 @@ function elit_advertisements_shortcode( $atts, $content = null ) {
   $ids = array( 'don', 'peggy' );
   $str = '';
 
-
   foreach ( $ids as $id ) {
     $str .= '<aside data-set="rover-' . $id . '-parent" ';
     $str .= 'class="ad ad__med-rect' . ($a['align'] == 'h' ? '-h' : '');

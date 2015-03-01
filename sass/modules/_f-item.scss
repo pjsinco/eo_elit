@@ -41,6 +41,7 @@
   /*position: relative;*/
   margin-bottom: 1em;
   text-align: left;
+  clear: both;
 
   &:not(:last-of-type) {
     @extend %border-bottom;

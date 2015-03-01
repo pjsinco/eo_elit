@@ -9,24 +9,22 @@
 
 get_header(); ?>
 
+<?php get_template_part('sidebar', 'leaderboard'); ?>
+
     <div id="main" class="content">
       <section id="primary" class="content__primary">
+        <div class="elit-archive">
 
         <?php if( have_posts() ): ?>
+          <header>
+            <?php elit_the_archive_title( '<pre>', '</pre>' ); ?>
+          </header>
 
-        <header>
-          <?php elit_the_archive_title( '<pre>', '</pre>' ); ?>
-          <?php //the_archive_description( '<div>', '</div' ); ?>
+            <?php get_template_part('content', 'archive'); ?>
+        <?php endif; ?>
 
-        </header>
-        <?php while( have_posts() ): the_post(); ?>
 
-          <pre><small><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></small></pre>
-          <?php //get_template_part('content', get_post_format()); ?>
-          <?php // get_template_part('content', 'single'); ?>
-
-        <?php endwhile; endif; ?>
-
+        </div> <!-- .elit-archive -->
       </section> <!-- #primary -->
 
 <!--       temp; make into a sidebar template? -->

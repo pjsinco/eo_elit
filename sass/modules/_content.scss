@@ -1,3 +1,14 @@
+%primary-base {
+  position: relative;
+}
+
+%secondary-base {
+  width: 94%;
+  max-width: $article-max-width;
+  @extend %center;
+}
+
+
 .content {
   position: relative;
   /*@include clearfix();*/
@@ -25,7 +36,7 @@
   }
   
   &__primary {
-    position: relative;
+    @extend %primary-base;
     @include breakpoint($screen $xlarge-start) {
       @include span(8 of $gridpage);
 
@@ -40,26 +51,62 @@
         
       }
     }
+
+    &--alt {
+      @extend %primary-base;
+
+      @include breakpoint($screen $large-minor-start) {
+        @include span(8 of $gridpage);
+
+      &:after {
+        content: '';
+        border-right: 1px solid $lightgray;
+        display: block;
+        position: absolute;
+        top: 0;
+        right: -1.2em;
+        height: 100%;
+        
+      }
+      }
+
+    }
   }
+
 
   &__secondary {
-    width: 94%;
-    max-width: $article-max-width;
-    @extend %center;
+    @extend %secondary-base;
     
-    @include breakpoint($screen $medium-start) {
+    @include breakpoint($screen $big-menu-start) {
       /*@include container(90%);*/
-      width: $story-width-medium;
-    }
-
-    @include breakpoint($screen $large-start) {
-      width: 94%;
-    }
-
-    @include breakpoint($screen $xlarge-start) {
+      /*width: $story-width-medium;*/
       @include span(30% last of $gridpage);
     }
-  }
 
+    /*@include breakpoint($screen $large-start) {*/
+      /*width: 94%;*/
+    /*}*/
+
+    @include breakpoint($screen $xlarge-start) {
+    }
+
+    &--alt {
+      @extend %secondary-base;    
+
+      @include breakpoint($screen $medium-start) {
+        /*@include container(90%);*/
+        /*width: $story-width-medium;*/
+      }
+
+      @include breakpoint($screen $large-minor-start) {
+        @include span(30% last of $gridpage);
+        /*width: 94%;*/
+      }
+
+      @include breakpoint($screen $xlarge-start) {
+        /*@include span(30% last of $gridpage);*/
+      }
+    }
+  }
 }
 
