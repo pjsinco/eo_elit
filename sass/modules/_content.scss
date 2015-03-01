@@ -77,17 +77,8 @@
   &__secondary {
     @extend %secondary-base;
     
-    @include breakpoint($screen $big-menu-start) {
-      /*@include container(90%);*/
-      /*width: $story-width-medium;*/
-      @include span(30% last of $gridpage);
-    }
-
-    /*@include breakpoint($screen $large-start) {*/
-      /*width: 94%;*/
-    /*}*/
-
     @include breakpoint($screen $xlarge-start) {
+      @include span(30% last of $gridpage);
     }
 
     &--alt {
