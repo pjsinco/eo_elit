@@ -491,3 +491,5 @@ global $some_var;
     * [8 Best WordPress Mailing List Plugins For List Building Magic](http://www.bloggingwizard.com/wordpress-mailing-list-plugins-superior-list-building-power/)
     * [http://www.wpexplorer.com/wordpress-plugins-email-list/](http://www.wpexplorer.com/wordpress-plugins-email-list/)
     * [http://robertryan.ie/best-wordpress-mailing-list-plugin/](http://robertryan.ie/best-wordpress-mailing-list-plugin/)
+
+* [How To Modify The Loop in archives.php To Have 11 Posts Per Page and CSS Styling](http://wordpress.stackexchange.com/questions/63424/how-to-modify-the-loop-in-archives-php-to-have-11-posts-per-page-and-css-styling)
