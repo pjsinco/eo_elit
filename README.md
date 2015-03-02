@@ -485,7 +485,9 @@ global $some_var;
 
 ###Mon Mar  2 10:32:34 2015 CST
 
-* Plugins for collecting email addrs
+* Collecting email addrs
     * [Mail Subscribe List](https://wordpress.org/plugins/mail-subscribe-list/)
     * [Easy Sign Up](https://wordpress.org/plugins/easy-sign-up/)
-
+    * [8 Best WordPress Mailing List Plugins For List Building Magic](http://www.bloggingwizard.com/wordpress-mailing-list-plugins-superior-list-building-power/)
+    * [http://www.wpexplorer.com/wordpress-plugins-email-list/](http://www.wpexplorer.com/wordpress-plugins-email-list/)
+    * [http://robertryan.ie/best-wordpress-mailing-list-plugin/](http://robertryan.ie/best-wordpress-mailing-list-plugin/)
