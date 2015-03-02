@@ -482,3 +482,10 @@ global $some_var;
 ###Sat Feb 28 09:35:32 2015 CST
 
 ###Sun Mar  1 08:24:06 2015 CST
+
+###Mon Mar  2 10:32:34 2015 CST
+
+* Plugins for collecting email addrs
+    * [Mail Subscribe List](https://wordpress.org/plugins/mail-subscribe-list/)
+    * [Easy Sign Up](https://wordpress.org/plugins/easy-sign-up/)
+
