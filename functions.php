@@ -496,10 +496,8 @@ function elit_honor_ssl_for_attachments( $url ) {
   $https = site_url( FALSE, 'https' );
 
   if ( isset( $_SERVER['HTTPS'] ) ) {
-    
     return ( $_SERVER['HTTPS'] == 'on' ) ? 
       str_replace( $http, $https, $url) : $url;
-
   } else {
     return $url;
   }
@@ -528,9 +526,9 @@ function elit_notify_of_post_status_change($new_status, $old_status, $post) {
 }
 add_action('transition_post_status', 'elit_notify_of_post_status_change', 10, 3);
 
-function elit_ten_posts_on_archive( $query ) {
+function elit_eight_posts_on_archive( $query ) {
   if ( $query->is_archive() && $query->is_main_query() ) {
-    $query->set( 'posts_per_page', -1 );
+    $query->set( 'posts_per_page', 8 );
   }
 }
-add_action( 'pre_get_posts' , 'elit_ten_posts_on_archive' );
+add_action( 'pre_get_posts' , 'elit_eight_posts_on_archive' );
