@@ -42,7 +42,7 @@
             </figure>
             <div class="f-item__body">
               <h5 class="f-item__kicker"><?php echo $meta['elit_kicker'][0]; ?></h5>
-              <span class="f-item__date"><?php echo get_the_date( 'M. j, Y' ); ?></span>
+<!--               <span class="f-item__date"><?php //echo get_the_date( 'M. j, Y' ); ?></span> -->
               <h2 class="f-item__head">
                 <a href="<?php the_permalink(); ?>" class="f-item__link"><?php the_title(); ?></a>
               </h2>
