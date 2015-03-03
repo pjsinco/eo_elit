@@ -29,7 +29,7 @@
   </li>
   <li class="social__icon">
     <a href="#" class="social--shiftable__link">
-      <span class="icon-email">
+      <span class="icon-mail">
         <span class="text-replace">Email</span>
       </span>
     </a>

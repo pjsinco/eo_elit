@@ -8,7 +8,7 @@
 
       <div class="row">
         <div class="size-1-of-1">
-          <div class="section-title-hat"><span class="section-title-hat__text">More Stories</span> <a href="#" class="section-title__link"><span class="section-title--muted">All stories <span class="icon-arrow-right"></span></span></a>
+          <div class="section-title-hat"><span class="section-title-hat__text">More Stories</span> <a href="#" class="section-title__link"><span class="section-title--muted">All stories <span class="icon-arrow-right-alt1"></span></span></a>
           </div>
         </div>
       </div>

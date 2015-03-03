@@ -28,11 +28,11 @@ get_header(); ?>
 
             <div class="pagination">
               <div class="pagination__prev">
-                <?php echo get_previous_posts_link( '<span class="icon-arrow-left"></span> Previous' ); ?>
+                <?php echo get_previous_posts_link( '<span class="icon-arrow-left-alt1"></span> Previous' ); ?>
                 
               </div>
               <div class="pagination__next">
-                <?php echo get_next_posts_link( 'More stories <span class="icon-arrow-right"></span>' ); ?>
+                <?php echo get_next_posts_link( 'More stories <span class="icon-arrow-right-alt1"></span>' ); ?>
                 
               </div>
             </div> <!-- .pagination -->

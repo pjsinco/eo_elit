@@ -79,7 +79,7 @@ function elit_story_footer($with_social = true) {
     <a href="#comments">
       <span class="story-nav__emph"></span>
         <?php comments_number( 'Leave a comment ', '1 comment ', '% comments '); ?>
-      <span class="icon-arrow-down"></span>
+      <span class="icon-arrow-down-alt1"></span>
     </a>
   </div>
 

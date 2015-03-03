@@ -484,7 +484,6 @@ global $some_var;
 ###Sun Mar  1 08:24:06 2015 CST
 
 ###Mon Mar  2 10:32:34 2015 CST
-
 * Collecting email addrs
     * [Mail Subscribe List](https://wordpress.org/plugins/mail-subscribe-list/)
     * [Easy Sign Up](https://wordpress.org/plugins/easy-sign-up/)
@@ -493,3 +492,6 @@ global $some_var;
     * [http://robertryan.ie/best-wordpress-mailing-list-plugin/](http://robertryan.ie/best-wordpress-mailing-list-plugin/)
 
 * [How To Modify The Loop in archives.php To Have 11 Posts Per Page and CSS Styling](http://wordpress.stackexchange.com/questions/63424/how-to-modify-the-loop-in-archives-php-to-have-11-posts-per-page-and-css-styling)
+
+###Tue Mar  3 08:44:45 2015 CST
+
