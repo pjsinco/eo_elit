@@ -24,7 +24,19 @@
                 </div> <!-- story-meta -->
               </div>
 
-              <?php get_template_part('social', 'shiftable'); ?>
+              <?php 
+                /**
+                 * Set up social
+                 *
+                 */
+                $meta = get_post_meta( $post->ID );
+                $link = get_permalink();
+                $title = get_the_title();
+                $thumb_id = ( 
+                  has_post_thumbnail() ? get_post_thumbnail_id() : 
+                    $meta['elit_thumb'][0]
+                );
+                elit_social_links( $meta, $link, $title, $thumb_id, true ); ?>
             </header>
 
             <div class="story__body-text">
@@ -32,7 +44,8 @@
             </div> <!-- story__body-text -->
             
             <footer class="story-footer"> 
-              <?php elit_story_footer(true); ?>
+              <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
+              <?php elit_story_footer(); ?>
             </footer>
           </div> <!-- .story -->
         </article>
