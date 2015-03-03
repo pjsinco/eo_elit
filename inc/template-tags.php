@@ -97,13 +97,6 @@ function elit_story_footer($with_social = true) {
     printf('<div class="story-nav">%1$s</div>', $tags_list);
   }
 
-//echo '<pre>'; var_dump( author_can( get_the_ID(), 'publish_posts' ) ); echo '</pre>'; die(  );
-//  $author_bio = (
-//    author_can( get_the_ID(), 'publish_posts' ) ?
-//      get_the_author_meta( 'description' ) :
-//      get_post_meta( get_the_id(), 'elit_bio', true )
-//  );
-
   // #4 output our about-the-author if we have the info
   $bio = get_post_meta (get_the_ID(), 'elit_bio', true);
   if ( author_can( get_the_ID(), 'publish_posts' ) && empty( $bio ) ) {
