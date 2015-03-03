@@ -103,7 +103,7 @@ function elit_story_footer($with_social = true) {
     $author_bio  = get_the_author_meta( 'description' ); 
     $author_bio .= '<span class="story-footer__note">';
     $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
-    $author_bio .= '<span class="icon-email"></span>&nbsp;Email '; 
+    $author_bio .= '<span class="icon-mail"></span>&nbsp;Email '; 
     $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
       
   } else {
