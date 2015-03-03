@@ -1,0 +1,32 @@
+%pagination-prev-next-base {
+  width: 50%;
+}
+.pagination {
+  @include clearfix;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: $font-color;
+  
+  a {
+    color: inherit;
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
+  }
+
+  [class*='icon-']:before {
+    color: inherit;
+    font-size: 1em;
+  }
+
+  &__prev {
+    @extend %pagination-prev-next-base;
+    float: left;
+  }
+
+  &__next {
+    @extend %pagination-prev-next-base;
+    float: right;
+  }
+
+}

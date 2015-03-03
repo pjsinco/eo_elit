@@ -26,6 +26,16 @@ get_header(); ?>
             <?php get_template_part('content', 'archive'); ?>
         <?php endif; ?>
 
+            <div class="pagination">
+              <div class="pagination__prev">
+                <?php echo get_previous_posts_link( '<span class="icon-arrow-left"></span> Previous' ); ?>
+                
+              </div>
+              <div class="pagination__next">
+                <?php echo get_next_posts_link( 'More stories <span class="icon-arrow-right"></span>' ); ?>
+                
+              </div>
+            </div> <!-- .pagination -->
 
           </div> <!-- .elit-archive -->
         </div> <!-- .row -->
