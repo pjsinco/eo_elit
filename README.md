@@ -494,4 +494,37 @@ global $some_var;
 * [How To Modify The Loop in archives.php To Have 11 Posts Per Page and CSS Styling](http://wordpress.stackexchange.com/questions/63424/how-to-modify-the-loop-in-archives-php-to-have-11-posts-per-page-and-css-styling)
 
 ###Tue Mar  3 08:44:45 2015 CST
+* [https://developers.facebook.com/tools/debug/](https://developers.facebook.com/tools/debug/)
 
+* Social sharing link formats:  
+
+    * Facebook
+    ```html
+    https://www.facebook.com/sharer/sharer.php?u=URL_TO_SHARE
+    ```
+
+    * Twitter
+    ```html
+    https://twitter.com/intent/tweet?text=TWEET_TO_SHARE&url=URL_TO_SHARE&via=USERNAME_TO_SHARE
+    ```
+
+    * [LinkedIn](https://developer.linkedin.com/docs/share-on-linkedin)
+    ```html
+    <a href="https://www.linkedin.com/shareArticle
+     ?mini=true
+     &url=https%3A%2F%2Fjonsuh.com%2F
+     &title=Jonathan%20Suh
+     &source=https%3A%2F%2Fjonsuh.com%2F
+     &summary=Short%20summary
+     target="_blank">Share on LinkedIn</a>
+    ```
+
+    * [Pinterest](https://developers.pinterest.com/pin_it/)
+    ```html
+    <a href="https://www.pinterest.com/pin/create/button/
+     ?url=https%3A%2F%2Fjonsuh.com%2F
+     &media=https%3A%2F%2Fjonsuh.com%2Ficon.png
+     &description=Short%20description
+     &hashtags=web,development" 
+     target="_blank">Share on Pinterest</a>
+    ```
