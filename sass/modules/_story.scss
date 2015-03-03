@@ -13,7 +13,23 @@
     /*@include container(95%);*/
     /*@include span(8 of $gridpage);*/
   }
+}
 
+%body-text-base {
+  margin-top: 1em;
+
+  > h2 {
+    margin-bottom: 0;
+    font-family: $primaryfont;
+    font-size: 1.1875em;
+    line-height: $bodylineheight;
+    font-weight: 600;
+    color: $primarycolor;
+    
+    @include breakpoint($screen $large-start) {
+      line-height: $bodylineheight-bigger;
+    }
+  }
 }
 
 .story {
@@ -22,6 +38,9 @@
   @include breakpoint($screen $large-minor-start) {
     width: 100%;
   }
+
+
+  
 
   &__social {
     &--shiftable {
@@ -33,8 +52,12 @@
     }
   }
 
+  &--page__body-text {
+    @extend %body-text-base;
+  }
+
   &__body-text {
-    margin-top: 1em;
+    @extend %body-text-base;
 
     // dropcap
     > p:first-child:first-letter {
@@ -49,19 +72,6 @@
         font-size: 3.5em;
         margin-bottom: -.3125em;
         line-height: .97;
-      }
-    }
-
-    > h2 {
-      margin-bottom: 0;
-      font-family: $primaryfont;
-      font-size: 1.1875em;
-      line-height: $bodylineheight;
-      font-weight: 600;
-      color: $primarycolor;
-      
-      @include breakpoint($screen $large-start) {
-        line-height: $bodylineheight-bigger;
       }
     }
 
