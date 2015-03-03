@@ -528,3 +528,8 @@ global $some_var;
      &hashtags=web,development" 
      target="_blank">Share on Pinterest</a>
     ```
+
+    *[Email](Quick Way to Add “Email This” Button to WordPress Posts)
+    ```html
+    <a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this article to a friend!">Email this</a>">
+    ```
