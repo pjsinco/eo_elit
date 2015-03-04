@@ -8,7 +8,6 @@
  */
 ?>
 
-    
       <footer id="colophon" class="footer" role="contentinfo">
         <div class="footer__body">
           <div class="row--full">
@@ -16,6 +15,8 @@
             <div class="footer__col">
               <h3 class="footer__title">About the AOA</h3>
               <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a class="footer__list-item"><a href="http://www.osteopathic.org/osteopathic-health/about-dos/what-is-a-do/Pages/default.aspx" title="What is a DO?">What is a DO?</a></li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/about/aoa-membership/Pages/default.aspx" title="Enjoy the Benefits of Being an AOA Member">AOA Membership</a>
                 </li>
@@ -135,7 +136,6 @@
               <a href="http://www.osteopathic.org/inside-aoa/about/Pages/copyright-notice.aspx" title="Copyright Notice">Copyright Notice</a>
             </li>
           </ul>
-
         </div><!-- .row -->
       </footer><!-- #colophon -->
     <script src="http://localhost:35729/livereload.js"></script>
