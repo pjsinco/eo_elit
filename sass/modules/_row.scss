@@ -1,8 +1,6 @@
 %row-base {
-  /*@include clearfix;*/
   @include container($gridpage);
   position: relative;
-  /*margin-bottom: 1em;*/
 }
 
 .row {
@@ -11,10 +9,6 @@
   margin-right: $out-gutter-pct;
   text-align: center;
 
-  @include breakpoint($screen $leaderboard-start) {
-    /*margin-bottom: 2em;*/
-  }
-
   @include breakpoint($screen $xlarge-start) {
     margin-left: 0;    
     margin-right: 0;    
@@ -22,32 +16,20 @@
   
   &--bleed {
     @extend %row-base;
-    @include bleed(0 3%);
-
-//    @include breakpoint($screen $xlarge-start) {
-//      /*margin-left: $out-gutter-pct;      */
-//      /*margin-right: $out-gutter-pct;      */
-//      margin-left: 0;      
-//      margin-right: 0;      
-//      padding-left: 0;
-//      padding-right: 0;
-//    }
+    @include bleed(0 5%);
 
     &-xl {
       @extend %row-base;
       @include bleed(0 3%);
-
-     // @include breakpoint($screen $xlarge-start) {
-     //   margin-left: $out-gutter-pct;      
-     //   margin-right: $out-gutter-pct;      
-     //   padding-left: 0;
-     //   padding-right: 0;
-     // }
     }
   }
 
-  /*&--center {*/
-    /*text-align: center;*/
-  /*}*/
+  &--full {
+    @extend .row;
+    @include breakpoint($screen $xlarge-start) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 
 }
