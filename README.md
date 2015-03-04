@@ -533,3 +533,5 @@ global $some_var;
     ```html
     <a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Send this article to a friend!">Email this</a>">
     ```
+
+###Wed Mar  4 05:38:28 2015 CST
