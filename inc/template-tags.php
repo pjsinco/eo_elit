@@ -15,11 +15,10 @@
  * @param boolean $shiftable - whether to add '--shiftable' class to tags
  */
 function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true ) {
-  //$meta = get_post_meta( $post->ID );
-  $link  = urlencode( $link );
-  $title = urlencode( html_entity_decode( strip_tags( $title ) ) );
-  if ( empty( $thumb_id ) ) {
-  }
+  $link = urlencode( $link );
+  $title_decoded = 
+    html_entity_decode( strip_tags( $title ), ENT_QUOTES, 'utf-8' );
+  $title = urlencode( $title_decoded );
   $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-large', false );
   $shift_str = get_shiftable( $shiftable );
 ?>
