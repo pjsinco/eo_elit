@@ -164,8 +164,6 @@ function elit_add_search_box_to_menu( $items, $args ) {
     $search  = '<li class="nav__item nav__item--last">';
     $search .= '<section class="site-search">';
     $search .= '<form action="/" id="search-form" class="site-search__form">';
-    $search .= '<label id="search-label" for="s" class="site-search__label">';
-    $search .= '</label>';
     $search .= '<input type="search" name="s" placeholder="Enter search terms"';
     $search .= ' id="q" class="site-search__input"/>';
     $search .= '<input type="submit" class="site-search__button--hide"/>';

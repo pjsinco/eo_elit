@@ -76,7 +76,8 @@
 
     &--last {
       margin-right: 0;
-      
+      background: $lightgray;
+
       @include breakpoint($screen $big-menu-start) {
         float: right;
       }
