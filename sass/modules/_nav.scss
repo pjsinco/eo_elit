@@ -30,6 +30,7 @@
   }
 
   &__list {
+    position: relative;
     margin: 0;
     padding: 0;
     line-height: 2.5em;
@@ -51,7 +52,6 @@
       font-size: 0.8125em;
     }
 
-    /*&--link {*/
     > a {
       display: block;
       color: $verydark;
@@ -74,12 +74,16 @@
       }
     }
 
-    &--last {
+    &--search {
       margin-right: 0;
       background: $lightgray;
 
       @include breakpoint($screen $big-menu-start) {
+        position: absolute;
+        top: 0;
+        right: 0;
         float: right;
+        background: $white;
       }
     }
   }

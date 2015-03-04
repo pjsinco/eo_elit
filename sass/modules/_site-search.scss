@@ -4,7 +4,12 @@
   &__form {
     width: 100%;
     /*padding-top: .3125em;*/
-    padding-top: 5px;
+    padding-top: .3125em;
+    outline: none;
+
+    @include breakpoint($screen $big-menu-start) {
+      padding-top: 0;
+    }
   }
 
   &__label {
@@ -45,6 +50,24 @@
       color: transparent;
     }
 
+
+    @include breakpoint($screen $big-menu-start) {
+      width: 0;
+      font-size: 1.230769231em;
+
+      &:focus {
+        /*margin-top: 0;*/
+        width: 10em;
+        outline: none;
+        cursor: text;
+        background-position: 3px 50%;
+      
+
+        &[type=text] {
+          /*padding: .5em 0 .5em 2em;*/
+        }
+      }
+    }
 
   } 
 }
