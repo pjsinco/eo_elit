@@ -1,9 +1,57 @@
+%footer-text-base {
+  font-size: .875em;
+  line-height: 1.4;
+}
 .footer {
-  @extend %top-and-bottom;
-  /*@include container(3);*/
-  padding-top: 1em;
-  margin-bottom: 3em;
+//  @extend %top-and-bottom;
+//  /*@include container(3);*/
+//  padding-top: 1em;
+//  margin-bottom: 3em;
 
+
+  @include clearfix;
   clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $site-width;
   border-top: 1px solid $lightgray;
+  /*font-size: .875em;*/
+  line-height: 1.4;
+
+  &__title {
+
+  }
+
+  a {
+    color: inherit;
+  }
+
+  &__list {
+  @extend %footer-text-base;
+  @include no-bullets;
+  text-align: left;
+  
+    &--horiz {
+      @include horizontal-list-container;
+    }
+  } // &__list
+
+  &__list-item {
+    /*@extend %footer-text-base;*/
+
+    &--horiz {
+      @include horizontal-list-item;
+      @extend %footer-text-base;
+    }
+
+  } //__list-item
+  
+  &__body-text {
+    @extend %footer-text-base;
+    text-align: left;
+
+    &--push {
+
+    }
+  }
 }
