@@ -15,7 +15,7 @@
   }
 }
 
-%body-text-base {
+%story-body-text-base {
   margin-top: 1em;
 
   > h2 {
@@ -53,11 +53,11 @@
   }
 
   &--page__body-text {
-    @extend %body-text-base;
+    @extend %story-body-text-base;
   }
 
   &__body-text {
-    @extend %body-text-base;
+    @extend %story-body-text-base;
 
     // dropcap
     > p:first-child:first-letter {
