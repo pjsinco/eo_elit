@@ -1,7 +1,7 @@
 .comment {
   margin-top: 1em;
-  padding: .5625em;
-  /*padding: 1em;*/
+  /*padding: .5625em;*/
+  padding: 1em;
   border-left: 1px solid $lightgray;
   border-right: 1px solid $lightgray;
   border-bottom: 1px solid $lightgray;
@@ -10,8 +10,9 @@
 
   &__children {
     position: relative;
-    right: -.625em;
-    bottom: -.625em;
+    right: -1.0625em;
+    bottom: -1.0625em;
+    /*right: -.625em;*/
     /*bottom: -.625em;*/
   }
     
