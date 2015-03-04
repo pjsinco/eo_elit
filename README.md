@@ -536,3 +536,5 @@ global $some_var;
 
 ###Wed Mar  4 05:38:28 2015 CST
 * [CSS Experiments With a Search Form Input and Button](http://webdesign.tutsplus.com/tutorials/css-experiments-with-a-search-form-input-and-button--cms-22069)
+
+* [When users leave the search box empty](https://css-tricks.com/users-leave-search-box-empty/)
