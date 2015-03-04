@@ -1,5 +1,4 @@
 .site-search {
-
   position: relative;
 
   &__form {
@@ -40,24 +39,17 @@
     height: 2em;
     width: 0;
     display: inline-block;
-    transition: width 400ms ease, background 400ms ease;
+    /*transition: width 400ms ease, background 400ms ease;*/
 
     &:-ms-input-placeholder {
       color: transparent;
     }
 
-    &:focus {
+    margin-top: -1px;
+    width: 10em;
+    outline: none;
+    /*border: 1px solid $lightgray;*/
+    cursor: text;
 
-      margin-top: -1px;
-      width: 10em;
-      outline: none;
-      border: 1px solid $lightgray;
-      cursor: text;
-
-      &[type=text] {
-        /*padding: .5em 0 .5em 2em;*/
-      }
-    }
   } 
-
 }
