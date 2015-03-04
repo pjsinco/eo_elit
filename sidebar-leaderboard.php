@@ -1,5 +1,5 @@
     <aside class="ad ad--wide-shallow">
-      <a href="http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.jaoatest" target="_blank">
+      <a href="http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.thedo" target="_blank">
         <?php //wp_enqueue_script('ehs-ads'); ?>
         <script type="text/javascript" charset="utf-8">
           var ehs_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
