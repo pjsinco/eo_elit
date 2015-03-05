@@ -244,11 +244,8 @@
     color: inherit;
     display: block;
 
-    /*@include breakpoint($screen $xlarge-start) {*/
-    @include breakpoint($screen $large-start) {
       transition: color .25s ease;
       @include red-hover;
-    }
 
     &--minor {
       display: block;
