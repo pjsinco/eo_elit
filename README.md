@@ -540,3 +540,4 @@ global $some_var;
 * [When users leave the search box empty](https://css-tricks.com/users-leave-search-box-empty/)
 
 ###Thu Mar  5 04:16:46 2015 CST
+* [Disable A Plugin’s CSS File](http://speakinginbytes.com/2012/09/disable-plugins-css-file/)
