@@ -545,3 +545,5 @@ global $some_var;
 * [Disable any WordPress Plugin CSS stylesheet](http://tutswp.com/disable-wordpress-plugin-css-stylesheet/)
 
 * [How WordPress Plugins Affect Your Site’s Load Time](http://www.wpbeginner.com/wp-tutorials/how-wordpress-plugins-affect-your-sites-load-time/)
+
+* [Reliably get viewport dimensions in JS](https://gist.github.com/scottjehl/2051999)
