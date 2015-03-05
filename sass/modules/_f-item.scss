@@ -243,9 +243,8 @@
   &__link {
     color: inherit;
     display: block;
-
-      transition: color .25s ease;
-      @include red-hover;
+    transition: color .25s ease;
+    @include red-hover;
 
     &--minor {
       display: block;
