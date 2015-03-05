@@ -20,9 +20,9 @@
               <iframe width="655" height="400" src="//www.youtube.com/embed/SbTcdzb1HR0?color=white&amp;autohide=1&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Egestas Purus</h5>
-              <h2 class="spotlight__head">Oras justo odio, dapibus ac facilisis in, egestas eget quam.</h2>
-              <p class="spotlight__body-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam porta sem malesuada magna mollis euismod.</p>
+              <h5 class="spotlight__kicker">Balancing Act</h5>
+              <h2 class="spotlight__head"><a href="<?php echo get_the_permalink( '179105' ); ?>">Video: How can physicians avoid burnout?</a></h2>
+              <p class="spotlight__body-text">Physicians recommend that DOs take steps to reduce anxiety, spend more time with family and remember why they became doctors.</p>
             </div>
           </div>
         </div>
