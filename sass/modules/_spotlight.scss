@@ -22,11 +22,9 @@
       /*max-width: (span(8 of $gridpage) - gutter($gridpage));*/
       max-width: span(8 of $gridpage);
     }
-  
   }
 
   &__body {
-
     margin-left: auto;
     margin-right: auto;
 
@@ -42,7 +40,6 @@
       width: span(4 of $gridpage);
       text-align: left;
     }
-
   }
 
   &__kicker {
@@ -56,6 +53,12 @@
   &__head {
     @extend .f-item__head--major;
 
+    > a {
+      color: inherit;
+      transition: color .25s ease;
+      @include red-hover;
+
+    }
   }
 
   &__body-text {
