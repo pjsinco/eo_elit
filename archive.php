@@ -5,8 +5,6 @@
  * @package elit
  */
 
-// TODO this is all temporary
-
 get_header(); ?>
 
 <?php get_template_part('sidebar', 'leaderboard'); ?>
@@ -41,11 +39,7 @@ get_header(); ?>
         </div> <!-- .row -->
       </section> <!-- #primary -->
 
-<!--       temp; make into a sidebar template? -->
       <section id="secondary" class="content__secondary">
-
-
-
 <?php get_sidebar('archive'); ?>
       </section>
     </div> <!-- #main -->
