@@ -60,18 +60,26 @@
     @extend %story-body-text-base;
 
     // dropcap
-    > p:first-child:first-letter {
-      margin-bottom: -.25em;
-      margin-right: .08333333333em;
-      float: left;
+    > p:first-of-type:first-letter {
+      height: .7em;
+      margin: .13em 0 -.05em 0;
+      padding: 0 .1em 0 0;
       font-size: 3em;
-      line-height: 1;
+      line-height: .7em;
+      float: left;
       color: $primarycolor;
+
+      /*margin-bottom: -.25em;*/
+      /*margin-right: .08333333333em;*/
+      /*float: left;*/
+      /*font-size: 3em;*/
+      /*line-height: 1;*/
 
       @include breakpoint($screen $large-start) {
         font-size: 3.5em;
-        margin-bottom: -.3125em;
-        line-height: .97;
+        /*font-size: 3.5em;*/
+        /*margin-bottom: -.3125em;*/
+        /*line-height: .97;*/
       }
     }
 
