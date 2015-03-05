@@ -41,7 +41,7 @@
 
 %super-label-base {
   position: absolute;
-  display: none;
+  /*display: none;*/
   padding: .5em;
   border: 1px solid rgba($extralightgray, .4);
   font-weight: 400;
@@ -49,10 +49,9 @@
   background: rgba(0,0,0,.1);
   color: rgba($extralightgray, .8);
 
-  @include breakpoint($screen $overlay-start) {
-    display: block;
-  }
-
+  /*@include breakpoint($screen $overlay-start) {*/
+    /*display: block;*/
+  /*}*/
 }
 
 .super {
@@ -156,50 +155,36 @@
   }
 
   &__label {
-
     &--t-l {
       @extend %super-label-base;
-
-      @include breakpoint($screen $overlay-start) {
-        top: 4.25%;
-        bottom: inherit;
-        left: 3%;
-        right: inherit;
-      }
+      top: 4.25%;
+      bottom: inherit;
+      left: 3%;
+      right: inherit;
     }
 
     &--t-r {
       @extend %super-label-base;
-
-      @include breakpoint($screen $overlay-start) {
-        top: 4.25%;
-        bottom: inherit;
-        left: inherit;
-        right: 3%;
-      }
+      top: 4.25%;
+      bottom: inherit;
+      left: inherit;
+      right: 3%;
     }
 
     &--b-l {
       @extend %super-label-base;
-
-      @include breakpoint($screen $overlay-start) {
-        top: inherit;
-        bottom: 4.25%;
-        left: 3%;
-        right: inherit;
-      }
+      top: inherit;
+      bottom: 4.25%;
+      left: 3%;
+      right: inherit;
     }
 
     &--b-r {
       @extend %super-label-base;
-
-      @include breakpoint($screen $overlay-start) {
-        top: inherit;
-        bottom: 4.25%;
-        left: inherit;
-        right: 3%;
-      }
-
+      top: inherit;
+      bottom: 4.25%;
+      left: inherit;
+      right: 3%;
     }
   }
 
