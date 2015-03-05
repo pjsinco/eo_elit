@@ -543,3 +543,5 @@ global $some_var;
 * [Disable A Plugin’s CSS File](http://speakinginbytes.com/2012/09/disable-plugins-css-file/)
 
 * [Disable any WordPress Plugin CSS stylesheet](http://tutswp.com/disable-wordpress-plugin-css-stylesheet/)
+
+* [How WordPress Plugins Affect Your Site’s Load Time](http://www.wpbeginner.com/wp-tutorials/how-wordpress-plugins-affect-your-sites-load-time/)
