@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
   // menu is hidden by default to keep from showing
   // during page load; so we need to make it seeable
   // after the page loads
-  $menu.css('display', 'block');
+  //$menu.css('display', 'block');
 
   $menulink.click(function(evt) { 
     $menulink.toggleClass('active'); 
