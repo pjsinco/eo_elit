@@ -20,7 +20,11 @@
 
     &-xl {
       @extend %row-base;
-      @include bleed(0 3%);
+      /*@include bleed(0 3%);*/
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
