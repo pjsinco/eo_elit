@@ -205,7 +205,7 @@ function elit_story_video_shortcode($atts, $content = null) {
     ), $atts
   );
 
-  $markup  = "<figure class='image image--secondary' id='video'>";
+  $markup  = "<figure class='image image--secondary elit-video' id='video'>";
   $markup .= $a['embed'];
   if ( $a['caption'] ) {
     $markup .= '<figcaption class="caption">';

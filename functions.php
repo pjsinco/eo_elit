@@ -268,7 +268,7 @@ function elit_admin_scripts() {
 function elit_add_fitvids_script() {
   $output = '<script>' . PHP_EOL;
   $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
-  $output .= "  jQuery('#video').fitVids();" . PHP_EOL;
+  $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
   $output .= "});";
   $output .= '</script>' . PHP_EOL;
 
