@@ -3,7 +3,13 @@
  * elit functions and defs
  */
 
-/* Change the Site URL */
+/* Change the Site URL to Live (Production) site*/
+/*
+update_option('siteurl','http://thedo.osteopathic.org');
+update_option('home','http://thedo.osteopathic.org');
+*/
+
+/* Change the Site URL to Dev (Development) site*/
 /*
 update_option('siteurl','http://thedodev.osteopathic.org');
 update_option('home','http://thedodev.osteopathic.org');
