@@ -225,7 +225,7 @@ function elit_scripts() {
   );
 
   
-  wp_enqueue_script( 'modernizr' );
+  //wp_enqueue_script( 'modernizr' );
   //wp_enqueue_script('typekit-load');
   //wp_enqueue_script('picturefill');
   //wp_enqueue_script('nav');
