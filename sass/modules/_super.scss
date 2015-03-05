@@ -42,8 +42,6 @@
 %super-label-base {
   position: absolute;
   display: none;
-  /*top: 3%;*/
-  /*left: 3%;*/
   padding: .5em;
   border: 1px solid rgba($extralightgray, .4);
   font-weight: 400;
@@ -157,19 +155,13 @@
     }
   }
 
-
   &__label {
-    @extend %super-label-base;
-
-    @include breakpoint($screen $overlay-start) {
-      
-    }
 
     &--t-l {
       @extend %super-label-base;
 
       @include breakpoint($screen $overlay-start) {
-        top: 3%;
+        top: 4.25%;
         bottom: inherit;
         left: 3%;
         right: inherit;
@@ -180,7 +172,7 @@
       @extend %super-label-base;
 
       @include breakpoint($screen $overlay-start) {
-        top: 3%;
+        top: 4.25%;
         bottom: inherit;
         left: inherit;
         right: 3%;
@@ -192,7 +184,7 @@
 
       @include breakpoint($screen $overlay-start) {
         top: inherit;
-        bottom: 3%;
+        bottom: 4.25%;
         left: 3%;
         right: inherit;
       }
@@ -203,7 +195,7 @@
 
       @include breakpoint($screen $overlay-start) {
         top: inherit;
-        bottom: 3%;
+        bottom: 4.25%;
         left: inherit;
         right: 3%;
       }
