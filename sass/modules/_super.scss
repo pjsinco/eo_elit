@@ -5,19 +5,14 @@
 
 %super-body-base {
   position: relative;
-  /*top: -1em;*/
   top: -.25em;
   padding: 5% 3%;
   margin-bottom: 1em;
   width: 100%;
-  /*max-width: $article-max-width;*/
   @extend %center;
   background: $verydark;
-  /*border: 1px solid $primarycolor;*/
   border-top: 3px solid $primarycolor;
-  /*border-right: 1px solid $mediumgray;*/
   border-bottom: 3px solid $primarycolor;
-  /*border-left: 1px solid $mediumgray;*/
   color: $white;
 
   @include breakpoint($screen $medium-start) {
@@ -44,8 +39,25 @@
   }
 }
 
+%super-label-base {
+  position: absolute;
+  display: none;
+  /*top: 3%;*/
+  /*left: 3%;*/
+  padding: .5em;
+  border: 1px solid $extralightgray;
+  font-weight: 400;
+  font-size: .875em;
+  background: rgba(0,0,0,.1);
+  color: $extralightgray;
+
+  @include breakpoint($screen $overlay-start) {
+    display: block;
+  }
+
+}
+
 .super {
-  
   position: relative;
   color: $font-color;
 
@@ -146,20 +158,56 @@
   }
 
 
-  &__tag {
-    position: absolute;
-    display: none;
-    top: 3%;
-    left: 3%;
-    padding: .5em;
-    border: 1px solid $extralightgray;
-    font-weight: 400;
-    font-size: .875em;
-    background: rgba(0,0,0,.1);
-    color: $extralightgray;
+  &__label {
+    @extend %super-label-base;
 
     @include breakpoint($screen $overlay-start) {
-      display: block;
+      
+    }
+
+    &--t-l {
+      @extend %super-label-base;
+
+      @include breakpoint($screen $overlay-start) {
+        top: 3%;
+        bottom: inherit;
+        left: 3%;
+        right: inherit;
+      }
+    }
+
+    &--t-r {
+      @extend %super-label-base;
+
+      @include breakpoint($screen $overlay-start) {
+        top: 3%;
+        bottom: inherit;
+        left: inherit;
+        right: 3%;
+      }
+    }
+
+    &--b-l {
+      @extend %super-label-base;
+
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        bottom: 3%;
+        left: 3%;
+        right: inherit;
+      }
+    }
+
+    &--b-r {
+      @extend %super-label-base;
+
+      @include breakpoint($screen $overlay-start) {
+        top: inherit;
+        bottom: 3%;
+        left: inherit;
+        right: 3%;
+      }
+
     }
   }
 

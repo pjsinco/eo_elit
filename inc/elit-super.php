@@ -43,7 +43,6 @@ $args = array(
   'rewrite' => array( 'slug' => 'super'),
   'supports' => array( 'revision', 'thumbnail', 'custom_fields' ),
 );
-
 register_post_type( 'elit_super', $args );
 
 /**
@@ -196,6 +195,93 @@ function elit_save_super_quadrant_meta( $post_id, $post ) {
 
   // set the meta key
   $meta_key = 'elit_super_quadrant';
+
+  // get the meta value as a string
+  $meta_value = get_post_meta( $post_id, $meta_key, true);
+
+  // if a new meta value was added and there was no previous value, add it
+  if ( $new_meta_value && $meta_value == '' ) {
+    //add_post_meta( $post_id, 'elit_foo', 'bar');
+    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+    // so the new meta value doesn't match the old one, so we're updating
+    update_post_meta( $post_id, $meta_key, $new_meta_value );
+  } elseif ( $new_meta_value == '' && $meta_value) {
+    // if there is no new meta value but an old value exists, delete it
+    delete_post_meta( $post_id, $meta_key, $meta_value );
+  }
+}
+
+
+/**
+ * SUPER label meta box
+ *
+ * Specify the quadrant for the label: 
+ */
+add_action( 'load-post.php' , 'elit_super_label_quadrant_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_super_label_quadrant_meta_box_setup' );
+
+function elit_super_label_quadrant_meta_box_setup() {
+  add_action( 'add_meta_boxes' , 'elit_add_super_label_quadrant_meta_box' );
+  add_action( 'save_post' , 'elit_save_super_label_quadrant_meta', 10, 2 );
+}
+
+function elit_add_super_label_quadrant_meta_box() {
+  add_meta_box(
+    'elit-super-label-quadrant',
+    esc_html( 'Label quadrant' ),
+    'elit_super_label_quadrant_meta_box',
+    'elit_super',
+    'side',
+    'low'
+  );
+}
+
+function elit_super_label_quadrant_meta_box( $object, $box ) {
+  wp_nonce_field( basename(__FILE__), 'elit_super_label_quadrant_nonce' );
+  $quadrant = get_post_meta( $object->ID, 'elit_super_label_quadrant', true );
+  d($quadrant);
+  ?>
+  <p>
+    <label for="widefat">The area of the image in which the label should appear, if at all.</label>
+    <br />
+    <br />
+    <select name="elit-super-label-quadrant" id="elit-super-label-quadrant">
+      <option value="none" <?php if ( $quadrant ) : selected( $quadrant, 'none' ); endif;?>>Don't display</option>
+      <option value="t-l"  <?php if ( $quadrant ) : selected( $quadrant, 't-l' ); endif;?>>Top-left</option>
+      <option value="t-r"  <?php if ( $quadrant ) : selected( $quadrant, 't-r' ); endif;?>>Top-right</option>
+      <option value="b-l"  <?php if ( $quadrant ) : selected( $quadrant, 'b-l' ); endif;?>>Bottom-left</option>
+      <option value="b-r"  <?php if ( $quadrant ) : selected( $quadrant, 'b-r' ); endif;?>>Bottom-right</option>
+      
+    </select>
+  </p>
+  <?php 
+}
+
+function elit_save_super_label_quadrant_meta( $post_id, $post ) {
+  // verify the nonce
+  if ( !isset( $_POST['elit_super_label_quadrant_nonce'] ) || 
+    !wp_verify_nonce( $_POST['elit_super_label_quadrant_nonce'], basename( __FILE__ ) )
+  ) {
+      // instead of just returning, we return the $post_id
+      // so other hooks can continue to use it
+      return $post_id;
+  }
+
+  // get post type object
+  $post_type = get_post_type_object( $post->post_type );
+
+  // if the user has permission to edit the post
+  if ( !current_user_can( $post_type->cap->edit_post, $post_id ) ) {
+    return $post_id;
+  }
+
+  // get the posted data and sanitize it
+  $new_meta_value = 
+    ( isset($_POST['elit-super-label-quadrant'] ) ? $_POST['elit-super-label-quadrant'] : '' );
+
+  // set the meta key
+  $meta_key = 'elit_super_label_quadrant';
 
   // get the meta value as a string
   $meta_value = get_post_meta( $post_id, $meta_key, true);
@@ -420,7 +506,6 @@ function elit_save_super_gowith_meta( $post_id, $post ) {
 // we need to add a title for our super.
 // this post type doesn't support titles, 
 // so it defaults to 'Auto Draft'
-
 
 function elit_super_update_post_title( $post_id, $tweet_date, $name ) {
   // we also need to to add the post title
