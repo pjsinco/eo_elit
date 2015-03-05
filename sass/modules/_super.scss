@@ -45,11 +45,11 @@
   /*top: 3%;*/
   /*left: 3%;*/
   padding: .5em;
-  border: 1px solid $extralightgray;
+  border: 1px solid rgba($extralightgray, .4);
   font-weight: 400;
   font-size: .875em;
   background: rgba(0,0,0,.1);
-  color: $extralightgray;
+  color: rgba($extralightgray, .8);
 
   @include breakpoint($screen $overlay-start) {
     display: block;
