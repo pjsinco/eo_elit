@@ -16,7 +16,7 @@
       <div class="row">
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
-            <div class="spotlight__feature-wrapper" id="video">
+            <div class="spotlight__feature-wrapper elit-video" id="video">
               <iframe width="655" height="400" src="//www.youtube.com/embed/SbTcdzb1HR0?color=white&amp;autohide=1&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="spotlight__body">
