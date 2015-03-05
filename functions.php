@@ -533,3 +533,10 @@ function elit_eight_posts_on_archive_and_search( $query ) {
   }
 }
 add_action( 'pre_get_posts' , 'elit_eight_posts_on_archive_and_search' );
+
+add_action( 'wp_print_styles' , 'elit_disable_plugin_stylesheets', 100 );
+function elit_disable_plugin_stylesheets() {
+
+  wp_dequeue_style( 'wordpress-popular-posts' );
+
+}
