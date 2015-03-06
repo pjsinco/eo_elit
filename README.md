@@ -547,3 +547,6 @@ global $some_var;
 * [How WordPress Plugins Affect Your Site’s Load Time](http://www.wpbeginner.com/wp-tutorials/how-wordpress-plugins-affect-your-sites-load-time/)
 
 * [Reliably get viewport dimensions in JS](https://gist.github.com/scottjehl/2051999)
+
+###Fri Mar  6 04:35:52 2015 CST
+
