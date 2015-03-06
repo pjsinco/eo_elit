@@ -6,7 +6,7 @@
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
           <?php $iframe = get_post_meta( $post->ID, 'elit_featured_video', true ); ?>
           <?php if ( $iframe ): ?>
-            <figure class="image--primary image-overlay--space" id="video">
+            <figure class="image--primary image-overlay--space elit-video" id="video">
               <?php echo $iframe; ?>
             </figure>
           <?php endif; ?>
