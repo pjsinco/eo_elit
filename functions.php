@@ -164,8 +164,6 @@ add_action( 'after_setup_theme' , 'elit_register_main_menu' );
  */
 add_filter( 'wp_nav_menu_items', 'elit_add_search_box_to_menu', 10, 2 );
 function elit_add_search_box_to_menu( $items, $args ) {
-  d( $items );
-  d( $args );
   if ( $args->theme_location == 'main-menu' ) {
     $search  = '<li class="nav__item nav__item--search">';
     $search .= '<section class="site-search">';
@@ -197,11 +195,6 @@ function elit_scripts() {
   );
 
   //wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
-
-  wp_register_script('nav', 
-    get_template_directory_uri() . '/js/nav.js', 
-    array('jquery'), false, true
-  );
 
   wp_register_script('ehs-head-tag', 
     get_template_directory_uri() . '/js/ehs-head-tag.js', 
