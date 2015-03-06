@@ -3,14 +3,16 @@ jQuery(document).ready(function() {
   /**
    * nav.js
    */
+  
+  // menu is hidden by default to keep from showing
+  // during page load; so we need to make it seeable
+  // after the page loads
+  $('.nav').show();
+
   $('body').addClass('js');
   var $menu = $('#site-nav'), 
     $menulink = $('.nav__link--toggle');
 
-  // menu is hidden by default to keep from showing
-  // during page load; so we need to make it seeable
-  // after the page loads
-  //$menu.css('display', 'block');
 
   $menulink.click(function(evt) { 
     $menulink.toggleClass('active'); 
