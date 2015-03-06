@@ -549,4 +549,11 @@ global $some_var;
 * [Reliably get viewport dimensions in JS](https://gist.github.com/scottjehl/2051999)
 
 ###Fri Mar  6 04:35:52 2015 CST
+* [https://tagboard.com/DOSnowDay2015/search](https://tagboard.com/DOSnowDay2015/search)
 
+* [ResponsiveSlides.js](http://responsiveslides.com/)
+    * [on github](https://github.com/viljamis/ResponsiveSlides.js)
+
+* [Friendly responsive slides slider](https://wordpress.org/plugins/friendly-responsiveslides-slider/)
+
+* [Meta Slider API](https://www.metaslider.com/documentation/metaslider_type_slider_parameters/)
