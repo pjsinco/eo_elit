@@ -27,6 +27,10 @@
       display: block;
       float: left;
     }
+
+    a {
+      color: inherit;
+    }
   }
 
   &__img {
@@ -46,9 +50,7 @@
     line-height: 1.2;
     color: $lightgray;
     background: rgba($verydark, .4);
-    
   }
-  
 }
 
 /**
