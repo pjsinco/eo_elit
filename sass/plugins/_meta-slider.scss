@@ -4,6 +4,11 @@
 }
 
 .metaslider .caption {
+  padding-bottom: 1em !important;
   font-size: .875em;
   color: $lightgray;
+
+  a {
+    color: inherit;
+  }
 }
