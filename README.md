@@ -557,3 +557,5 @@ global $some_var;
 * [Friendly responsive slides slider](https://wordpress.org/plugins/friendly-responsiveslides-slider/)
 
 * [Meta Slider API](https://www.metaslider.com/documentation/metaslider_type_slider_parameters/)
+
+###Sat Mar  7 09:33:09 2015 CST
