@@ -559,3 +559,22 @@ global $some_var;
 * [Meta Slider API](https://www.metaslider.com/documentation/metaslider_type_slider_parameters/)
 
 ###Sat Mar  7 09:33:09 2015 CST
+
+###Sun Mar  8 18:46:02 2015 CDT
+* [hashtag #unit-testing on wordcamp.tv] (http://wordpress.tv/tag/unit-testing/)
+
+* [Unit Testing Wordpress Plugins+ Bryan Petty](https://www.youtube.com/watch?v=9qMUc9anJKQ)
+
+* [susan buck on unit tests](https://github.com/susanBuck/notes/blob/master/05_Laravel/17_Testing.md)
+
+* [tuts+The Theory of Unit Testing, Part 2](http://code.tutsplus.com/tutorials/the-theory-of-unit-testing-part-2--wp-26157)
+
+* [Unit Testing for WordPress – Part 2: Writing Unit Tests](http://voceplatforms.com/2014/09/unit-testing-for-wordpress-part-2-writing-unit-tests/)
+
+* [WP_UnitTestCase: The Hidden API](http://taylorlovett.com/2014/07/04/wp_unittestcase-the-hidden-api/)
+
+* [Unit Testing WordPress Plugins: The Right Way](https://catn.com/2012/08/17/unit-testing-wordpress-plugins-the-right-way/)
+
+* [How to add unit testing and continuous integration to your WordPress plugin](http://ben.lobaugh.net/blog/84669/how-to-add-unit-testing-and-continuous-integration-to-your-wordpress-plugin)
+
+* [+tuts on test-driven php](http://code.tutsplus.com/series/test-driven-php--net-27482)
