@@ -578,3 +578,12 @@ global $some_var;
 * [How to add unit testing and continuous integration to your WordPress plugin](http://ben.lobaugh.net/blog/84669/how-to-add-unit-testing-and-continuous-integration-to-your-wordpress-plugin)
 
 * [+tuts on test-driven php](http://code.tutsplus.com/series/test-driven-php--net-27482)
+
+###Mon Mar  9 05:59:30 2015 CDT
+* [slides: Getting Started With Unit Testing by Alison Barrett](https://speakerdeck.com/aliso/getting-started-with-unit-testing)
+
+* [Grumpy Programmer's Guide to Building Testable PHP Applications](https://leanpub.com/grumpy-testing)
+
+* [The Grumpy Programmer's PHPUnit Cookbook](https://leanpub.com/grumpy-phpunit)
+
+* PDF from Google engineer: [Guide: Writing Testable Code](http://misko.hevery.com/attachments/Guide-Writing%20Testable%20Code.pdf)
