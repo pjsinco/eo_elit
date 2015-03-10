@@ -218,14 +218,6 @@ function elit_scripts() {
     array( 'jquery' ), false, true
   );
 
-  wp_register_script( 
-    'responsive-slides-js', 
-    get_template_directory_uri() . '/js/responsiveslides.min.js',
-    array( 'jquery' ),
-    false,
-    true
-  );
-
   wp_register_script('main',
     get_template_directory_uri() . '/js/main.js', 
     array( 'jquery' ), false, true

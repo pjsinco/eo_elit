@@ -1,11 +1,13 @@
 .elit-slideshow {
 
+  @include clearfix;
   position: relative;
   float: left;
   width: 100%;
   margin-bottom: 0;
 
   &__list {
+    @include clearfix;
     padding: 0;
     margin: 0 auto;
     width: 100%;
