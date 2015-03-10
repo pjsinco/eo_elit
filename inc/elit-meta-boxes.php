@@ -318,9 +318,10 @@ function elit_save_standalone_credit_meta( $post_id, $post ) {
 /**
  * META BOX THAT DISPLAYS LINK TO POST ON THE OLD SITE
  *
+ * NOTE: Turned off
  */
-add_action( 'load-post.php' , 'elit_origlink_meta_box_setup' );
-add_action( 'load-post-new.php' , 'elit_origlink_meta_box_setup' );
+//add_action( 'load-post.php' , 'elit_origlink_meta_box_setup' );
+//add_action( 'load-post-new.php' , 'elit_origlink_meta_box_setup' );
 
 function elit_origlink_meta_box_setup() {
   add_action( 'add_meta_boxes', 'elit_add_origlink_meta_box' );
