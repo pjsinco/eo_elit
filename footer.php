@@ -107,9 +107,6 @@
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/development/quality/Pages/default.aspx" title="Quality and Research">Quality and Research</a>
                 </li>
-                <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/development/public-health/Pages/default.aspx" title="Public Health Initiatives">Public Health</a>
-                </li>
               </ul>
               
               <h3 class="footer__title">Other publications</h3>
