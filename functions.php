@@ -237,6 +237,65 @@ function elit_scripts() {
   wp_enqueue_script( 'append-around' );
   wp_enqueue_script( 'main' );
 
+
+
+
+  /**************************
+  
+    TEMPORARY
+      TEMPORARY
+        TEMPORARY
+          TEMPORARY
+            TEMPORARY
+          TEMPORARY
+        TEMPORARY
+      TEMPORARY
+    TEMPORARY
+  
+  ***************************/
+
+  wp_register_script( 'topojson', 
+    get_template_directory_uri() . '/js/topojson.v1.min.js', 
+    array( 'd3' ), false, true
+  );
+
+  wp_register_script( 'd3-geomap-state-growth', 
+    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
+    array( 'd3', 'topojson' ), false, true
+  );
+
+  if ( is_front_page() ) {
+    wp_enqueue_script( 'topojson' );
+    wp_enqueue_script( 'd3-geomap-state-growth' );
+  }
+
+  /**************************
+  
+                    TEMPORARY
+                  TEMPORARY
+                TEMPORARY
+              TEMPORARY
+            TEMPORARY
+              TEMPORARY
+                TEMPORARY
+                  TEMPORARY
+                    TEMPORARY
+  
+  ***************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // if we're on a video page, load FitVids to make the video responsive
   if ( has_post_format( 'video' ) || is_front_page() )  {
     wp_enqueue_script( 'fitvids' );
