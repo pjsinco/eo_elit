@@ -180,7 +180,7 @@ function elit_add_search_box_to_menu( $items, $args ) {
 }
  
 /**
- * Enqueue scripts and styles.
+ * Register scripts and styles. Enqueue as needed.
  */
 function elit_scripts() {
 	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
@@ -216,6 +216,11 @@ function elit_scripts() {
   wp_register_script( 'fitvids', 
     get_template_directory_uri() . '/js/jquery.fitvids.js', 
     array( 'jquery' ), false, true
+  );
+
+  wp_register_script( 'd3', 
+    get_template_directory_uri() . '/js/d3.min.js', 
+    array(), false, true
   );
 
   wp_register_script('main',
