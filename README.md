@@ -591,3 +591,6 @@ global $some_var;
 * [Smashing: Introduction To JavaScript Unit Testing](http://www.smashingmagazine.com/2012/06/27/introduction-to-javascript-unit-testing/)
 
 ###Wed Mar 11 09:53:01 2015 CDT
+
+###Thu Mar 12 10:21:31 2015 CDT
+* [tuts+: Object-Oriented Programming in WordPress: Building the Plugin I](http://code.tutsplus.com/articles/object-oriented-programming-in-wordpress-building-the-plugin-i--cms-21083)
