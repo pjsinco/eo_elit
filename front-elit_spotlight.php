@@ -24,7 +24,8 @@
             <div class="spotlight__body">
               <h5 class="spotlight__kicker">On the rise</h5>
               <h2 class="spotlight__head">Fastest-growing DO states</h2>
-              <p class="spotlight__body-text">Here's a look at the growth rate in the number of osteopathic physicians practicing in each state between 2009 and 2014. Virginia leads all states with a 62.1% increase in DOs. Overall, the profession has grown by more than one-third in five years.</p>
+              <p class="spotlight__body-text">Here's a look at the growth rate in the number of DOs practicing in each state between 2009 and 2014. Virginia leads all with a 62.1% increase, to 1,668 osteopathic physicians. Overall, the profession added more than 19,000 osteopathic physicians between 2009 and 2014.</p>
+              <p class="spotlight__body-text">Read more in the <a href="http://www.osteopathic.org/inside-aoa/about/aoa-annual-statistics/Pages/default.aspx">2014 Osteopathic Medical Profession Report</a>.</p>
             </div>
           </div>
         </div>
