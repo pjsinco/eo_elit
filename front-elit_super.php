@@ -21,12 +21,12 @@
       <div class="row--bleed-xl no-m-b">
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
-              <figure class="super__figure">
-                <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-super' ); ?> />
-                <?php if ( !empty( $featured_image_content ) ): ?>
-                  <figcaption class="super__label--<?php echo $super_meta['elit_super_label_quadrant'][0]; ?>"><?php echo $featured_image_content->post_content ?></figcaption>
-                <?php endif; ?>
-              </figure></a>
+            <figure class="super__figure">
+              <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-super' ); ?> />
+              <?php if ( !empty( $featured_image_content ) ): ?>
+                <figcaption class="super__label--<?php echo $super_meta['elit_super_label_quadrant'][0]; ?>"><?php echo $featured_image_content->post_content ?></figcaption>
+              <?php endif; ?>
+            </figure></a>
             <div class="super__body--<?php echo $super_meta['elit_super_quadrant'][0]; ?> <?php echo ($super_meta['elit_super_overlay_color'][0] == 'light' ? 'super__body--alt' : ''); ?>">
               <h5 class="super__kicker"><?php echo $super_meta['elit_super_kicker'][0]; ?></h5>
               <span class="super__date<?php echo ($super_meta['elit_super_overlay_color'][0] == 'light' ? '--alt' : ''); ?>"><?php echo $super_meta['elit_super_date'][0]; ?></span>

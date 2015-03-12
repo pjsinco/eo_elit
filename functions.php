@@ -180,7 +180,7 @@ function elit_add_search_box_to_menu( $items, $args ) {
 }
  
 /**
- * Enqueue scripts and styles.
+ * Register scripts and styles. Enqueue as needed.
  */
 function elit_scripts() {
 	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
@@ -218,6 +218,11 @@ function elit_scripts() {
     array( 'jquery' ), false, true
   );
 
+  wp_register_script( 'd3', 
+    get_template_directory_uri() . '/js/d3.min.js', 
+    array(), false, true
+  );
+
   wp_register_script('main',
     get_template_directory_uri() . '/js/main.js', 
     array( 'jquery' ), false, true
@@ -231,6 +236,65 @@ function elit_scripts() {
   wp_enqueue_script( 'ehs-head-tag' );
   wp_enqueue_script( 'append-around' );
   wp_enqueue_script( 'main' );
+
+
+
+
+  /**************************
+  
+    TEMPORARY
+      TEMPORARY
+        TEMPORARY
+          TEMPORARY
+            TEMPORARY
+          TEMPORARY
+        TEMPORARY
+      TEMPORARY
+    TEMPORARY
+  
+  ***************************/
+
+  wp_register_script( 'topojson', 
+    get_template_directory_uri() . '/js/topojson.v1.min.js', 
+    array( 'd3' ), false, true
+  );
+
+  wp_register_script( 'd3-geomap-state-growth', 
+    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
+    array( 'd3', 'topojson' ), false, true
+  );
+
+  if ( is_front_page() ) {
+    wp_enqueue_script( 'topojson' );
+    wp_enqueue_script( 'd3-geomap-state-growth' );
+  }
+
+  /**************************
+  
+                    TEMPORARY
+                  TEMPORARY
+                TEMPORARY
+              TEMPORARY
+            TEMPORARY
+              TEMPORARY
+                TEMPORARY
+                  TEMPORARY
+                    TEMPORARY
+  
+  ***************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // if we're on a video page, load FitVids to make the video responsive
   if ( has_post_format( 'video' ) || is_front_page() )  {
