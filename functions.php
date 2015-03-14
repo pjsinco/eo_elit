@@ -544,7 +544,7 @@ function elit_add_dashboard_widgets() {
     'elit_link_to_original'
   );
 }
-add_action( 'wp_dashboard_setup' , 'elit_add_dashboard_widgets' );
+//add_action( 'wp_dashboard_setup' , 'elit_add_dashboard_widgets' );
 
 function elit_link_to_original() {
   d('hiya');
