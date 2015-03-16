@@ -6,7 +6,6 @@
   <?php $counter = 0; ?>
 <?php while( have_posts() ): ?>
 
-  <?php (d($wp_query)); ?>
   <?php the_post(); ?>
 
 

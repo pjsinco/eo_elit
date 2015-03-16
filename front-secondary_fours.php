@@ -27,7 +27,6 @@
             $secondary->the_post();
             $meta = get_post_meta( $post->ID );
             ++$counter;
-            d($meta);
         ?>
         <div class="unit size-1-of-4 f-item<?php echo ($counter > 1) ? " border-$counter-of-$cols" : ''; ?>">
           <article>

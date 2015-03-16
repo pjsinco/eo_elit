@@ -4,7 +4,6 @@
  *
  * @package elit
  */
-d( $inside_the_aoa );
 ?>
 
 
