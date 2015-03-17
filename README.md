@@ -571,7 +571,8 @@ global $some_var;
 
 * [Unit Testing for WordPress – Part 2: Writing Unit Tests](http://voceplatforms.com/2014/09/unit-testing-for-wordpress-part-2-writing-unit-tests/)
 
-* [WP_UnitTestCase: The Hidden API](http://taylorlovett.com/2014/07/04/wp_unittestcase-the-hidden-api/)
+* [WP_UnitTestCase: The Hidden API](http://taylorlovett.com/2014/07/04/wp_unittestcase-the-hidden-api/) 
+    * <small>3 STARS</small>
 
 * [Unit Testing WordPress Plugins: The Right Way](https://catn.com/2012/08/17/unit-testing-wordpress-plugins-the-right-way/)
 
@@ -602,3 +603,4 @@ global $some_var;
 ###Mon Mar 16 17:24:05 2015 CDT
 
 ###Tue Mar 17 06:23:31 2015 CDT
+* [stackexchange: Testing hooks callback](http://wordpress.stackexchange.com/questions/164121/testing-hooks-callback)
