@@ -154,7 +154,6 @@ function elit_add_super_quadrant_meta_box() {
 function elit_super_quadrant_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_super_quadrant_nonce' );
   $quadrant = get_post_meta( $object->ID, 'elit_super_quadrant', true );
-  d($quadrant);
   ?>
   <p>
     <label for="widefat">The area of the image in which the overlay should appear.</label>
@@ -240,7 +239,6 @@ function elit_add_super_label_quadrant_meta_box() {
 function elit_super_label_quadrant_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_super_label_quadrant_nonce' );
   $quadrant = get_post_meta( $object->ID, 'elit_super_label_quadrant', true );
-  d($quadrant);
   ?>
   <p>
     <label for="widefat">The area of the image in which the label should appear, if at all.</label>
@@ -327,7 +325,6 @@ function elit_add_super_body_meta_box() {
 function elit_super_body_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_super_body_nonce' );
   $body = get_post_meta( $object->ID, 'elit_super_body', true );
-  d($body);
   ?>
   <p>
     <label for="widefat">The body text for the overlay</label>
