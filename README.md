@@ -604,3 +604,6 @@ global $some_var;
 
 ###Tue Mar 17 06:23:31 2015 CDT
 * [stackexchange: Testing hooks callback](http://wordpress.stackexchange.com/questions/164121/testing-hooks-callback)
+
+###Thu Mar 19 11:20:03 2015 CDT
+
