@@ -338,8 +338,8 @@ function elit_add_origlink_meta_box() {
 }
 
 function elit_origlink_meta_box( $object, $box ) {
-  $id_of_last_post_on_old_site = 180495;
-  if ( (int) $box->ID <= $id_of_last_post_on_old_site ):
+  $id_of_last_post_on_old_site = 179511;
+  if ( (int) $object->ID <= $id_of_last_post_on_old_site ):
   ?>
   <p>
     <a href="<?php echo 'http://thedoarc.osteopathic.org/?p=' . $object->ID; ?>" target="_blank"><?php echo 'http://thedoarc.osteopathic.org/?p=' . $object->ID; ?></a>
