@@ -320,8 +320,8 @@ function elit_save_standalone_credit_meta( $post_id, $post ) {
  *
  * NOTE: Turned off
  */
-//add_action( 'load-post.php' , 'elit_origlink_meta_box_setup' );
-//add_action( 'load-post-new.php' , 'elit_origlink_meta_box_setup' );
+add_action( 'load-post.php' , 'elit_origlink_meta_box_setup' );
+add_action( 'load-post-new.php' , 'elit_origlink_meta_box_setup' );
 
 function elit_origlink_meta_box_setup() {
   add_action( 'add_meta_boxes', 'elit_add_origlink_meta_box' );
@@ -338,11 +338,14 @@ function elit_add_origlink_meta_box() {
 }
 
 function elit_origlink_meta_box( $object, $box ) {
+  $id_of_last_post_on_old_site = 180495;
+  if ( (int) $box->ID <= $id_of_last_post_on_old_site ):
   ?>
   <p>
-    <a href="<?php echo 'http://thedo.osteopathic.org/?p=' . $object->ID; ?>" target="_blank"><?php echo 'http://thedo.osteopathic.org/?p=' . $object->ID; ?></a>
+    <a href="<?php echo 'http://thedoarc.osteopathic.org/?p=' . $object->ID; ?>" target="_blank"><?php echo 'http://thedoarc.osteopathic.org/?p=' . $object->ID; ?></a>
   </p>
   <?php 
+  endif;
 }
 
 
