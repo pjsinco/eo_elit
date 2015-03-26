@@ -608,4 +608,16 @@ global $some_var;
 ###Thu Mar 19 11:20:03 2015 CDT
 
 ###Wed Mar 25 14:49:08 2015 CDT
+* [how to fix the RSS feed XML error](http://www.w3it.org/blog/wordpress-feed-error-output-solution-how-to/)
+    * in wp-includes/feed-rss.php:
 
+    ```php
+    // this code is already there
+    header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);
+    $more = 1;
+
+    // new code block, directly under the one above
+    $out = ob_get_contents();
+    $out = str_replace(array("\n", "\r", "\t", " "), "", $input);
+    ob_end_clean();
+    ```
