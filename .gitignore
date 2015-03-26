@@ -55,3 +55,7 @@ img/*
 elit-slideshow/*
 
 psysh
+
+# symlinks #
+elit-builds-dev
+sass/elit-sass
