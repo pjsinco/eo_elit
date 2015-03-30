@@ -621,3 +621,6 @@ global $some_var;
     $out = str_replace(array("\n", "\r", "\t", " "), "", $input);
     ob_end_clean();
     ```
+
+###Mon Mar 30 09:12:01 2015 CDT
+* github: [favicon cheat sheet](https://github.com/audreyr/favicon-cheat-sheet)
