@@ -607,3 +607,13 @@ function elit_create_feed_for_aoa_app() {
   load_template( get_template_directory() . '/elit-feed-for-aoa-app.php' );
 }
 add_action( 'do_feed_app' , 'elit_create_feed_for_aoa_app', 10, 1 );
+
+function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
+
+  if ( is_feed( 'app' ) ) {
+    $content = strip_shortcodes( $content );
+  }
+
+  return $content;
+}
+add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10, 1 );
