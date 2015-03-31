@@ -602,3 +602,8 @@ function elit_disable_plugin_stylesheets() {
   wp_dequeue_style( 'wordpress-popular-posts' );
 
 }
+
+function elit_create_feed_for_aoa_app() {
+  load_template( get_template_directory() . '/elit-feed-for-aoa-app.php' );
+}
+add_action( 'do_feed_app' , 'elit_create_feed_for_aoa_app', 10, 1 );

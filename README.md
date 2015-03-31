@@ -624,3 +624,12 @@ global $some_var;
 
 ###Mon Mar 30 09:12:01 2015 CDT
 * github: [favicon cheat sheet](https://github.com/audreyr/favicon-cheat-sheet)
+
+###Tue Mar 31 10:19:23 2015 CDT
+* This [plugin](https://github.com/hlashbrooke/Post-Length-Indicator) gives an indication of how to see how much of a page is used by 
+the story vs how much is used by comments. It uses jQuery offset() and height():
+```js
+var display_height = parseInt( $(window).height() );
+var page_height = parseInt( $(document).height() );
+var comments_top = parseInt( $('#comments').offset().top );
+```
