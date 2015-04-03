@@ -633,3 +633,13 @@ var display_height = parseInt( $(window).height() );
 var page_height = parseInt( $(document).height() );
 var comments_top = parseInt( $('#comments').offset().top );
 ```
+
+* So when I get this:
+```
+PHP Warning:  require_once(/tmp/wordpress//wp-includes/class-phpmailer.php): failed to open stream: No such file or directory in /srv/www/wordpress-develop/tests/phpunit/includes/mock-mailer.php on line 2
+PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-includes/class-phpmailer.php' (include_path='/usr/local/src/composer/vendor/phpunit/php-text-template:/usr/local/src/composer/vendor/phpunit/php-timer:/usr/local/src/composer/vendor/phpunit/php-file-iterator:/usr/local/src/composer/vendor/phpunit/phpunit:/usr/local/src/composer/vendor/symfony/yaml:/usr/local/src/composer/vendor/phpunit/php-invoker:.:/usr/share/php:/usr/share/pear') in /srv/www/wordpress-develop/tests/phpunit/includes/mock-mailer.php on line 2
+```
+    * just re-setup our plugin unit tests (see Feb. 16 entry above)
+
+###Fri Apr  3 08:32:47 2015 CDT
+* [Five Ways to Secure Your WordPress Plugins](http://blog.vaultpress.com/2015/03/27/five-ways-to-secure-your-wordpress-plugins/)
