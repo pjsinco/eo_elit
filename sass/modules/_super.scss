@@ -105,7 +105,7 @@
     &--t-l {
       @extend %super-body-base;
       @include breakpoint($screen $overlay-start) {
-        top: 10%;
+        top: 20%;
         bottom: inherit;
         left: 0;
         right: inherit;
@@ -116,7 +116,7 @@
     &--t-r {
       @extend %super-body-base;
       @include breakpoint($screen $overlay-start) {
-        top: 10%;
+        top: 20%;
         bottom: inherit;
         left: inherit;
         right: 0;
