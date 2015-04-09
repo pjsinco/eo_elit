@@ -343,12 +343,12 @@ function elit_add_fitvids_script() {
 //    replace-default-wordpress-jquery-script-with-google-library/
 function elit_modify_jquery() {
   if (! is_admin()) {
-    wp_deregister_script('jquery');
-    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', FALSE, '1.11.1', TRUE);
-    wp_enqueue_script('jquery');
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', FALSE, '1.11.1', TRUE );
+    wp_enqueue_script( 'jquery' );
   }    
 }
-add_action('init' , 'elit_modify_jquery');
+add_action( 'wp_enqueue_scripts' , 'elit_modify_jquery' );
 
 
 
