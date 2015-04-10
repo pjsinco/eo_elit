@@ -586,7 +586,7 @@ function elit_notify_of_post_status_change($new_status, $old_status, $post) {
     wp_mail('psinco@osteopathic.org', $subject, $message, $headers);
   }
 }
-add_action('transition_post_status', 'elit_notify_of_post_status_change', 10, 3);
+//add_action('transition_post_status', 'elit_notify_of_post_status_change', 10, 3);
 
 
 function elit_eight_posts_on_archive_and_search( $query ) {
