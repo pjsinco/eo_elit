@@ -643,3 +643,12 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 
 ###Fri Apr  3 08:32:47 2015 CDT
 * [Five Ways to Secure Your WordPress Plugins](http://blog.vaultpress.com/2015/03/27/five-ways-to-secure-your-wordpress-plugins/)
+
+###Fri Apr 10 08:48:33 2015 CDT
+* Post transitions - these are typical statuses a new post goes through
+    
+    1. new -> auto-draft  [ old_status -> new_status ]
+        * new -> inherit  [ another possibility ]
+    2. auto-draft -> draft
+    3. ... -> ... 
+    4. draft -> publish
