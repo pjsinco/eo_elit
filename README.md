@@ -656,3 +656,6 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 ###Wed Apr 15 10:39:28 2015 CDT
 * [Wordpress Plugin Boilerplate](http://wppb.io/)
     * Made by Tom McFarlin, who did the Tuts+ series on obj-oriented plugin devlopment
+
+###Fri Apr 24 10:35:34 2015 CDT
+* [howtocenterincss.com](http://howtocenterincss.com)
