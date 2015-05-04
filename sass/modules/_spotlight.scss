@@ -62,10 +62,27 @@
   }
 
   &__body-text {
-    @extend .f-item__body-text--major;
+    @extend .f-item__body-text--minor;
+
     &:not(:last-child) {
       margin-bottom: 1em;
     }
+    
+    &--source {
+      font-size: .875em;
+      color: $font-color-lighter;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+
+  }
+
+  &--source {
+    /*@extend .spotlight__body-text;*/
+    font-size: .875em;
+    color: $font-color-lighter;
   }
 
 }

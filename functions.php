@@ -264,9 +264,19 @@ function elit_scripts() {
     array( 'd3', 'topojson' ), false, true
   );
 
+  wp_register_script( 'd3-tip', 
+    get_template_directory_uri() . '/js/d3-tip.min.js', 
+    array(), false, true
+  );
+
+  wp_register_script( 'd3-grads-counties', 
+    get_template_directory_uri() . '/js/d3-grads-counties-2015-05-04.js', 
+    array( 'd3', 'topojson', 'd3-tip' ), false, true
+  );
+
   if ( is_front_page() ) {
     wp_enqueue_script( 'topojson' );
-    wp_enqueue_script( 'd3-geomap-state-growth' );
+    wp_enqueue_script( 'd3-grads-counties' );
   }
 
   /**************************
