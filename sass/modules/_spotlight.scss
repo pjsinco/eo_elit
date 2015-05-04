@@ -71,18 +71,8 @@
     &--source {
       font-size: .875em;
       color: $font-color-lighter;
-
-      &:not(:last-child) {
-        margin-bottom: 1em;
-      }
+      margin-bottom: 0;
     }
-
-  }
-
-  &--source {
-    /*@extend .spotlight__body-text;*/
-    font-size: .875em;
-    color: $font-color-lighter;
   }
 
 }

@@ -57,7 +57,7 @@ var svg = d3.select('.vis').append('svg')
   .call(zoom)
   //.call(zoom.evt)
   
-var context = svg.append('g')
+var contextContainer = svg.append('g')
   .classed('context', true)
   .attr('transform', 'translate(' + 
     context.margin.left + ',' + context.margin.top + ')')
@@ -102,7 +102,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
       var schoolSelect = document.querySelector('#schools');
       schoolSelect.addEventListener('change', changeSchool, false)
       
-      context 
+      contextContainer
         .classed('states', true)
         .selectAll('path')
         .data(topojson.feature(us, us.objects.states).features)
@@ -151,7 +151,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
 
 
       function drawAllBubbles() {
-        var bubbles = context
+        var bubbles = contextContainer
           .selectAll('.bubble')
           .data(topojson.feature(us, us.objects.counties).features
             .sort(function(a, b) { 
@@ -203,7 +203,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
 
       function drawBubbles(school) {
         var c = 0;
-        var bubbles = context 
+        var bubbles = contextContainer
           .selectAll('.bubble')
           .data(topojson.feature(us, us.objects.counties).features
             .filter(function(d) {
@@ -244,9 +244,10 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         tip.html(function(d) { 
           var count = d.properties.schools[school];
           if (count != undefined) {
-            //return '<p class="d3-tooltip__kicker">' + school + ' grads</p>' +
+            //return '<p class="d3-tip__kicker">' + school + '</p>' +
             return '<p class="d3-tip__title">' + d.properties.county + '</p>' + 
-              '<p class="d3-tip__body">AOA members<br /> in practice: <span class="d3-tip__figure">' + count + '</span>' + 
+              '<p class="d3-tip__body">AOA members<br /> in practice<br />from ' + 
+              school+ ': <span class="d3-tip__figure">' + count + '</span>' + 
               //' DO' + (count > 1 ? 's' : '') + 
               '</p>';
           }
@@ -333,7 +334,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
       // NOT USED
       function drawSchools() {
         d3.csv('data/schools-lat-lon.csv', function(error, csv) {
-          var schools = context.selectAll('schools')
+          var schools = contextContainer.selectAll('schools')
             .data(csv)
           schools
             .enter()
@@ -365,13 +366,14 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
           .style('opacity', 0)
           .remove();
 
-        var bullseye = context.append('g')
+        var bullseye = contextContainer.append('g')
           .classed('selected-school', true)
         
-        var name = csv.filter(function(d) {
+        var schoolInfo = csv.filter(function(d) {
             return d.abbrev == school;
-          })[0].name
-        document.querySelector('#school-info').textContent = name;
+          })[0]
+        document.querySelector('.school-info__name').textContent = schoolInfo.name;
+        document.querySelector('.school-info__meta').textContent = 'Established: ' + schoolInfo.est;
 
         var target = bullseye 
           .selectAll('.bullseye')
@@ -388,11 +390,8 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
           .style('opacity', '0')
           .attr('r', 25)
           .attr('cx', function(d) {
-              console.log(projection([Number.parseFloat(d.lon), Number.parseFloat(d.lat)]));
-              return projection([
-                Number.parseFloat(d.lon), 
-                Number.parseFloat(d.lat)
-              ])[0];
+              //console.log(projection([d.lon, d.lat]));
+              return projection([d.lon, d.lat])[0];
           })
           .attr('cy', function(d) {
             return projection([
@@ -486,10 +485,10 @@ function clicked(d) {
     centered = null;
   }
 
-  context.selectAll("path")
+  contextContainer.selectAll("path")
       .classed("active", centered && function(d) { return d === centered; });
 
-  context.transition()
+  contextContainer.transition()
       .duration(750)
       .attr("transform", "translate(" + contextWidth / 2 + "," + (visHeight + 80)/ 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
       .style("stroke-width", 1.5 / k + "px");
@@ -499,7 +498,7 @@ function zoom() {
   // hide some things
   tip.hide();
 
-  if (d3.event.scale > 1) {
+  if (Math.round(d3.event.scale) > 1) {
     document.querySelector('.legend').style.display = 'none';
   } else {
     document.querySelector('.legend').style.display = 'block';
@@ -508,9 +507,9 @@ function zoom() {
   d3.selectAll('.bubble')
     .style('stroke-width', 0.5 / d3.event.scale + 'px')
 
-  context
+  contextContainer
     .style('stroke-width', 1.5 / d3.event.scale + 'px')
-  context
+  contextContainer
     .attr('transform', function(d) {
       return 'translate(' + d3.event.translate + ')scale(' + 
         d3.event.scale + ')'
@@ -518,7 +517,11 @@ function zoom() {
 }
 
 function zoomClicked() {
+  
   svg.call(zoom.event); 
+
+  if (d3.event.defaultPrevented) d3.event.stopPropagation();
+    
 
   var attr = +this.getAttribute('data-zoom')
   console.log(zoom.scale(), attr);
@@ -530,7 +533,7 @@ function zoomClicked() {
 
   // Record the coordinates (in data space) of the center (in screen space).
   var center0 = zoom.center(), translate0 = zoom.translate(), coordinates0 = coordinates(center0);
-  zoom.scale(zoom.scale() * Math.pow(2, +this.getAttribute("data-zoom")));
+  zoom.scale(Math.round(zoom.scale()) * Math.pow(2, +this.getAttribute("data-zoom")));
 
   // Translate back to the center.
   var center1 = point(coordinates0);

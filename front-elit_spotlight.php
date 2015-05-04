@@ -19,7 +19,10 @@
             <div class="spotlight__feature-wrapper">
 
               <div class="vis-info">
-                <div class="school-info" id="school-info"></div>
+                <div class="school-info" id="school-info">
+                  <p class="school-info__name"></p>
+                  <p class="school-info__meta"></p>
+                </div>
                 <form class="schools-form">
                   <select id='schools' name='schools'>
                     <option value="ATSU-KCOM">ATSU-KCOM</option>

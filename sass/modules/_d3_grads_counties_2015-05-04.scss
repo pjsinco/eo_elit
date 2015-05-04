@@ -87,7 +87,7 @@ svg .state {
 
 .zoom-buttons {
   position: absolute;
-  top: 1em;
+  top: 2em;
   right: 1em;
 }
 
@@ -115,15 +115,26 @@ svg .state {
 
 .school-info {
   margin-bottom: .5em;
-  font-weight: 200;
-  line-height: 1.4;
-  color: $font-color-lighter;
+
 
   @include breakpoint($screen $large-start) {
     float: right;
     max-width: 65%;
     text-align: right;
     /*height: 2em;*/
+  }
+
+  &__name {
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 200;
+    color: $font-color-lighter;
+  }
+
+  &__meta {
+    @extend .school-info__name;
+    text-transform: uppercase;
+    font-size: .875em;
   }
 }
 
@@ -201,7 +212,8 @@ svg .state {
       font-weight: 200;
       letter-spacing: 1px;
       border-bottom: 1px solid #d0d0d0;
-      line-height: 1.4;
+      line-height: 1;
+      /*color: rgba(239,63,35,0.6)*/
     }
   }
 
@@ -225,6 +237,7 @@ svg .state {
       margin-left: 1em;
       /*font-size: 2em;*/
       /*line-height: .25;*/
+      font-weight: 400;
       color: #ef3f23;  
       
       /*font-size: 2em;*/
@@ -237,10 +250,11 @@ svg .state {
     @include breakpoint($screen $large-start) {
       display: block;  
       margin: 0;
+      margin-bottom: .5em;
       font-size: .875em;
       /*color: #d0d0d0;*/
       margin-bottom: .5em;
-      line-height: 1;
+      line-height: .875;
     }
   }
 
