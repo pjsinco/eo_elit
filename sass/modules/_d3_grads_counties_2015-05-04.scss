@@ -8,6 +8,13 @@ svg .state {
   fill: #ddd;
 }
 
+.county-border {
+  fill: none;
+  stroke: #fff;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
 .states {
   fill: #ddd;
   cursor: move;

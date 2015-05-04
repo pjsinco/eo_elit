@@ -3,7 +3,7 @@
  * There are no DOs are practicing in Louisiana?
  */
 
-var context = { 
+var contextDim = { 
   margin: {
     top: 0,
     bottom: 20,
@@ -12,7 +12,7 @@ var context = {
   }
 };
 
-var focus = {
+var focusDim = {
   margin: {
     top: 500,
     bottom: 20,
@@ -25,10 +25,10 @@ var visWidth = 655, visHeight = 437;
 var active = d3.select(null);
 var windowScale = 1;
 
-var contextWidth = visWidth - context.margin.left - context.margin.right,
-  contextHeight = visHeight - context.margin.top - context.margin.bottom,
-  focusWidth = visWidth - focus.margin.left - focus.margin.right,
-  focusHeight = visHeight - focus.margin.top - focus.margin.bottom;
+var contextWidth = visWidth - contextDim.margin.left - contextDim.margin.right,
+  contextHeight = visHeight - contextDim.margin.top - contextDim.margin.bottom,
+  focusWidth = visWidth - focusDim.margin.left - focusDim.margin.right,
+  focusHeight = visHeight - focusDim.margin.top - focusDim.margin.bottom;
 
 var centered;
 
@@ -57,23 +57,24 @@ var svg = d3.select('.vis').append('svg')
   .call(zoom)
   //.call(zoom.evt)
   
-var contextContainer = svg.append('g')
+var context = svg.append('g')
   .classed('context', true)
   .attr('transform', 'translate(' + 
-    context.margin.left + ',' + context.margin.top + ')')
+    contextDim.margin.left + ',' + contextDim.margin.top + ')')
 
 var focus = svg.append('g')
   .classed('focus', true)
-  .attr('width', focusWidth + focus.margin.left + focus.margin.right)
-  .attr('height', focusHeight + focus.margin.top + focus.margin.bottom)
+  .attr('width', focusWidth + focusDim.margin.left + focusDim.margin.right)
+  .attr('height', focusHeight + focusDim.margin.top + focusDim.margin.bottom)
   .attr('transform', 'translate(' +
-    focus.margin.left + ',' + focus.margin.top + ')')
+    focusDim.margin.left + ',' + focusDim.margin.top + ')')
 
 var defaultMapScale = 850;
 
 var projection = d3.geo.albersUsa()
   .translate([contextWidth / 2, contextHeight / 2])
   .scale([defaultMapScale])
+
 
 var path = d3.geo.path()
   .projection(projection);
@@ -102,7 +103,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
       var schoolSelect = document.querySelector('#schools');
       schoolSelect.addEventListener('change', changeSchool, false)
       
-      contextContainer
+      context
         .classed('states', true)
         .selectAll('path')
         .data(topojson.feature(us, us.objects.states).features)
@@ -111,8 +112,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         .attr('d', path)
         .style('stroke', '#fff')
         .attr('class', 'state')
-        //.on('click', clicked)
-      
+
       kickoffVis();
 
       d3.selectAll('.zoom')
@@ -125,7 +125,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         drawBubbles(kickoffSchool);
         drawBullseye(kickoffSchool);
         writeSchoolInfo(kickoffSchool);
-        
       }
 
       function drawLegend() {
@@ -151,7 +150,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
 
 
       function drawAllBubbles() {
-        var bubbles = contextContainer
+        var bubbles = context
           .selectAll('.bubble')
           .data(topojson.feature(us, us.objects.counties).features
             .sort(function(a, b) { 
@@ -203,7 +202,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
 
       function drawBubbles(school) {
         var c = 0;
-        var bubbles = contextContainer
+        var bubbles = context
           .selectAll('.bubble')
           .data(topojson.feature(us, us.objects.counties).features
             .filter(function(d) {
@@ -289,8 +288,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
 
           //console.log(years);
 
-          var focus = d3.select('.focus')
-          focus.select('text').remove()
+          d3.select('.focus').select('text').remove()
 
           focus
             .append('text')
@@ -331,34 +329,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         })
       }
 
-      // NOT USED
-      function drawSchools() {
-        d3.csv('data/schools-lat-lon.csv', function(error, csv) {
-          var schools = contextContainer.selectAll('schools')
-            .data(csv)
-          schools
-            .enter()
-            .append('circle')
-            .classed('schools', true)
-            .attr('r', 5)
-            .attr('cx', function(d) {
-              return projection([
-                Number.parseFloat(d.lon), 
-                Number.parseFloat(d.lat)
-              ])[0];
-            })
-            .attr('cy', function(d) {
-              return projection([
-                Number.parseFloat(d.lon), 
-                Number.parseFloat(d.lat)
-              ])[1];
-            })
-            //.style('fill', 'rgba(163, 64, 64, 0.45098)')
-            .style('fill', '#fff')
-        });
-      }
-
-      //drawSchools();
       function drawBullseye(school) {
         d3.select('.selected-school')
           .transition()
@@ -366,7 +336,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
           .style('opacity', 0)
           .remove();
 
-        var bullseye = contextContainer.append('g')
+        var bullseye = context.append('g')
           .classed('selected-school', true)
         
         var schoolInfo = csv.filter(function(d) {
@@ -395,8 +365,8 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
           })
           .attr('cy', function(d) {
             return projection([
-              Number.parseFloat(d.lon), 
-              Number.parseFloat(d.lat)
+              parseFloat(d.lon), 
+              parseFloat(d.lat)
             ])[1];
           })
           .transition()
@@ -468,37 +438,11 @@ function getSchoolsList(topojson) {
   return schools;
 }
 
-function clicked(d) {
-  tip.hide();
-  var x, y, k;
-
-  if (d && centered !== d) {
-    var centroid = path.centroid(d);
-    x = centroid[0];
-    y = centroid[1];
-    k = 4;
-    centered = d;
-  } else {
-    x = contextWidth / 2;
-    y = contextHeight / 2;
-    k = 1;
-    centered = null;
-  }
-
-  contextContainer.selectAll("path")
-      .classed("active", centered && function(d) { return d === centered; });
-
-  contextContainer.transition()
-      .duration(750)
-      .attr("transform", "translate(" + contextWidth / 2 + "," + (visHeight + 80)/ 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
-      .style("stroke-width", 1.5 / k + "px");
-}
-
 function zoom() {
   // hide some things
   tip.hide();
 
-  if (Math.round(d3.event.scale) > 1) {
+  if (d3.event.scale > 1) {
     document.querySelector('.legend').style.display = 'none';
   } else {
     document.querySelector('.legend').style.display = 'block';
@@ -507,9 +451,9 @@ function zoom() {
   d3.selectAll('.bubble')
     .style('stroke-width', 0.5 / d3.event.scale + 'px')
 
-  contextContainer
+  context
     .style('stroke-width', 1.5 / d3.event.scale + 'px')
-  contextContainer
+  context
     .attr('transform', function(d) {
       return 'translate(' + d3.event.translate + ')scale(' + 
         d3.event.scale + ')'
@@ -517,6 +461,7 @@ function zoom() {
 }
 
 function zoomClicked() {
+  console.log('zoomclick');
   
   svg.call(zoom.event); 
 
