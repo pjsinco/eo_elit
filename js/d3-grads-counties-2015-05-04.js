@@ -1,4 +1,3 @@
-console.log('hiya mornng');
 /**
  * TODO
  * There are no DOs are practicing in Louisiana?
@@ -41,10 +40,11 @@ var xScale = d3.time.scale()
 var zoom = d3.behavior.zoom()
   .translate([0, 0])
   //.scale([1])
+  .center([contextWidth / 2, contextHeight / 2])
   .scale(1)
   .scaleExtent([1, 8])
   .on('zoom', zoom)
-  
+
 var tip = d3.tip()
   .attr('class', 'd3-tip')
   .direction('e')
@@ -99,251 +99,300 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
     d3.csv('/wp-content/themes/elit/js/data/schools.csv', function(error, csv) {
 
 
-    var schoolSelect = document.querySelector('#schools');
-    schoolSelect.addEventListener('change', changeSchool, false)
-    
-    context 
-      .classed('states', true)
-      .selectAll('path')
-      .data(topojson.feature(us, us.objects.states).features)
-      .enter()
-      .append('path')
-      .attr('d', path)
-      .style('stroke', '#fff')
-      .attr('class', 'state')
-      //.on('click', clicked)
-    
-
-
-    kickoffVis();
-
-    function kickoffVis() {
-    //drawAllBubbles();
-      var kickoffSchool = 'NSU-COM';
-      drawLegend();
-      drawBubbles(kickoffSchool);
-      drawBullseye(kickoffSchool);
-      writeSchoolInfo(kickoffSchool);
+      var schoolSelect = document.querySelector('#schools');
+      schoolSelect.addEventListener('change', changeSchool, false)
       
-    }
-
-    function drawLegend() {
-      var legend = svg.append('g')
-        .classed('legend', true)
-        .attr('transform', 'translate(' + (visWidth - 50) + ',' +
-          (visHeight - 20) + ')')
-        .selectAll('g')
-        .data([25, 75, 150, 300])
-        .enter().append('g')
-
-      legend
-        .append('circle')
-        .attr('cy', function(d) { return -radius(d); })
-        .attr('r', radius)
-
-      legend
-        .append('text')
-        .attr('y', function(d) {  return -2 * radius(d) })
-        .attr('dy', '1.3em')
-        .text(function(d) { return d; })
-    }
-
-
-    function drawAllBubbles() {
-      var bubbles = context
-        .selectAll('.bubble')
-        .data(topojson.feature(us, us.objects.counties).features
-          .sort(function(a, b) { 
-            return b.properties['mem_count'] - a.properties['mem_count'];
-          }), function(d) {
-            return d.id;
-          }
-        )
-
-      bubbles
+      context 
+        .classed('states', true)
+        .selectAll('path')
+        .data(topojson.feature(us, us.objects.states).features)
         .enter()
-        .append('circle')
-        .classed('bubble', true)
-        .attr('transform', function(d) {
-          return 'translate(' + path.centroid(d) + ')';
-        })
-        .attr('r', 0)
-        .style('stroke-width', '0.5px')
+        .append('path')
+        .attr('d', path)
+        .style('stroke', '#fff')
+        .attr('class', 'state')
+        //.on('click', clicked)
+      
+      kickoffVis();
 
-      bubbles
-        .transition()
-        .duration(3000)
-        .attr('r', function(d) {
-          var count = 0;
-          for (var prop in d.properties.schools) {
-            count += +d.properties.schools[prop];
-          }
-          //console.log(d.properties.county, count);
-          return radius(count);
-        })
-        .style('stroke-width', 0.5 / zoom.scale() + 'px')
+      d3.selectAll('.zoom')
+        .on('click', zoomClicked)
+
+      function kickoffVis() {
+      //drawAllBubbles();
+        var kickoffSchool = 'NSU-COM';
+        drawLegend();
+        drawBubbles(kickoffSchool);
+        drawBullseye(kickoffSchool);
+        writeSchoolInfo(kickoffSchool);
         
+      }
 
-    } // end drawAllBubbles
+      function drawLegend() {
+        var legend = svg.append('g')
+          .classed('legend', true)
+          .attr('transform', 'translate(' + (visWidth - 50) + ',' +
+            (visHeight - 20) + ')')
+          .selectAll('g')
+          .data([25, 75, 150, 300])
+          .enter().append('g')
 
-    function sanityCountGrads() {
-      var grads = 0;
-      topojson.feature(us, us.objects.counties).features.forEach(function(d) {
-          var count = 0 
-          for (var prop in d.properties.schools) {
-            if (d.properties.schools.hasOwnProperty(prop)) {
-              count += +d.properties.schools[prop];
-            }
-          }
-          grads += count;
-      })
-      //console.log(grads);
-    }
+        legend
+          .append('circle')
+          .attr('cy', function(d) { return -radius(d); })
+          .attr('r', radius)
 
-    function drawBubbles(school) {
-      var c = 0;
-      var bubbles = context 
-        .selectAll('.bubble')
-        .data(topojson.feature(us, us.objects.counties).features
-          .filter(function(d) {
-            return d.properties.schools[school] != undefined;
-          })
-          .sort(function(a, b) { 
-            schoolCountA = (a.properties.schools[school] == undefined ? 0 : a.properties.schools[school]);
-            schoolCountB = (b.properties.schools[school] == undefined ? 0 : b.properties.schools[school]);
-            return schoolCountB - schoolCountA;
-          }), function(d) {
-            return d.id;
-          }
-        )
-
-      var countUndef = 0;
-
-      bubbles
-        .enter()
-        .append('circle')
-        .attr('class', 'bubble')
-        .attr('transform', function(d) {
-          return 'translate(' + path.centroid(d) + ')';
-        })
-        .attr('r', 0)
-        .style('stroke-width', 0.5 / zoom.scale() + 'px')
-
-      bubbles
-        .transition()
-        .duration(3000)
-        .attr('r', function(d) {
-          if (!isNaN(d.properties.schools[school])) {
-            return radius(d.properties.schools[school]);
-          } else {
-            return 0;
-          }
-        })
-
-      tip.html(function(d) { 
-        var count = d.properties.schools[school];
-        if (count != undefined) {
-          //return '<p class="d3-tooltip__kicker">' + school + ' grads</p>' +
-          return '<p class="d3-tip__title">' + d.properties.county + '</p>' + 
-            '<p class="d3-tip__body">AOA members<br /> in practice: <span class="d3-tip__figure">' + count + '</span>' + 
-            //' DO' + (count > 1 ? 's' : '') + 
-            '</p>';
-        }
-      })
-      
-      bubbles
-        .on('mouseover', tip.show)
-        .on('mouseout', tip.hide)
-
-      bubbles
-        .exit()
-        .transition()
-        .duration(3000)
-        .attr('r', 0)
-        .remove()
-    } // end drawBubbles
-
-    function changeSchool(evt) {
-      var school = evt.target.value;
-      drawBubbles(school);
-      //gradCount();
-      drawBullseye(school);
-      writeSchoolInfo(school);
-    }
-
-    function writeSchoolInfo(schoolName) {
-      d3.json('/wp-content/themes/elit/js/data/grad-years.json', function(json) {
-        var school = json[schoolName];
-
-        var years = []
-
-        for (var prop in school) {
-          var year = {}
-          if (school.hasOwnProperty(prop)) {
-            year[prop] = school[prop];
-          }
-          years.push(year)
-        }
-
-        //console.log(years);
-
-        var focus = d3.select('.focus')
-        focus.select('text').remove()
-
-        focus
+        legend
           .append('text')
-          .text(schoolName)
+          .attr('y', function(d) {  return -2 * radius(d) })
+          .attr('dy', '1.3em')
+          .text(function(d) { return d; })
+      }
 
-        var bars = focus
-          .selectAll('.bar')
-          //.data([17, 18, 19, 20])
-          .data(years)
 
-        bars
-          .enter()
-          .append('rect')
-          .classed('bar', true)
-          .attr('x', function(d, i) {
-            var date = new Date;
-            //console.log(xScale(date.setYear(i)))
-            return xScale(date.setYear(i))
-          })
-          .attr('y', function(d) {
-            //console.log(d);
-          })
-          .attr('width', 1)
-          .attr('height', 25)
-          .style('fill', 'orange')
-      
+      function drawAllBubbles() {
+        var bubbles = context
+          .selectAll('.bubble')
+          .data(topojson.feature(us, us.objects.counties).features
+            .sort(function(a, b) { 
+              return b.properties['mem_count'] - a.properties['mem_count'];
+            }), function(d) {
+              return d.id;
+            }
+          )
 
-      }) // d3.json
-    } // drawSchoolInfo
-    
-    function gradCount() {
-      // sanity check: count grads
-      var gradCount = 0;
-      us.objects.counties.geometries.forEach(function(d) {
-        if (!isNaN(d.properties.schools[school])) {
-          gradCount += Number.parseInt(d.properties.schools[school]);
-        }
-      })
-    }
-
-    // NOT USED
-    function drawSchools() {
-      d3.csv('data/schools-lat-lon.csv', function(error, csv) {
-        var schools = context.selectAll('schools')
-          .data(csv)
-        schools
+        bubbles
           .enter()
           .append('circle')
-          .classed('schools', true)
-          .attr('r', 5)
+          .classed('bubble', true)
+          .attr('transform', function(d) {
+            return 'translate(' + path.centroid(d) + ')';
+          })
+          .attr('r', 0)
+          .style('stroke-width', '0.5px')
+
+        bubbles
+          .transition()
+          .duration(3000)
+          .attr('r', function(d) {
+            var count = 0;
+            for (var prop in d.properties.schools) {
+              count += +d.properties.schools[prop];
+            }
+            //console.log(d.properties.county, count);
+            return radius(count);
+          })
+          .style('stroke-width', 0.5 / zoom.scale() + 'px')
+          
+
+      } // end drawAllBubbles
+
+      function sanityCountGrads() {
+        var grads = 0;
+        topojson.feature(us, us.objects.counties).features.forEach(function(d) {
+            var count = 0 
+            for (var prop in d.properties.schools) {
+              if (d.properties.schools.hasOwnProperty(prop)) {
+                count += +d.properties.schools[prop];
+              }
+            }
+            grads += count;
+        })
+        //console.log(grads);
+      }
+
+      function drawBubbles(school) {
+        var c = 0;
+        var bubbles = context 
+          .selectAll('.bubble')
+          .data(topojson.feature(us, us.objects.counties).features
+            .filter(function(d) {
+              return d.properties.schools[school] != undefined;
+            })
+            .sort(function(a, b) { 
+              schoolCountA = (a.properties.schools[school] == undefined ? 0 : a.properties.schools[school]);
+              schoolCountB = (b.properties.schools[school] == undefined ? 0 : b.properties.schools[school]);
+              return schoolCountB - schoolCountA;
+            }), function(d) {
+              return d.id;
+            }
+          )
+
+        var countUndef = 0;
+
+        bubbles
+          .enter()
+          .append('circle')
+          .attr('class', 'bubble')
+          .attr('transform', function(d) {
+            return 'translate(' + path.centroid(d) + ')';
+          })
+          .attr('r', 0)
+          .style('stroke-width', 0.5 / zoom.scale() + 'px')
+
+        bubbles
+          .transition()
+          .duration(3000)
+          .attr('r', function(d) {
+            if (!isNaN(d.properties.schools[school])) {
+              return radius(d.properties.schools[school]);
+            } else {
+              return 0;
+            }
+          })
+
+        tip.html(function(d) { 
+          var count = d.properties.schools[school];
+          if (count != undefined) {
+            //return '<p class="d3-tooltip__kicker">' + school + ' grads</p>' +
+            return '<p class="d3-tip__title">' + d.properties.county + '</p>' + 
+              '<p class="d3-tip__body">AOA members<br /> in practice: <span class="d3-tip__figure">' + count + '</span>' + 
+              //' DO' + (count > 1 ? 's' : '') + 
+              '</p>';
+          }
+        })
+        
+        bubbles
+          .on('mouseover', tip.show)
+          .on('mouseout', tip.hide)
+
+        bubbles
+          .exit()
+          .transition()
+          .duration(3000)
+          .attr('r', 0)
+          .remove()
+      } // end drawBubbles
+
+      function changeSchool(evt) {
+        var school = evt.target.value;
+        drawBubbles(school);
+        //gradCount();
+        drawBullseye(school);
+        writeSchoolInfo(school);
+      }
+
+      function writeSchoolInfo(schoolName) {
+        d3.json('/wp-content/themes/elit/js/data/grad-years.json', function(json) {
+          var school = json[schoolName];
+
+          var years = []
+
+          for (var prop in school) {
+            var year = {}
+            if (school.hasOwnProperty(prop)) {
+              year[prop] = school[prop];
+            }
+            years.push(year)
+          }
+
+          //console.log(years);
+
+          var focus = d3.select('.focus')
+          focus.select('text').remove()
+
+          focus
+            .append('text')
+            .text(schoolName)
+
+          var bars = focus
+            .selectAll('.bar')
+            //.data([17, 18, 19, 20])
+            .data(years)
+
+          bars
+            .enter()
+            .append('rect')
+            .classed('bar', true)
+            .attr('x', function(d, i) {
+              var date = new Date;
+              //console.log(xScale(date.setYear(i)))
+              return xScale(date.setYear(i))
+            })
+            .attr('y', function(d) {
+              //console.log(d);
+            })
+            .attr('width', 1)
+            .attr('height', 25)
+            .style('fill', 'orange')
+        
+
+        }) // d3.json
+      } // drawSchoolInfo
+      
+      function gradCount() {
+        // sanity check: count grads
+        var gradCount = 0;
+        us.objects.counties.geometries.forEach(function(d) {
+          if (!isNaN(d.properties.schools[school])) {
+            gradCount += Number.parseInt(d.properties.schools[school]);
+          }
+        })
+      }
+
+      // NOT USED
+      function drawSchools() {
+        d3.csv('data/schools-lat-lon.csv', function(error, csv) {
+          var schools = context.selectAll('schools')
+            .data(csv)
+          schools
+            .enter()
+            .append('circle')
+            .classed('schools', true)
+            .attr('r', 5)
+            .attr('cx', function(d) {
+              return projection([
+                Number.parseFloat(d.lon), 
+                Number.parseFloat(d.lat)
+              ])[0];
+            })
+            .attr('cy', function(d) {
+              return projection([
+                Number.parseFloat(d.lon), 
+                Number.parseFloat(d.lat)
+              ])[1];
+            })
+            //.style('fill', 'rgba(163, 64, 64, 0.45098)')
+            .style('fill', '#fff')
+        });
+      }
+
+      //drawSchools();
+      function drawBullseye(school) {
+        d3.select('.selected-school')
+          .transition()
+          .duration(3000)
+          .style('opacity', 0)
+          .remove();
+
+        var bullseye = context.append('g')
+          .classed('selected-school', true)
+        
+        var name = csv.filter(function(d) {
+            return d.abbrev == school;
+          })[0].name
+        document.querySelector('#school-info').textContent = name;
+
+        var target = bullseye 
+          .selectAll('.bullseye')
+          .data(csv.filter(function (d) {
+            return d.abbrev == school;
+          }))
+        
+        target
+          .enter()
+          .append('circle')
+          .classed('bullseye', true)
+
+        target
+          .style('opacity', '0')
+          .attr('r', 25)
           .attr('cx', function(d) {
-            return projection([
-              Number.parseFloat(d.lon), 
-              Number.parseFloat(d.lat)
-            ])[0];
+              console.log(projection([Number.parseFloat(d.lon), Number.parseFloat(d.lat)]));
+              return projection([
+                Number.parseFloat(d.lon), 
+                Number.parseFloat(d.lat)
+              ])[0];
           })
           .attr('cy', function(d) {
             return projection([
@@ -351,65 +400,17 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
               Number.parseFloat(d.lat)
             ])[1];
           })
-          //.style('fill', 'rgba(163, 64, 64, 0.45098)')
-          .style('fill', '#fff')
-      });
-    }
-
-    //drawSchools();
-    function drawBullseye(school) {
-      d3.select('.selected-school')
-        .transition()
-        .duration(3000)
-        .style('opacity', 0)
-        .remove();
-
-      var bullseye = context.append('g')
-        .classed('selected-school', true)
-      
-      var name = csv.filter(function(d) {
-          return d.abbrev == school;
-        })[0].name
-      document.querySelector('#school-info').textContent = name;
-
-      var target = bullseye 
-        .selectAll('.bullseye')
-        .data(csv.filter(function (d) {
-          return d.abbrev == school;
-        }))
-      
-      target
-        .enter()
-        .append('circle')
-        .classed('bullseye', true)
-
-      target
-        .style('opacity', '0')
-        .attr('r', 25)
-        .attr('cx', function(d) {
-            console.log(projection([Number.parseFloat(d.lon), Number.parseFloat(d.lat)]));
-            return projection([
-              Number.parseFloat(d.lon), 
-              Number.parseFloat(d.lat)
-            ])[0];
-        })
-        .attr('cy', function(d) {
-          return projection([
-            Number.parseFloat(d.lon), 
-            Number.parseFloat(d.lat)
-          ])[1];
-        })
-        .transition()
-        .duration(3000)
-        .style('opacity', '1')
-        
-      target
-        .exit() 
-        .transition()
-        .duration(3000)
-        .attr('r', 0)
-        .remove()
-    } // end drawBulleye
+          .transition()
+          .duration(3000)
+          .style('opacity', '1')
+          
+        target
+          .exit() 
+          .transition()
+          .duration(3000)
+          .attr('r', 0)
+          .remove()
+      } // end drawBulleye
   }); // d3.csv
 }); // d3.json
 
@@ -510,8 +511,41 @@ function zoom() {
   context
     .style('stroke-width', 1.5 / d3.event.scale + 'px')
   context
-    .attr('transform', 'translate(' + d3.event.translate + ')scale(' + 
-      d3.event.scale + ')')
+    .attr('transform', function(d) {
+      return 'translate(' + d3.event.translate + ')scale(' + 
+        d3.event.scale + ')'
+     })
 }
 
+function zoomClicked() {
+  svg.call(zoom.event); 
+
+  var attr = +this.getAttribute('data-zoom')
+  console.log(zoom.scale(), attr);
+
+  //if ((zoom.scale() < 1 && attr < 0) || (zoom.scale() > 4 && attr > 0)) {
+  if ((Math.round(zoom.scale()) <= 1 && attr < 0) || (Math.round(zoom.scale() >= 5 && attr > 0))) {
+    return;
+  }
+
+  // Record the coordinates (in data space) of the center (in screen space).
+  var center0 = zoom.center(), translate0 = zoom.translate(), coordinates0 = coordinates(center0);
+  zoom.scale(zoom.scale() * Math.pow(2, +this.getAttribute("data-zoom")));
+
+  // Translate back to the center.
+  var center1 = point(coordinates0);
+  zoom.translate([translate0[0] + center0[0] - center1[0], translate0[1] + center0[1] - center1[1]]);
+
+  svg.transition().duration(750).call(zoom.event);
+}
+
+function coordinates(point) {
+  var scale = zoom.scale(), translate = zoom.translate();
+  return [(point[0] - translate[0]) / scale, (point[1] - translate[1]) / scale];
+}
+
+function point(coordinates) {
+  var scale = zoom.scale(), translate = zoom.translate();
+  return [coordinates[0] * scale + translate[0], coordinates[1] * scale + translate[1]];
+}
 

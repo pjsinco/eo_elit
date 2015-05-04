@@ -90,6 +90,23 @@ svg .state {
   top: 1em;
   right: 1em;
 }
+
+.zoom {
+  height: 2em;
+  width: 2em;
+  font-size: 1em;
+  border: none;
+  background: rgba($mediumgray,.5);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background: rgba($gray,.5);
+  }
+}
+
 #schools {
   &:focus {
     outline: none;
