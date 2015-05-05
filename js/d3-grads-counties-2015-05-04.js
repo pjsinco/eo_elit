@@ -94,7 +94,7 @@ var quantize = d3.scale.quantize()
   .domain([0, 10])
   .range(d3.range(9).map(function(i) { return 'q' + i + '-9'; }))
 
-d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
+d3.json("/wp-content/themes/elit/js/data/us-schools-eunice.json", function(error, us) {
 
     d3.csv('/wp-content/themes/elit/js/data/schools.csv', function(error, csv) {
 
