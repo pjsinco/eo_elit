@@ -61,7 +61,7 @@
 
             </div> <!-- spotlight__feature-wrapper -->
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Graduates by county</h5>
+              <h5 class="spotlight__kicker">DO<span style="text-transform: lowercase">s</span> in practice</h5>
               <h2 class="spotlight__head">Grads stay close to home</h2>
               <p class="spotlight__body-text">Here's a look at where AOA members are practicing, grouped by their medical school. As you'll see, they generally stay near the schools where they trained.</p>
               <p class="spotlight__body-text">We focus on AOA members&mdash;namely, those who are out of residency and care for patients&mdash;because they are the DOs for whom we have the most accurate information. We exclude schools that are too new to have a significant number graduates out of residency.</p>

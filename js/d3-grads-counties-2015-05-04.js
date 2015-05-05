@@ -1,8 +1,3 @@
-/**
- * TODO
- * There are no DOs are practicing in Louisiana?
- */
-
 var contextDim = { 
   margin: {
     top: 0,
@@ -58,12 +53,21 @@ var svg = d3.select('.vis').append('svg')
   .call(tip)
   .call(zoom)
   .on('click', stopped, true)
-  //.call(zoom.evt)
   
 var context = svg.append('g')
   .classed('context', true)
   .attr('transform', 'translate(' + 
     contextDim.margin.left + ',' + contextDim.margin.top + ')')
+
+var directions = svg
+  .append('text')
+  .text('Click on a state to zoom')
+  .attr('x', 0)
+  .attr('y', function() {
+    return contextHeight;
+  })
+  .style('fill', '#d0d0d0')
+  .style('font-size', '12px')
 
 var focus = svg.append('g')
   .classed('focus', true)
@@ -91,14 +95,6 @@ var quantize = d3.scale.quantize()
   .range(d3.range(9).map(function(i) { return 'q' + i + '-9'; }))
 
 d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
-    // add a count of all members to each county
-    //us.objects.counties.geometries.forEach(function(d, i) {
-    //  var count = 0;
-    //  for (var prop in d.properties.schools) {
-    //    count += +d.properties.schools[prop];
-    //  }
-    //  d['total_mems'] = count;
-    //})
 
     d3.csv('/wp-content/themes/elit/js/data/schools.csv', function(error, csv) {
 
@@ -181,7 +177,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
             for (var prop in d.properties.schools) {
               count += +d.properties.schools[prop];
             }
-            //console.log(d.properties.county, count);
             return radius(count);
           })
           .style('stroke-width', 0.5 / zoom.scale() + 'px')
@@ -200,7 +195,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
             }
             grads += count;
         })
-        //console.log(grads);
       }
 
       function drawBubbles(school) {
@@ -246,11 +240,9 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         tip.html(function(d) { 
           var count = d.properties.schools[school];
           if (count != undefined) {
-            //return '<p class="d3-tip__kicker">' + school + '</p>' +
             return '<p class="d3-tip__title">' + d.properties.county + '</p>' + 
               '<p class="d3-tip__body">AOA members<br /> in practice<br />from ' + 
               school+ ': <span class="d3-tip__figure">' + count + '</span>' + 
-              //' DO' + (count > 1 ? 's' : '') + 
               '</p>';
           }
         })
@@ -258,7 +250,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         bubbles
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide)
-          //.on('click', clicked)
 
         bubbles
           .exit()
@@ -291,35 +282,11 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
             years.push(year)
           }
 
-          //console.log(years);
-
           d3.select('.focus').select('text').remove()
 
           focus
             .append('text')
             .text(schoolName)
-
-          var bars = focus
-            .selectAll('.bar')
-            //.data([17, 18, 19, 20])
-            .data(years)
-
-          bars
-            .enter()
-            .append('rect')
-            .classed('bar', true)
-            .attr('x', function(d, i) {
-              var date = new Date;
-              //console.log(xScale(date.setYear(i)))
-              return xScale(date.setYear(i))
-            })
-            .attr('y', function(d) {
-              //console.log(d);
-            })
-            .attr('width', 1)
-            .attr('height', 25)
-            .style('fill', 'orange')
-        
 
         }) // d3.json
       } // drawSchoolInfo
@@ -365,7 +332,6 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
           .style('opacity', '0')
           .attr('r', 25)
           .attr('cx', function(d) {
-              //console.log(projection([d.lon, d.lat]));
               return projection([d.lon, d.lat])[0];
           })
           .attr('cy', function(d) {
@@ -444,17 +410,18 @@ function getSchoolsList(topojson) {
 }
 
 function zoom() {
-  // hide some things
   tip.hide();
 
-  if (d3.event.scale > 1.1) {
+  if (d3.event.scale > 1.05) {
     document.querySelector('.legend').style.display = 'none';
     resetButton.style('display', 'block')
     context.style('cursor', 'move')
+    directions.style('display', 'none')
   } else {
     document.querySelector('.legend').style.display = 'block';
     resetButton.style('display', 'none')
     context.style('cursor', 'auto')
+    directions.style('display', 'block')
   }
 
   d3.selectAll('.bubble')
@@ -480,7 +447,6 @@ function zoomClicked() {
   var attr = +this.getAttribute('data-zoom')
   console.log(zoom.scale(), attr);
 
-  //if ((zoom.scale() < 1 && attr < 0) || (zoom.scale() > 4 && attr > 0)) {
   if ((Math.round(zoom.scale()) <= 1 && attr < 0) || (Math.round(zoom.scale() >= 5 && attr > 0))) {
     return;
   }
@@ -507,9 +473,9 @@ function point(coordinates) {
 }
 
 function clicked(d) {
+  console.log(d);
+  console.log(d3.event);
   
-  //tip.hide();
-
   context.style('cursor', 'move')
 
   resetButton.style('display', 'block');
