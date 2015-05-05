@@ -16,6 +16,7 @@
       <div class="row">
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
+            <h3 class="vis-title">Where graduates practice, by county</h3>
             <div class="spotlight__feature-wrapper">
 
               <div class="vis-info">
@@ -24,6 +25,7 @@
                   <p class="school-info__meta"></p>
                 </div>
                 <form class="schools-form">
+                  <label class="schools-label" for="schools">Select school</label>
                   <select id='schools' name='schools'>
                     <option value="ATSU-KCOM">ATSU-KCOM</option>
                     <option value="DMU-COM">DMU-COM</option>
@@ -31,7 +33,6 @@
                     <option value="KCUMB-COM">KCUMB-COM</option>
                     <option value="LECOM">LECOM</option>
                     <option value="LECOM-Bradenton">LECOM-Bradenton</option>
-                    <option value="LMU-DCOM">LMU-DCOM</option>
                     <option value="MSUCOM">MSUCOM</option>
                     <option value="MWU/AZCOM">MWU/AZCOM</option>
                     <option value="MWU/CCOM">MWU/CCOM</option>
@@ -53,19 +54,18 @@
                 </form>
               </div> <!-- .vis-info -->
               <div id="vis" class="vis">
-                <div class="zoom-buttons">
-                  <button class="zoom" data-zoom="+1">+</button>
-                  <button class="zoom" data-zoom="-1">-</button>
+                <div class="ui-buttons">
+                  <button id="reset" class="ui-button">Reset</button>
                 </div>
               </div> <!-- .vis -->
 
             </div> <!-- spotlight__feature-wrapper -->
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Lorem ipsum</h5>
+              <h5 class="spotlight__kicker">Graduates by county</h5>
               <h2 class="spotlight__head">Grads stay close to home</h2>
-              <p class="spotlight__body-text">Here's a look at where AOA members are practicing, broken down by their medical school. As you'll see, they generally stay near the schools where they trained.</p>
+              <p class="spotlight__body-text">Here's a look at where AOA members are practicing, grouped by their medical school. As you'll see, they generally stay near the schools where they trained.</p>
               <p class="spotlight__body-text">We focus on AOA members&mdash;namely, those who are out of residency and care for patients&mdash;because they are the DOs for whom we have the most accurate information. We exclude schools that are too new to have a significant number graduates out of residency.</p>
-              <p class="spotlight__body-text--source">Source: AOA Physician Masterfile</p>
+              <p class="spotlight__body-text--source">Source: AOA Physician Masterfile; <em>The Journal of the American Osteopathic Association</em></p>
             </div> <!-- spotlight__body -->
           </div>
         </div>

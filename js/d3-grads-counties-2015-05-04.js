@@ -32,6 +32,9 @@ var contextWidth = visWidth - contextDim.margin.left - contextDim.margin.right,
 
 var centered;
 
+var resetButton = d3.select('#reset')
+  .style('display', 'none')
+
 var xScale = d3.time.scale()
   .domain([new Date, new Date])
   .nice(d3.time.year, 1950)
@@ -39,7 +42,6 @@ var xScale = d3.time.scale()
 
 var zoom = d3.behavior.zoom()
   .translate([0, 0])
-  //.scale([1])
   .center([contextWidth / 2, contextHeight / 2])
   .scale(1)
   .scaleExtent([1, 8])
@@ -55,6 +57,7 @@ var svg = d3.select('.vis').append('svg')
   .call(responsivefy)
   .call(tip)
   .call(zoom)
+  .on('click', stopped, true)
   //.call(zoom.evt)
   
 var context = svg.append('g')
@@ -112,11 +115,11 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         .attr('d', path)
         .style('stroke', '#fff')
         .attr('class', 'state')
+        .on('click', clicked)
 
       kickoffVis();
 
-      d3.selectAll('.zoom')
-        .on('click', zoomClicked)
+      resetButton.on('click', reset)
 
       function kickoffVis() {
       //drawAllBubbles();
@@ -255,6 +258,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
         bubbles
           .on('mouseover', tip.show)
           .on('mouseout', tip.hide)
+          //.on('click', clicked)
 
         bubbles
           .exit()
@@ -265,6 +269,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
       } // end drawBubbles
 
       function changeSchool(evt) {
+        
         var school = evt.target.value;
         drawBubbles(school);
         //gradCount();
@@ -330,7 +335,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools.json", function(error, us) {
       }
 
       function drawBullseye(school) {
-        d3.select('.selected-school')
+        d3.selectAll('.selected-school')
           .transition()
           .duration(3000)
           .style('opacity', 0)
@@ -442,10 +447,14 @@ function zoom() {
   // hide some things
   tip.hide();
 
-  if (d3.event.scale > 1) {
+  if (d3.event.scale > 1.1) {
     document.querySelector('.legend').style.display = 'none';
+    resetButton.style('display', 'block')
+    context.style('cursor', 'move')
   } else {
     document.querySelector('.legend').style.display = 'block';
+    resetButton.style('display', 'none')
+    context.style('cursor', 'auto')
   }
 
   d3.selectAll('.bubble')
@@ -495,5 +504,51 @@ function coordinates(point) {
 function point(coordinates) {
   var scale = zoom.scale(), translate = zoom.translate();
   return [coordinates[0] * scale + translate[0], coordinates[1] * scale + translate[1]];
+}
+
+function clicked(d) {
+  
+  //tip.hide();
+
+  context.style('cursor', 'move')
+
+  resetButton.style('display', 'block');
+
+  if (active.node() === this) return reset();
+  active.classed("active", false);
+  active = d3.select(this).classed("active", true);
+
+  var bounds = path.bounds(d),
+      dx = bounds[1][0] - bounds[0][0],
+      dy = bounds[1][1] - bounds[0][1],
+      x = (bounds[0][0] + bounds[1][0]) / 2,
+      y = (bounds[0][1] + bounds[1][1]) / 2,
+      scale = .9 / Math.max(dx / contextWidth, dy / contextHeight),
+      translate = [contextWidth / 2 - scale * x, contextHeight / 2 - scale * y];
+
+  svg.transition()
+      .duration(750)
+      .call(zoom.translate(translate).scale(scale).event);
+}
+
+function reset() {
+  resetButton.style('display', 'none');
+  context.style('cursor', 'auto')
+
+  active.classed("active", false);
+  active = d3.select(null);
+
+  svg.transition()
+      .duration(750)
+      .call(zoom.translate([0, 0]).scale(1).event);
+}
+
+function stopped() {
+  if (d3.event.defaultPrevented) d3.event.stopPropagation();
+}
+
+function zoomed() {
+  g.style("stroke-width", 1.5 / d3.event.scale + "px");
+  g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
 }
 
