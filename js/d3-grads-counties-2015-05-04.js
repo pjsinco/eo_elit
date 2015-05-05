@@ -66,7 +66,7 @@ var directions = svg
   .attr('y', function() {
     return contextHeight;
   })
-  .style('fill', '#d0d0d0')
+  .style('fill', '#b3b3b3')
   .style('font-size', '12px')
 
 var focus = svg.append('g')
@@ -420,7 +420,7 @@ function zoom() {
   } else {
     document.querySelector('.legend').style.display = 'block';
     resetButton.style('display', 'none')
-    context.style('cursor', 'auto')
+    context.style('cursor', 'default')
     directions.style('display', 'block')
   }
 
@@ -499,7 +499,7 @@ function clicked(d) {
 
 function reset() {
   resetButton.style('display', 'none');
-  context.style('cursor', 'auto')
+  context.style('cursor', 'default')
 
   active.classed("active", false);
   active = d3.select(null);

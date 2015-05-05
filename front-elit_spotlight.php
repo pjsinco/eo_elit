@@ -16,7 +16,7 @@
       <div class="row">
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
-            <h3 class="vis-title">Where graduates practice, by county</h3>
+            <h3 class="vis-title">Where graduates practice, by school</h3>
             <div class="spotlight__feature-wrapper">
 
               <div class="vis-info">
