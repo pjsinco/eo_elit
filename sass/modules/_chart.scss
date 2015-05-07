@@ -1,0 +1,31 @@
+.chart {
+
+  margin-bottom: 1em;
+  border-top: 1px solid $lightgray;
+  border-bottom: 1px solid $lightgray;
+
+
+  &__title {
+    margin-top: .5em;
+    font-weight: 200;
+    font-size: 2em;
+    
+  }
+
+  &__subhead {
+    @extend p;
+    font-weight: 600;
+  }
+
+  &__source {
+    color: $font-color-lighter;
+    font-size: .875em;
+    text-align: right;
+  }
+
+  &__caption {
+
+  }
+  
+
+}
