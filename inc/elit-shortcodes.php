@@ -110,7 +110,7 @@ function elit_story_image_shortcode($atts, $content = null) {
 }
 add_shortcode('story-image', 'elit_story_image_shortcode' );
 
-function elit_pull_quote_shortcode($atts, $content = null) {
+function elit_pull_quote_shortcode($atts, $content = null ) {
   $a = shortcode_atts(
     array(
       'quote' => '',
@@ -193,7 +193,7 @@ function elit_advertisements_shortcode( $atts, $content = null ) {
 }
 add_shortcode('advertisements', 'elit_advertisements_shortcode');
 
-function elit_story_video_shortcode($atts, $content = null) {
+function elit_story_video_shortcode($atts, $content = null ) {
   // we're going to need fitvids
   wp_enqueue_script('fitvids');
   add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
@@ -217,3 +217,25 @@ function elit_story_video_shortcode($atts, $content = null) {
   return $markup;
 }
 add_shortcode('story-video', 'elit_story_video_shortcode' );
+
+function elit_story_chart_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'title' => '',
+      'id' => '',
+      'subhead' => '',
+      'source' => '',
+    ), $atts
+  ); 
+
+  $markup  = '<div class="chart">';
+  $markup .= '<h5 class="chart__title">' . $a['title'] . '</h5>';
+  $markup .= '<p class="chart__subhead">' . $a['subhead'] . '</p>';
+  $markup .= do_shortcode('[story-image id="'. $a['id'] . '" size="full"]');
+  $markup .= '<p class="chart__source">' . $a['source'] . '</p>';
+  $markup .= '</div>';
+
+  return $markup;
+}
+add_shortcode('story-chart', 'elit_story_chart_shortcode' );
