@@ -154,16 +154,21 @@ function elit_story_footer() {
   }
 
   // #4 output our about-the-author if we have the info
-  $bio = get_post_meta (get_the_ID(), 'elit_bio', true);
+  $bio = get_post_meta(get_the_ID(), 'elit_bio', true);
+  // we only want to show emails for staff;
+  // staff have at least 'Author' privileges
   if ( author_can( get_the_ID(), 'publish_posts' ) && empty( $bio ) ) {
     $author_bio  = get_the_author_meta( 'description' ); 
     $author_bio .= '<span class="story-footer__note">';
     $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
     $author_bio .= '<span class="icon-mail"></span>&nbsp;Email '; 
     $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
-      
+  // here we catch less than 'Author' priveliges;
+  // we don't want to show their email
+  } elseif ( !author_can( get_the_ID(), 'publish_posts' ) && empty( $bio ) ) {
+    $author_bio = get_the_author_meta( 'description' );
   } else {
-    $author_bio = get_post_meta( get_the_id(), 'elit_bio', true );
+    $author_bio = $bio;
   }
 
   if ( $author_bio ) {
