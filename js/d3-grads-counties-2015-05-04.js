@@ -119,7 +119,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools-eunice.json", function(error
 
       function kickoffVis() {
       //drawAllBubbles();
-        var kickoffSchool = 'NSU-COM';
+        var kickoffSchool = 'OSU-COM';
         drawLegend();
         drawBubbles(kickoffSchool);
         drawBullseye(kickoffSchool);

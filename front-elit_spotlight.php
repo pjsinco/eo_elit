@@ -36,9 +36,9 @@
                     <option value="MSUCOM">MSUCOM</option>
                     <option value="MWU/AZCOM">MWU/AZCOM</option>
                     <option value="MWU/CCOM">MWU/CCOM</option>
-                    <option selected value="NSU-COM">NSU-COM</option>
+                    <option value="NSU-COM">NSU-COM</option>
                     <option value="NYITCOM">NYITCOM</option>
-                    <option value="OSU-COM">OSU-COM</option>
+                    <option selected value="OSU-COM">OSU-COM</option>
                     <option value="OU-HCOM">OU-HCOM</option>
                     <option value="PCOM">PCOM</option>
                     <option value="RowanSOM">RowanSOM</option>
@@ -64,8 +64,8 @@
               <h5 class="spotlight__kicker">DO<span style="text-transform: lowercase">s</span> in practice</h5>
               <h2 class="spotlight__head">Grads stay close to home</h2>
               <p class="spotlight__body-text">Here's a look at where AOA members are practicing, grouped by their medical school. As you'll see, they generally stay near the schools where they trained.</p>
-              <p class="spotlight__body-text">We focus on AOA members&mdash;namely, those who are out of residency and care for patients&mdash;because they are the DOs for whom we have the most accurate information. We exclude schools that are too new to have a significant number graduates out of residency.</p>
-              <p class="spotlight__body-text--source">Source: AOA Physician Masterfile; <em>The Journal of the American Osteopathic Association</em></p>
+              <p class="spotlight__body-text">We focus on AOA members&mdash;namely, those who are out of residency and care for patients&mdash;because they are the DOs for whom we have the most accurate information. We exclude schools that are too new to have a significant number of graduates out of residency.</p>
+              <p class="spotlight__body-text--source">Sources: AOA Physician Masterfile; <em>The Journal of the American Osteopathic Association</em></p>
             </div> <!-- spotlight__body -->
           </div>
         </div>
