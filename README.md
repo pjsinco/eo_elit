@@ -422,6 +422,9 @@ global $some_var;
         * Note: ```elit-social-pick``` is the name of our plugin
     5. ```cd $(wp plugin path --dir elit-social-pick)```
     6. ```bash bin/install-wp-tests.sh wordpress_test root root localhost latest```
+    7. And here's how we run a test:
+        ```phpunit```
+      
 
 * [How can I add an image upload field directly to a custom write panel?](http://wordpress.stackexchange.com/questions/4307/how-can-i-add-an-image-upload-field-directly-to-a-custom-write-panel/4413#4413)
 
@@ -659,3 +662,12 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 
 ###Fri Apr 24 10:35:34 2015 CDT
 * [howtocenterincss.com](http://howtocenterincss.com)
+
+###Mon May 11 11:20:04 2015 CDT
+* Example: [NYTimes slideshow](http://www.nytimes.com/slideshow/2015/05/08/nytnow/08eveningss.html#9)
+
+* Slideshow: possible libraries
+    * [jQuery Owl Carousel](http://owlgraphic.com/owlcarousel/)
+        * JSFiddle: [example with caption](http://jsfiddle.net/nLJ79/)
+
+    * [Royal Slider](http://dimsemenov.com/plugins/royal-slider/)
