@@ -54,7 +54,7 @@ function elit_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
-  add_theme_support( 'post-formats', array( 'video', ) );
+  add_theme_support( 'post-formats', array( 'video', 'gallery' ) );
 
   /*
    * Set our image sizes
@@ -312,6 +312,10 @@ function elit_scripts() {
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }
 
+  if ( has_post_format( 'gallery' ) ) {
+    add_action( 'wp_head' , 'elit_add_no_fouc_snippet' );
+  }
+
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -343,6 +347,24 @@ function elit_add_fitvids_script() {
   $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
   $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
   $output .= "});";
+  $output .= '</script>' . PHP_EOL;
+
+  echo $output;
+}
+
+/**
+ * Prevent flash of unstyled content (fouc)
+ *
+ * https://gist.github.com/johnpolacek/3827270
+ *
+ */
+function elit_add_no_fouc_snippet() {
+  $output  = '<style type="text/css">' . PHP_EOL;
+  $output .= '.no-fouc { display: none; }' . PHP_EOL;
+  $output .= '</style>' . PHP_EOL;
+
+  $output .= '<script>' . PHP_EOL;
+  $output .= 'document.documentElement.className = \'no-fouc\'' . PHP_EOL;
   $output .= '</script>' . PHP_EOL;
 
   echo $output;
