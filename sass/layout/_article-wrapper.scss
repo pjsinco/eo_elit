@@ -1,0 +1,17 @@
+%article-base {
+  width: 94%;
+  max-width: $article-max-width;
+  @extend %center;
+  
+  @include breakpoint($screen $medium-start) {
+    width: $story-width-medium;
+  }
+
+  @include breakpoint($screen $large-start) {
+    width: 100%;
+  }
+}
+
+.article-wrapper {
+  @extend %article-base;
+}

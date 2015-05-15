@@ -6,13 +6,23 @@
   border-bottom: 1px dashed $mediumgray;
 }
 
-.story-footer {
+%story-footer-base {
   margin-top: 3em;
   clear: both;
   font-size: 1em;
 
+}
+
+.story-footer {
+  @extend %story-footer-base; 
+
   @include breakpoint($screen $large-minor-start) {
     @include span(last 7 of 8);
+  }
+  
+  &--full-width {
+    @extend %story-footer-base; 
+      
   }
 
   .with-top-rule {

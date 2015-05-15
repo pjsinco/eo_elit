@@ -1,14 +1,24 @@
 .comments__wrapper {
   @include clearfix;
-  @extend %story-base;
+  @extend %article-base;
   margin-bottom: 2em;
 }
-.comments {
 
+%comments-base {
   margin-top: 3em;
   color: #333;
+}
+
+.comments {
+  @extend %comments-base;
+
   @include breakpoint($screen $large-minor-start) {
     @include span(last 7 of 8);
+  }
+
+  &--full-width {
+    @extend %comments-base;
+    width: 100%;
   }
 
 
