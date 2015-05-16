@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 ?>
 <div class="comments__wrapper">
   
-  <div id="comments" class="story__commments comments">
+  <div id="comments" class="comments">
   
   	<?php if ( have_comments() ) : ?>
       <h2 class="comments__title">

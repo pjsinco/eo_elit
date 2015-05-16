@@ -671,3 +671,9 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
         * JSFiddle: [example with caption](http://jsfiddle.net/nLJ79/)
 
     * [Royal Slider](http://dimsemenov.com/plugins/royal-slider/)
+
+###Thu May 14 17:19:56 2015 CDT
+* Today we added a function in functions.php to keep our elit-slideshow from flashing on the page before it's ready
+    * [How to prevent Flash of Unstyled Content on your websites](http://www.techrepublic.com/blog/web-designer/how-to-prevent-flash-of-unstyled-content-on-your-websites/)
+    * We added this code:
+        * [Gist](https://gist.github.com/johnpolacek/3827270)
