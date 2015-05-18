@@ -186,6 +186,14 @@ function elit_add_kicker_meta_box() {
     'side',
     'default'
   );
+  add_meta_box(
+    'elit-kicker',
+    esc_html( 'Headline kicker' ),
+    'elit_kicker_meta_box',
+    'elit_slideshow',
+    'side',
+    'default'
+  );
 }
 
 function elit_kicker_meta_box( $object, $box ) {
