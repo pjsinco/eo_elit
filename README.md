@@ -677,3 +677,11 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
     * [How to prevent Flash of Unstyled Content on your websites](http://www.techrepublic.com/blog/web-designer/how-to-prevent-flash-of-unstyled-content-on-your-websites/)
     * We added this code:
         * [Gist](https://gist.github.com/johnpolacek/3827270)
+
+###Mon May 18 16:59:12 2015 CDT
+* Today we added a couple new alternate templates for an article page. These have classes that use "--full-width".
+    * '--full-width' items span the full width of article; that means they don't use (7 last of 8) in our grid
+
+* We added our kicker meta box to the elit_slideshow custom post type, which we're bringing in as a plugin.
+    * StackExchange: [Add Metabox to all custom post types](http://wordpress.stackexchange.com/questions/106859/add-metabox-to-all-custom-post-types)
+
