@@ -12,6 +12,11 @@
 
     <div id="main" class="content">
       <?php 
+        /**
+         * We'll display these post types
+         *
+         */
+        $post_types_to_include = array('post', 'elit_slideshow');
 
         /**************************************************************
          *
@@ -72,7 +77,7 @@
               (SELECT {$wpdb->prefix}posts.*
               from {$wpdb->prefix}posts
               where {$wpdb->prefix}posts.ID IN (" . implode( ',', $stickies ) . ")
-              AND {$wpdb->prefix}posts.post_type = 'post' 
+              AND {$wpdb->prefix}posts.post_type IN ('" . implode( "','", $post_types_to_include) . "')
               AND {$wpdb->prefix}posts.post_status = 'publish'
               order by post_date DESC)
               UNION
@@ -88,7 +93,7 @@
               WHERE 1=1 
                 AND {$wpdb->prefix}posts.ID NOT IN (" . implode( ',', $do_not_dupe ) . ") 
                 AND {$wpdb->prefix}term_relationships.term_taxonomy_id IN (3,4,5,6,7)
-                AND {$wpdb->prefix}posts.post_type = 'post' 
+                AND {$wpdb->prefix}posts.post_type in ('" . implode( "','", $post_types_to_include) . "')
                 AND ({$wpdb->prefix}posts.post_status = 'publish' OR {$wpdb->prefix}posts.post_status = 'private')
                 AND ({$wpdb->prefix}postmeta.post_id IS NULL)
               order by post_date DESC
@@ -113,6 +118,7 @@
         $args = array(
           'post__not_in' => $do_not_dupe,
           'posts_per_page' => 4,
+          'post_type' => $post_types_to_include,
           'ignore_sticky_posts' => 1,
           'category_name' => 'lifestyle,patient-care,policy,profession,training',
         );
