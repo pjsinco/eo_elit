@@ -178,22 +178,25 @@ function elit_kicker_meta_box_setup() {
 }
 
 function elit_add_kicker_meta_box() {
-  add_meta_box(
-    'elit-kicker',
-    esc_html( 'Headline kicker' ),
-    'elit_kicker_meta_box',
-    'post',
-    'side',
-    'default'
-  );
-  add_meta_box(
-    'elit-kicker',
-    esc_html( 'Headline kicker' ),
-    'elit_kicker_meta_box',
-    'elit_slideshow',
-    'side',
-    'default'
-  );
+  $post_types = array('post', 'elit_slideshow');
+  foreach ( $post_types as $post_type ) {
+    add_meta_box(
+      'elit-kicker',
+      esc_html( 'Headline kicker' ),
+      'elit_kicker_meta_box',
+      $post_type,
+      'side',
+      'default'
+    );
+  }
+//  add_meta_box(
+//    'elit-kicker',
+//    esc_html( 'Headline kicker' ),
+//    'elit_kicker_meta_box',
+//    'elit_slideshow',
+//    'side',
+//    'default'
+//  );
 }
 
 function elit_kicker_meta_box( $object, $box ) {
