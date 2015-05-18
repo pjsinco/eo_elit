@@ -685,3 +685,4 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 * We added our kicker meta box to the elit_slideshow custom post type, which we're bringing in as a plugin.
     * StackExchange: [Add Metabox to all custom post types](http://wordpress.stackexchange.com/questions/106859/add-metabox-to-all-custom-post-types)
 
+* WPBeginner new: [12 Most Useful WordPress Custom Post Types Tutorials](http://www.wpbeginner.com/wp-tutorials/12-most-useful-wordpress-custom-post-types-tutorials/)
