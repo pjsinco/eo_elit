@@ -1,7 +1,13 @@
 .comments__wrapper {
   @include clearfix;
-  @extend %article-base;
   margin-bottom: 2em;
+  @extend %center;
+
+  @include breakpoint($screen $large-start) {
+    max-width: $article-max-width;
+    
+  }
+
 }
 
 %comments-base {
@@ -11,14 +17,15 @@
 
 .comments {
   @extend %comments-base;
+  @extend %article-base;
 
   @include breakpoint($screen $large-minor-start) {
     @include span(last 7 of 8);
   }
 
   &--full-width {
-    @extend %comments-base;
-    width: 100%;
+    @extend %article-base;
+    /*width: 100%;*/
   }
 
 

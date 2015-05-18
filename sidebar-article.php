@@ -12,7 +12,7 @@
 
         <div class="article-wrapper">
           
-          <div class='widgets--article__wrapper'>
+          <div class='widgets--article__wrapper<?php echo (has_post_format('gallery') ? '--full-width' : ''); ?>'>
           <?php if ( !dynamic_sidebar( 'article-sidebar' ) ); ?>
           </div>
         </div>

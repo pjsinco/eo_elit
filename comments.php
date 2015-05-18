@@ -19,8 +19,7 @@ if ( post_password_required() ) {
 ?>
 <div class="comments__wrapper">
   
-  <div id="comments" class="comments">
-  
+  <div id="comments" class="comments<?php echo (has_post_format('gallery') ? '--full-width' : ''); ?>">
   	<?php if ( have_comments() ) : ?>
       <h2 class="comments__title">
         <span class="comments__count">
