@@ -649,3 +649,16 @@ function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
   return $content;
 }
 add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10, 1 );
+
+function elit_check_for_slideshow( $single_template ) {
+  global $post;
+  $slideshow = get_post_meta($post->ID, 'elit_featured_slideshow', true);
+
+  if ( !empty( $slideshow ) ) {
+    $single_template = get_template_directory() . '/single-elit_slideshow.php';
+  }
+
+  return $single_template;
+  
+}
+add_filter( 'single_template', 'elit_check_for_slideshow' );
