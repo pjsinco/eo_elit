@@ -312,9 +312,9 @@ function elit_scripts() {
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }
 
-  if ( has_post_format( 'gallery' ) ) {
-    add_action( 'wp_head' , 'elit_add_no_fouc_snippet' );
-  }
+  //if ( has_post_format( 'gallery' ) ) {
+    //add_action( 'wp_head' , 'elit_add_no_fouc_snippet' );
+  //}
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -358,17 +358,17 @@ function elit_add_fitvids_script() {
  * https://gist.github.com/johnpolacek/3827270
  *
  */
-function elit_add_no_fouc_snippet() {
-  $output  = '<style type="text/css">' . PHP_EOL;
-  $output .= '.no-fouc { display: none; }' . PHP_EOL;
-  $output .= '</style>' . PHP_EOL;
-
-  $output .= '<script>' . PHP_EOL;
-  $output .= 'document.documentElement.className = \'no-fouc\'' . PHP_EOL;
-  $output .= '</script>' . PHP_EOL;
-
-  echo $output;
-}
+//function elit_add_no_fouc_snippet() {
+//  $output  = '<style type="text/css">' . PHP_EOL;
+//  $output .= '.no-fouc { display: none; }' . PHP_EOL;
+//  $output .= '</style>' . PHP_EOL;
+//
+//  $output .= '<script>' . PHP_EOL;
+//  $output .= 'document.documentElement.className = \'no-fouc\'' . PHP_EOL;
+//  $output .= '</script>' . PHP_EOL;
+//
+//  echo $output;
+//}
 
 // use google's cdn for jquery and load it in the footer
 // http://www.wpbeginner.com/wp-themes/
@@ -650,15 +650,3 @@ function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
 }
 add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10, 1 );
 
-function elit_check_for_slideshow( $single_template ) {
-  global $post;
-  $slideshow = get_post_meta($post->ID, 'elit_featured_slideshow', true);
-
-  if ( !empty( $slideshow ) ) {
-    $single_template = get_template_directory() . '/single-elit_slideshow.php';
-  }
-
-  return $single_template;
-  
-}
-add_filter( 'single_template', 'elit_check_for_slideshow' );
