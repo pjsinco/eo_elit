@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 ?>
 <div class="comments__wrapper">
   
-  <div id="comments" class="comments<?php echo ((get_post_type($post->id) == 'elit_slideshow') ? '--full-width' : ''); ?>">
+  <div id="comments" class="comments--full-width">
   	<?php if ( have_comments() ) : ?>
       <h2 class="comments__title">
         <span class="comments__count">
