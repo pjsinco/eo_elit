@@ -5,12 +5,29 @@
 ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-          <?php // do we have a slideshow? if so, show it ?>
-          <?php if ( get_post_meta( $post->ID, 'elit_featured_slideshow', true ) ): ?>
-            <?php get_template_part( 'top_of_story', 'slideshow' ); ?>
-          <?php // or if we have a featured image, show it ?>
-          <?php elseif ( has_post_thumbnail() ): ?>
-            <?php get_template_part( 'top_of_story', 'featured_image' ); ?>
+          <?php // if we have a featured image, show it ?>
+          <?php if ( has_post_thumbnail() ): ?>
+            <?php $featured_image_id = (get_post_thumbnail_id()); ?>
+            <?php $featured_image_content = get_post($featured_image_id); ?>
+
+            <?php // if we don't have a label for the image, add some space below with image-overlay--space ?>
+            <figure class="image--primary <?php echo (($featured_image_content->post_excerpt) ? 'image-overlay ' : ''); ?> <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
+              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo tevkori_get_srcset_string( $featured_image_id, 'elit-large' ); ?> />
+
+            <?php // the caption overlay ?>
+            <?php if ($featured_image_content->post_excerpt): ?>
+              <div class="image-overlay__body">
+                <span class="image-overlay__text"><?php echo $featured_image_content->post_excerpt; ?></span>
+              </div>
+            <?php endif; ?>
+            </figure>
+
+            <?php // our label for the featured image  ?>
+            <?php if ($featured_image_content->post_content): ?>
+            <figcaption class="image__caption caption caption--feature caption--right">
+              <?php echo $featured_image_content->post_content; ?>
+            </figcaption>
+            <?php endif; ?>
           <?php endif; ?>
 
 
@@ -53,4 +70,3 @@
 
           </div> <!-- .story -->
         </article>
-
