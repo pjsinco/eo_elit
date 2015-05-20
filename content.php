@@ -17,7 +17,7 @@
             <?php // the caption overlay ?>
             <?php if ($featured_image_content->post_excerpt): ?>
               <div class="image-overlay__body">
-                <span class="image-overlay__text"><?php echo $featured_image_content->post_excerpt; ?></span>
+                <span class="image-overlay__text"><?php echo wptexturize( $featured_image_content->post_excerpt ); ?></span>
               </div>
             <?php endif; ?>
             </figure>
@@ -25,7 +25,7 @@
             <?php // our label for the featured image  ?>
             <?php if ($featured_image_content->post_content): ?>
             <figcaption class="image__caption caption caption--feature caption--right">
-              <?php echo $featured_image_content->post_content; ?>
+              <?php echo wptexturize( $featured_image_content->post_content ); ?>
             </figcaption>
             <?php endif; ?>
           <?php endif; ?>
