@@ -17,6 +17,11 @@
     transition-property: color;
     transition-duration: $mediumduration;
     @include red-hover;
+
+    &--author {
+      @extend .story-meta__link;
+      margin-right: .25em;
+    }
   }
 
   &__by {
@@ -28,10 +33,21 @@
 
   &__author {
     display: inline-block;
-    max-width: 77%;
+    max-width: 70%;
+    margin-right: .25em;
     text-transform: uppercase;
     line-height: 1.3;
     font-weight: 700;
+    
+  }
+
+  &__author-email {
+    /*margin-left: .25em;*/
+    font-size: .95em;
+    color: $mediumgray;
+    transition-property: color;
+    transition-duration: $mediumduration;
+    @include red-hover;
   }
 
   &__date {

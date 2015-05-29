@@ -68,9 +68,10 @@ function elit_byline() {
 ?>
 	<span class="story-meta__by">By</span>
 	  <span class="story-meta__author"> 
-      <a class="story-meta__link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
+      <a class="story-meta__link--author" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
         <?php echo esc_html( get_the_author() ); ?>
       </a>
+      <a class="story-meta__link" href="<?php echo author_can( get_the_ID(), 'publish_posts' ) ? elit_mailto('staff') : elit_mailto('contributor'); ?>"><span class="story-meta__author-email icon-mail"><span class="text-replace">Email</span></span></a>
     </span>
 <?php 
 }
@@ -160,7 +161,8 @@ function elit_story_footer() {
   if ( author_can( get_the_ID(), 'publish_posts' ) && empty( $bio ) ) {
     $author_bio  = get_the_author_meta( 'description' ); 
     $author_bio .= '<span class="story-footer__note">';
-    $author_bio .= '<a href="mailto:' . get_the_author_meta( 'user_email' ). '">';
+    $author_bio .= '<a href="' . elit_mailto('staff') . '"';
+    $author_bio .= '?subject=' . get_the_title() . '">';
     $author_bio .= '<span class="icon-mail"></span>&nbsp;Email '; 
     $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
   // here we catch less than 'Author' priveliges;
@@ -389,3 +391,20 @@ function get_shiftable( $shiftable = true ) {
   }
 }
 
+/**
+ * Generate a "mailto:" link
+ *
+ * @return a string ready to insert into an href attribute
+ * @param string $recipient - 
+ *   'staff' will use the author's email;
+ *   any other value will use the admin's email
+ * @author PJS
+ */
+function elit_mailto( $recipient ) {
+  $link  = 'mailto:';
+  $link .= $recipient == 'staff' ? get_the_author_meta( 'user_email' ) :
+    get_option('admin_email');
+  $link .= '?subject=' . get_the_title();
+  
+  return $link;
+}
