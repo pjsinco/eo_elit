@@ -53,7 +53,7 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true )
     </a>
   </li>
   <li class="social__icon">
-    <a href="mailto:?subject=<?php the_title();?>&amp;body=<?php the_permalink() ?>" title="Email this article" id="social-email" href="" class="<?php echo $shift_str; ?>__link">
+    <a href="mailto:?subject=<?php echo strip_tags(get_the_title()); ?>&amp;body=<?php the_permalink() ?>" title="Email this article" id="social-email" href="" class="<?php echo $shift_str; ?>__link">
       <span class="icon-mail">
         <span class="text-replace">Email</span>
       </span>
@@ -162,7 +162,7 @@ function elit_story_footer() {
     $author_bio  = get_the_author_meta( 'description' ); 
     $author_bio .= '<span class="story-footer__note">';
     $author_bio .= '<a href="' . elit_mailto('staff') . '"';
-    $author_bio .= '?subject=' . get_the_title() . '">';
+    $author_bio .= '?subject=' . strip_tags(get_the_title()) . '">';
     $author_bio .= '<span class="icon-mail"></span>&nbsp;Email '; 
     $author_bio .= get_the_author_meta( 'first_name' ) . '</a></span>';
   // here we catch less than 'Author' priveliges;
@@ -404,7 +404,7 @@ function elit_mailto( $recipient ) {
   $link  = 'mailto:';
   $link .= $recipient == 'staff' ? get_the_author_meta( 'user_email' ) :
     get_option('admin_email');
-  $link .= '?subject=' . get_the_title();
+  $link .= '?subject=' . strip_tags(get_the_title());
   
   return $link;
 }
