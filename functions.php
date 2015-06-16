@@ -274,10 +274,10 @@ function elit_scripts() {
     array( 'd3', 'topojson', 'd3-tip' ), false, true
   );
 
-  if ( is_front_page() ) {
-    wp_enqueue_script( 'topojson' );
-    wp_enqueue_script( 'd3-grads-counties' );
-  }
+  //if ( is_front_page() ) {
+    //wp_enqueue_script( 'topojson' );
+    //wp_enqueue_script( 'd3-grads-counties' );
+  //}
 
   /**************************
   
