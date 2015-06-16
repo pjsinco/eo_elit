@@ -82,4 +82,13 @@
     }
   }
 
+  &__link {
+    color: $font-color;
+    font-weight: 600;
+      &:hover {
+        transition: color .25s ease;
+        @include red-hover;
+      }
+    }
+
 }
