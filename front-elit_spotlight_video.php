@@ -21,8 +21,8 @@
             </div>
             <div class="spotlight__body">
               <h5 class="spotlight__kicker">Finding patterns</h5>
-              <h2 class="spotlight__head"><a href="<?php echo get_the_permalink( '' ); ?>">A glimpse into the mind of a data-driven physician</a></h2>
-              <p class="spotlight__body-text">Jay Bhatt, DO, describes how physicians can use big-picture data from the community to provide better, more efficient care in the clinic. Dr. Bhatt is a former chief strategy and information officer for the Chicago Department of Public Health. <span class="spotlight__note"><a class="spotlight__link" href="#">Read more &raquo;</a></span></p>
+              <h2 class="spotlight__head"><a href="<?php echo get_permalink( 183025 ); ?>">A glimpse into the mind of a data-driven physician</a></h2>
+              <p class="spotlight__body-text">Jay Bhatt, DO, describes how physicians can use big-picture data from the community to provide better, more efficient care in the clinic. Dr. Bhatt is a former chief strategy and information officer for the Chicago Department of Public Health. <span class="spotlight__note"><a class="spotlight__link" href="<?php echo get_permalink( 183025 ); ?>">Read more &raquo;</a></span></p>
 
             </div>
           </div>
