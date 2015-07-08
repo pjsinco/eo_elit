@@ -7,11 +7,11 @@
   }
 
   &__img {
-    margin-right: 1em;
     float: left;
 
     @include breakpoint($screen $medium-minor-start) {
       margin-bottom: 1em;      
+      margin-right: 1em;
     }
   }
 
@@ -29,19 +29,33 @@
   }
 
   &__body {
+    margin-left: 9.75em;
     color: $gray;
     @include breakpoint($screen $medium-minor-start) {
       width: 8.75em;
+      margin-left: 0;
     }
   }
   
   &__head {
+    line-height: 1.165;
+    position: relative;
+    top: -.25em;
+    margin-bottom: 0;
+    margin-top: 0;
     font-weight: normal;
     font-size: 1.125em;
-    line-height: 1.22;
+
+    @include breakpoint($screen $medium-minor-start) {
+        line-height: 1.22;
+    }
   }
 
   &__link {
     color: inherit;
+    transition-property: color;
+    transition-duration: .25s; 
+    transition-timing-function: ease;
+    @include red-hover;
   }
 }

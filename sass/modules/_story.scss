@@ -76,9 +76,10 @@
 
   &__box {
     @include clearfix();
+    margin-bottom: 1em;
+
     @include breakpoint($screen $medium-minor-start) {
       margin-left: 1.5em;
-      margin-bottom: 1em;
       width: 11.875em;
       float: right;
     }
