@@ -32,7 +32,7 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true )
     </a>
   </li>
   <li class="social__icon">
-    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo  $title; ?>&url=<?php echo $link; ?>&via=TheDOmagazine" class="<?php echo $shift_str; ?>__link">
+    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo  $title; ?>&url=<?php echo $link; ?>&via=AOAforDOs" class="<?php echo $shift_str; ?>__link">
       <span class="icon-twitter">
         <span class="text-replace">Twitter</span>
       </span>

@@ -30,7 +30,7 @@
     </a>
   </li>
   <li class="social__icon">
-    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo  $title; ?>&url=<?php echo $link; ?>&via=TheDOmagazine" class="social--shiftable__link">
+    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo  $title; ?>&url=<?php echo $link; ?>&via=AOAforDOs" class="social--shiftable__link">
       <span class="icon-twitter">
         <span class="text-replace">Twitter</span>
       </span>
