@@ -11,7 +11,7 @@
       <footer id="colophon" class="footer" role="contentinfo">
         <div class="footer__body">
           <div class="row--full">
-            <h2 class="footer__header">More from the <span>American Osteopathic Association</span></h2>
+            <h2 class="footer__header">More from the <span><a href="http://www.osteopathic.org/Pages/default.aspx" title="American Osteopathic Association">American Osteopathic Association</a></span></h2>
             <div class="footer__col">
               <h3 class="footer__title">About the AOA</h3>
               <ul class="footer__list">
@@ -27,10 +27,7 @@
                   <a href="http://www.osteopathic.org/inside-aoa/about/affiliates/Pages/default.aspx" title="AOA Affiliates, Partnerships, and Teams">Related Organizations</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.aoastore.com/RetailSite.asp" title="American Osteopathic Association">AOA Store</a>
-                </li>
-                <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/about/Pages/osteopathic-family-relief-fund.aspx" title="Osteopathic Family Relief Fund">Osteopathic Family Relief Fund</a>
+                  <a href="https://aoa.rangemod.com/RetailSite.asp" title="American Osteopathic Association">AOA Store</a>
                 </li>
               </ul>
               
@@ -44,9 +41,6 @@
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/accreditation/opti-approval/Pages/default.aspx" title="Osteopathic Postdoctoral Training Institution Approval">OPTI Approval</a>
-                </li>
-                <li class="footer__list-item">
-                  <a href="http://www.hfap.org/" title="HFAP">Healthcare Facilities Accreditation Program</a>
                 </li>
               </ul>
             </div> <!-- .footer__col -->
@@ -80,22 +74,25 @@
                   <a href="http://www.osteopathic.org/inside-aoa/Education/postdoctoral-training/Pages/default.aspx" title="Postdoctoral Training">Postdoctoral Training</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/Education/opti-clearinghouse/Pages/default.aspx" title="OPTI Clearinghouse">OPTI Clearinghouse</a>
-                </li>
-                <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/Education/OGME-development-initiative/Pages/default.aspx" title="OGME Development Initiative">OGME Development</a>
                 </li>
               </ul>
             </div> <!-- .footer__col -->
 
             <div class="footer__col--last">
-              <h3 class="footer__title">DO Profiles</h3>
+              <h3 class="footer__title">CME Opportunities</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="https://www.doprofiles.org/sign_in.cfm" title="AOIA - Account Sign In">Order Physician Credentialing Reports</a>
+                  <a href="https://www.docmeonline.com/Default.aspx" title="AOA Professional Development">DO CME Online</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="http://www.osteopathic.org/inside-aoa/events/omed/Pages/default.aspx" title="Home - OMED: Osteopathic Medical Conference & Exposition">OMED</a>
+                </li>
+                <li class="footer__list-item">
+                  <a href="http://osteopathic.org/inside-aoa/events/regional-osteopathic-medical-education/Pages/default.aspx" title="AOA ROME Conferences">ROME</a>
                 </li>
               </ul>
-              
+
               <h3 class="footer__title">Professional Development</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
@@ -106,6 +103,13 @@
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/development/quality/Pages/default.aspx" title="Quality and Research">Quality and Research</a>
+                </li>
+              </ul>
+              
+              <h3 class="footer__title">DO Profiles</h3>
+              <ul class="footer__list">
+                <li class="footer__list-item">
+                  <a href="https://www.doprofiles.org/sign_in.cfm" title="AOIA - Account Sign In">Order Physician Credentialing Reports</a>
                 </li>
               </ul>
               
