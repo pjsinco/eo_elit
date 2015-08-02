@@ -686,3 +686,6 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
     * StackExchange: [Add Metabox to all custom post types](http://wordpress.stackexchange.com/questions/106859/add-metabox-to-all-custom-post-types)
 
 * WPBeginner new: [12 Most Useful WordPress Custom Post Types Tutorials](http://www.wpbeginner.com/wp-tutorials/12-most-useful-wordpress-custom-post-types-tutorials/)
+
+###Sun Aug  2 12:40:45 2015 CDT
+* Include posts from authors in the search results where either their display name or user login matches the query string [Gist](https://gist.github.com/danielbachhuber/7126249)
