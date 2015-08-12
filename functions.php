@@ -649,4 +649,3 @@ function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
   return $content;
 }
 add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10, 1 );
-

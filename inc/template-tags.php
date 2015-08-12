@@ -408,3 +408,40 @@ function elit_mailto( $recipient ) {
   
   return $link;
 }
+
+/**
+ * Given a date, create a "[time] ago"-style string.
+ * If date is today, will return time in hours or minutes or seconds.
+ * If date is yesterday, returns "Yesterday".
+ * Else, month and day are returned.
+ *
+ * @return string
+ * @param string $date
+ * @author PJS
+ */
+function elit_time_ago($date) {
+    date_default_timezone_set("GMT");
+    $d = ((int)gmdate('U') - strtotime($date));
+    $time_since = (time() - strtotime($date));
+    $month = array("", "Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec.");
+    if ($d > 172800) {
+      $d = 'Posted ' . $month[date("n", strtotime($date))] . ' ' . date("j", strtotime($date));
+    } elseif ($d <= 172800 && $d > 86400) {
+      $d = "Yesterday";
+    } else if ($d > 7200) {
+      $d = date("G", $time_since) . " hours ago";
+    } else if ($d > 3600) {
+      $d = date("G", $time_since) . " hour ago";
+    } else if ($d > 120) {
+//      $d = date("i", $time_since) . " minutes ago";
+      // replaces '03' with '3'
+      $d = str_replace('0', '', date("i", $time_since)) . " minutes ago";
+    } else if ($d > 60) {
+      $d = date("i", $time_since) . " minute ago";
+    } else if ($d == 1) {
+      $d = date("s", $time_since) . " second ago";
+    } else {
+      $d = date("s", $time_since) . " seconds ago";
+    }
+    return $d;
+}

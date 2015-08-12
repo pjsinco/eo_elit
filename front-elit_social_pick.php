@@ -20,7 +20,7 @@
 ?>
       <div class="row">
         <div class="size-1-of-1 social-pick-red module">
-          <div class="social-pick-red__date"><?php echo $meta['elit_social_pick_date'][0] ?> on Twitter</div>
+          <div class="social-pick-red__date"><?php echo elit_time_ago($meta['elit_social_pick_date'][0]); ?> on Twitter</div>
           <div class="social-pick-red__body">
             <div class="social-pick-red__img">
               <?php echo get_the_post_thumbnail( $social_pick->ID, 'full', array( 'class' => 'image__img' ) ); ?>
