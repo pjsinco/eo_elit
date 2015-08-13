@@ -33,6 +33,22 @@
       line-height: $bodylineheight-bigger;
     }
   }
+
+  > h4 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: $primaryfont;
+    font-size: 1em;
+    line-height: $bodylineheight;
+    font-weight: 400;
+    color: $font-color-lighter;
+    
+    @include breakpoint($screen $large-start) {
+      line-height: $bodylineheight-bigger;
+      font-size: $font-size-base;
+    }
+
+  }
 }
 
 .story {
