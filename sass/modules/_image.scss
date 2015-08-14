@@ -36,7 +36,7 @@
   }
 
   &--tertiary {
-    margin-top: 0.4375em;
+    margin-top: .3125em;
     @extend %image-base;
     max-width: 7em;
     float: right;
@@ -44,6 +44,10 @@
   
     @include breakpoint($screen $medium-start) {
       max-width: 9em;
+    }
+
+    @include breakpoint($screen $large-start) {
+      margin-top: .4375em;
     }
   }
 
