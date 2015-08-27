@@ -1,10 +1,4 @@
 <?php
-/**
- * Plugin Name: Elit Shortcodes
- * Description: Set up shortcodes for elit theme
- * Version: 0.0.1
- * Author: Patrick Sinco
- */
 
 function elit_hiya_shortcode($atts) {
   $a = shortcode_atts(
@@ -18,6 +12,17 @@ function elit_hiya_shortcode($atts) {
   return 'hiya ' . $a['name'] . '. You are a ' . $a['occupation'] . '.';
 }
 add_shortcode('hiya', 'elit_hiya_shortcode');
+
+function elit_ed_note_shortcode($atts, $content = null) {
+
+    //[ed-note]This is <a href="#">hiya</a> an editor's note[/ed-note]
+
+    $note = '<div class="ed-note">' . $content . '</div>';
+    return wptexturize($note);
+
+}
+add_shortcode('ed-note', 'elit_ed_note_shortcode');
+
 
 function elit_related_shortcode($atts, $content = null) {
   $a = shortcode_atts(

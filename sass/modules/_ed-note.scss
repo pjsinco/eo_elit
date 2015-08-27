@@ -1,0 +1,7 @@
+.ed-note {
+
+    @extend %p-base;
+    color: $font-color-lighter;
+    font-style: italic;
+
+}

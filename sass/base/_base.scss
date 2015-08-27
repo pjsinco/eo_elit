@@ -25,7 +25,7 @@ article {
   overflow: hidden;
 }
 
-p {
+%p-base {
   margin-top: 0;
   margin-bottom: 1em;
   font-size: 1em;
@@ -36,6 +36,11 @@ p {
     line-height: $bodylineheight-bigger;
     font-size: $font-size-base;
   }
+
+}
+
+p {
+    @extend %p-base;
 }
 
 h1 {
