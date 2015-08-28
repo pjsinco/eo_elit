@@ -689,3 +689,6 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 
 ###Sun Aug  2 12:40:45 2015 CDT
 * Include posts from authors in the search results where either their display name or user login matches the query string [Gist](https://gist.github.com/danielbachhuber/7126249)
+
+###Fri Aug 28 16:42:39 2015 CDT
+* Plugin: [WP REST API (WP API)](https://wordpress.org/plugins/json-rest-api/)
