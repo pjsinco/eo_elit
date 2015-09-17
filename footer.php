@@ -29,6 +29,9 @@
                 <li class="footer__list-item">
                   <a href="https://aoa.rangemod.com/RetailSite.asp" title="American Osteopathic Association">AOA Store</a>
                 </li>
+                <li class="footer__list-item">
+                  <a href="http://www.osteopathic.org/inside-aoa/about/Pages/employment-opportunities.aspx" title="Employment Opportunities">Work at the AOA</a>
+                </li>
               </ul>
               
               <h3 class="footer__title">Accreditation</h3>
