@@ -184,11 +184,11 @@
         $args = array(
           'posts_per_page' => 4,
           'post__not_in' => array_merge( $stickies, $do_not_dupe ),
-          'category_name' => 'inside-the-aoa',
+          'category_name' => 'newsbriefs',
         );
-        $inside_the_aoa = new WP_Query( $args );
-        if ( $inside_the_aoa ) {
-          include( locate_template( 'front-inside_the_aoa.php' ) ); 
+        $newsbriefs = new WP_Query( $args );
+        if ( $newsbriefs ) {
+          include( locate_template( 'front-newsbriefs.php' ) ); 
           wp_reset_postdata();
         }
 ?>

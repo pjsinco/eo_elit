@@ -9,10 +9,10 @@
 
         <div class="size-2-of-3--last inside-the-aoa module">
           <div class="section-title-hat">
-            <span class="section-title-hat__text">Inside the AOA</span>
+            <span class="section-title-hat__text">Newsbriefs</span>
           </div>
-          <?php while( $inside_the_aoa->have_posts() ): ?>
-            <?php $inside_the_aoa->the_post(); ?>
+          <?php while( $newsbriefs->have_posts() ): ?>
+            <?php $newsbriefs->the_post(); ?>
             <?php $meta = get_post_meta( $post->ID ); ?>
           <article class="f-item--minor">
             <figure class="f-item__fig--minor">
