@@ -111,54 +111,6 @@
 
         /**************************************************************
          *
-         *                       SET UP SECONDARY
-         *
-         *
-         *************************************************************/
-        $args = array(
-          'post__not_in' => $do_not_dupe,
-          'posts_per_page' => 4,
-          'post_type' => $post_types_to_include,
-          'ignore_sticky_posts' => 1,
-          'category_name' => 'lifestyle,patient-care,policy,profession,training',
-        );
-        $secondary = new WP_Query ( $args );
-        if ( $secondary->have_posts() ) {
-          include( locate_template( 'front-secondary_fours.php' ) ); 
-          wp_reset_postdata();
-        }
-
-        /**************************************************************
-         *
-         *                    SET UP SOCIAL-PICK
-         *
-         *
-         *************************************************************/
-        $args = array(
-          'post_type' => 'elit_social_pick',
-          'posts_per_page' => 1,
-          'post_status' => 'publish',
-        );
-        $social = get_posts( $args );
-
-        if ( $social ) {
-          get_template_part( 'front', 'elit_social_pick' );
-        }
-
-        /**************************************************************
-         *
-         *                    SET UP SPOTLIGHT
-         *
-         *
-         *************************************************************/
-
-        // TODO we're just stubbing this for now
-        //get_template_part( 'front', 'elit_spotlight' );
-        get_template_part( 'front', 'elit_spotlight_video' );
-
-
-        /**************************************************************
-         *
          *                    SET UP WIDGET
          *
          *
@@ -194,8 +146,57 @@
 ?>
 
       </div><!-- .row -->
-    
-      <?php get_template_part( 'ad', 'peggy_home_front' ); ?>
+<?php
+
+        /**************************************************************
+         *
+         *                       SET UP SECONDARY
+         *
+         *
+         *************************************************************/
+        $args = array(
+          'post__not_in' => $do_not_dupe,
+          'posts_per_page' => 4,
+          'post_type' => $post_types_to_include,
+          'ignore_sticky_posts' => 1,
+          'category_name' => 'lifestyle,patient-care,policy,profession,training',
+        );
+        $secondary = new WP_Query ( $args );
+        if ( $secondary->have_posts() ) {
+          include( locate_template( 'front-secondary_fours.php' ) ); 
+          wp_reset_postdata();
+        }
+
+        /**************************************************************
+         *
+         *                    SET UP SOCIAL-PICK
+         *
+         *
+         *************************************************************/
+        $args = array(
+          'post_type' => 'elit_social_pick',
+          'posts_per_page' => 1,
+          'post_status' => 'publish',
+        );
+        $social = get_posts( $args );
+
+        if ( $social ) {
+          get_template_part( 'front', 'elit_social_pick' );
+        }
+
+        get_template_part( 'ad', 'peggy_home_front' );
+
+        /**************************************************************
+         *
+         *                    SET UP SPOTLIGHT
+         *
+         *
+         *************************************************************/
+
+        // TODO we're just stubbing this for now
+        //get_template_part( 'front', 'elit_spotlight' );
+        get_template_part( 'front', 'elit_spotlight_video' ); ?>
+
 
 
 

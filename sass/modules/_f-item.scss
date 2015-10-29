@@ -169,6 +169,7 @@
   &--minor {
     @extend %f-item-base;
     top: .375em;
+    padding-bottom: 1em;
   }
 
   &__item {
