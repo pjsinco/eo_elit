@@ -22,7 +22,7 @@
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
             <figure class="super__figure">
-              <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo tevkori_get_src_sizes( $featured_image_id, 'elit-super' ); ?> />
+              <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo tevkori_get_sizes( $featured_image_id, 'elit-super' ); ?> />
               <?php if ( !empty( $featured_image_content ) ): ?>
                 <figcaption class="super__label--<?php echo $super_meta['elit_super_label_quadrant'][0]; ?>"><?php echo $featured_image_content->post_content ?></figcaption>
               <?php endif; ?>
