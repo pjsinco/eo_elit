@@ -24,6 +24,13 @@
       @include span(8 of $gridpage);
     }
 
+    &--large-keep {
+        @include breakpoint($screen $large-start) {
+          @include span(7 of $gridpage);
+        }
+    }
+
+
     &--last  {
       @include breakpoint($screen $large-start) {
         @include span(7 last of $gridpage);        
