@@ -28,6 +28,11 @@
         @include breakpoint($screen $large-start) {
           @include span(7 of $gridpage);
         }
+
+        @include breakpoint($screen $xlarge-start) {
+          @include span(8 of $gridpage);
+        }
+
     }
 
 

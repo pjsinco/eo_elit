@@ -61,7 +61,7 @@
   &--front {
     @extend %widget-base;
     margin-top: 0;
-    /*margin-left: $out-gutter-pct;*/
+    /*margin-left: $out-gutter-pct * 2;*/
     /*margin-right: $out-gutter-pct;*/
     overflow: visible;
 
@@ -69,6 +69,12 @@
       margin-left: 0;
       margin-right: 0;
     }
+
+    @include breakpoint($screen $xlarge-start) {
+        /*margin-left: 6%;*/
+        margin-left: $out-gutter-pct * 2;
+    }
+
   }
 
   &__list {
