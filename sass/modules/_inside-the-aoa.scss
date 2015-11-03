@@ -2,23 +2,13 @@
 
   position: relative;
 
-//  &:before {
-//    content: '';
-//    width: 0;
-//    height: 100%; 
-//    position: absolute;
-//    top: 0;
-//    left: -9%;
-//    border-left: 1px solid $lightgray;
-//    
-//  }
-  &:after {
+  &:before {
     content: '';
     width: 0;
     height: 100%; 
     position: absolute;
     top: 0;
-    right: -9%;
+    left: -9%;
     border-left: 1px solid $lightgray;
     
   }

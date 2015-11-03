@@ -109,13 +109,21 @@
           include( locate_template( 'front-primary.php' ) );
         }
 
+        /**************************************************************
+         *
+         *                    SET UP WIDGET
+         *
+         *
+         *************************************************************/
 ?>
-
-
-
       <div class="row">
-
+        <div class="size-1-of-3 module">
+          <?php if ( ! dynamic_sidebar( 'front-page-standalone' ) ); ?>
+        </div>
 <?php
+        
+
+
         /**************************************************************
          *
          *                 SET UP NEWSBRIEFS
@@ -136,20 +144,6 @@
           wp_reset_postdata();
         }
 ?>
-<?php
-        /**************************************************************
-         *
-         *                    SET UP WIDGET
-         *
-         *
-         *************************************************************/
-?>
-        <div class="size-1-of-3--last module">
-          <?php if ( ! dynamic_sidebar( 'front-page-standalone' ) ); ?>
-        </div>
-
-
-
 
       </div><!-- .row -->
 <?php

@@ -7,7 +7,7 @@
 ?>
 
 
-        <div class="size-2-of-3--large-keep inside-the-aoa module">
+        <div class="size-2-of-3--last inside-the-aoa module">
           <div class="section-title-hat">
             <span class="section-title-hat__text">Newsbriefs</span>
           </div>
