@@ -16,7 +16,7 @@
               <h3 class="footer__title">About the AOA</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a class="footer__list-item"><a href="http://www.osteopathic.org/osteopathic-health/about-dos/what-is-a-do/Pages/default.aspx" title="What is a DO?">What is a DO?</a></li>
+                  <a class="footer__list-item"><a href="http://doctorsthatdo.org/" title="Home - Doctors of Osteopathic Medicine">Doctors That DO</a></li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/about/aoa-membership/Pages/default.aspx" title="Enjoy the Benefits of Being an AOA Member">AOA Membership</a>
                 </li>
