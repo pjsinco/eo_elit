@@ -420,7 +420,7 @@ function elit_mailto( $recipient ) {
  * @author PJS
  */
 function elit_time_ago($date) {
-    date_default_timezone_set("GMT");
+    date_default_timezone_set("America/Chicago");
     $d = ((int)gmdate('U') - strtotime($date));
     $time_since = (time() - strtotime($date));
     $month = array("", "Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec.");
