@@ -15,6 +15,13 @@
   }
 
   @include breakpoint($screen $large-minor-start) {
+
+    .story__body-text--full-width & {
+        width: span(3 of 8);
+        right: (2 * gutter($gridpage));
+        margin-right: gutter($gridpage);
+    }
+
     right: span(1 of 7 wide);
     width: span(3 of 7);
     margin-right: -#{span(1 of 7) };
