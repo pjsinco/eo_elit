@@ -17,13 +17,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-              <iframe width="654" height="368" src="https://www.youtube.com/embed/ac2Z9-7ftCU?color=white&amp;autohide=1&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+              <iframe width="654" height="368" src="https://www.youtube.com/embed/U_Amufac5XU?color=white&amp;autohide=1&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">'Really inspired'</h5>
-              <h2 class="spotlight__head">What do you think of the new brand campaign?</h2>
-              <p class="spotlight__body-text">DOs and students at OMED 2015 react to the unveiling of the AOA's <a href="/2015/10/people-want-doctors-who-listen-creating-a-national-awareness-campaign/">new national awareness campaign</a>. "I do really believe that DOs care about the whole person," says Kelli Glaser, DO, of Phoenix. "And I think the campaign is going to demonstrate that."</p>
-
+              <h5 class="spotlight__kicker">Being a partner</h5>
+              <h2 class="spotlight__head">What are your strategies for communicating well with patients?</h2>
+              <p class="spotlight__body-text">DOs share different ways to connect with patients, including listening, asking questions and withholding judgment. &ldquo;You have to look at the person in front of you as a partner,&rdquo; says Doede Donaugh-Rae, DO.</p>
             </div>
           </div>
         </div>
