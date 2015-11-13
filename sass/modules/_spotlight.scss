@@ -35,7 +35,7 @@
     @include breakpoint($screen $large-minor-start) {
       /*padding: 1em;*/
       position: absolute;
-      bottom: .375em;
+      bottom: .0625em;
       right: 0;
       /*width: 33%;*/
       width: span(4 of $gridpage);
