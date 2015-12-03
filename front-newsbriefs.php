@@ -25,7 +25,7 @@
                   if ( $thumb_id ):
                     $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-thumb' );
                 ?>
-                <img src="<?php echo $thumb_url[0]; ?>" width="96" height="64" class="image__img" alt="<?php get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ?>">
+                <img src="<?php echo $thumb_url[0]; ?>" width="96" height="64" class="image__img f-item__image--tint" alt="<?php get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ?>">
                 <?php endif; ?>
               </a>
             </figure>

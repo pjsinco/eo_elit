@@ -173,6 +173,14 @@
 
   }
 
+  &__image {
+
+    &--tint {
+        filter: grayscale(1) contrast(1.2) brightness(1.5);
+    }
+
+  }
+
   &__fig {
     @extend %f-fig-base;
     top: .1875em;
