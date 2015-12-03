@@ -107,10 +107,7 @@
 }
 
 %date-base {
-  margin-left: .25em;
   font-size: .875em;
-  color: $font-color-lighter;
-
 }
 
 .f-item {
@@ -281,12 +278,15 @@
 
     &--minor {
       @extend %body-text-base;
+      display: inline;
+      margin-right: .33em;
+      color: $font-color-lighter;
     }
   }
 
   &__date {
     @extend %date-base;
-
+    margin-left: .25em;
       
     &--major {
       @extend %date-base;
@@ -294,12 +294,19 @@
 
       @include breakpoint($screen $medium-minor-start) {
         display: inline-block;
+        color: $font-color-lighter;
       }
     }
 
     &--minor {
       @extend %date-base;
-      display: none;
+      display: inline-block;
+      line-height: 1.5;
+      color: $font-color-lightest;
+
+      @include breakpoint($screen $large-start) {
+        line-height: 1.65;
+      }
     }
   }
 

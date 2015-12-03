@@ -35,7 +35,10 @@
                   <?php the_title(); ?>
                 </a>
               </h2>
-              <p class="f-item__body-text--minor"><?php echo wptexturize( get_the_excerpt() ); ?></p>
+              <p class="f-item__body-text--minor">
+                <?php echo wptexturize( get_the_excerpt() ); ?>
+              </p>
+              <span class="f-item__date--minor"><?php echo get_the_date( 'M. j, Y' ); ?></span>
             </div>
           </article>
           <?php endwhile; ?>
