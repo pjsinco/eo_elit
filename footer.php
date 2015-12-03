@@ -105,7 +105,7 @@
                   <a href="http://www.osteopathic.org/inside-aoa/development/do-jobs-online/Pages/default.aspx" title="DO Jobs Online">DO Jobs Online</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/development/quality/research-and-grants/research-and-development/Pages/default.aspx" title="Research and Development">Research and Development</a>
+                  <a href="http://www.osteopathic.org/inside-aoa/development/research-and-development/Pages/default.aspx" title="Research and Development">Research and Development</a>
                 </li>
               </ul>
               
