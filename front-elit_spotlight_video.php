@@ -17,12 +17,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-              <iframe width="654" height="368" src="https://www.youtube.com/embed/U_Amufac5XU?color=white&amp;autohide=1&amp;modestbranding=1" frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://player.vimeo.com/video/143673867?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Being a partner</h5>
-              <h2 class="spotlight__head">What are your strategies for communicating well with patients?</h2>
-              <p class="spotlight__body-text">DOs share different ways to connect with patients, including listening, asking questions and withholding judgment. &ldquo;You have to look at the person in front of you as a partner,&rdquo; says Doede Donaugh-Rae, DO.</p>
+              <h5 class="spotlight__kicker">Proud to be a DO</h5>
+              <h2 class="spotlight__head">Creating wellness through listening, partnering, OMT</h2>
+              <p class="spotlight__body-text">DOs see their patients as people. In this video, DOs explain how they approach patient care, elaborating on listening tactics, osteopathic manipulative treatment and the ways DOs partner with their patients.</p>
             </div>
           </div>
         </div>
