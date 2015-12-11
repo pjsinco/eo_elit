@@ -188,7 +188,7 @@ function elit_story_footer() {
       if ( $author_photo_src ) {
         $author_photo_content = get_post( $author_photo_id );
         $width = wp_get_attachment_image_src( $author_photo_id );
-        $about .= '<img class="story-footer__img" ';
+        $about .= '<img class="story-footer__img--bio" ';
         $about .= 'src="' . wp_get_attachment_url( $author_photo_id ) . '" ';
         $about .= 'alt = "' . $author_photo_content->post_excerpt . '" '  ;
         $about .= ' width="' . $width[1] . '" />';

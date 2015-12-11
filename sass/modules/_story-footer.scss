@@ -13,6 +13,12 @@
 
 }
 
+%story-footer-image-base {
+    float: left;
+    margin-right: 1em;
+    @extend %clip-path-circle;
+}
+
 .story-footer {
   @extend %story-footer-base; 
 
@@ -59,9 +65,12 @@
   }
 
   &__img {
-    float: left;
-    margin-right: 1em;
-    @extend %clip-path-circle;
+    @extend %story-footer-image-base;
+
+    &--bio {
+        @extend %story-footer-image-base;
+        max-width: 95px;
+    }
   }
 
   &__title {
