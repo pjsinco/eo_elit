@@ -16,10 +16,14 @@ get_header(); ?>
         <?php if ( have_posts() ): ?>
             <div class="size-1-of-1">
               <div class="section-title--archive">
-                <?php printf( 
-                  'Search results for: %s', 
-                  '<span>' . get_search_query() . '</span>'
-                ); ?>
+                <?php 
+                    global $wp_query;
+                    printf( 
+                        '%s search results for: %s', 
+                        $wp_query->found_posts,
+                        '<span>' . get_search_query() . '</span>'
+                    ); 
+                ?>
               </div>
             </div>
 

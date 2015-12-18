@@ -649,3 +649,53 @@ function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
   return $content;
 }
 add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10, 1 );
+
+/**
+ * Based on this gist:
+ * https://gist.github.com/danielbachhuber/7126249
+ */
+function elit_include_authors_in_search($posts_search)
+{
+    if (! is_search() || empty($posts_search)) {
+        return $posts_search;
+    }
+
+    global $wpdb;
+
+    add_filter('pre_user_query', 'elit_filter_user_query');
+
+    $search = sanitize_text_field(get_query_var('s'));
+    $args = array(
+        'count_total' => false,
+        'search' => sprintf('*%s*', $search),
+        'count_total' => false,
+        'search_columns' => array(
+            'display_name',
+        ),
+        'fields' => 'ID',
+    );
+
+    $matching_users = get_users($args);
+
+    remove_filter('pre_user_query', 'elit_filter_user_query');
+
+    if (empty($matching_users)) {
+        return $posts_search;
+    }
+
+    $posts_search = str_replace(')))', ")) OR ({$wpdb->posts}.post_author IN (" .
+        implode(',', array_map('absint', $matching_users)) . ')))', $posts_search );
+
+    return $posts_search;
+
+}
+add_filter('posts_search' , 'elit_include_authors_in_search');
+
+function elit_filter_user_query( &$user_query )
+{
+    if (is_object($user_query)) {
+        $user_query->query_where = str_replace("user_nicename LIKE", "display_name LIKE", $user_query->query_where);
+    }
+    return $user_query;
+}
+
