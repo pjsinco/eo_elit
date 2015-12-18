@@ -692,3 +692,6 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 
 ###Fri Aug 28 16:42:39 2015 CDT
 * Plugin: [WP REST API (WP API)](https://wordpress.org/plugins/json-rest-api/)
+
+###Fri Dec 18 16:32:18 2015 CST
+* Gist: [Include posts from authors in the search results where either their display name or user login matches the query string](https://gist.github.com/danielbachhuber/7126249)
