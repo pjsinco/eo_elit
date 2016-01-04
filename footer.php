@@ -37,7 +37,7 @@
               <h3 class="footer__title">Accreditation</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/accreditation/predoctoral%20accreditation/Pages/default.aspx" title="Predoctoral Accreditation">Predoctoral Accreditation</a>
+                  <a href="http://www.osteopathic.org/inside-aoa/accreditation/predoctoral%20accreditation/Pages/default.aspx" title="COM Accreditation">COM Accreditation</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/accreditation/postdoctoral-training-approval/Pages/default.aspx" title="Postdoctoral Training Approval">Postdoctoral Training Approval</a>
