@@ -3,27 +3,6 @@
  * elit functions and defs
  */
 
-/* Change the Site URL to Live (Production) site*/
-/*
-update_option('siteurl','http://thedo.osteopathic.org');
-update_option('home','http://thedo.osteopathic.org');
-*/
-
-/* Change the Site URL to Dev (Development) site*/
-/*
-update_option('siteurl','http://thedodev.osteopathic.org');
-update_option('home','http://thedodev.osteopathic.org');
-*/
-
-// temporarily disable admin bar so we can see our susy grid display
-//add_filter('show_admin_bar', '__return_false');
-
-/**
- * Set the content width based on the theme's design and stylesheet.
- */
-//if ( ! isset( $content_width ) ) {
-	//$content_width = 640; [> pixels <]
-//}
 
 if ( ! function_exists( 'elit_setup' ) ) :
 /**
@@ -95,7 +74,7 @@ add_action( 'after_setup_theme', 'elit_setup' );
 function elit_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => 'Article-Sidebar',
+		'name'          => 'Article Sidebar',
 		'id'            => 'article-sidebar',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -105,7 +84,61 @@ function elit_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => 'Front-Page-Standalone',
+		'name'          => 'Article Sidebar Ad: Don',
+		'id'            => 'article-sidebar-ad-don',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="%2$s ad rover-don-parent-b" ' .
+      'data-set="rover-don-parent"><div class="rover-don">',
+    'after_widget'  => '</div></aside>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Article Sidebar Ad: Peggy',
+		'id'            => 'article-sidebar-ad-peggy',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="%2$s ad rover-peggy-parent-b" ' .
+      'data-set="rover-peggy-parent"><div class="rover-peggy">',
+    'after_widget'  => '</div></aside>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Article Ad: Leaderboard',
+		'id'            => 'article-ad-leaderboard',
+		'description'   => '',
+		'before_widget' => '<aside class="ad ad--wide-shallow">',
+    'after_widget'  => '</aside>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Front Ad: Don',
+		'id'            => 'front-ad-don',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="%2$s ad ad__med-rect--front rover-don-parent-f-a" ' .
+      'data-set="rover-don-parent"><div class="rover-don">',
+    'after_widget'  => '</div></aside>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Front Ad: Peggy',
+		'id'            => 'front-ad-peggy',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="%2$s ad ad__med-rect--front rover-peggy-parent-f-a" ' .
+      'data-set="rover-peggy-parent"><div class="rover-peggy">',
+    'after_widget'  => '</div></aside>',
+		'before_title'  => '',
+		'after_title'   => '',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Front Page Standalone',
 		'id'            => 'front-page-standalone',
 		'description'   => 'A front-page stand-alone widget, like \'Popular\'',
 		'before_widget' => '<aside id="%1$s" class="widget--counter widget--front %2$s">',
@@ -113,17 +146,10 @@ function elit_widgets_init() {
 		'before_title'  => '<div class="section-title-hat"><span class="section-title-hat__text">',
 		'after_title'   => '</span></div>',
 	) );
+
 }
 add_action( 'widgets_init', 'elit_widgets_init' );
 
-/*
-  <div class="section-title-hat">
-    <span class="section-title-hat__text">
-      More Stories
-    </span>
-    </span>/a>
-
-*/
 
 /**
  * Remove default WP widgets we don't need.
@@ -194,24 +220,10 @@ function elit_scripts() {
     '//use.typekit.net/vdi5qvx.js', array(), false, false
   );
 
-  //wp_register_script('picturefill', get_template_directory_uri() . '/js/picturefill.min.js', array(), false, false);
-
-  wp_register_script('ehs-head-tag', 
-    get_template_directory_uri() . '/js/ehs-head-tag.js', 
-    array(), false, false
-  );
-
-  //wp_register_script('ehs-ads', get_template_directory_uri() . '/js/ehs-ads.js', array('ehs-head-tag'), false, false);
-
   wp_register_script( 'append-around', 
     get_template_directory_uri() . '/js/appendAround.js', 
     array( 'jquery' ), false, true
   );
-
-  //wp_register_script('append-around-load', 
-    //get_template_directory_uri() . '/js/append-around-load.js', 
-    //array('append-around'), false, true
-  //);
 
   wp_register_script( 'fitvids', 
     get_template_directory_uri() . '/js/jquery.fitvids.js', 
@@ -229,11 +241,6 @@ function elit_scripts() {
   );
 
   
-  //wp_enqueue_script( 'modernizr' );
-  //wp_enqueue_script('typekit-load');
-  //wp_enqueue_script('picturefill');
-  //wp_enqueue_script('nav');
-  wp_enqueue_script( 'ehs-head-tag' );
   wp_enqueue_script( 'append-around' );
   wp_enqueue_script( 'main' );
 

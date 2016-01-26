@@ -7,13 +7,12 @@
  */
 ?>
 
-        <aside data-set="rover-don-parent" class="ad rover-don-parent-b"></aside>
-        <aside data-set="rover-peggy-parent" class="ad rover-peggy-parent-b"></aside>
+        <?php if ( !dynamic_sidebar( 'article-sidebar-ad-don' ) ); ?>
+        <?php if ( !dynamic_sidebar( 'article-sidebar-ad-peggy' ) ); ?>
 
         <div class="article-wrapper">
-          
-          <div class='widgets--article__wrapper'>
-          <?php if ( !dynamic_sidebar( 'article-sidebar' ) ); ?>
-          </div>
+            <div class='widgets--article__wrapper'>
+                <?php if ( !dynamic_sidebar( 'article-sidebar' ) ); ?>
+            </div>
         </div>
 

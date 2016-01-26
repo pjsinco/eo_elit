@@ -187,11 +187,12 @@ function elit_advertisements_shortcode( $atts, $content = null ) {
     $str .= 'class="ad ad__med-rect' . ($a['align'] == 'h' ? '-h' : '');
     $str .= '--article rover-' . $id . '-parent-a">';
     $str .= '<div class="rover-' . $id . '">';
-    $str .= '<a href=';
-    $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.thedo"';
-    $str .= ' target="_blank">';
-    $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
-    $str .= '</a></div></aside>';
+//    $str .= '<a href=';
+//    $str .= '"http://www.e-healthcaresolutions.com/forms/?did=ehs.pro.aoa.thedo"';
+//    $str .= ' target="_blank">';
+//    $str .= '<script> EHS_AD("t", "r", "300x250"); </script>';
+//    $str .= '</a>';
+    $str .= '</div></aside>';
   }
 
   return $str;
