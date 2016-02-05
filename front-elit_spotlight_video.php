@@ -17,12 +17,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-                <iframe src="https://player.vimeo.com/video/143673867?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+                <iframe src="https://www.youtube.com/embed/LAQS2rkXMTY?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Proud to be a DO</h5>
-              <h2 class="spotlight__head">Creating wellness through listening, partnering, OMT</h2>
-              <p class="spotlight__body-text">DOs see their patients as people. In this video, DOs explain how they approach patient care, elaborating on listening tactics, osteopathic manipulative treatment and the ways DOs partner with their patients.</p>
+              <h5 class="spotlight__kicker">On target</h5>
+              <h2 class="spotlight__head">Consumers looking for the type of care DOs provide</h2>
+              <p class="spotlight__body-text">The qualities patients want to see in their physicians are &ldquo;very well aligned with the osteopathic philosophy,&rdquo; says AOA Trustee William J. Burke, DO, in summarizing consumer research behind the AOA&rsquo;s <a href="/?p=185013" title="'People want doctors who listen': Creating a national awareness campaign - The DO">Doctors That DO campaign</a>.</p>
             </div>
           </div>
         </div>
