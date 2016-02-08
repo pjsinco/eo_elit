@@ -58,7 +58,7 @@
                   <a href="http://www.osteopathic.org/inside-aoa/public-policy/regulatory-issues/Pages/default.aspx" title="Regulatory Issues">Regulatory Issues</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/advocacy/Pages/do-advocacy-action-center.aspx" title="Write to Congress">Write to Congress</a>
+                  <a href="http://osteopathic.org/inside-aoa/advocacy/Pages/action-center.aspx" title="Write to Congress">Write to Congress</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/public-policy/state-government-affairs/Pages/default.aspx" title="State Government Affairs">State Government Affairs</a>
@@ -148,7 +148,7 @@
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
-    <script src="http://localhost:35729/livereload.js"></script>
+<!--     <script src="http://localhost:35729/livereload.js"></script> -->
     <?php wp_footer(); ?>
   </body>
 </html>
