@@ -22,7 +22,7 @@
             <div class="spotlight__body">
               <h5 class="spotlight__kicker">On the up and up</h5>
               <h2 class="spotlight__head">AOA report highlights profession&rsquo;s tremendous growth</h2>
-              <p class="spotlight__body-text">The number of osteopathic physicians in the U.S. has nearly quadrupled in the past 30 years, according to the <a href="http://www.osteopathic.org/inside-aoa/about/aoa-annual-statistics/Pages/default.aspx" title="Osteopathic Medical Profession Report"> AOA's 2015 Osteopathic Medical Profession Report</a>. A sign of the growth, last year 1 in 4 medical students attended an osteopathic medical school.</p>
+              <p class="spotlight__body-text">The number of DOs in the United States has nearly quadrupled in the past 30 years, according to the <a href="http://www.osteopathic.org/inside-aoa/about/aoa-annual-statistics/Pages/default.aspx" title="Osteopathic Medical Profession Report"> AOA's 2015 Osteopathic Medical Profession Report</a>. A sign of the growth, last year 1 in 4 medical students attended an osteopathic medical school.</p>
             </div>
           </div>
         </div>
