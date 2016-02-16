@@ -17,12 +17,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-                <iframe src="https://www.youtube.com/embed/LAQS2rkXMTY?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+                <iframe src="https://www.youtube.com/embed/tFm68X_Usqk?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">On target</h5>
-              <h2 class="spotlight__head">Consumers looking for the type of care DOs provide</h2>
-              <p class="spotlight__body-text">The qualities patients want to see in their physicians are &ldquo;very well aligned with the osteopathic philosophy,&rdquo; says AOA Trustee William J. Burke, DO, in summarizing consumer research behind the AOA&rsquo;s <a href="/?p=185013" title="'People want doctors who listen': Creating a national awareness campaign - The DO">Doctors That DO campaign</a>.</p>
+              <h5 class="spotlight__kicker">On the up and up</h5>
+              <h2 class="spotlight__head">AOA report highlights profession&rsquo;s tremendous growth</h2>
+              <p class="spotlight__body-text">The number of osteopathic physicians in the U.S. has nearly quadrupled in the past 30 years, according to the <a href="http://www.osteopathic.org/inside-aoa/about/aoa-annual-statistics/Pages/default.aspx" title="Osteopathic Medical Profession Report"> AOA's 2015 Osteopathic Medical Profession Report</a>. A sign of the growth, last year 1 in 4 medical students attended an osteopathic medical school.</p>
             </div>
           </div>
         </div>
