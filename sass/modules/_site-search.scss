@@ -98,6 +98,8 @@
     &--onpage {
       @extend %input-base;
       box-sizing: border-box !important;
+      height: 2.6875em;
+      line-height: 1.2;
       width: 71%;
       margin-top: 0;
       margin-bottom: 1em;
