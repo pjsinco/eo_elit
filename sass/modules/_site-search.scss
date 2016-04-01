@@ -1,3 +1,18 @@
+%input-base {
+  display: inline-block;
+  top: .25em;
+  background: $white url('img/svg/glass.svg') 10px 50% no-repeat;
+  background-size: 18px 18px;
+  position: relative;
+  margin-top: -.0625em;
+  padding-left: 2.25em;
+  padding-right: 0;
+  line-height: 1.7;
+  border: 0;
+  outline: none;
+  cursor: text;
+}
+
 .site-search {
   position: relative;
 
@@ -12,12 +27,28 @@
     }
   }
 
+  &__term {
+    font-weight: 400;
+  }
+
   &__label {
 
   }
 
-  &__submit {
+  &__results {
+    margin-top: 0;
+    padding: 1em;
+    background: $extralightgray;
+    text-align: left;
+  }
 
+  &__submit {
+    height: 2.6875em;
+    width: 100%;
+    padding: .5em;
+    background: #ef3f23;
+    border: none;
+    color: #fff;
   }
 
   &__button {
@@ -30,21 +61,11 @@
   }
 
   &__input {
-    display: inline-block;
-    top: .25em;
-    background: $white url('img/svg/glass.svg') 10px 50% no-repeat;
-    background-size: 18px 18px;
+
+    @extend %input-base;
     height: 1.0625em;
     width: 80%;
-    position: relative;
-    margin-top: -.0625em;
     margin-bottom: .6875em;
-    padding-left: 2.25em;
-    padding-right: 0;
-    line-height: 1.7;
-    border: 0;
-    outline: none;
-    cursor: text;
 
     &:-ms-input-placeholder {
       color: transparent;
@@ -69,5 +90,11 @@
       }
     }
 
+    &--onpage {
+      @extend %input-base;
+      box-sizing: border-box !important;
+      width: 100%;
+      margin-bottom: 1em;
+    }
   } 
 }

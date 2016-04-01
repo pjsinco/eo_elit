@@ -76,5 +76,7 @@
   &--archive {
     // in _section-title-hat.scss
     @extend %section-title-hat-base;
+    line-height: 1.2;
+    text-align: left;
   }
 }
