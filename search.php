@@ -18,8 +18,9 @@ get_header(); ?>
               <div class="section-title--archive">
                 <?php 
                     printf( 
-                        '%s search results for: %s', 
+                        '%s search result%s for: %s', 
                         $wp_query->found_posts,
+                        $wp_query->found_posts === '1' ? '' : 's',
                         '<span class="site-search__term">' . get_search_query() . '</span>'
                     ); 
                 ?>
