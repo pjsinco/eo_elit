@@ -14,8 +14,7 @@ get_header(); ?>
         <div class="row">
           <div class="elit-archive">
           <?php global $wp_query; ?>
-          <?php if ($wp_query->found_posts === 0): ?>
-            <div class="site-search__results">
+            <div class="site-search__results<?php echo ($wp_query->found_posts === 0 ? '--empty' : ''); ?>">
               <div class="section-title--archive">
                 <?php 
                     printf( 
@@ -25,23 +24,12 @@ get_header(); ?>
                     ); 
                 ?>
               </div>
+              <?php if ($wp_query->found_posts === 0): ?>
               <h3 id="reply-title" class="comment-reply-title">Try another search</h3>
               <form action="/" id="search-form" class="site-search__form">
                 <input type="search" name="s" placeholder="Enter search terms" id="q" class="site-search__input--onpage" required />
                 <input name="submit" type="submit" id="submit" class="site-search__submit" value="Search">
               </form>
-            </div>
-          <?php else: ?>
-            <div class="size-1-of-1">
-              <div class="section-title--archive">
-                <?php 
-                    printf( 
-                        '%s search results for: %s', 
-                        $wp_query->found_posts,
-                        '<span>' . get_search_query() . '</span>'
-                    ); 
-                ?>
-              </div>
             </div>
           <?php endif ?>
 
