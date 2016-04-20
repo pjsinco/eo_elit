@@ -22,7 +22,7 @@
             <div class="spotlight__body">
               <h5 class="spotlight__kicker">White coats in the red</h5>
               <h2 class="spotlight__head">Medical students advocate for debt relief</h2>
-              <p class="spotlight__body-text">This year for DO Day, white-coated medical students and DOs convened on Capitol Hill to educate Congress about the debt burden today&rsquo;s medical students face and advocate for meaningful policy changes that could lead to a boost in primary care physicians in years to come. <span class="spotlight__note"><a class="spotlight__link" href="2016/04/video-on-do-day-medical-students-advocated-for-student-debt-relief/">Read more &raquo;</a></span></p>
+              <p class="spotlight__body-text">This year for DO Day, white-coated medical students and DOs convened on Capitol Hill to educate Congress about the debt burden today&rsquo;s medical students face and advocate for meaningful policy changes that could lead to a boost in primary care physicians in years to come.</p>
             </div>
           </div>
         </div>
