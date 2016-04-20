@@ -17,12 +17,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-                <iframe src="https://www.youtube.com/embed/tFm68X_Usqk?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+                <iframe src="https://www.youtube.com/embed/AhIDxA-u1iA?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">On the up and up</h5>
-              <h2 class="spotlight__head">AOA report highlights profession&rsquo;s tremendous growth</h2>
-              <p class="spotlight__body-text">The number of DOs in the United States has nearly quadrupled in the past 30 years, according to the <a href="http://www.osteopathic.org/inside-aoa/about/aoa-annual-statistics/Pages/default.aspx" title="Osteopathic Medical Profession Report"> AOA's 2015 Osteopathic Medical Profession Report</a>. A sign of the growth, last year 1 in 4 medical students attended an osteopathic medical school.</p>
+              <h5 class="spotlight__kicker">White coats in the red</h5>
+              <h2 class="spotlight__head">Medical students advocate for debt relief</h2>
+              <p class="spotlight__body-text">This year for DO Day, white-coated medical students and DOs convened on Capitol Hill to educate Congress about the debt burden today&rsquo;s medical students face and advocate for meaningful policy changes that could lead to a boost in primary care physicians in years to come. <span class="spotlight__note"><a class="spotlight__link" href="2016/04/video-on-do-day-medical-students-advocated-for-student-debt-relief/">Read more &raquo;</a></span></p>
             </div>
           </div>
         </div>
