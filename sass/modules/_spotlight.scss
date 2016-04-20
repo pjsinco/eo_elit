@@ -83,6 +83,10 @@
     }
   }
 
+  &__note {
+    white-space: nowrap;
+  }
+
   &__link {
     color: $font-color;
     font-weight: 600;
