@@ -38,14 +38,20 @@ function elit_related_shortcode($atts, $content = null) {
     return $post; 
   }
 
-  
-
   // build up our string to output
   $output  = '<div class="story__box">';
   $output .= '<div class="media">';
   $output .= '<div class="media__title">Related</div>';
 
-  $thumb_id = get_post_thumbnail_id( $post->ID );
+  $thumb_id = null;
+
+  if ( has_post_thumbnail( $post->ID ) ) {
+    $thumb_id = get_post_thumbnail_id( $post->ID );
+  } else {
+    $meta = get_post_meta( $post->ID );
+    $thumb_id = $meta['elit_thumb'][0];
+  }
+  
   $thumb = get_post( $thumb_id );
 
   if ( $thumb_id )  {
