@@ -1,0 +1,69 @@
+.footer {
+
+  .ninja-forms-response-msg p {
+    font-size: 1.5em;
+    font-weight: 200;
+    color: $white;
+    opacity: .8
+    
+  }
+
+  .ninja-forms-cont {
+    text-align: center;
+    width: 100%; 
+
+    @include breakpoint($screen $large-start) {
+      width: 50%;
+      padding-right: 2em;
+      border-right: 1px solid rgba($white, .8);
+      
+      /*margin: 0 auto;*/
+    }
+  }
+
+  .ninja-forms-form-title {
+    margin-bottom: .25em;
+    font-weight: 200;  
+    font-size: 1.25em;
+    text-align: left;
+    color: rgba($white, .8);
+  }
+
+  .ninja-forms-form {
+
+  }
+
+}
+
+.signup {
+  border-top: 1px solid $lightgray;
+  border-left: 1px solid $lightgray;
+  border-bottom: 1px solid $lightgray;
+  border-right: none;
+
+  &-wrap {
+    width: 75%;
+    float: left;
+  }
+
+  &:focus {
+    border: 1px solid $white !important;
+  }
+
+}
+
+.signup-submit {
+
+  position: relative;
+  top: 5px;
+  width: 100% !important;
+  background: $red;
+  border: 1px solid $white;
+  color: $white;
+  
+
+  &-wrap {
+    width: 25%;
+    float: left;
+  }
+}

@@ -11,6 +11,14 @@
       <footer id="colophon" class="footer" role="contentinfo">
         <div class="footer__body">
           <div class="row--full">
+          <?php
+            if ( function_exists( 'ninja_forms_display_form' ) ) {
+              ninja_forms_display_form( 5 );
+            } 
+          ?>
+            <h2 class="footer__header">Got a news tip?</h2>
+          </div>
+          <div class="row--full">
             <h2 class="footer__header">More from the <span><a href="http://www.osteopathic.org/Pages/default.aspx" title="American Osteopathic Association">American Osteopathic Association</a></span></h2>
             <div class="footer__col">
               <h3 class="footer__title">About the AOA</h3>
@@ -148,7 +156,7 @@
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
-<!--     <script src="http://localhost:35729/livereload.js"></script> -->
+    <script src="http://localhost:35729/livereload.js"></script>
     <?php wp_footer(); ?>
   </body>
 </html>
