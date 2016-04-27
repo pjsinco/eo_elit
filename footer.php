@@ -19,13 +19,15 @@
             ?>
             </div>
             <div class="size-1-of-2--last">
-              <h2 class="footer__header--minor">Got a news tip?</h2>
-              <p class="footer__body-text">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-              <p>
-              <p class="footer__body-text">
-                <button class="footer__btn"><a href="#">Let us know</a></button>
-              <p>
+              <div class="footer__block">
+                <h2 class="footer__header--minor">Got a news tip?</h2>
+                <p class="footer__body-text">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                <p>
+                <p class="footer__body-text">
+                  <a class="footer__btn" href="/drop-us-note">Let us know</a>
+                <p>
+              </div>
             </div>
           </div>
           <div class="row--full">

@@ -29,7 +29,7 @@
     margin-top: 0;
     line-height: 1.3;
 
-    @include breakpoint($screen $medium-start) {
+    @include breakpoint($screen $large-start) {
       text-align: left;
       color: rgba($white, .8);
     }
@@ -56,7 +56,7 @@
         border-bottom: 3px solid white;
       }
 
-      @include breakpoint($screen $medium-start) {
+      @include breakpoint($screen $large-start) {
         text-align: left;
         color: rgba($white, .8);
         
@@ -107,6 +107,7 @@
 
   a {
     color: inherit;
+
   }
 
   &__list {
@@ -171,14 +172,23 @@
   }
 
   &__btn {
-    padding-top: 0.5714285714em;
-    padding-bottom: 0.5714285714em;
-    padding-left: 1.142857143em;
-    padding-right: 1.142857143em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: 1em;
+    padding-right: 1em;
     font-size: 1.142857143em;
     border: 1px solid rgba(255,255,255,.8);
     background: #ef3f23;
     outline: 0;
     color: white;
+    transition-property: background, color;
+    transition-duration: 150ms;
+
+    &:hover {
+      background: rgba($white, .95);
+      text-decoration: none;
+      color: $red;
+    }
+
   }
 }
