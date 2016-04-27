@@ -51,7 +51,6 @@
     @include breakpoint($screen $xlarge-start) {
       @include gallery(3 of $gridpage);
     }
-
   }
 
   &-2-of-4 {
