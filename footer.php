@@ -23,10 +23,8 @@
                 <h2 class="footer__header--minor">Got a news tip?</h2>
                 <p class="footer__body-text">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
-                <p>
-                <p class="footer__body-text">
-                  <a class="footer__btn" href="/drop-us-note">Let us know</a>
-                <p>
+                </p>
+                <a class="footer__btn--link" href="/drop-us-note">Let us know</a>
               </div>
             </div>
           </div>

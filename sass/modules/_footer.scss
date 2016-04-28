@@ -1,3 +1,19 @@
+%footer-btn-base {
+  display: inline-block;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  /*font-size: 1.142857143em;*/
+  font-size: 16px;
+  border: 1px solid rgba(255,255,255,.8);
+  background: #ef3f23;
+  outline: 0;
+  color: rgba($white, .8);
+  transition-property: background, color;
+  transition-duration: 150ms;
+}
+
 %footer-text-base {
   font-size: .875em;
   line-height: 1.4;
@@ -172,19 +188,13 @@
   }
 
   &__btn {
-    padding-top: .5em;
-    padding-bottom: .5em;
-    padding-left: 1em;
-    padding-right: 1em;
-    font-size: 1.142857143em;
-    border: 1px solid rgba(255,255,255,.8);
-    background: #ef3f23;
-    outline: 0;
-    color: white;
-    transition-property: background, color;
-    transition-duration: 150ms;
+    @extend %footer-btn-base;
+    
+    &--link {
+      @extend %footer-btn-base;
+    }
 
-    &:hover {
+    &:hover, &--link:hover {
       background: rgba($white, .95);
       text-decoration: none;
       color: $red;
