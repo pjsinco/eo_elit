@@ -15,7 +15,7 @@
     @include breakpoint($screen $large-start) {
       /*width: 50%;*/
       padding-right: 4em;
-      border-right: 1px solid rgba($white, .8);
+      border-right: 1px solid $offwhite;
       
       /*margin: 0 auto;*/
     }
@@ -27,9 +27,9 @@
     font-size: 1.25em;
     color: $white;
 
-    @include breakpoint($screen $medium-start) {
+    @include breakpoint($screen $large-start) {
       text-align: left;
-      color: rgba($white, .8);
+      color: $offwhite;
     }
   }
 
@@ -43,10 +43,7 @@
   margin-bottom: .5em;
   /*padding-top: .625em;*/
   /*padding-bottom: .6875em;*/
-  border-top: 1px solid $lightgray;
-  border-left: 1px solid $lightgray;
-  border-bottom: 1px solid $lightgray;
-  border-right: none;
+  border: 1px solid $offwhite;
 
   &-wrap {
     width: 100%;
@@ -73,7 +70,7 @@
   /*padding-left: 1em;*/
   /*padding-right: 1em;*/
   /*background: $red;*/
-  /*border: 1px solid rgba($white, .8);*/
+  /*border: 1px solid $offwhite;*/
   /*color: $white;*/
   
 

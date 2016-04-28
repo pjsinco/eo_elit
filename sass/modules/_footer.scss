@@ -6,10 +6,10 @@
   padding-right: 1em;
   /*font-size: 1.142857143em;*/
   font-size: 16px;
-  border: 1px solid rgba(255,255,255,.8);
+  border: 1px solid $offwhite;
   background: #ef3f23;
   outline: 0;
-  color: rgba($white, .8);
+  color: $offwhite;
   transition-property: background, color;
   transition-duration: 150ms;
 }
@@ -17,7 +17,7 @@
 %footer-text-base {
   font-size: .875em;
   line-height: 1.4;
-  color: rgba($white, .8);
+  color: $offwhite;
   letter-spacing: .25px;
 }
 
@@ -28,7 +28,7 @@
   text-align: center;
   font-weight: 200;  
   font-size: 1.25em;
-  /*border-bottom: 1px solid rgba($white, .8);*/
+  /*border-bottom: 1px solid $offwhite;*/
   color: $white;
 }
 
@@ -47,7 +47,7 @@
 
     @include breakpoint($screen $large-start) {
       text-align: left;
-      color: rgba($white, .8);
+      color: $offwhite;
     }
     
     span {
@@ -74,7 +74,7 @@
 
       @include breakpoint($screen $large-start) {
         text-align: left;
-        color: rgba($white, .8);
+        color: $offwhite;
         
       }
     }
@@ -85,7 +85,7 @@
     padding-bottom: 1em;
     margin-bottom: 1em;
     background: $primarycolor;
-    color: rgba($white,.8);
+    color: $offwhite;
     
     @include breakpoint($screen $large-start) {
       padding-top: 2em;
@@ -114,7 +114,7 @@
     text-align: center;
     line-height: 1.2;
     font-size: .875em;
-    color: rgba($white,.8);
+    color: $offwhite;
 
     @include breakpoint($screen $medium-start) {
       text-align: left;
