@@ -26,7 +26,7 @@
   margin-bottom: 1em;
   padding-bottom: .25em;
   text-align: center;
-  font-weight: 200;  
+  font-weight: 600;  
   font-size: 1.25em;
   /*border-bottom: 1px solid $offwhite;*/
   color: $white;
@@ -66,15 +66,19 @@
         bottom: -.4em;
         left: 0;
         right: 0;
-        width: 30%;
+        width: 20%;
         margin-left: auto;
         margin-right: auto;
         border-bottom: 3px solid white;
+        @include breakpoint($large-start) {
+          content: none;
+        }
       }
 
       @include breakpoint($screen $large-start) {
+        margin-bottom: 0;
         text-align: left;
-        color: $offwhite;
+        /*color: $offwhite;*/
         
       }
     }
@@ -114,7 +118,8 @@
     text-align: center;
     line-height: 1.2;
     font-size: .875em;
-    color: $offwhite;
+    /*color: $offwhite;*/
+    color: $white;
 
     @include breakpoint($screen $medium-start) {
       text-align: left;
@@ -180,7 +185,7 @@
     @extend %footer-text-base;
     text-align: center;
     
-    @include breakpoint($screen $xlarge-start) {
+    @include breakpoint($screen $large-start) {
       text-align: left;
       float: left;
     }
@@ -196,9 +201,17 @@
 
     &:hover, &--link:hover {
       background: rgba($white, .95);
+      cursor: pointer;
       text-decoration: none;
       color: $red;
     }
 
+  }
+
+  &__block {
+    @include breakpoint($screen $large-start) {
+      /*margin-left: 7%;*/
+      margin-left: 2.5em;
+    }
   }
 }
