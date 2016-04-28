@@ -7,6 +7,7 @@
   /*font-size: 1.142857143em;*/
   font-size: 16px;
   line-height: 1.4;
+  text-align: center;
   border: 1px solid $offwhite;
   background: #ef3f23;
   outline: 0;
@@ -207,6 +208,11 @@
     
     &--link {
       @extend %footer-btn-base;
+
+      @include breakpoint($screen $large-start) {
+        width: 100%;
+        
+      }
     }
 
     &:hover, &--link:hover {
