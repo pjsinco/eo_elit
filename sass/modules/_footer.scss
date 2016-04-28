@@ -17,7 +17,6 @@
 %footer-text-base {
   font-size: .875em;
   line-height: 1.4;
-  color: $offwhite;
   letter-spacing: .25px;
 }
 
@@ -188,6 +187,16 @@
     @include breakpoint($screen $large-start) {
       text-align: left;
       float: left;
+    }
+
+    &--white {
+      @extend %footer-text-base;
+      color: $offwhite;
+
+      @include breakpoint($screen $large-start) {
+        text-align: left;
+        float: left;
+      }
     }
 
   }
