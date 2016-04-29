@@ -20,11 +20,11 @@
             </div>
             <div class="size-1-of-2--last">
               <div class="footer__block">
-                <h2 class="footer__header--minor">Want to tell us something?</h2>
+                <h2 class="footer__header--minor">Send us a note</h2>
                 <p class="footer__body-text--white">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
                 </p>
-                <a class="footer__btn--link" href="/drop-us-note">Let us know</a>
+                <a class="footer__btn--link" href="/drop-us-note">Contact us</a>
               </div>
             </div>
           </div>
