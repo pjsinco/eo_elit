@@ -12,11 +12,10 @@
 
       </section> <!-- #primary -->
 
-
-<!--       temp; make into a sidebar template? -->
       <section id="secondary" class="content__secondary">
 
-<?php get_sidebar('page'); ?>
+        <?php get_sidebar('article'); ?>
+
       </section>
     </div> <!-- #main -->
 
