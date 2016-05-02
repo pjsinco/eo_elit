@@ -39,6 +39,6 @@ add_action('init' , 'elit_register_spotlight_video_cpt');
 
 
 function elit_rewrite_flush() {
-  elit_register_spotlight_video_cpt();
-  flush_rewrite_rules();
+  //elit_register_spotlight_video_cpt();
+  //flush_rewrite_rules();
 }

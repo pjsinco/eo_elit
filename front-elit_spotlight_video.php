@@ -35,12 +35,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-                <iframe src="https://www.youtube.com/embed/AhIDxA-u1iA?color=ffffff&title=0&byline=0&portrait=0" width="654" height="368" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+              <?php echo wptexturize( get_post_meta( $spotlight->ID, 'elit_featured_video', true ) ); ?></h5>
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker">Kicker will go here</h5>
+              <h5 class="spotlight__kicker"><?php echo wptexturize( get_post_meta( $spotlight->ID, 'elit_kicker', true ) ); ?></h5>
               <h2 class="spotlight__head"><?php echo $spotlight->post_title; ?></h2>
-              <p class="spotlight__body-text"><?php echo $spotlight->post_content; ?></p>
+              <?php echo $spotlight->post_content; ?>
             </div>
           </div>
         </div>
