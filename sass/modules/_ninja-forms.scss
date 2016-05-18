@@ -64,6 +64,10 @@
 
 }
 
+input.signup {
+  height: 2.5em !important;
+}
+
 .signup {
   margin-bottom: .75em;
   /*padding-top: .625em;*/
@@ -71,9 +75,6 @@
   line-height: 1.4;
   border: 1px solid $offwhite;
 
-  input & {
-    height: 2.5em !important;
-  }
 
   &-wrap {
     width: 100%;
