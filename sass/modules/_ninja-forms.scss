@@ -2,6 +2,10 @@
   color: $gray !important;
 }
 
+.hp-wrap, .honeypot-wrap {
+  display: none;
+}
+
 .footer {
 
   .ninja-forms {
@@ -61,6 +65,7 @@
 }
 
 .signup {
+  height: 2.5em;
   margin-bottom: .75em;
   /*padding-top: .625em;*/
   /*padding-bottom: .6875em;*/
@@ -73,6 +78,7 @@
 
     @include breakpoint($screen $medium-start) {
       width: 70%;
+      height: 2.5em;
       float: left;
       
     }
