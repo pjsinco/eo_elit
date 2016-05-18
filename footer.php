@@ -10,13 +10,32 @@
 
       <footer id="colophon" class="footer" role="contentinfo">
         <div class="footer__body">
+          <div class="row--full module--footer">
+            <div class="size-1-of-2">
+            <?php
+              if ( function_exists( 'ninja_forms_display_form' ) ) {
+                ninja_forms_display_form( 5 );
+              } 
+            ?>
+            </div>
+            <div class="size-1-of-2--last">
+              <div class="footer__block">
+                <h2 class="footer__header--minor">Send us a note</h2>
+                <p class="footer__body-text--white">
+                  Have a news tip or idea for a story? Send it our way.
+                </p>
+                <a class="footer__btn--link" href="/drop-us-note">Contact us</a>
+              </div>
+            </div>
+          </div>
           <div class="row--full">
-            <h2 class="footer__header">More from the <span><a href="http://www.osteopathic.org/Pages/default.aspx" title="American Osteopathic Association">American Osteopathic Association</a></span></h2>
+            <h2 class="footer__header--minor">More from the <span><a href="http://www.osteopathic.org/Pages/default.aspx" title="American Osteopathic Association">American Osteopathic Association</a></span></h2>
             <div class="footer__col">
               <h3 class="footer__title">About the AOA</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a class="footer__list-item"><a href="http://doctorsthatdo.org/" title="Home - Doctors of Osteopathic Medicine">Doctors That DO</a></li>
+                  <a href="http://doctorsthatdo.org/" title="Home - Doctors of Osteopathic Medicine">Doctors That DO</a>
+                </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/about/aoa-membership/Pages/default.aspx" title="Enjoy the Benefits of Being an AOA Member">AOA Membership</a>
                 </li>
@@ -148,7 +167,7 @@
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
-<!--     <script src="http://localhost:35729/livereload.js"></script> -->
+    <script src="http://localhost:35729/livereload.js"></script>
     <?php wp_footer(); ?>
   </body>
 </html>

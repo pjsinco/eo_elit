@@ -1,0 +1,144 @@
+.ninja-forms-req-symbol {
+  color: $gray !important;
+}
+
+.footer {
+
+  .ninja-forms {
+
+    &-response-msg p {
+      font-size: 1.5em;
+      font-weight: 200;
+      color: $white;
+      opacity: .8
+      
+    }
+
+    &-cont {
+      text-align: center;
+      width: 100%; 
+
+      @include breakpoint($screen $large-start) {
+        /*width: 50%;*/
+        padding-right: 2.5em;
+        border-right: 1px solid $offwhitemore;
+        
+        /*margin: 0 auto;*/
+      }
+    }
+
+    &-form {
+
+      &-wrap input {
+        @include breakpoint($screen $medium-start) {
+          width: 100%;
+        }
+
+        /*@include breakpoint($screen $xlarge-start) {*/
+          /*width: auto;*/
+        /*}*/
+      }
+
+      &-title {
+        margin-bottom: .25em;
+        /*font-weight: 200;  */
+        font-size: 1.25em;
+        color: $white;
+
+        @include breakpoint($screen $large-start) {
+          text-align: left;
+          /*color: $offwhite;*/
+        }
+      }
+
+    }
+
+
+  }
+
+
+
+}
+
+.signup {
+  margin-bottom: .75em;
+  /*padding-top: .625em;*/
+  /*padding-bottom: .6875em;*/
+  line-height: 1.4;
+  border: 1px solid $offwhite;
+
+  &-wrap {
+    width: 100%;
+    margin-bottom: 0 !important;
+
+    @include breakpoint($screen $medium-start) {
+      width: 70%;
+      float: left;
+      
+    }
+  }
+
+  &:focus {
+    border: 1px solid $white !important;
+  }
+
+}
+
+.signup-submit {
+
+  /*position: relative;*/
+  /*top: 5px;*/
+  /*width: 100% !important;*/
+  /*padding-left: 1em;*/
+  /*padding-right: 1em;*/
+  /*background: $red;*/
+  /*border: 1px solid $offwhite;*/
+  /*color: $white;*/
+  
+
+  &-wrap {
+
+    @include breakpoint($screen $medium-start) {
+      width: 30%;
+      float: left;
+      text-align: left;
+      
+    }
+  }
+}
+
+/*Send us a Note page*/
+#post-185536 {
+
+  .ninja-forms-error-msg {
+    @extend p;
+    color: $font-color-lighter;
+  }
+
+  .contact__msg-wrap .ninja-forms-field-error p {
+    position: relative;
+    top: -17em;
+  
+    @include breakpoint($screen $medium-minor-start) {
+      top: -5%;
+    }
+  }
+
+
+  .ninja-forms-field-error {
+    text-align: right;
+    font-size: .875em;
+
+    & p {
+      color: $red;
+    }
+
+    @include breakpoint($screen $medium-minor-start) {
+      position: relative;
+      top: -.75em;
+      
+      clear: both;
+    }
+  }
+}
+

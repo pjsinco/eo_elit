@@ -51,7 +51,6 @@
     @include breakpoint($screen $xlarge-start) {
       @include gallery(3 of $gridpage);
     }
-
   }
 
   &-2-of-4 {
@@ -64,12 +63,12 @@
   
   &-1-of-2 {
     @include breakpoint($screen $large-start) {
-      @include span(6 of $gridpage);
+      @include span(50% of $gridpage no-gutters);
     }
 
     &--last {
       @include breakpoint($screen $large-start) {
-        @include span(6 last of $gridpage);
+        @include span(50% last of $gridpage no-gutters);
       }
     }
   }

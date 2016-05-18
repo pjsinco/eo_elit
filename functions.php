@@ -707,3 +707,22 @@ function elit_filter_user_query( &$user_query )
     return $user_query;
 }
 
+
+function elit_add_custom_ninja_form_class ( $form_class, $form_id ) 
+{
+  if ( $form_id == 1 ) {
+    $form_class .= ' contact-form';
+  }
+
+  return $form_class;
+}
+add_filter( 'ninja_forms_form_class', 'elit_add_custom_ninja_form_class', 10, 2 );
+
+function elit_add_custom_ninja_form_response_class( $form_class, $form_id ) {
+  if ( $form_id == 1 ) {
+    $form_class .= ' contact__success';
+  }
+
+  return $form_class;
+}
+//add_filter ( 'ninja_forms_display_response_message_class', 'elit_add_custom_ninja_form_response_class', 10, 2);

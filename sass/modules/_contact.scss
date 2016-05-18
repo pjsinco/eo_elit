@@ -1,0 +1,50 @@
+.contact {
+
+  &__success {
+    font-size: 2em;
+    text-align: center;
+    color: $font-color-lightest;
+  }
+
+  &-form {
+    padding-top: 1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 0;
+    background: $extralightgray;
+
+    input[type=text] {
+      @extend %comment-form-input-base;
+      /*@extend .comment-form input;*/
+      /*border-color: $gray;*/
+      /*@extend input;*/
+    }
+
+    .contact__msg {
+      @extend %comment-form-textarea-base;
+      margin-left: 0 !important;
+    }
+
+    .contact__btn {
+      @extend %comment-form-button-base;
+    }
+    
+
+    label {
+      @extend %comment-form-label-base;
+      font-weight: $normal !important;
+      line-height: 1.4;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 1.125em;
+      }
+    }
+  }
+
+  
+
+  &-label-wrap {
+    @extend %comment-form-p-base;
+  }
+
+}

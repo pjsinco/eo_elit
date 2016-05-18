@@ -1,3 +1,10 @@
+<?php 
+/**
+ * Template Name: Contact
+ *
+ */
+?>
+
 <?php get_header(); ?>
 
 
@@ -14,7 +21,7 @@
 
       <section id="secondary" class="content__secondary">
 
-        <?php get_sidebar('article'); ?>
+        <?php get_sidebar('article_full_width_no_ads'); ?>
 
       </section>
     </div> <!-- #main -->
