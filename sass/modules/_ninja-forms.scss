@@ -65,12 +65,15 @@
 }
 
 .signup {
-  height: 2.5em;
   margin-bottom: .75em;
   /*padding-top: .625em;*/
   /*padding-bottom: .6875em;*/
   line-height: 1.4;
   border: 1px solid $offwhite;
+
+  input & {
+    height: 2.5em !important;
+  }
 
   &-wrap {
     width: 100%;
