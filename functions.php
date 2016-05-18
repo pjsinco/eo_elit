@@ -720,7 +720,7 @@ function elit_filter_user_query( &$user_query )
 
 function elit_add_custom_ninja_form_class ( $form_class, $form_id ) 
 {
-  if ( $form_id == 1 ) {
+  if ( $form_id == 7 ) {
     $form_class .= ' contact-form';
   }
 
