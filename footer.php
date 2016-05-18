@@ -22,7 +22,7 @@
               <div class="footer__block">
                 <h2 class="footer__header--minor">Send us a note</h2>
                 <p class="footer__body-text--white">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+                  Have a news tip or idea for a story? Send it our way.
                 </p>
                 <a class="footer__btn--link" href="/drop-us-note">Contact us</a>
               </div>

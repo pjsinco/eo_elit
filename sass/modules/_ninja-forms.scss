@@ -21,7 +21,7 @@
       @include breakpoint($screen $large-start) {
         /*width: 50%;*/
         padding-right: 2.5em;
-        border-right: 1px solid $offwhite;
+        border-right: 1px solid $offwhitemore;
         
         /*margin: 0 auto;*/
       }
@@ -106,3 +106,39 @@
     }
   }
 }
+
+/*Send us a Note page*/
+#post-185536 {
+
+  .ninja-forms-error-msg {
+    @extend p;
+    color: $font-color-lighter;
+  }
+
+  .contact__msg-wrap .ninja-forms-field-error p {
+    position: relative;
+    top: -17em;
+  
+    @include breakpoint($screen $medium-minor-start) {
+      top: -5%;
+    }
+  }
+
+
+  .ninja-forms-field-error {
+    text-align: right;
+    font-size: .875em;
+
+    & p {
+      color: $red;
+    }
+
+    @include breakpoint($screen $medium-minor-start) {
+      position: relative;
+      top: -.75em;
+      
+      clear: both;
+    }
+  }
+}
+
