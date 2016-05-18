@@ -13,7 +13,7 @@
         <div class="article-wrapper">
           
           <div class='widgets--article__wrapper--full-width'>
-          <?php if ( !dynamic_sidebar( 'article-sidebar' ) ); ?>
+          <?php if ( !dynamic_sidebar( 'article-sidebar-alt-1' ) ); ?>
           </div>
         </div>
 

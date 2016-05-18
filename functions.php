@@ -85,6 +85,16 @@ function elit_widgets_init() {
 	) );
 
 	register_sidebar( array(
+		'name'          => 'Article Sidebar Alt-1',
+		'id'            => 'article-sidebar-alt-1',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget'  => '</aside>',
+		'before_title'  => '<div class="section-title-hat"><span class="section-title-hat__text">',
+		'after_title'   => '</span></div>',
+	) );
+
+	register_sidebar( array(
 		'name'          => 'Article Sidebar Ad: Don',
 		'id'            => 'article-sidebar-ad-don',
 		'description'   => '',
