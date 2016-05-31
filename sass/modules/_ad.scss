@@ -8,7 +8,7 @@
 
 
 /*Fix flickering caused by ads*/
-[id^=placement_] img {
+[class^=rover-] [id^=placement_] img {
   height: 250px;
   width: 300px;
 }
