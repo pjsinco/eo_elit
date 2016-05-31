@@ -6,6 +6,14 @@
   width: 300px;
 }
 
+
+/*Fix flickering caused by ads*/
+[id^=placement_] img {
+  height: 250px;
+  width: 300px;
+}
+
+
 .ad {
   /*@include container();*/
 
