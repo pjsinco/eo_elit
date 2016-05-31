@@ -71,12 +71,6 @@
     text-align: center;
     width: 100%;
     max-width: $article-max-width;
-
-    & [id^=placement_] img {
-      width: 728px;
-      height: 90px;
-    }
-
   }
 
   &:before {
