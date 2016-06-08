@@ -90,9 +90,6 @@
                   <a href="http://opportunities.osteopathic.org/index.htm" title="Opportunities.osteopathic.org">Find a Training Program</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://cf.osteopathic.org/iLearn/home.cfm" title="iLEARN Home Page">Mentoring Program</a>
-                </li>
-                <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/Education/postdoctoral-training/Pages/default.aspx" title="Postdoctoral Training">Postdoctoral Training</a>
                 </li>
                 <li class="footer__list-item">
