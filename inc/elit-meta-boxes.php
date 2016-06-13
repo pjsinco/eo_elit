@@ -607,7 +607,7 @@ function elit_thumb_meta_box( $object, $box ) {
     $img_src = esc_url( $thumb_src[0] );
     $img_srcset = esc_attr( $thumb_srcset );
     $sizes = "(max-width: 266px) 100vw, 266px";
-    $image_markup = "<p><img src='$img_src' srcset='$img_srcset' sizes='$sizes' alt='Thumbnail for post' width='254' height='169' /></p>";
+    $image_markup = ($img_src && $img_srcset) ? "<p><img src='$img_src' srcset='$img_srcset' sizes='$sizes' alt='Thumbnail for post' width='254' height='169' /></p>" : null;
   }
   ?>
 
