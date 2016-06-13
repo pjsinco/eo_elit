@@ -599,10 +599,20 @@ function elit_add_thumb_meta_box() {
 function elit_thumb_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_thumb_nonce' );
 
-  $thumb = get_post_meta( $object->ID, 'elit_thumb', true );
+  $thumb_id = get_post_meta( $object->ID, 'elit_thumb', true );
 
+  if ( $thumb_id ){
+    $thumb_src = wp_get_attachment_image_src( $thumb_id, 'elit-medium' );
+    $thumb_srcset = wp_get_attachment_image_srcset( $thumb_id, 'elit-medium' );
+    $img_src = esc_url( $thumb_src[0] );
+    $img_srcset = esc_attr( $thumb_srcset );
+    $sizes = "(max-width: 266px) 100vw, 266px";
+    $image_markup = "<p><img src='$img_src' srcset='$img_srcset' sizes='$sizes' alt='Thumbnail for post' width='254' height='169' /></p>";
+  }
   ?>
+
   <p>
+    <?php if ( $image_markup ): echo $image_markup; endif; ?>
     <label for="widefat">The ID of the thumbnail image to use with this story. Not needed if a Featured Image is selected.</label>
     <br />
     <input class="widefat" type="text" name="elit-thumb-meta" id="elit-thumb-meta" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_thumb', true ) ); ?>" />
