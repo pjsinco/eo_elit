@@ -72,6 +72,12 @@
     width: 100%;
     max-width: $article-max-width;
     overflow-x: scroll;
+
+    /* Prevent page flickering  when ad changes */
+    & img {
+      width: 728px; 
+      height: 90px; 
+    }
   }
 
   &:before {
