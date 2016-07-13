@@ -656,7 +656,7 @@ function elit_disable_plugin_stylesheets() {
 function elit_create_feed_for_aoa_app() {
   load_template( get_template_directory() . '/elit-feed-for-aoa-app.php' );
 }
-add_action( 'do_feed_app' , 'elit_create_feed_for_aoa_app', 10, 1 );
+//add_action( 'do_feed_app' , 'elit_create_feed_for_aoa_app', 10, 1 );
 
 function elit_remove_shortcodes_from_content_for_aoa_app( $content ) {
 
