@@ -15,6 +15,10 @@
   color: #333;
 }
 
+%nav-base {
+  display: inline-block;
+}
+
 .comments {
   @extend %comments-base;
   @extend %article-base;
@@ -55,6 +59,15 @@
     margin-top: 3em;
     padding: 1em;
     background: $extralightgray;
+  }
+
+  & .nav-previous {
+    @extend %nav-base;
+  }
+
+  & .nav-next {
+    @extend %nav-base;
+    float: right;
   }
 }
 
