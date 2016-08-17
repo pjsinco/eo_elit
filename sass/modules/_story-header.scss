@@ -23,6 +23,11 @@
     @include breakpoint($screen $large-start) {
       font-size: 2.1875em;
     }
+
+    &--alt {
+      @extend .story-header__title;
+      color: $primarycolor;
+    }
   }
 
   &__teaser {

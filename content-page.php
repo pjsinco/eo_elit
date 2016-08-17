@@ -38,7 +38,7 @@
 
           <div class="story">
             <header class="story-header">
-              <?php the_title('<h1 class="story-header__title">', '</h1>', true); ?>
+              <?php the_title('<h1 class="story-header__title--alt">', '</h1>', true); ?>
             </header>
 
             <div class="story--page__body-text">
