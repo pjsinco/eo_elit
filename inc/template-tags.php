@@ -131,6 +131,8 @@ function elit_story_footer() {
   //}
 
   // #2 set up jump-to-comments
+  
+  if ( comments_open() ):
   ?>
   <div class="story-footer__jump-link">
     <a href="#comments">
@@ -139,8 +141,8 @@ function elit_story_footer() {
       <span class="icon-arrow-down-alt1"></span>
     </a>
   </div>
+  <?php endif; ?>
 
-  
   <?php   
   // #3 list our story tags
   $before = '<div class="story-footer__title">Topics</div>';
@@ -247,9 +249,7 @@ function elit_story_footer() {
   $prev_post = get_previous_post(false, 'inside-the-aoa');
   if ( $prev_post ) {
     $prev  = '<li class="prev-next__prev">';
-    //$prev .= '<a href="%1$s" class="prev-next__title">';
     $prev .= '<span class="prev-next__title">Older</span>';
-    //$prev .= '<span class="icon-arrow-left space-to-right"></span>Older ';
     $prev .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
     $prev  = sprintf( $prev,
       get_permalink( $prev_post->ID ),
@@ -261,7 +261,11 @@ function elit_story_footer() {
   }
 
   if ( $prev || $next ) {
-    echo '<ul class="prev-next">';
+    // We don't want a bottom border no the component 
+    // if comments are disabled
+    $prev_next_class = 
+      "prev-next" .  ( comments_open() ? "" : "--nobottomborder" );
+    echo "<ul class='$prev_next_class'>";
     if ( $next ) {
       echo $next;
     } 

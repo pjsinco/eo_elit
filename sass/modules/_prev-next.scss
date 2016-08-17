@@ -1,4 +1,4 @@
-%prev-next-base {
+%prev-or-next-base {
   margin: 0;
   padding: 0;
   /*padding-right: 1em;*/
@@ -9,21 +9,24 @@
   display: inline-block;
   width: 100%;
   text-align: center;
-  
-  
 }
 
-.prev-next {
+%prev-next-base {
   position: relative;
   margin-top: 2em;
   padding-top: .5em;
-  /*margin-left: -6%;*/
-  /*margin-right: -6%;*/
   @include clearfix;
-  /*background: $primarycolor;*/
   border-top: 1px solid $lightgray;
-  border-bottom: 1px solid $lightgray;
   color: $font-color;
+}
+
+.prev-next {
+  @extend %prev-next-base;
+  border-bottom: 1px solid $lightgray;
+
+  &--nobottomborder {
+    @extend %prev-next-base;
+  }
 
   [class*='icon-']:before {
     color: $font-color;
@@ -36,7 +39,7 @@
 
   
   &__prev {
-    @extend %prev-next-base;
+    @extend %prev-or-next-base;
 
     @include breakpoint($screen $medium-start) { 
       float: left;
@@ -57,7 +60,7 @@
   }
 
   &__next {
-    @extend %prev-next-base;
+    @extend %prev-or-next-base;
 
     @include breakpoint($screen $medium-start) { 
       float: right;
