@@ -75,4 +75,18 @@
   font-weight: 400;
   color: $primarycolor;
   margin-top: 0;
+
+  & > span {
+    display: block;
+    margin-top: .33em;
+    font-size: 70%;
+    vertical-align: baseline;
+    line-height: 1.6;
+
+    @include breakpoint($screen $medium-start) {
+      display: inline;
+      margin-top: 0;
+      float: right;
+    }
+  }
 }

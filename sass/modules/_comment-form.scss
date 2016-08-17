@@ -50,6 +50,7 @@
 
 .comment-form {
   @include clearfix;
+  clear: both;
 
   &__notes {
     font-size: .75em;

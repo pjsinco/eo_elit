@@ -24,7 +24,6 @@ if ( post_password_required() ) {
       <h2 class="comments__title">
         <span class="comments__count">
 
-          <?php //echo get_comments_number(); ?>
           <?php 
             $num_comments = get_comments_number();
             if ( $num_comments == 0 ) {
@@ -98,6 +97,7 @@ if ( post_password_required() ) {
         'fields' => $fields,
         'comment_notes_before' => '',
         'comment_notes_after' => '',
+        'title_reply_after' => '<span class="comment-note"><a href="/comment-policy">Please see our comment policy</a></span></h3>',
         'title_reply' => 'Leave a comment',
         'label_submit' => 'Submit comment',
       );
