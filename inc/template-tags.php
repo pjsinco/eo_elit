@@ -286,20 +286,22 @@ function elit_recommended() {
   $recs = get_field( 'elit_recommended' );
 
   if ( $recs ):
+    // Whether to "article" should be plural
+    $label = 'Article' . (count($recs) > 1 ? 's' : '');
 ?>
 
   <div class="recommended">
-
+    <h4 class="recommended__title">Related <?php echo $label; ?></h4>
+    
   <?php foreach ( $recs as $rec ):
-
     $meta = get_post_meta( $rec->ID );
     $thumb_id = ( 
       has_post_thumbnail( $rec->ID ) ? get_post_thumbnail_id( $rec->ID ) : $meta['elit_thumb'][0]
     );
     $url = get_permalink( $rec->ID );
   ?>
-    <article class="f-item--minor">
-      <figure class="f-item__fig--minor">
+    <article>
+      <figure>
         <a href="<?php echo $url; ?>" title="<?php $rec->post_title ?>">
           <?php if ( $thumb_id ): ?>
           <?php $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-thumb' ); ?>
@@ -307,11 +309,11 @@ function elit_recommended() {
           <?php endif; ?>
         </a>
       </figure>
-      <div class="f-item__body--minor">
-        <h2 class="f-item__head--minor">
-          <a href="<?php echo $url; ?>" class="f-item__link" title="<?php $rec->post_title; ?>"><?php echo wptexturize( $rec->post_title ); ?></a>
-        </h2> 
-        <p class="f-item__body-text--minor"><?php echo wptexturize( $rec->post_excerpt ); ?></p>
+      <div class="recommended__body">
+        <h5>
+          <a href="<?php echo $url; ?>" title="<?php $rec->post_title; ?>"><?php echo wptexturize( $rec->post_title ); ?></a>
+        </h5> 
+        <p class=""><?php echo wptexturize( $rec->post_excerpt ); ?></p>
       </div>
     </article>
   <?php endforeach; ?>

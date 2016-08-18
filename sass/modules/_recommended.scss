@@ -1,8 +1,48 @@
 .recommended {
-
+  margin-top: 2em;
+  border-top: 1px solid $lightgray;
 
   &__item {
     color: fuchsia;
   }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .875em;
+    letter-spacing: .125em;
+    color: $primarycolor;
+
+    @include breakpoint($screen $medium-start) {
+      text-align: left;
+    }
+  }
+
+  & article {
+    @extend .f-item--minor;
+  }
+
+  & figure {
+    @extend %f-fig-base;
+    max-width: 6em;
+  }
+
+  &__body {
+    @extend .f-item__body--minor;
+
+    & p {
+      @extend .f-item__body-text--minor;
+    }
+
+    & h5 {
+      @extend .f-item__head--minor;
+    }
+
+    & a {
+      @extend .f-item__link;
+    }
+  }
+
 
 }
