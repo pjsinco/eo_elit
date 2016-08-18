@@ -217,7 +217,10 @@ function elit_story_footer() {
     echo $credit_line;
   }
 
-  // #6 create "More in <category>" line
+  // #6 Show recommended stories if we have them
+  elit_recommended();
+
+  // #7 create "More in <category>" line
   $story_nav  = '<div class="story-nav__more-in">More in ';
   $story_nav .= '<a href="%1$s" class="story-nav__emph">%2$s&nbsp;';
   $story_nav .= '<span class="icon-arrow-right"></span></a></div>';
@@ -229,13 +232,11 @@ function elit_story_footer() {
   //echo $story_nav;
 
 
-  // #7 set up our post navigation
+  // #8 set up our post navigation
   $next_post = get_next_post(false, 'inside-the-aoa');
   if ( $next_post ) {
     $next  = '<li class="prev-next__next">';
-    //$next .= '<a href="%1$s" class="prev-next__title">Newer ';
     $next .= '<span class="prev-next__title">Newer</span>';
-    //$next .= '<span class="icon-arrow-right space-to-left"></span>';
     $next .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
     $next  = sprintf( $next,
       get_permalink( $next_post->ID ),
@@ -261,7 +262,7 @@ function elit_story_footer() {
   }
 
   if ( $prev || $next ) {
-    // We don't want a bottom border no the component 
+    // We don't want a bottom border on the component 
     // if comments are disabled
     $prev_next_class = 
       "prev-next" .  ( comments_open() ? "" : "--nobottomborder" );
@@ -274,6 +275,49 @@ function elit_story_footer() {
     }
   echo '</ul>';
   }
+
+}
+
+/**
+ * Show a list of recommended posts
+ *
+ */
+function elit_recommended() {
+  $recs = get_field( 'elit_recommended' );
+
+  if ( $recs ):
+?>
+
+  <div class="recommended">
+
+  <?php foreach ( $recs as $rec ):
+
+    $meta = get_post_meta( $rec->ID );
+    $thumb_id = ( 
+      has_post_thumbnail( $rec->ID ) ? get_post_thumbnail_id( $rec->ID ) : $meta['elit_thumb'][0]
+    );
+    $url = get_permalink( $rec->ID );
+  ?>
+    <article class="f-item--minor">
+      <figure class="f-item__fig--minor">
+        <a href="<?php echo $url; ?>" title="<?php $rec->post_title ?>">
+          <?php if ( $thumb_id ): ?>
+          <?php $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-thumb' ); ?>
+          <img src="<?php echo $thumb_url[0]; ?>" alt="<?php get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ?>" class="image__img" width="96" height="64">
+          <?php endif; ?>
+        </a>
+      </figure>
+      <div class="f-item__body--minor">
+        <h2 class="f-item__head--minor">
+          <a href="<?php echo $url; ?>" class="f-item__link" title="<?php $rec->post_title; ?>"><?php echo wptexturize( $rec->post_title ); ?></a>
+        </h2> 
+        <p class="f-item__body-text--minor"><?php echo wptexturize( $rec->post_excerpt ); ?></p>
+      </div>
+    </article>
+  <?php endforeach; ?>
+
+  </ul>
+  <?php endif; 
 
 }
 
