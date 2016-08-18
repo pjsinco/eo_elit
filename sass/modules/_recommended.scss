@@ -41,7 +41,17 @@
     }
 
     & a {
-      @extend .f-item__link;
+      /*@extend .f-item__link;*/
+      font-size: 1.0227272727em;
+      font-weight: 100;
+      color: $verydark;
+      transition-property: color;
+      transition-duration: $mediumduration;
+      @include red-hover;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 1.1505681818em;
+      }
     }
   }
 

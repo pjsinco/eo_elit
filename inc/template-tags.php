@@ -313,7 +313,7 @@ function elit_recommended() {
         <h5>
           <a href="<?php echo $url; ?>" title="<?php $rec->post_title; ?>"><?php echo wptexturize( $rec->post_title ); ?></a>
         </h5> 
-        <p class=""><?php echo wptexturize( $rec->post_excerpt ); ?></p>
+        <p><?php echo wptexturize( $rec->post_excerpt ); ?></p>
       </div>
     </article>
   <?php endforeach; ?>
