@@ -147,7 +147,7 @@
           </p>
           <ul class="footer__list--horiz">
             <li class="footer__list-item--horiz">
-              <a href="http://www.osteopathic.org/inside-aoa/about/Pages/contact-us.aspx" title="Contact Us">Contact Us</a>
+              <a href="/comment-policy" title="Comment Policy">Comment Policy</a>
             </li>
             <li class="footer__list-item--horiz">
               <a href="<?php bloginfo( 'rss_url' ) ?>" title="RSS feed">RSS</a>
