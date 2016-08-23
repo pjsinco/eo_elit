@@ -45,6 +45,7 @@
 
     & p {
       @extend .f-item__body-text--minor;
+      display: block;
       text-align: left;
 
       &:not(:last-child) {
