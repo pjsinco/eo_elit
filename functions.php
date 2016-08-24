@@ -256,8 +256,6 @@ function elit_scripts() {
   wp_enqueue_script( 'main' );
 
 
-
-
   /**************************
   
     TEMPORARY

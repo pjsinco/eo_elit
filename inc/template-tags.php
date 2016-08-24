@@ -495,3 +495,42 @@ function elit_time_ago($date) {
     }
     return $d;
 }
+
+/**
+ * Load any post-specific scripts.
+ * 
+ * The scripts are set in the post via an Advanced Custom Fields
+ * meta box.
+ *
+ * @return none
+ * @author pjs
+ */
+function elit_load_scripts_for_post() {
+
+  $script = get_field('elit_script_file'); 
+
+  if ( $script ) {
+
+    $deps = array();
+
+    if ( get_field( 'elit_load_d3' ) ) {
+      $deps[] = 'd3';
+    }
+
+    if ( get_field( 'elit_load_topojson' ) ) {
+      $deps[] = 'topojson';
+    }
+
+    if ( get_field( 'elit_load_d3_tip' ) ) {
+      $deps[] = 'd3-tip';
+    }
+
+    wp_enqueue_script( 
+      $script['title'],
+      $script['url'],
+      $deps, 
+      false, 
+      true
+    );
+  }
+}
