@@ -220,7 +220,13 @@ function elit_add_search_box_to_menu( $items, $args ) {
  * Register scripts and styles. Enqueue as needed.
  */
 function elit_scripts() {
-	wp_enqueue_style( 'elit-style', get_stylesheet_uri() );
+	wp_enqueue_style(
+    'elit-style', 
+    get_stylesheet_uri(),
+    array(),
+    filemtime( get_template_directory() . '/style.css' ), 
+    'screen'
+  );
 
   wp_register_script( 'modernizr', 
     get_template_directory_uri() . '/js/modernizr.js', 
