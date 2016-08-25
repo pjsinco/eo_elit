@@ -534,3 +534,19 @@ function elit_load_scripts_for_post() {
     );
   }
 }
+
+function elit_story_body_class( $layout = 'two-col' ) {
+  echo 'story__body-text' . ($layout == 'one-col' ? '--full-width' : '');
+}
+
+function elit_get_featured_image_size( $layout = 'two-col' ) {
+  return ( $layout == 'two-col' ? 'elit-large' : 'elit-super' );
+}
+
+function elit_featured_image_class( $layout ) {
+  echo 'image--' . ( $layout == 'two-col' ? 'primary' : 'super' );
+}
+
+function elit_story_footer_class( $layout ) {
+  echo 'story-footer' . ( $layout == 'two-col' ? '' : '--full-width' );
+}

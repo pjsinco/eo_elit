@@ -4,8 +4,10 @@
 
 <?php elit_load_scripts_for_post(); ?>
 
+<?php $layout = empty( get_field( 'elit_post_layout' ) ) ? 'two-col' : get_field( 'elit_post_layout' ); ?>
+
     <div id="main" class="content">
-      <section id="primary" class="content__primary">
+      <section id="primary" class="content__primary--<?php echo $layout; ?>">
 
         <?php while(have_posts()): the_post(); ?>
 
@@ -14,7 +16,11 @@
     			<?php
     				// If comments are open or we have at least one comment, load up the comment template
     				if ( comments_open() || get_comments_number() ) :
-    					comments_template();
+              if ( $layout == 'one-col' ) {
+                comments_template('/comments_full_width.php');
+              } else {
+                comments_template();
+              }
     				endif;
     			?>
 
