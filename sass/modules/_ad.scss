@@ -52,6 +52,21 @@
       width: 50%;
     }
 
+
+  }
+
+  .ad-container & {
+    @extend %ad-pos;
+    @extend %med-rect;
+
+    @include breakpoint($screen $medium-minor-minor-start) {
+      float: right;
+      width: 50%;
+      clear: left !important;
+      margin-top: 1em;
+      text-align: center;
+      /*margin-left: 1em;*/
+    };
   }
 
   &__med-rect--front {

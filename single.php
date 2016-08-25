@@ -30,9 +30,10 @@
 
 
 <!--       temp; make into a sidebar template? -->
-      <section id="secondary" class="content__secondary">
+      <section id="secondary" class="<?php elit_secondary_class( $layout ); ?>">
 
-<?php get_sidebar('article'); ?>
+<?php $sidebar = ($layout == 'two-col' ? 'article' : 'article_full_width'); ?>
+<?php get_sidebar( $sidebar ); ?>
       </section>
     </div> <!-- #main -->
 

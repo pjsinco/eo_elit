@@ -291,14 +291,14 @@ function elit_scripts() {
     array(), false, true
   );
 
-  wp_register_script( 'd3-grads-counties', 
-    get_template_directory_uri() . '/js/d3-grads-counties.js', 
-    array( 'd3', 'topojson', 'd3-tip' ), false, true
-  );
+//  wp_register_script( 'd3-grads-counties', 
+//    get_template_directory_uri() . '/js/d3-grads-counties.js', 
+//    array( 'd3', 'topojson', 'd3-tip' ), false, true
+//  );
 
   if ( is_front_page() ) {
     wp_enqueue_script( 'topojson' );
-    wp_enqueue_script( 'd3-grads-counties' );
+    //wp_enqueue_script( 'd3-grads-counties' );
   }
 
   /**************************

@@ -535,6 +535,11 @@ function elit_load_scripts_for_post() {
   }
 }
 
+/**
+ * A Series of helper functions to help us distinguish
+ * between layouts.
+ *
+ */
 function elit_story_body_class( $layout = 'two-col' ) {
   echo 'story__body-text' . ($layout == 'one-col' ? '--full-width' : '');
 }
@@ -549,4 +554,8 @@ function elit_featured_image_class( $layout ) {
 
 function elit_story_footer_class( $layout ) {
   echo 'story-footer' . ( $layout == 'two-col' ? '' : '--full-width' );
+}
+
+function elit_secondary_class( $layout ) {
+  echo 'content__secondary' . ( $layout == 'two-col' ? '' : '--full-width' );
 }

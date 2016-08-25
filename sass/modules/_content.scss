@@ -107,6 +107,11 @@
         /*@include span(30% last of $gridpage);*/
       }
     }
+
+    &--full-width {
+      @extend %secondary-base;    
+
+    }
   }
 }
 
