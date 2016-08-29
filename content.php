@@ -52,6 +52,7 @@
               </div>
 
               <?php 
+                if ( !get_field( 'elit_short_post' ) ):
                 /**
                  * Set up social
                  *
@@ -64,6 +65,7 @@
                     $meta['elit_thumb'][0]
                 );
                 elit_social_links( $meta, $link, $title, $thumb_id, true ); ?>
+                <?php endif; ?>
             </header>
 
             <div class="<?php elit_story_body_class( $layout ); ?>">
