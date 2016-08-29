@@ -60,7 +60,7 @@ function elit_setup() {
   require_once elit_inc_path . 'elit-shortcodes.php';
   require_once elit_inc_path . 'elit-taxonomies.php';
   require_once elit_inc_path . 'elit-super.php';
-  require_once elit_inc_path . 'elit-spotlight-video.php';
+  require_once elit_inc_path . 'elit-spotlight.php';
   require_once elit_inc_path . 'template-tags.php'; 
   require_once elit_inc_path . 'elit-widgets.php'; 
 }
@@ -291,15 +291,15 @@ function elit_scripts() {
     array(), false, true
   );
 
-//  wp_register_script( 'd3-grads-counties', 
-//    get_template_directory_uri() . '/js/d3-grads-counties.js', 
-//    array( 'd3', 'topojson', 'd3-tip' ), false, true
-//  );
+  wp_register_script( 'd3-grads-counties', 
+    get_template_directory_uri() . '/js/d3-grads-counties-2015-05-04.js', 
+    array( 'd3', 'topojson', 'd3-tip' ), false, true
+  );
 
-  if ( is_front_page() ) {
-    wp_enqueue_script( 'topojson' );
+  //if ( is_front_page() ) {
+    //wp_enqueue_script( 'topojson' );
     //wp_enqueue_script( 'd3-grads-counties' );
-  }
+  //}
 
   /**************************
   
