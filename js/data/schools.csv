@@ -1,22 +1,22 @@
 abbrev,name,city,state,lat,lon,est
 ACOM,Alabama College of Osteopathic Medicine in Dothan,Dothan,Alabama,31.266568,-85.401317,2011
-ATSU-KCOM,A.T. Still University-Kirksville (Missouri) College of Osteopathic Medicine,Kirksville,Missouri,40.165717,-92.609514,1892
-ATSU-SOMA,A.T. Still University-School of Osteopathic Medicine in Arizona in Mesa,Mesa,Arizona,33.38387395,-111.7041822,2005
+ATSU-KCOM,A.T. Still University—Kirksville (Missouri) College of Osteopathic Medicine,Kirksville,Missouri,40.165717,-92.609514,1892
+ATSU-SOMA,A.T. Still University—School of Osteopathic Medicine in Arizona in Mesa,Mesa,Arizona,33.38387395,-111.7041822,2005
 CUSOM,"Campbell University Jerry M. Wallace School of Osteopathic Medicine in Buies Creek, North Carolina",Buies Creek,North Carolina,35.420467,-78.713729,2011
 DMU-COM,Des Moines (Iowa) University College of Osteopathic Medicine,Des Moines,Iowa,41.58445086,-93.66190082,1898
-GA-PCOM,"Georgia Campus-Philadelphia College of Osteopathic Medicine in Suwanee, Georgia",Suwanee,Georgia,34.042479,-84.026171,2004
-KCUMB-COM,Kansas City (Missouri) University of Medicine and Biosciences' College of Osteopathic Medicine,Kansas City,Missouri,39.10667855,-94.56101521,1916
+GA-PCOM,"Georgia Campus-Philadelphia College of Osteopathic Medicine in Suwanee",Suwanee,Georgia,34.042479,-84.026171,2004
+KCUMB-COM,Kansas City (Missouri) University of Medicine and Biosciences College of Osteopathic Medicine,Kansas City,Missouri,39.10667855,-94.56101521,1916
 LECOM,"Lake Erie College of Osteopathic Medicine in Erie, Pennsylvania",Erie,Pennsylvania,42.07993652,-80.10483179,1992
 LECOM-Bradenton,Lake Erie College of Osteopathic Medicine-Bradenton in Florida,Bradenton,Florida,27.41079344,-82.42796033,2003
-LECOM-Seton Hill,"Lake Erie College of Osteopathic Medicine - Seton Hill in Greensburg, Pennsylvania",Greensburg,Pennsylvania,40.313525,-79.558876,2009
+LECOM-Seton Hill,"Lake Erie College of Osteopathic Medicine-Seton Hill in Greensburg, Pennsylvania",Greensburg,Pennsylvania,40.313525,-79.558876,2009
 LMU-DCOM,"Lincoln Memorial University-DeBusk College of Osteopathic Medicine in Harrogate, Tennessee",Harrogate,Tennessee,36.57625408,-83.65481751,2005
 LUCOM,"Liberty University College of Osteopathic Medicine in Lynchburg, Virginia",Lynchburg,Virginia,37.33885924,-79.17450353,2013
 MSUCOM,Michigan State University College of Osteopathic Medicine in East Lansing,East Lansing,Michigan,42.728334,-84.488226,1969
 MSUCOM-DMC,Michigan State University College of Osteopathic Medicine - Detroit Medical Center in Detroit,Detroit,Michigan,42.35850578,-83.05641392,2009
 MSUCOM-MUC,Michigan State University College of Osteopathic Medicine - Macomb University Center in Clinton Township,Clinton Twp.,Michigan,42.624261,-82.953332,2009
 MU-COM,Marian University College of Osteopathic Medicine,Indianapolis,Indiana,39.81493283,-86.20112933,2011
-MWU/AZCOM,Midwestern University/Arizona College of Osteopathic Medicine in Glendale,Glendale,Arizona,33.661597,-112.1865039,1995
-MWU/CCOM,"Midwestern University/Chicago College of Osteopathic Medicine in Downers Grove, Illinois",Downers Grove,Illinois,41.831362,-87.996907,1900
+MWU/AZCOM,Midwestern University Arizona College of Osteopathic Medicine  in Glendale,Glendale,Arizona,33.661597,-112.1865039,1995
+MWU/CCOM,"Midwestern University Chicago College of Osteopathic Medicine in Downers Grove, Illinois",Downers Grove,Illinois,41.831362,-87.996907,1900
 NSU-COM,"Nova Southeastern University College of Osteopathic Medicine in Fort Lauderdale, Florida.",Fort Lauderdale,Florida,26.07585607,-80.25212745,1980
 NYITCOM,New York Institute of Technology College of Osteopathic Medicine in Old Westbury,Old Westbury,New York,40.819704,-73.60061,1977
 OSU-COM,Oklahoma State University Center for Health Sciences College of Osteopathic Medicine in Tulsa,Tulsa,Oklahoma,36.137626,-96.006952,1972
@@ -26,8 +26,8 @@ PCOM,Philadelphia College of Osteopathic Medicine,Philadelphia,Pennsylvania,40.0
 PNWU-COM,"Pacific Northwest University of Health Sciences, College of Osteopathic Medicine in Yakima, Washington",Yakima,Washington,46.59716826,-120.4522688,2007
 RowanSOM,"Rowan University School of Osteopathic Medicine in Stratford, New Jersey",Stratford,New Jersey,39.829763,-75.012012,1976
 RVUCOM,"Rocky Vista University College of Osteopathic Medicine in Parker, Colorado",Parker,Colorado,39.54601664,-104.8097881,2006
-TouroCOM-Harlem,Touro College of Osteopathic Medicine in New York City,New York,New York,40.80930486,-73.94955346,2005
-TUCOM,"Touro University California, College of Osteopathic Medicine in Vallejo, California",Vallejo,California,38.08553406,-122.2678827,1995
+TouroCOM-Harlem,Touro College of Osteopathic Medicine, Harlem, in New York City,New York,New York,40.80930486,-73.94955346,2005
+TUCOM,"Touro University College of Osteopathic Medicine in Vallejo, California",Vallejo,California,38.08553406,-122.2678827,1995
 TUNCOM,"Touro University Nevada College of Osteopathic Medicine in Henderson, Nevada",Henderson,Nevada,36.0423412,-115.0244752,2003
 UNECOM,"University of New England College of Osteopathic Medicine in Biddeford, Maine",Biddeford,Maine,43.45761871,-70.38482935,1978
 UNTHSC/TCOM,University of North Texas Health Science Center Texas College of Osteopathic Medicine in Fort Worth,Fort Worth,Texas,32.73024765,-97.41647649,1970
