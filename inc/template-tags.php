@@ -507,23 +507,20 @@ function elit_time_ago($date) {
  */
 function elit_load_scripts_for_post() {
 
-  $script = get_field('elit_script_file'); 
+  $script = get_field( 'elit_script_file' ); 
 
   if ( $script ) {
 
-    $deps = array();
+    $all_fields =  get_fields();
 
-    if ( get_field( 'elit_load_d3' ) ) {
-      $deps[] = 'd3';
-    }
+    // Dependencies begin with "elit_load_"
+    $available_dependencies = array_filter( array_keys( $all_fields ), function( $val ) {
+      return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
+    } );
 
-    if ( get_field( 'elit_load_topojson' ) ) {
-      $deps[] = 'topojson';
-    }
-
-    if ( get_field( 'elit_load_d3_tip' ) ) {
-      $deps[] = 'd3-tip';
-    }
+    $deps = array_keys( array_filter( $all_fields, function( $value ) use ( $available_dependencies ){
+      return in_array( $value, $available_dependencies );
+    }) );
 
     wp_enqueue_script( 
       $script['title'],

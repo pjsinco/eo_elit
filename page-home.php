@@ -192,16 +192,29 @@
 
         get_template_part( 'ad', 'peggy_home_front' );
 
+
         /**************************************************************
          *
          *                    SET UP SPOTLIGHT
          *
          *
          *************************************************************/
+        $args = array(
+          'post_type' => 'elit_spotlight',
+          'post_count' => 1,
+        );
+        $spotlights = new WP_Query( $args );
+
+        if ($spotlights->post_count > 0) {
+          $spotlight_post = $spotlights->posts[0];
+          $spotlight = get_fields( $spotlight_post->ID );
+
+          include( locate_template( 'front-elit_spotlight.php' ) ); 
+        }
 
         // TODO we're just stubbing this for now
         //get_template_part( 'front', 'elit_spotlight' );
-        get_template_part( 'front', 'elit_spotlight_video' );
+        //get_template_part( 'front', 'elit_spotlight_video' );
 
 
         /**************************************************************

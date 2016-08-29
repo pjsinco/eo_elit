@@ -2,9 +2,17 @@
 
 <?php get_template_part('sidebar', 'leaderboard'); ?>
 
-<?php elit_load_scripts_for_post(); ?>
+<?php //elit_load_scripts_for_post(); ?>
 
-<?php $layout = empty( get_field( 'elit_post_layout' ) ) ? 'two-col' : get_field( 'elit_post_layout' ); ?>
+<?php 
+  // TODO We have the makings for distinguishing layout types.
+  // For now, we're sticking with two-col only. 
+  //
+  // Here's how we would get the layout from an Advanced Custom Fields field 
+  // $layout = empty( get_field( 'elit_post_layout' ) ) ? 'two-col' : get_field( 'elit_post_layout' ); 
+?>
+
+<?php $layout = 'two-col'; ?>
 
     <div id="main" class="content">
       <section id="primary" class="content__primary--<?php echo $layout; ?>">
@@ -38,3 +46,4 @@
     </div> <!-- #main -->
 
 <?php get_footer(); ?>
+

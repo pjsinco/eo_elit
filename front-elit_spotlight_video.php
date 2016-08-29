@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template for the front-page spotlight.
+ * Template for the Spotlight: Video type.
  * 
  *
  * @package elit
@@ -35,12 +35,12 @@
         <div class="unit size-1-of-1 module">
           <div id="spotlight" class="spotlight">
             <div class="spotlight__feature-wrapper elit-video" id="video">
-              <?php echo wptexturize( get_post_meta( $spotlight->ID, 'elit_featured_video', true ) ); ?></h5>
+              <?php echo wptexturize( get_field( 'elit_spotlight_video_embed_code' ) ); ?>
             </div>
             <div class="spotlight__body">
-              <h5 class="spotlight__kicker"><?php echo wptexturize( get_post_meta( $spotlight->ID, 'elit_kicker', true ) ); ?></h5>
+              <h5 class="spotlight__kicker"><?php echo wptexturize( get_field( 'elit_spotlight_kicker', $spotlight->ID ) ); ?></h5>
               <h2 class="spotlight__head"><?php echo $spotlight->post_title; ?></h2>
-              <?php echo $spotlight->post_content; ?>
+              <?php echo wptexturize( get_field( 'elit_spotlight_body_text' ) ); ?>
             </div>
           </div>
         </div>
