@@ -31,7 +31,7 @@
                     <option value="ATSU-SOMA">ATSU-SOMA</option>
                     <option value="DMU-COM">DMU-COM</option>
                     <option value="GA-PCOM">GA-PCOM</option>
-                    <option value="KCUMB-COM">KCU-COM</option>
+                    <option value="KCU-COM">KCUMB-COM</option>
                     <option value="LECOM">LECOM</option>
                     <option value="LECOM-Bradenton">LECOM-Bradenton</option>
                     <option value="LMU-DCOM">LMU-DCOM</option>

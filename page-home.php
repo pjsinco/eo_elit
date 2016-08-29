@@ -200,8 +200,8 @@
          *************************************************************/
 
         // TODO we're just stubbing this for now
-        get_template_part( 'front', 'elit_spotlight' );
-        //get_template_part( 'front', 'elit_spotlight_video' );
+        //get_template_part( 'front', 'elit_spotlight' );
+        get_template_part( 'front', 'elit_spotlight_video' );
 
 
         /**************************************************************

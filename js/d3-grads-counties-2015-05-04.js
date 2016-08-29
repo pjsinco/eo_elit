@@ -94,7 +94,7 @@ var quantize = d3.scale.quantize()
   .domain([0, 10])
   .range(d3.range(9).map(function(i) { return 'q' + i + '-9'; }))
 
-d3.json("/wp-content/themes/elit/js/data/us-schools-2016.json", function(error, us) {
+d3.json("/wp-content/themes/elit/js/data/us-schools-eunice.json", function(error, us) {
 
     d3.csv('/wp-content/themes/elit/js/data/schools.csv', function(error, csv) {
 
@@ -119,7 +119,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools-2016.json", function(error, 
 
       function kickoffVis() {
       //drawAllBubbles();
-        var kickoffSchool = 'OU-HCOM';
+        var kickoffSchool = 'OSU-COM';
         drawLegend();
         drawBubbles(kickoffSchool);
         drawBullseye(kickoffSchool);
@@ -206,12 +206,8 @@ d3.json("/wp-content/themes/elit/js/data/us-schools-2016.json", function(error, 
               return d.properties.schools[school] != undefined;
             })
             .sort(function(a, b) { 
-              schoolCountA = 
-                (a.properties.schools[school] == undefined ? 
-                  0 : a.properties.schools[school]);
-              schoolCountB = 
-                (b.properties.schools[school] == undefined ? 
-                  0 : b.properties.schools[school]);
+              schoolCountA = (a.properties.schools[school] == undefined ? 0 : a.properties.schools[school]);
+              schoolCountB = (b.properties.schools[school] == undefined ? 0 : b.properties.schools[school]);
               return schoolCountB - schoolCountA;
             }), function(d) {
               return d.id;
@@ -273,7 +269,7 @@ d3.json("/wp-content/themes/elit/js/data/us-schools-2016.json", function(error, 
       }
 
       function writeSchoolInfo(schoolName) {
-        d3.json('/wp-content/themes/elit/js/data/grad-years-2016.json', function(json) {
+        d3.json('/wp-content/themes/elit/js/data/grad-years.json', function(json) {
           var school = json[schoolName];
 
           var years = []
@@ -514,9 +510,7 @@ function reset() {
 }
 
 function stopped() {
-  if (d3.event.defaultPrevented) {
-    d3.event.stopPropagation();
-  }
+  if (d3.event.defaultPrevented) d3.event.stopPropagation();
 }
 
 function zoomed() {
