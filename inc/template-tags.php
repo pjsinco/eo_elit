@@ -502,12 +502,13 @@ function elit_time_ago($date) {
  * The scripts are set in the post via an Advanced Custom Fields
  * meta box.
  *
+ * @param array   $all_fields   Advanced Custom Fields fields
  * @return none
  * @author pjs
  */
-function elit_load_scripts_for_post() {
+function elit_load_scripts_for_post( $all_fields ) {
 
-  $script = get_field( 'elit_script_file' ); 
+  $script = $all_fields['elit_script_file'];
 
   if ( $script ) {
 
