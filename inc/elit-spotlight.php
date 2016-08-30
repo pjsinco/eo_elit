@@ -29,7 +29,7 @@ function elit_register_spotlight_cpt() {
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => array( 'slug' => 'spotlight'),
-    'supports' => array( 'revision', 'title', 'custom_fields' ),
+    'supports' => array( 'revision', 'title', 'comments' ),
   );
   
   register_post_type( 'elit_spotlight', $args );
