@@ -1,5 +1,6 @@
 .comments__wrapper {
   @include clearfix;
+  clear: both;
   margin-bottom: 2em;
   @extend %center;
 

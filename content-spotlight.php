@@ -5,13 +5,16 @@
 ?>
 
   <?php if ($spotlight && !empty($spotlight)): ?>
-    <div class="row">
-      <div class="unit size-1-of-1 module">
+    <div class="story--full-width">
+<!--       <div class="unit size-1-of-1 module"> -->
+
+      
 
         <?php include( locate_template( 'template-parts/spotlight.php' ) ); ?>
 
-      </div>
-    </div>
+
+<!--       </div> -->
+    </div> <!-- .story -->
   <?php endif; ?>
 
     <header>
@@ -29,8 +32,12 @@
         ); ?>
     </header>
     
-    <footer class="<?php elit_story_footer_class( $layout ) ?>">
+    <div class="story">
+      
+      <footer class="<?php elit_story_footer_class( 'one-col' ); ?>">
 
-      <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
+        <?php elit_story_footer(); ?>
+        <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
 
-    </footer>
+      </footer>
+    </div>

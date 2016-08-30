@@ -329,7 +329,7 @@ function elit_scripts() {
 
 
   // if we're on a video page, load FitVids to make the video responsive
-  if ( has_post_format( 'video' ) || is_front_page() )  {
+  if ( has_post_format( 'video' ) || is_front_page() || is_singular( 'elit_spotlight' ) )  {
     wp_enqueue_script( 'fitvids' );
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }

@@ -3,6 +3,10 @@
  * @package elit
  */
 ?>
+
+
+          <?php $layout = 'two-col'; ?>
+
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
           <?php // if we have a featured image, show it ?>
@@ -11,8 +15,8 @@
             <?php $featured_image_content = get_post($featured_image_id); ?>
 
             <?php // if we don't have a label for the image, add some space below with image-overlay--space ?>
-            <figure class="image--primary <?php echo (($featured_image_content->post_excerpt) ? 'image-overlay ' : ''); ?> <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
-              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo wp_get_attachment_image_srcset( $featured_image_id, 'elit-large' ); ?> />
+            <figure class="<?php elit_featured_image_class( $layout ); ?> <?php echo (($featured_image_content->post_excerpt) ? 'image-overlay ' : ''); ?> <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
+              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo wp_get_attachment_image_srcset( $featured_image_id, elit_get_featured_image_size( $layout ) ); ?> />
 
             <?php // the caption overlay ?>
             <?php if ($featured_image_content->post_excerpt): ?>
@@ -59,11 +63,11 @@
                 elit_social_links( $meta, $link, $title, $thumb_id, true ); ?>
             </header>
 
-            <div class="story__body-text">
+            <div class="<?php elit_story_body_class( $layout ) ?>">
               <?php the_content(); ?>
             </div> <!-- story__body-text -->
             
-            <footer class="story-footer"> 
+            <footer class="<?php elit_story_footer_class( $layout ); ?>"> 
               <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
               <?php elit_story_footer(); ?>
             </footer>

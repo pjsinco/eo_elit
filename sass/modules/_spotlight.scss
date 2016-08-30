@@ -2,6 +2,12 @@
   position: relative;
   @include clearfix;
 
+  @include breakpoint($screen $large-start) {
+    .single & {
+      padding-top: 1em;
+    }
+  }
+
   @include breakpoint($screen $xlarge-start) {
     margin-bottom: 2em;
     
@@ -21,6 +27,14 @@
       /*max-width: 65%;*/
       /*max-width: (span(8 of $gridpage) - gutter($gridpage));*/
       max-width: span(8 of $gridpage);
+    }
+
+    .single & {
+      max-width: 100%;
+
+      @include breakpoint($screen $large-minor-start) {
+        max-width: span(8 of $gridpage);
+      }
     }
   }
 
@@ -45,6 +59,7 @@
 
     & p {
       @extend .f-item__body-text--minor;
+      display: block;
       text-align: left;
 
       &:not(:last-child) {
