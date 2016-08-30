@@ -21,7 +21,8 @@
       <?php 
         $spotlight_post = get_post();
         $spotlight = get_fields( $spotlight_post->ID );
-        include( locate_template( sprintf( 'content-spotlight_%s.php', $spotlight['elit_spotlight_type'] ) ) );
+        //include( locate_template( sprintf( 'content-spotlight_%s.php', $spotlight['elit_spotlight_type'] ) ) );
+        include( locate_template( 'content-spotlight.php' ) );
       ?>
 
       </section> <!-- #primary -->

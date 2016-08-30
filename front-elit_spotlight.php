@@ -19,7 +19,7 @@
       </div>
       <div class="row">
         <div class="unit size-1-of-1 module">
-          <?php include( locate_template( 'template-parts/spotlight-video.php' ) ); ?>
+          <?php include( locate_template( 'template-parts/spotlight.php' ) ); ?>
         </div> <!-- .unit -->
       </div> <!-- .row -->
   <?php endif; ?>
