@@ -13,6 +13,8 @@
 
 <?php get_template_part('sidebar', 'leaderboard'); ?>
 
+<?php elit_load_scripts_for_post(); ?>
+
     <div id="main" class="content">
       <section id="primary" class="content__primary--<?php echo $layout; ?>">
 
