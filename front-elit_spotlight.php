@@ -9,6 +9,7 @@
 ?>
 
   <?php 
+    elit_load_scripts_for_post( $spotlight );
   ?>
     
   <?php if ($spotlight && !empty($spotlight)): ?>

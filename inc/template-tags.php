@@ -512,8 +512,6 @@ function elit_load_scripts_for_post( $all_fields ) {
 
   if ( $script ) {
 
-    $all_fields =  get_fields();
-
     // Dependencies begin with "elit_load_"
     $available_dependencies = array_filter( array_keys( $all_fields ), function( $val ) {
       return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
