@@ -278,7 +278,7 @@ function elit_scripts() {
 
   wp_register_script( 'elit_load_topojson', 
     get_template_directory_uri() . '/js/topojson.v1.min.js', 
-    array(), false, true
+    array( 'elit_load_d3' ), false, true
   );
 
 //  wp_register_script( 'd3-geomap-state-growth', 
@@ -288,7 +288,7 @@ function elit_scripts() {
 
   wp_register_script( 'elit_load_d3_tip', 
     get_template_directory_uri() . '/js/d3-tip.min.js', 
-    array(), false, true
+    array( 'elit_load_d3' ), false, true
   );
 
 //  wp_register_script( 'd3-grads-counties', 
