@@ -125,15 +125,36 @@ function elit_comments_link() {
  */
 function elit_story_footer() {
 
-  // #1 let's get our social icons
-  //if ( $with_social ) {
-    //elit_social_links
-  //}
-
-  // #2 set up jump-to-comments
+  // #1 set up jump-to-comments
+  elit_comments_jump();
   
-  if ( comments_open() ):
-  ?>
+  // #2 list our story tags
+  elit_story_tags();
+
+  // #3 output our about-the-author if we have the info
+  elit_about_the_author();
+
+  // #4 print credit for the top-of-story-image
+  elit_photo_credit_for_top_of_page();
+
+  // #5 Show recommended stories if we have them
+  elit_recommended();
+
+  // #6 create "More in <category>" line
+  //elit_more_in_category();
+
+  // #7 set up our post navigation
+  elit_post_navigation();
+
+}
+
+/**
+ * Display the leave-a-comment jump in story footer.
+ *
+ */
+function elit_comments_jump() {
+
+  if ( comments_open() ): ?>
   <div class="story-footer__jump-link">
     <a href="#comments">
       <span class="story-nav__emph"></span>
@@ -141,10 +162,16 @@ function elit_story_footer() {
       <span class="icon-arrow-down-alt1"></span>
     </a>
   </div>
-  <?php endif; ?>
+  <?php endif;
 
-  <?php   
-  // #3 list our story tags
+}
+
+/**
+ * Display the tags for a post.
+ *
+ */
+function elit_story_tags() {
+
   $before = '<div class="story-footer__title">Topics</div>';
   $before .= '<ul class="topics"><li class="topics__topic">';
   $sep = '</li><li class="topics__topic">';
@@ -156,7 +183,15 @@ function elit_story_footer() {
     printf('<div class="story-nav">%1$s</div>', $tags_list);
   }
 
-  // #4 output our about-the-author if we have the info
+}
+
+/**
+ * Display information about the author.
+ * Intended to use in a post footer.
+ *
+ */
+function elit_about_the_author() {
+
   $bio = get_post_meta(get_the_ID(), 'elit_bio', true);
   // we only want to show emails for staff;
   // staff have at least 'Author' privileges
@@ -204,7 +239,15 @@ function elit_story_footer() {
     echo $about;
   }
 
-  // #5 print credit for the top-of-story-image
+}
+
+/**
+ * Display the credit for the top-of-page image.
+ * Intended to use in post footer.
+ *
+ */
+function elit_photo_credit_for_top_of_page() {
+
   $credit = get_post_meta( get_the_id(), 'elit_standalone_credit', true );
   if ( $credit ) {
 
@@ -217,23 +260,35 @@ function elit_story_footer() {
     echo $credit_line;
   }
 
-  // #6 Show recommended stories if we have them
-  elit_recommended();
+}
 
-  // #7 create "More in <category>" line
+/**
+ * Display the link for more stories in this category.
+ * Intended to use in post footer.
+ *
+ */
+function elit_more_in_category() {
+
   $story_nav  = '<div class="story-nav__more-in">More in ';
   $story_nav .= '<a href="%1$s" class="story-nav__emph">%2$s&nbsp;';
   $story_nav .= '<span class="icon-arrow-right"></span></a></div>';
   $story_nav = sprintf( $story_nav, 
-    '#', // todo temp value
-    'Patient Care' // todo temp value
+    '#', // TODO temp value
+    'Patient Care' // TODO temp value
   );
 
-  //echo $story_nav;
+  echo $story_nav;
 
+}
 
-  // #8 set up our post navigation
+/**
+ * Display the next and previous stories
+ *
+ */
+function elit_post_navigation() {
+
   $next_post = get_next_post(false, 'inside-the-aoa');
+
   if ( $next_post ) {
     $next  = '<li class="prev-next__next">';
     $next .= '<span class="prev-next__title">Newer</span>';
@@ -555,3 +610,7 @@ function elit_story_footer_class( $layout ) {
 function elit_secondary_class( $layout ) {
   echo 'content__secondary' . ( $layout == 'two-col' ? '' : '--full-width' );
 }
+
+
+
+

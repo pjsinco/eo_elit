@@ -36,8 +36,14 @@
       
       <footer class="<?php elit_story_footer_class( 'one-col' ); ?>">
 
-        <?php elit_story_footer(); ?>
         <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
+
+        <?php elit_comments_jump(); ?>
+
+        <?php elit_post_navigation(); ?>
+
+
+        <?php // elit_comments_jump(); ?>
 
       </footer>
     </div>
