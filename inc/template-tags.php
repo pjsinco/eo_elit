@@ -303,10 +303,26 @@ function elit_latest_related_posts( $post_type = 'post' ) {
 
 <?php if ( $related_posts ):  ?>
   <ul class="prev-next">
-    <span class="prev-next__title">More Spotlights</span>
-    <?php foreach( $related_posts as $related ): ?>
+    <span class="prev-next__title" style="margin-bottom: 2em;">More Spotlights</span>
+    <?php foreach( $related_posts as $related ):
+
+      $meta = get_post_meta( $related->ID );
+      $thumb_id = ( 
+        has_post_thumbnail( $related->ID ) ? get_post_thumbnail_id( $related->ID ) : $related['elit_thumb'][0]
+      );
+      $url = get_permalink( $related->ID ); 
+    ?>
+
     <li class="prev-next__item<?php echo ( count( $related_posts ) == 3 ? '--thirds' : '' ); ?>">  
-      <a href="<?php echo get_permalink( $related->ID ); ?>" class="prev-next__link"><?php echo wptexturize( $related->post_title ); ?></a>
+      <figure>
+        <a href="<?php echo $url; ?>" title="<?php $related->post_title ?>">
+          <?php if ( $thumb_id ): ?>
+          <?php $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-thumb' ); ?>
+          <img src="<?php echo $thumb_url[0]; ?>" alt="<?php get_post_meta( $thumb_id, '_wp_attachment_image_alt', true ) ?>" class="image__img" width="96" height="64">
+          <?php endif; ?>
+        </a>
+      </figure>
+      <a href="<?php echo $url; ?>" class="prev-next__link" style="padding-top: .5em;"><?php echo wptexturize( $related->post_title ); ?></a>
     </li>
     <?php endforeach; ?>
   </ul>
