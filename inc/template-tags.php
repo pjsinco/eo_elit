@@ -282,6 +282,39 @@ function elit_more_in_category() {
 }
 
 /**
+ * Display the latest 2 or 3 posts in the post category.
+ * Intended to use in post footer.
+ *
+ */
+function elit_latest_related_posts( $post_type = 'post' ) {
+
+  global $post;
+  $current_page_id = $post->ID;
+  
+  $args = array(
+    'post_type' => $post_type,
+    'posts_per_page' => 3,
+    'exclude' => $current_page_id,
+  );
+
+  $related_posts = get_posts( $args );
+
+?>
+
+<?php if ( $related_posts ):  ?>
+  <ul class="prev-next">
+    <span class="prev-next__title">More Spotlights</span>
+    <?php foreach( $related_posts as $related ): ?>
+    <li class="prev-next__item<?php echo ( count( $related_posts ) == 3 ? '--thirds' : '' ); ?>">  
+      <a href="<?php echo get_permalink( $related->ID ); ?>" class="prev-next__link"><?php echo wptexturize( $related->post_title ); ?></a>
+    </li>
+    <?php endforeach; ?>
+  </ul>
+<?php endif; ?>
+<?php 
+}
+
+/**
  * Display the next and previous stories
  *
  */
@@ -290,8 +323,8 @@ function elit_post_navigation() {
   $next_post = get_next_post(false, 'inside-the-aoa');
 
   if ( $next_post ) {
-    $next  = '<li class="prev-next__next">';
-    $next .= '<span class="prev-next__title">Newer</span>';
+    $next  = '<li class="prev-next__item">';
+    $next .= '<span class="prev-next__title">Next article</span>';
     $next .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
     $next  = sprintf( $next,
       get_permalink( $next_post->ID ),
@@ -303,9 +336,10 @@ function elit_post_navigation() {
   }
 
   $prev_post = get_previous_post(false, 'inside-the-aoa');
+
   if ( $prev_post ) {
-    $prev  = '<li class="prev-next__prev">';
-    $prev .= '<span class="prev-next__title">Older</span>';
+    $prev  = '<li class="prev-next__item">';
+    $prev .= '<span class="prev-next__title">Previous article</span>';
     $prev .= '<a href="%2$s" class="prev-next__link">%3$s </a></li>';
     $prev  = sprintf( $prev,
       get_permalink( $prev_post->ID ),
@@ -322,11 +356,11 @@ function elit_post_navigation() {
     $prev_next_class = 
       "prev-next" .  ( comments_open() ? "" : "--nobottomborder" );
     echo "<ul class='$prev_next_class'>";
-    if ( $next ) {
-      echo $next;
-    } 
     if ( $prev ) {
       echo $prev;
+    } 
+    if ( $next ) {
+      echo $next;
     }
   echo '</ul>';
   }

@@ -40,8 +40,9 @@
 
         <?php elit_comments_jump(); ?>
 
-        <?php elit_post_navigation(); ?>
+        <?php elit_latest_related_posts( 'elit_spotlight' ); ?>
 
+        <?php //elit_post_navigation(); ?>
 
         <?php // elit_comments_jump(); ?>
 
