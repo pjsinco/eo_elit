@@ -2,9 +2,10 @@
 
 <?php get_template_part('sidebar', 'leaderboard'); ?>
 
-    <div id="main" class="content">
-      <section id="primary" class="content__primary">
+<?php $layout = 'one-col'; ?>
 
+    <div id="main" class="content">
+      <section id="primary" class="content__primary--<?php echo $layout; ?>">
         <?php while(have_posts()): the_post(); ?>
 
           <?php get_template_part('content', 'slideshow'); ?>
@@ -12,7 +13,11 @@
     			<?php
     				// If comments are open or we have at least one comment, load up the comment template
     				if ( comments_open() || get_comments_number() ) :
-    					comments_template('/comments_full_width.php');
+              if ( $layout == 'one-col' ) {
+                comments_template('/comments_full_width.php');
+              } else {
+                comments_template();
+              }
     				endif;
     			?>
 
@@ -22,9 +27,11 @@
 
 
 <!--       temp; make into a sidebar template? -->
-      <section id="secondary" class="content__secondary">
+      <section id="secondary" class="<?php elit_secondary_class( $layout ); ?>">
 
-<?php get_sidebar('article_full_width'); ?>
+        <?php $sidebar = ($layout == 'two-col' ? 'article' : 'article_full_width'); ?>
+        <?php get_sidebar( $sidebar ); ?>
+
       </section>
     </div> <!-- #main -->
 
