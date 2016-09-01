@@ -695,3 +695,6 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 
 ###Fri Dec 18 16:32:18 2015 CST
 * Gist: [Include posts from authors in the search results where either their display name or user login matches the query string](https://gist.github.com/danielbachhuber/7126249)
+
+###Thu Sep  1 11:13:05 2016 CDT
+* Blog: [Add Custom Post Types to Tags and Categories in WordPress](https://premium.wpmudev.org/blog/add-custom-post-types-to-tags-and-categories-in-wordpress/)
