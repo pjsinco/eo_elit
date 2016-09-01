@@ -740,3 +740,20 @@ function elit_add_custom_ninja_form_response_class( $form_class, $form_id ) {
   return $form_class;
 }
 //add_filter ( 'ninja_forms_display_response_message_class', 'elit_add_custom_ninja_form_response_class', 10, 2);
+
+/**
+ * Spotlights have the same categories as regular posts.
+ * Include them in the archive page for a category.
+ */
+function elit_modify_main_query_for_archive( $query ) {
+
+  if ( is_category() ) {
+    $query->set( 'post_type', array( 'post', 'elit_spotlight' ) );
+  }
+
+  return $query;
+
+}
+
+add_action('pre_get_posts' , 'elit_modify_main_query_for_archive');
+
