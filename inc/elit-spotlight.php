@@ -29,10 +29,12 @@ function elit_register_spotlight_cpt() {
     'capability_type' => 'post',
     'hierarchical' => false,
     'rewrite' => array( 'slug' => 'spotlight'),
-    'supports' => array( 'revision', 'title', 'comments', 'thumbnail' ),
+    'supports' => array( 'revision', 'title', 'comments', 'thumbnail', 'excerpt' ),
   );
   
   register_post_type( 'elit_spotlight', $args );
+
+  register_taxonomy_for_object_type( 'category', 'elit_spotlight' );
 }
 
 add_action('init' , 'elit_register_spotlight_cpt');
