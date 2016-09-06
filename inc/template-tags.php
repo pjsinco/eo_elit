@@ -302,6 +302,7 @@ function elit_latest_related_posts( $post_type = 'post' ) {
 ?>
 
 <?php if ( $related_posts ):  ?>
+  <h3 class="recommended__bigtitle">What to read next</h3>
   <div class="recommended">
     <h4 class="recommended__title">More Spotlights</h4>
     <?php foreach( $related_posts as $related ):
@@ -400,6 +401,7 @@ function elit_recommended() {
     $label = 'Article' . (count($recs) > 1 ? 's' : '');
 ?>
 
+  <h3 class="recommended__bigtitle">What to read next</h3>
   <div class="recommended">
     <h4 class="recommended__title">Related <?php echo $label; ?></h4>
     

@@ -88,16 +88,19 @@ svg .state {
   /*max-width: span(12 of $gridpage);*/
   margin-top: 0;
   margin-bottom: .5em;
-  font-weight: 600;
-  font-size: 1.5em;
-  text-align: left;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 200;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+  color: $font-color-lighter;
 
   @include breakpoint($screen $large-start) {
     max-width: 16.375em;
-    font-size: 2.5em;
+    font-size: 2rem;
   }
+
   @include breakpoint($screen $large-minor-start) {
     margin-left: 0;
     margin-right: 0;
