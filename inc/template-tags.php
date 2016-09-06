@@ -302,8 +302,8 @@ function elit_latest_related_posts( $post_type = 'post' ) {
 ?>
 
 <?php if ( $related_posts ):  ?>
-  <ul class="prev-next">
-    <span class="prev-next__title" style="margin-bottom: 2em;">More Spotlights</span>
+  <div class="recommended">
+    <h4 class="recommended__title">More Spotlights</h4>
     <?php foreach( $related_posts as $related ):
 
       $meta = get_post_meta( $related->ID );
@@ -313,7 +313,7 @@ function elit_latest_related_posts( $post_type = 'post' ) {
       $url = get_permalink( $related->ID ); 
     ?>
 
-    <li class="prev-next__item<?php echo ( count( $related_posts ) == 3 ? '--thirds' : '' ); ?>">  
+    <article>
       <figure>
         <a href="<?php echo $url; ?>" title="<?php $related->post_title ?>">
           <?php if ( $thumb_id ): ?>
@@ -322,10 +322,15 @@ function elit_latest_related_posts( $post_type = 'post' ) {
           <?php endif; ?>
         </a>
       </figure>
-      <a href="<?php echo $url; ?>" class="prev-next__link" style="padding-top: .5em;"><?php echo wptexturize( $related->post_title ); ?></a>
-    </li>
+      <div class="recommended__body">
+        <h5>
+          <a href="<?php echo $url; ?>"><?php echo wptexturize( $related->post_title ); ?></a>
+        </h5>
+        <p><?php echo wptexturize( $related->post_excerpt ); ?></p>
+      </div> <!-- .recommended__body -->
+    </article>
     <?php endforeach; ?>
-  </ul>
+  </div> <!-- .recommended -->
 <?php endif; ?>
 <?php 
 }

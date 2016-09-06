@@ -32,6 +32,7 @@
 
   &__body {
     @extend .f-item__body--minor;
+    margin-top: -.25em;
 
     & p {
       @extend .f-item__body-text--minor;
