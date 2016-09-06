@@ -151,7 +151,7 @@ class elit_widget_recent_posts extends WP_Widget {
 			'no_found_rows'       => true,
 			'post_status'         => 'publish',
 			'ignore_sticky_posts' => true,
-      //'post_type'           => array( 'post', 'elit_spotlight' )
+      'post_type'           => array( 'post', 'elit_spotlight' )
 		) ) );
 
 		if ($r->have_posts()) :

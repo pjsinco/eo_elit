@@ -77,6 +77,13 @@
 
   &__kicker {
     @extend %kicker-base;
+    background-image: url('img/spotlight-lamp.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 14px;
+    padding-left: 1.75em;
+    line-height: 1.4;
+    height: 18px;
   }
 
   &__date {
