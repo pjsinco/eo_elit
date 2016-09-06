@@ -17,7 +17,7 @@
         <div class="size-1-of-1">
           <div class="section-title-hat">
             <span class="section-title-hat__text">Spotlight</span>
-            <a href="#" class="section-title__link">
+            <a href="/spotlight" class="section-title__link">
               <span class="section-title--muted">All Spotlights <span class="icon-arrow-right-alt1"></span></span>
              </a>
           </div>

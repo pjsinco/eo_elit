@@ -13,6 +13,7 @@ function elit_register_spotlight_cpt() {
     'view_item'          => 'View Spotlight',
     'all_items'          => 'All Spotlights',
     'search_items'       => 'Search Spotlights',
+    'archives'           => 'Spotlights',
     'not_found'          => 'No Spotlights found',
     'not_found_in_trash' => 'No Spotlights found in trash',
   );
@@ -28,6 +29,7 @@ function elit_register_spotlight_cpt() {
     'menu_position' => 5,
     'capability_type' => 'post',
     'hierarchical' => false,
+    'has_archive' => true,
     'rewrite' => array( 'slug' => 'spotlight'),
     'supports' => array( 'revision', 'title', 'comments', 'thumbnail', 'excerpt' ),
   );
