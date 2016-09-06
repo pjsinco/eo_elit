@@ -17,23 +17,20 @@
     </div> <!-- .story -->
   <?php endif; ?>
 
-    <header>
-      <?php 
-        /**
-         * Set up social
-         *
-         */
-        $meta = get_post_meta( $post->ID );
-        $link = get_permalink();
-        $title = get_the_title();
-        $thumb_id = ( 
-          has_post_thumbnail() ? get_post_thumbnail_id() : 
-            $meta['elit_thumb'][0]
-        ); ?>
-    </header>
+  <?php 
+    /**
+     * Set up social
+     *
+     */
+    $meta = get_post_meta( $post->ID );
+    $link = get_permalink();
+    $title = get_the_title();
+    $thumb_id = ( 
+      has_post_thumbnail() ? get_post_thumbnail_id() : 
+        $meta['elit_thumb'][0]
+    ); ?>
     
     <div class="story">
-      
       <footer class="<?php elit_story_footer_class( 'one-col' ); ?>">
 
         <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
@@ -47,4 +44,4 @@
         <?php // elit_comments_jump(); ?>
 
       </footer>
-    </div>
+    </div> <!-- .story -->
