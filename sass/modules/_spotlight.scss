@@ -1,3 +1,15 @@
+%spotlight-layout {
+
+  @include breakpoint($screen $large-start) {
+    max-width: span(10 of $gridpage);
+  }
+
+  @include breakpoint($screen $large-minor-start) {
+    max-width: span(8 of $gridpage);
+  }
+  
+}
+
 .spotlight {
   position: relative;
   @include clearfix;
@@ -13,12 +25,49 @@
     
   }
 
+  &__vis-title {
+    @extend %spotlight-layout;
+    /*max-width: 27.29166667em;*/
+    /*max-width: span(12 of $gridpage);*/
+    margin-top: 0;
+    margin-bottom: .5em;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 200;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    text-align: left;
+    color: $font-color-lighter;
+
+    
+  
+    @include breakpoint($screen $large-start) {
+      /*max-width: 85%;*/
+      /*max-width: 16.375em;*/
+      /*max-width: span(8 of $gridpage);*/
+      font-size: 2rem;
+    }
+  
+    @include breakpoint($screen $large-minor-start) {
+      margin-left: 0;
+      margin-right: 0;
+      /*max-width: span(12 of $gridpage);*/
+    }
+  
+    .single & {
+      /*max-width: 100%;*/
+    }
+
+  }
+
   &__feature-wrapper {
     @include clearfix;
+    @extend %spotlight-layout;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
-    max-width: 40.9375em;
+    /*max-width: 40.9375em;*/
+
 
     @include breakpoint($screen $large-minor-start) {
       margin-left: 0;
@@ -30,21 +79,16 @@
     }
 
     .single & {
-      max-width: 100%;
+      /*max-width: 100%;*/
 
-      @include breakpoint($screen $large-minor-start) {
-        max-width: span(8 of $gridpage);
-      }
+      @extend %spotlight-layout;
     }
   }
 
   &__body {
+    @extend %spotlight-layout;
     margin-left: auto;
     margin-right: auto;
-
-    @include breakpoint($screen $large-start) {
-      max-width: 85%;
-    }
 
     @include breakpoint($screen $large-minor-start) {
       /*padding: 1em;*/
@@ -77,13 +121,15 @@
 
   &__kicker {
     @extend %kicker-base;
+    display: block;
+    height: 18px;
+    padding-left: 1.75em;
+    line-height: 1.4;
+    text-align: left;
     background-image: url('img/spotlight-lamp.png');
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: 14px;
-    padding-left: 1.75em;
-    line-height: 1.4;
-    height: 18px;
   }
 
   &__date {
@@ -92,7 +138,9 @@
 
   &__head {
     @extend .f-item__head--major;
+    display: block;
     line-height: 1.33;
+    text-align: left;
 
     > a {
       color: inherit;

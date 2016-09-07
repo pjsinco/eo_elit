@@ -1,5 +1,5 @@
 <div id="spotlight" class="spotlight">
-  <h3 class="vis-title"><?php echo wptexturize( $spotlight['elit_spotlight_secondary_headline'] ); ?></h3>
+  <h3 class="spotlight__vis-title"><?php echo wptexturize( $spotlight['elit_spotlight_secondary_headline'] ); ?></h3>
   <div class="spotlight__feature-wrapper <?php echo ( $spotlight['elit_spotlight_type'] == 'video' ? 'elit-video' : '' ); ?>" <?php echo ( $spotlight['elit_spotlight_type'] == 'video' ? 'id="video"' : '' );  ?>>
     <?php 
       if ( $spotlight['elit_spotlight_type'] == 'video' ): 

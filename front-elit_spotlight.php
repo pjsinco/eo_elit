@@ -21,8 +21,8 @@
               <span class="section-title--muted">All Spotlights <span class="icon-arrow-right-alt1"></span></span>
              </a>
           </div>
-        </div>
-      </div>
+        </div> <!-- .size-1-of-1 -->
+      </div> <!-- .row -->
       <div class="row">
         <div class="unit size-1-of-1 module">
           <?php include( locate_template( 'template-parts/spotlight.php' ) ); ?>
