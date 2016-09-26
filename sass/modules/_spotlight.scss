@@ -89,6 +89,7 @@
     @extend %spotlight-layout;
     margin-left: auto;
     margin-right: auto;
+    color: $font-color-lighter;
 
     @include breakpoint($screen $large-minor-start) {
       /*padding: 1em;*/
@@ -156,12 +157,29 @@
   }
 
   &__link {
+
     color: $font-color;
     font-weight: 600;
-      &:hover {
-        transition: color .25s ease;
-        @include red-hover;
-      }
+
+    &:hover {
+      transition: color .25s ease;
+      @include red-hover;
     }
+  }
+
+  &__explicitlink {
+    display: block;
+    padding-left: 1.0625rem;
+    background-image: url('img/link-icon-gray.png');
+    background-repeat: no-repeat;
+    background-position: 0 1.75px;
+    background-size: 12px;
+    font-size: .875em;
+    text-align: left;
+    line-height: 1.2;
+    /*color: $font-color-lighter;*/
+    transition: color .25s ease;
+    @include red-hover;
+  }
 
 }

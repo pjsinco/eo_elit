@@ -208,9 +208,10 @@
         if ($spotlights->post_count > 0) {
           $spotlight_post = $spotlights->posts[0];
           $spotlight = get_fields( $spotlight_post->ID );
+          $permalink = get_permalink( $spotlight_post->ID );
 
-          //include( locate_template( 'front-elit_spotlight.php' ) ); 
-          include( locate_template( 'front-elit_spotlight_temp.php' ) ); 
+          include( locate_template( 'front-elit_spotlight.php' ) ); 
+          //include( locate_template( 'front-elit_spotlight_temp.php' ) ); 
         }
 
         // TODO we're just stubbing this for now

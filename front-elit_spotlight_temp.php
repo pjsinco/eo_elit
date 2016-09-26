@@ -28,7 +28,8 @@
       <div class="spotlight__body">
         <h5 class="spotlight__kicker">Spotlight</h5>
         <h2 class="spotlight__head">Teaching the power of touch</h2>
-        <p>'A feeling that gets right down to your soul': Veteran educator Boyd R. Buser, DO, the AOA's 2016-2017 president, discusses his passion for teaching osteopathic manipulative medicine to students. <a href="http://thedo.osteopathic.org/2016/07/in-a-year-of-change-the-aoas-new-leader-is-a-medical-education-expert/">Learn more about the AOA's new president.</a></p>            </div>
+        <p>'A feeling that gets right down to your soul': Veteran educator Boyd R. Buser, DO, the AOA's 2016-2017 president, discusses his passion for teaching osteopathic manipulative medicine to students. <a href="http://thedo.osteopathic.org/2016/07/in-a-year-of-change-the-aoas-new-leader-is-a-medical-education-expert/">Learn more about the AOA's new president.</a></p>
+        <p><a href="/spotlight/aoa-svp-ray-quintero-physicians-stand-gain-macra/" class="spotlight__explicitlink">http://elit.dev/spotlight/aoa-svp-ray-quintero-physicians-stand-gain-macra/</a></p>            </div>
     </div> <!-- .spotlight__body -->
   </div> <!-- .module -->
 </div> <!-- .row -->

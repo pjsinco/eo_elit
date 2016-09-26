@@ -515,7 +515,11 @@ function elit_the_archive_title( $before = '', $after = '' ) {
   } elseif ( is_day() ) {
     $title = sprintf( 'Day: %s', get_the_date( 'F j, Y' ) );
   } elseif ( is_post_type_archive() ) {
-    $title = sprintf( 'Archives: %s', post_type_archive_title( '', false ) );
+    if ( is_post_type_archive( 'elit_spotlight' ) ) {
+      $title = sprintf( '%s', post_type_archive_title( '', false ) );
+    } else {
+      $title = sprintf( 'Archives: %s', post_type_archive_title( '', false ) );
+    }
   } elseif ( is_tax( 'post_format' ) ) {
     if ( is_tax( 'post_format', 'post_format_video' ) ) {
       $title = 'Videos';

@@ -16,5 +16,8 @@
     <h5 class="spotlight__kicker">Spotlight</h5>
     <h2 class="spotlight__head"><?php echo wptexturize( $spotlight_post->post_title ); ?></h2>
     <?php echo wptexturize( $spotlight['elit_spotlight_body_text'] ); ?>
+    <?php if ( is_front_page() ): ?>
+      <a href="<?php echo $permalink; ?>" class="spotlight__explicitlink"><?php echo $permalink; ?></a>
+    <?php endif; ?>
   </div>
 </div>
