@@ -18,7 +18,7 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true )
   $link = urlencode( $link );
   $title_decoded = 
     html_entity_decode( strip_tags( $title ), ENT_QUOTES, 'utf-8' );
-  $title = urlencode( $title_decoded );
+  $url_encoded_title = urlencode( $title_decoded );
   $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-large', false );
   $shift_str = get_shiftable( $shiftable );
 ?>
@@ -32,7 +32,7 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true )
     </a>
   </li>
   <li class="social__icon">
-    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo  $title; ?>&url=<?php echo $link; ?>&via=AOAforDOs" class="<?php echo $shift_str; ?>__link">
+    <a id="social-twitter" href="https://twitter.com/intent/tweet?text=<?php echo $url_encoded_title; ?>&url=<?php echo $link; ?>&via=AOAforDOs" class="<?php echo $shift_str; ?>__link">
       <span class="icon-twitter">
         <span class="text-replace">Twitter</span>
       </span>
@@ -46,14 +46,14 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true )
     </a>
   </li>
   <li class="social__icon">
-    <a id="social-pinterest" class="<?php echo $shift_str; ?>__link" href="https://www.pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo urlencode( $thumb_url[0] ); ?>&description=<?php echo $title; ?>" target="_blank">
+    <a id="social-pinterest" class="<?php echo $shift_str; ?>__link" href="https://www.pinterest.com/pin/create/button/?url=<?php echo $link; ?>&media=<?php echo urlencode( $thumb_url[0] ); ?>&description=<?php echo $url_encoded_title; ?>" target="_blank">
       <span class="icon-pinterest">
         <span class="text-replace">Pinterest</span>
       </span>
     </a>
   </li>
   <li class="social__icon">
-    <a href="mailto:?subject=<?php echo strip_tags(get_the_title()); ?>&amp;body=<?php the_permalink() ?>" title="Email this article" id="social-email" href="" class="<?php echo $shift_str; ?>__link">
+    <a href="mailto:?subject=<?php echo rawurlencode( 'From The DO: '. $title ); ?>&amp;body=<?php echo rawurlencode( $title ) . '%0A' . $link; ?>" title="Email this article" id="social-email" class="<?php echo $shift_str; ?>__link">
       <span class="icon-mail">
         <span class="text-replace">Email</span>
       </span>
