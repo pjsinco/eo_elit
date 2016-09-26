@@ -182,4 +182,10 @@
     @include red-hover;
   }
 
+  &__social {
+    padding-top: 1.5rem;
+    @include breakpoint($screen $xlarge-start) {
+      padding-top: 0;
+    }
+  }
 }
