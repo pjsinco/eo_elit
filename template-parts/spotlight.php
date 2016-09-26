@@ -18,6 +18,20 @@
     <?php echo wptexturize( $spotlight['elit_spotlight_body_text'] ); ?>
     <?php if ( is_front_page() ): ?>
       <a href="<?php echo $permalink; ?>" class="spotlight__explicitlink"><?php echo $permalink; ?></a>
+      <?php 
+
+        /**
+         * Set up social
+         *
+         */
+        $meta = get_post_meta( $spotlight_post->ID );
+        $title = get_the_title( $spotlight_post->ID );
+        $thumb_id = ( 
+          has_post_thumbnail() ? get_post_thumbnail_id() : 
+            $meta['elit_thumb'][0]
+        );
+        elit_social_links( $meta, $permalink, $title, $thumb_id, $shiftable = false );
+      ?>
     <?php endif; ?>
   </div>
 </div>
