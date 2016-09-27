@@ -54,7 +54,7 @@ function elit_social_links( $meta, $link, $title, $thumb_id, $shiftable = true, 
     </a>
   </li>
   <li class="social__icon">
-    <a href="mailto:?subject=<?php echo rawurlencode( 'From The DO: '. $title ); ?>&amp;body=<?php echo rawurlencode( $title ) . '%0A' . $link; ?>" title="Email this article" id="social-email" class="<?php echo $shift_str; ?>__link">
+    <a href="mailto:?subject=<?php echo rawurlencode( 'From The DO: '. $title ); ?>&amp;body=<?php echo rawurlencode( $title ) . '%0A' . $link; ?>" title="Email this article" id="social-email" class="<?php echo $shiftable_class; ?>__link">
       <span class="icon-mail">
         <span class="text-replace">Email</span>
       </span>

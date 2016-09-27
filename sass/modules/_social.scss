@@ -108,14 +108,17 @@
   &, &--small {
     [class*='icon-facebook'] {
       color: $facebook;
+      @include social-icon-hover($facebook);
     }
   
     [class*='icon-twitter'] {
       color: $twitter;
+      @include social-icon-hover($twitter);
     }
   
     [class*='icon-linkedin'] {
       color: $linkedin;
+      @include social-icon-hover($linkedin);
     }
   
     [class*='icon-gplus'] {
@@ -124,6 +127,7 @@
   
     [class*='icon-pinterest'] {
       color: $pinterest;
+      @include social-icon-hover($pinterest);
     }
   
     [class*='icon-youtube'] {
@@ -132,10 +136,12 @@
   
     [class*='icon-email'] {
       color: $mediumgray;
+      @include social-icon-hover($mediumgray);
     }
   
     [class*='icon-mail'] {
       color: $mediumgray;
+      @include social-icon-hover($mediumgray);
     }
 
   }
