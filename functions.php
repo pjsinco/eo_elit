@@ -757,3 +757,73 @@ function elit_modify_main_query_for_archive( $query ) {
 
 add_action('pre_get_posts' , 'elit_modify_main_query_for_archive');
 
+/**
+ * Redo WP's get_adjacent_post() to allow us to get an adjacent post 
+ * regardless of its type.
+ *
+ * WP's default function does not work across post types.
+ *
+ * Source: http://stackoverflow.com/questions/10376891/
+ *   make-get-adjacent-post-work-across-custom-post-types
+ */
+function elit_get_adjacent_post( $direction = 'prev', $post_types = 'post' ) {
+  global $post, $wpdb;
+
+  if ( empty( $post ) ) {
+    return null;
+  }
+
+  if ( is_array( $post_types ) ) {
+    $text = '';
+    for ( $i = 0; $i < count( $post_types ); $i++ ) {
+      $text .= "'" . $post_types[$i] . "'";
+      if ( $i != count( $post_types ) - 1 ) {
+        $text .= ', ';
+      }
+    }
+    $post_types = $text;
+  }
+
+  $current_post_date = $post->post_date;
+  
+  $join = '';
+  $in_same_cat = false;
+  $excluded_categories = '';
+  $adjacent = ( $direction == 'prev' ? 'prev' : 'next' );
+  $op = ( $direction == 'prev' ? '<' : '>' );
+  $order = ( $direction == 'prev' ? 'DESC' : 'ASC' );
+
+  $join = apply_filters( 
+    'get_{$adjacent}_post_join', 
+    $join, 
+    $in_same_cat, 
+    $excluded_categories );
+
+  $where = apply_filters(
+    'get_{$adjacent}_post_where', 
+    $wpdb->prepare( "WHERE p.post_date $op %s AND p.post_type " .
+                    "IN ({$post_types}) " .
+                    "AND p.post_status = 'publish'", $current_post_date),
+    $in_same_cat,
+    $excluded_categories );
+    
+  $sort = apply_filters(
+    'get_{$adjacent}_post_sort', 
+    "ORDER BY p.post_date $order LIMIT 1" );
+
+  $query = "SELECT p.* FROM $wpdb->posts as p $join $where $sort";
+  $query_key = 'adjacent_post_' . md5( $query );
+  $result = wp_cache_get( $query_key, 'counts' );
+  if ( $result !== false ) {
+    return $result;
+  }
+
+  $result = 
+    $wpdb->get_row( "select p.* from $wpdb->posts as p $join $where $sort" );
+
+  if ( $result == null ) {
+    $result = '';
+  }
+
+  return $result;
+}
