@@ -5,6 +5,8 @@
  * @package elit
  */
 
+require_once elit_inc_path . 'elit-suggested-posts.php'; 
+
 /**
  * Generate our list of social links
  *
@@ -124,7 +126,7 @@ function elit_comments_link() {
  *
  * @param boolean $with_social Optional. Include the social icons.
  */
-function elit_story_footer() {
+function elit_story_footer( $post ) {
 
   // #1 set up jump-to-comments
   elit_comments_jump();
@@ -138,8 +140,14 @@ function elit_story_footer() {
   // #4 print credit for the top-of-story-image
   elit_photo_credit_for_top_of_page();
 
+  $suggested_posts = new ElitSuggestedPosts( $post );
+  $suggested_posts->display();
+
   // #5 Show recommended stories if we have them
-  elit_recommended();
+  //elit_recommended();
+
+  // #6 Show stories from same school if we have them
+  //elit_school_posts( $post );
 
   // #6 create "More in <category>" line
   //elit_more_in_category();
@@ -437,6 +445,43 @@ function elit_recommended() {
   </ul>
   <?php endif; 
 
+}
+
+
+
+/**
+ * Show a list of posts that match a post's school taxonomy
+ *
+ */
+function elit_school_posts( $post ) {
+
+  function get_schools( $taxonomy )  {
+    return $taxonomy->slug;
+  }
+
+  $term_slugs = array_map('get_schools', get_the_terms( $post->ID, 'elit_school' ));
+
+  $args = array(
+    'posts_per_page' => 2,
+    'orderby' => 'date',
+    'order' => 'DESC',
+    'post_status' => 'publish',
+    'post_type' => 'post',
+    'tax_query' => array(
+      array(
+        'taxonomy' => 'elit_school',
+        'field' => 'slug',
+        'terms' => $term_slugs,
+        'operator' => 'IN',
+      )
+    )
+  );
+
+  $posts = get_posts( $args );
+
+  if ( $posts ) {
+    
+  }
 }
 
 /**

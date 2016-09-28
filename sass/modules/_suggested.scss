@@ -1,0 +1,76 @@
+.suggested {
+  /*margin-top: 2em;*/
+  /*border-top: 1px solid $lightgray;*/
+  border-top: 3px solid $primarycolor;
+
+
+  &__item {
+    color: fuchsia;
+  }
+
+  &__bigtitle {
+
+    margin-bottom: .3125rem;
+    text-align: left;
+    font-weight: 400;
+    font-size: 1.875rem;
+    color: $primarycolor;
+
+    @include breakpoint($screen $large-start) {
+      margin-top: 2em;
+      line-height: 1;
+      font-weight: 400;
+    }
+  }
+
+  &__title {
+    /*text-align: center;*/
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1em;
+    letter-spacing: .125em;
+    color: $primarycolor;
+
+    @include breakpoint($screen $medium-start) {
+      /*text-align: left;*/
+    }
+  }
+
+  & article {
+    @extend .f-item--minor;
+  }
+
+  & figure {
+    @extend %f-fig-base;
+    max-width: 6em;
+  }
+
+  &__body {
+    @extend .f-item__body--minor;
+    margin-top: -.25em;
+
+    & p {
+      @extend .f-item__body-text--minor;
+    }
+
+    & h5 {
+      @extend .f-item__head--minor;
+    }
+
+    & a {
+      /*@extend .f-item__link;*/
+      font-size: 1.0227272727em;
+      font-weight: 100;
+      color: $verydark;
+      transition-property: color;
+      transition-duration: $mediumduration;
+      @include red-hover;
+
+      @include breakpoint($screen $large-start) {
+        font-size: 1.1505681818em;
+      }
+    }
+  }
+
+
+}
