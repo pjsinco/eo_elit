@@ -199,7 +199,7 @@ function elit_kicker_meta_box_setup() {
 }
 
 function elit_add_kicker_meta_box() {
-  $post_types = array('post', 'elit_slideshow', 'elit_spotlight_video');
+  $post_types = array('post', 'elit_slideshow', 'elit_spotlight');
   foreach ( $post_types as $post_type ) {
     add_meta_box(
       'elit-kicker',

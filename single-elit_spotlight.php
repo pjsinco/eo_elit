@@ -32,9 +32,6 @@
           <?php echo do_shortcode( "[advertisements align='h']" ); ?>
         </div>
 
-        
-
-
     	<?php
     		// If comments are open or we have at least one comment, load up the comment template
     		if ( comments_open() || get_comments_number() ) :

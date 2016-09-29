@@ -1,15 +1,16 @@
 <?php 
 
 /**
- * Calculate suggested posts based on the given post
+ * A panel of suggested posts to read next
+ *
  */
 class ElitSuggestedPosts
 {
-  private $post_id; // the ID of the current post
-  private $categories; // the categories object of the current post
-  private $category_id; // the category ID of the current post
-  private $meta; // the meta data object for the current post
-  private $school_slugs; // the schools associated with the current post
+  private $post_id;                 // the ID of the current post
+  private $categories;              // the categories object of the current post
+  private $category_id;             // the category ID of the current post
+  private $meta;                    // the meta data object for the current post
+  private $school_slugs;            // the schools associated with the current post
   private $suggested_ids = array(); // array of the IDs of posts that we are suggesting
 
   public function __construct( $post ) {
@@ -21,8 +22,10 @@ class ElitSuggestedPosts
   }
 
   /**
-   * Add the posts to the collection of all suggested posts. 
+   * Add the post IDs to the collection of all suggested post IDs. 
    *
+   * @param array of post objects $posts 
+   * @return none
    */
   private function add_to_suggested( $posts ) {
     $this->suggested_ids = array_merge( array_map( function( $post ) {
@@ -30,6 +33,11 @@ class ElitSuggestedPosts
     }, $posts ), $this->suggested_ids );
   }
 
+  /**
+   * Display the panel of suggested posts
+   *
+   * @return none
+   */
   public function display() {
     echo '<h3 class="suggested__bigtitle">What to read next</h3>';
 
@@ -97,6 +105,12 @@ class ElitSuggestedPosts
     }
   }
 
+  /**
+   * Display a single section of the panel
+   *
+   * @param string $text
+   * @param string $text
+   */
   private function display_section( $text, $posts ) {
   ?>
     <div class="suggested">

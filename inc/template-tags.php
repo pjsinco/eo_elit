@@ -143,16 +143,7 @@ function elit_story_footer( $post ) {
   $suggested_posts = new ElitSuggestedPosts( $post );
   $suggested_posts->display();
 
-  // #5 Show recommended stories if we have them
-  //elit_recommended();
-
-  // #6 Show stories from same school if we have them
-  //elit_school_posts( $post );
-
-  // #6 create "More in <category>" line
-  //elit_more_in_category();
-
-  // #7 set up our post navigation
+  // #5 set up our post navigation
   elit_post_navigation();
 
 }

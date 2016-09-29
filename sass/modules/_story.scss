@@ -62,10 +62,10 @@
     @extend %story-base;
     
     @include breakpoint($screen $leaderboard-start) {
-      margin-left: 1em;
-      margin-right: 1em;
-      max-width: 992px;
-      width: auto;
+      /*margin-left: 1em;*/
+      /*margin-right: 1em;*/
+      /*max-width: 992px;*/
+      /*width: auto;*/
     }
 
     @include breakpoint($screen $max-site-start) {
