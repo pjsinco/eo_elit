@@ -10,6 +10,7 @@ class ElitSuggestedPosts
   private $category_id; // the category ID of the current post
   private $meta; // the meta data object for the current post
   private $school_slugs; // the schools associated with the current post
+  private $suggested_ids = array(); // array of the IDs of posts that we are suggesting
 
   public function __construct( $post ) {
     $this->post_id      = $post->ID;
@@ -19,45 +20,89 @@ class ElitSuggestedPosts
     $this->school_slugs = $this->get_schools_for_post( $post->ID );
   }
 
+  /**
+   * Add the posts to the collection of all suggested posts. 
+   *
+   */
+  private function add_to_suggested( $posts ) {
+    $this->suggested_ids = array_merge( array_map( function( $post ) {
+      return $post->ID;
+    }, $posts ), $this->suggested_ids );
+  }
+
   public function display() {
+    echo '<h3 class="suggested__bigtitle">What to read next</h3>';
+
+    /**
+     * Display recommended posts if we have them
+     *
+     */
     $recommended_posts = $this->get_recommended_posts( $this->post_id );
-    //$school_posts = 
-      //$this->get_school_posts( array( $this->post_id ), $this->school_slugs );
+
+    if ( ! empty( $recommended_posts ) ) {
+      $this->add_to_suggested( $recommended_posts );
+      $this->display_section( 
+        sprintf( 
+          '%s %s', 
+          'Related', 
+          $this->singular_or_plural( 'article', $recommended_posts ) 
+        ),
+        $recommended_posts 
+      );
+    }
+
+    /**
+     * Display posts for associated schools if we have them
+     *
+     */
+
+    if ( ! empty( $this->school_slugs ) ) {
+      foreach( $this->school_slugs as $school_slug ) {
+
+        $school_posts = $this->get_school_posts( 
+            array_merge( $this->suggested_ids, array( $this->post_id ) ), 
+            $school_slug
+        );
+
+        if ( ! empty( $school_posts ) ) {
+        
+          $this->add_to_suggested( $school_posts );
+
+          $this->display_section( 
+            sprintf( 'Articles featuring <span>%s</span>', $school_slug ),
+            $school_posts 
+          );
+        }
+      }
+    }
+
+    /**
+     * Display other posts in same category
+     *
+     */
     $category_posts = 
-      $this->get_posts_in_category( array( $this->post_id ), $this->category_id );
+      $this->get_posts_in_category( 
+        array_merge( $this->suggested_ids, array( $this->post_id ) ), 
+        $this->category_id );
+
+
+    if ( ! empty( $category_posts ) ) {
+      $this->add_to_suggested( $category_posts );
+      $this->display_section( 
+        sprintf( 'More in <span>%s</span>', $this->categories[0]->name ),
+        $category_posts 
+      );
+    }
+  }
+
+  private function display_section( $text, $posts ) {
   ?>
-    <h3 class="suggested__bigtitle">What to read next</h3>
-
-    <?php if ( $recommended_posts ): ?>
     <div class="suggested">
       <h4 class="suggested__title">
-        <?php echo sprintf( '%s %s', 
-                            'Related', 
-                            $this->singular_or_plural( 'article', $recommended_posts ) ); ?>
+        <?php echo $text; ?>
       </h4>
-      <?php $this->display_posts( $recommended_posts ); ?>
+      <?php $this->display_posts( $posts ); ?>
     </div>
-    <?php endif; ?>
-
-    <?php if( $this->school_slugs ): foreach( $this->school_slugs as $school_slug ): ?>
-    <div class="suggested">
-      <h4 class="suggested__title">
-        <?php echo 'More articles about ' . $school_slug; ?>
-      </h4>
-      <?php $this->display_posts( $this->get_school_posts( array( $this->post_id ), $school_slug ) ); ?>
-    </div>
-    <?php endforeach; endif; ?>
-
-
-    <?php if ( $category_posts ): ?>
-    <div class="suggested">
-      <h4 class="suggested__title">
-        <?php echo 'More in ' . $this->categories[0]->name; ?>
-      </h4>
-      <?php $this->display_posts( $category_posts ); ?>
-    </div>
-    <?php endif; ?>
-
   <?php
   }
 
@@ -111,7 +156,7 @@ class ElitSuggestedPosts
       return $taxonomy->slug;
     }
 
-    $posts = get_the_terms( $post->ID, 'elit_school' );
+    $posts = get_the_terms( $post_id, 'elit_school' );
 
     if ( $posts ) {
       return array_map('filter_school_slug', $posts );

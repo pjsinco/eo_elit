@@ -5,7 +5,7 @@
  * @package elit
  */
 
-require_once elit_inc_path . 'elit-suggested-posts.php'; 
+require_once elit_inc_path . '/classes/elit-suggested-posts.php'; 
 
 /**
  * Generate our list of social links
