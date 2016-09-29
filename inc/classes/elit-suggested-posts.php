@@ -45,7 +45,7 @@ class ElitSuggestedPosts
         sprintf( 
           '%s %s', 
           'Related', 
-          $this->singular_or_plural( 'article', $recommended_posts ) 
+          $this->singular_or_plural( 'article', count( $recommended_posts ) )
         ),
         $recommended_posts 
       );
@@ -58,18 +58,20 @@ class ElitSuggestedPosts
 
     if ( ! empty( $this->school_slugs ) ) {
       foreach( $this->school_slugs as $school_slug ) {
-
         $school_posts = $this->get_school_posts( 
             array_merge( $this->suggested_ids, array( $this->post_id ) ), 
             $school_slug
         );
 
         if ( ! empty( $school_posts ) ) {
-        
           $this->add_to_suggested( $school_posts );
 
           $this->display_section( 
-            sprintf( 'Articles featuring <span>%s</span>', $school_slug ),
+            sprintf( 
+              '%s featuring <span>%s</span>', 
+              $this->singular_or_plural( 'Article', count( $school_posts ) ),
+              $school_slug 
+            ),
             $school_posts 
           );
         }
@@ -106,13 +108,8 @@ class ElitSuggestedPosts
   <?php
   }
 
-  private function singular_or_plural( $term, $arr ) {
-    return $term . ( count( $arr ) > 1 ? 's' : '' );
-
-  }
-
-  private function get_section( $section, $posts ) {
-    
+  private function singular_or_plural( $term, $count ) {
+    return $term . ( $count > 1 ? 's' : '' );
   }
 
   /**
@@ -123,7 +120,6 @@ class ElitSuggestedPosts
    * @return array
    */
   private function get_posts_in_category( $post_ids_to_exclude, $category_id ) {
-
     $args = array(
       'posts_per_page' => 2,
       'post__not_in' => $post_ids_to_exclude,
@@ -149,9 +145,7 @@ class ElitSuggestedPosts
     }
   }
 
-
   private function get_schools_for_post( $post_id ) {
-
     function filter_school_slug( $taxonomy ) {
       return $taxonomy->slug;
     }
@@ -196,13 +190,9 @@ class ElitSuggestedPosts
   private function format_section( $section, $posts ) {
     $label = 'Article' . ( count( $posts ) > 1 ? 's' : '' );
     return $label;
-  ?>
-
-  <?php
   }
 
   private function get_formatted_post( $post ) {
-
     $meta = get_post_meta( $post->ID );
     $thumb_id = ( has_post_thumbnail( $post->ID ) ? 
                     get_post_thumbnail_id( $post->ID ) : 
