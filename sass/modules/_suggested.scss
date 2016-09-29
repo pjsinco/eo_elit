@@ -1,7 +1,7 @@
 .suggested {
   /*margin-top: 2em;*/
   /*border-top: 1px solid $lightgray;*/
-  border-top: 3px solid $primarycolor;
+  border-top: 1px solid $primarycolor;
 
 
   &__item {
@@ -19,20 +19,20 @@
     @include breakpoint($screen $large-start) {
       margin-top: 2em;
       line-height: 1;
-      font-weight: 400;
+      font-weight: $bold;
     }
   }
 
   &__title {
     /*text-align: center;*/
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 200;
     font-size: 1em;
     letter-spacing: .125em;
     color: $primarycolor;
 
-    @include breakpoint($screen $medium-start) {
-      /*text-align: left;*/
+    & span {
+      font-weight: 600;
     }
   }
 
