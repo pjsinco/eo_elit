@@ -126,7 +126,7 @@ function elit_comments_link() {
  *
  * @param boolean $with_social Optional. Include the social icons.
  */
-function elit_story_footer( $post ) {
+function elit_story_footer( $post, $include_author = true ) {
 
   // #1 set up jump-to-comments
   elit_comments_jump();
@@ -135,7 +135,9 @@ function elit_story_footer( $post ) {
   elit_story_tags();
 
   // #3 output our about-the-author if we have the info
-  elit_about_the_author();
+  if ( $include_author ) {
+    elit_about_the_author();
+  }
 
   // #4 print credit for the top-of-story-image
   elit_photo_credit_for_top_of_page();
