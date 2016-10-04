@@ -218,6 +218,13 @@
       transition: color .25s ease;
       @include red-hover;
     }
+
+    & .icon-link {
+      position: relative;
+      top: 0;
+      margin-left: 1px;
+      font-size: .75rem;
+    }
   }
 
 

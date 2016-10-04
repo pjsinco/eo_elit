@@ -26,6 +26,7 @@
       <?php if ( is_front_page() ): ?>
         <a href="<?php echo $permalink; ?>" class="">
       <?php echo wptexturize( $spotlight['elit_spotlight_secondary_headline'] ); ?>
+      <?php echo '<span class="icon-link"></span>'; ?>
         </a>
       <?php else: ?>
       <?php echo wptexturize( $spotlight['elit_spotlight_secondary_headline'] ); ?>
