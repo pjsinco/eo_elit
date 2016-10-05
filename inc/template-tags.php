@@ -655,6 +655,21 @@ function elit_time_ago($date) {
 }
 
 /**
+ * Filter an array by its keys using a callback.
+ *
+ * Source: https://gist.github.com/h4cc/8e2e3d0f6a8cd9cacde8
+ *
+ * @param $arr      array    The array to filter
+ * @param $callback function The filter callback, which will get 
+ *                           the key as its first arg
+ * @return array             The remaining key => value pairs from $array
+ */
+function array_filter_key( $arr, $callback ) {
+  $matched_keys = array_filter( array_keys( $arr ), $callback );
+  return array_intersect_key( $arr, array_flip( $matched_keys ) );
+}
+
+/**
  * Load any post-specific scripts.
  * 
  * The scripts are set in the post via an Advanced Custom Fields
@@ -671,18 +686,22 @@ function elit_load_scripts_for_post( $all_fields ) {
   if ( $script ) {
 
     // Dependencies begin with "elit_load_"
-    $available_dependencies = array_filter( array_keys( $all_fields ), function( $val ) {
+    $all_available_dependencies = array_filter( array_keys( $all_fields ), function( $val ) {
       return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
     } );
 
-    $deps = array_keys( array_filter( $all_fields, function( $value ) use ( $available_dependencies ){
-      return in_array( $value, $available_dependencies );
-    }) );
+    $possible_deps = array_filter_key( $all_fields, function( $value ) use ( $all_available_dependencies ) {
+      return in_array( $value, $all_available_dependencies, true );
+    } );
+
+    $deps_to_load = array_keys( array_filter( $possible_deps, function( $value ) {
+      return $value == true;
+    } ) );
 
     wp_enqueue_script( 
       $script['title'],
       $script['url'],
-      $deps, 
+      $deps_to_load, 
       false, 
       true
     );
