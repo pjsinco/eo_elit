@@ -21,15 +21,14 @@
 <div class="row">
   <div class="unit size-1-of-1 module">
     <div id="spotlight" class="spotlight">
-      <h3 class="spotlight__vis-title"><?php echo wptexturize( "'A feeling that gets right down to your soul'" ); ?></h3>
       <div class="spotlight__feature-wrapper elit-video" id="video">
-        <iframe width="728" height="410" src="https://www.youtube.com/embed/avV3NncPvQ0?showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+        <div class="fluid-width-video-wrapper" style="padding-top: 56.3187%;"><iframe src="https://www.youtube.com/embed/zXkhMp_xcyU" frameborder="0" allowfullscreen="" id="fitvid38964"></iframe></div>
       </div>
       <div class="spotlight__body">
-        <h5 class="spotlight__kicker">Spotlight</h5>
-        <h2 class="spotlight__head">Teaching the power of touch</h2>
-        <p>'A feeling that gets right down to your soul': Veteran educator Boyd R. Buser, DO, the AOA's 2016-2017 president, discusses his passion for teaching osteopathic manipulative medicine to students. <a href="http://thedo.osteopathic.org/2016/07/in-a-year-of-change-the-aoas-new-leader-is-a-medical-education-expert/">Learn more about the AOA's new president.</a></p>
-        <p><a href="/spotlight/aoa-svp-ray-quintero-physicians-stand-gain-macra/" class="spotlight__explicitlink">http://elit.dev/spotlight/aoa-svp-ray-quintero-physicians-stand-gain-macra/</a></p>            </div>
-    </div> <!-- .spotlight__body -->
-  </div> <!-- .module -->
-</div> <!-- .row -->
+<!--         <h5 class="spotlight__kicker">Spanning the globe</h5> -->
+        <h2 class="spotlight__head">JAOA kidney stone roller coaster study goes viral</h2>
+        <p>News is spreading across the country and around the world about David Wartinger, DO, and his findings that moderate roller coaster rides can lead to the passage of small kidney stones. The results of the study, published in <a href="http://jaoa.org/article.aspx?articleid=2557373" title="Validation of a Functional Pyelocalyceal Renal Model for the Evaluation of Renal Calculi Passage While Riding a Roller Coaster | The Journal of the American Osteopathic Association" target="_blank">The Journal of the American Osteopathic Association</a>, have appeared in roughly 850 news reports, including about 140 broadcasted news segments.</p>
+      </div>
+    </div>
+  </div>
+</div>
