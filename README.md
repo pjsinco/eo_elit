@@ -700,4 +700,9 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 * Blog: [Add Custom Post Types to Tags and Categories in WordPress](https://premium.wpmudev.org/blog/add-custom-post-types-to-tags-and-categories-in-wordpress/)
 
 ###Tue Oct  4 12:36:10 2016 CDT
-* Tuts+; [Creating Maintainable WordPress Meta Boxes - Envato Tuts+ Code Tutorials](https://code.tutsplus.com/series/creating-maintainable-wordpress-meta-boxes--cms-661)
+* Tuts+: [Creating Maintainable WordPress Meta Boxes - Envato Tuts+ Code Tutorials](https://code.tutsplus.com/series/creating-maintainable-wordpress-meta-boxes--cms-661)
+
+###Wed Oct  5 12:47:19 2016 CDT
+* Blog: [How to Create a Photo Album Gallery in WordPress without a plugin](http://www.wpbeginner.com/wp-tutorials/how-to-create-a-photo-album-gallery-in-wordpress-without-a-plugin/)
+
+* Sitepoint: * [Adding a Stylish Lightbox Effect to the WordPress Gallery](https://www.sitepoint.com/adding-a-stylish-lightbox-effect-to-the-wordpress-gallery/)
