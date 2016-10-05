@@ -345,7 +345,7 @@ function elit_latest_related_posts( $post_type = 'post' ) {
 function elit_post_navigation() {
 
   //$next_post = get_next_post(false, 'inside-the-aoa');
-  $next_post = elit_get_adjacent_post('next', ['post', 'elit_spotlight']);
+  $next_post = elit_get_adjacent_post('next', array( 'post', 'elit_spotlight' ) );
 
   if ( $next_post ) {
     $next  = '<li class="prev-next__item">';
@@ -361,7 +361,7 @@ function elit_post_navigation() {
   }
 
   //$prev_post = get_previous_post(false, 'inside-the-aoa');
-  $prev_post = elit_get_adjacent_post('prev', ['post', 'elit_spotlight']);
+  $prev_post = elit_get_adjacent_post('prev', array( 'post', 'elit_spotlight' ) );
 
 //echo '<pre>'; var_dump($prev_post); echo '</pre>'; die();
   if ( $prev_post ) {
