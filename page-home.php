@@ -210,15 +210,9 @@
           $spotlight = get_fields( $spotlight_post->ID );
           $permalink = get_permalink( $spotlight_post->ID );
           $meta = get_post_meta( $spotlight_post->ID );
-
-          //include( locate_template( 'front-elit_spotlight.php' ) ); 
-          include( locate_template( 'front-elit_spotlight_temp.php' ) ); 
         }
 
-        // TODO we're just stubbing this for now
-        //get_template_part( 'front', 'elit_spotlight' );
-        //get_template_part( 'front', 'elit_spotlight_video' );
-
+        include( locate_template( 'front-elit_spotlight.php' ) ); 
 
         /**************************************************************
          *
