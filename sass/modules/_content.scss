@@ -36,19 +36,28 @@
   }
   
   &__primary {
-    @extend %primary-base;
-    @include breakpoint($screen $xlarge-start) {
-      @include span(8 of $gridpage);
+    &--two-col {
+      @extend %primary-base;
+      @include breakpoint($screen $xlarge-start) {
+        @include span(8 of $gridpage);
 
-      &:after {
-        content: '';
-        border-right: 1px solid $lightgray;
-        display: block;
-        position: absolute;
-        top: 0;
-        right: -1.2em;
-        height: 100%;
-        
+        &:after {
+          content: '';
+          border-right: 1px solid $lightgray;
+          display: block;
+          position: absolute;
+          top: 0;
+          right: -1.2em;
+          height: 100%;
+        }
+      }
+    }
+
+    &--one-col {
+      @extend %primary-base;
+
+      @include breakpoint($screen $xlarge-start) {
+        @include span(12 of $gridpage);
       }
     }
 
@@ -97,6 +106,11 @@
       @include breakpoint($screen $xlarge-start) {
         /*@include span(30% last of $gridpage);*/
       }
+    }
+
+    &--full-width {
+      @extend %secondary-base;    
+
     }
   }
 }

@@ -7,10 +7,13 @@
 
 get_header(); ?>
 
+
 <?php get_template_part('sidebar', 'leaderboard'); ?>
 
+<?php $layout = 'two-col'; ?>
+
     <div id="main" class="content">
-      <section id="primary" class="content__primary">
+      <section id="primary" class="content__primary--<?php echo $layout; ?>">
         <div class="row">
           <div class="elit-archive">
 
@@ -39,7 +42,7 @@ get_header(); ?>
         </div> <!-- .row -->
       </section> <!-- #primary -->
 
-      <section id="secondary" class="content__secondary">
+      <section id="secondary" class="<?php elit_secondary_class( $layout ); ?>">
 <?php get_sidebar('archive'); ?>
       </section>
     </div> <!-- #main -->

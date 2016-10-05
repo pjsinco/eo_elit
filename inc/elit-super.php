@@ -14,7 +14,7 @@
  * For displaying the big image on the home page
  */
 $labels = array(
-  'name'               => 'Super',
+  'name'               => 'Supers',
   'singular_name'      => 'Super',
   'menu_name'          => 'Super',
   'name_admin_bar'     => 'Super',

@@ -1,0 +1,9 @@
+.feature {
+
+  /*@extend %article-base;*/
+
+  @include breakpoint($screen $xlarge-start) {
+    max-width: $site-width;
+  }
+
+}

@@ -1,20 +1,117 @@
+%spotlight-layout {
+
+  @include breakpoint($screen $large-start) {
+    max-width: span(10 of $gridpage);
+  }
+
+  /*@include breakpoint($screen $large-minor-start) {*/
+  @include breakpoint($screen $max-site-start) {
+    max-width: span(8 of $gridpage);
+  }
+  
+}
+
+%vis-title-base {
+  /*@extend %spotlight-layout;*/
+  /*@extend .story-header__title;*/
+  margin-top: 0.1em;
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+  font-size: 2em;
+  line-height: 1.2;
+  text-align: left;
+}
+
 .spotlight {
   position: relative;
   @include clearfix;
+
+  @include breakpoint($screen $large-start) {
+    .single & {
+      padding-top: 1em;
+    }
+  }
 
   @include breakpoint($screen $xlarge-start) {
     margin-bottom: 2em;
     
   }
 
+  &__vis-title {
+    @extend %vis-title-base;
+    border-bottom: 1px solid $lightgray;
+    margin-bottom: 2rem;
+    font-size: 2em;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 2.1875em;
+    }
+  
+    &:before {
+      content: "Spotlight";
+      font-weight: 200;
+      color: $font-color-lighter;
+      /*opacity: .75;*/
+    }
+
+    &--home {
+      /*@extend %vis-title-base;*/
+      margin-top: 0.1em;
+      margin-bottom: 1rem;
+      font-size: 2em;
+      font-weight: 200;
+      line-height: 1.2;
+      text-align: left;
+      color: $font-color-lighter;
+    }
+
+    & span {
+      color: $primarycolor;
+    }
+    /*max-width: 27.29166667em;*/
+    /*max-width: span(12 of $gridpage);*/
+//    margin-top: 0;
+//    margin-bottom: .5em;
+//    margin-left: auto;
+//    margin-right: auto;
+//    /*font-weight: 200;*/
+//    font-weight: 600;
+//    font-size: 1.5rem;
+//    line-height: 1.2;
+//    text-align: left;
+//    color: $font-color;
+
+    
+  
+    @include breakpoint($screen $large-start) {
+      /*max-width: 85%;*/
+      /*max-width: 16.375em;*/
+      /*max-width: span(8 of $gridpage);*/
+      font-size: 2rem;
+    }
+  
+    @include breakpoint($screen $large-minor-start) {
+      margin-left: 0;
+      margin-right: 0;
+      /*max-width: span(12 of $gridpage);*/
+    }
+  
+    .single & {
+      /*max-width: 100%;*/
+    }
+
+  }
+
   &__feature-wrapper {
     @include clearfix;
+    /*@extend %spotlight-layout;*/
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 1em;
-    max-width: 40.9375em;
+    /*max-width: 40.9375em;*/
 
-    @include breakpoint($screen $large-minor-start) {
+
+    @include breakpoint($screen $max-site-start) {
       margin-left: 0;
       margin-bottom: .4375em;
       margin-right: 0;
@@ -22,17 +119,21 @@
       /*max-width: (span(8 of $gridpage) - gutter($gridpage));*/
       max-width: span(8 of $gridpage);
     }
+
+    .single & {
+      /*max-width: 100%;*/
+
+      /*@extend %spotlight-layout;*/
+    }
   }
 
   &__body {
+    /*@extend %spotlight-layout;*/
     margin-left: auto;
     margin-right: auto;
+    color: $font-color-lighter;
 
-    @include breakpoint($screen $large-start) {
-      max-width: 85%;
-    }
-
-    @include breakpoint($screen $large-minor-start) {
+    @include breakpoint($screen $max-site-start) {
       /*padding: 1em;*/
       position: absolute;
       bottom: .0625em;
@@ -62,7 +163,38 @@
   }
 
   &__kicker {
-    @extend %kicker-base;
+    &--major {
+      /*@extend %spotlight-layout;*/
+      @extend .story-header__kicker;
+      text-align: left;
+    }
+
+    &--home {
+      @extend %kicker-base;
+      display: block;
+      margin-left: 0;
+      text-align: left;
+    }
+
+    /*@extend %kicker-base;*/
+    height: 19px;
+    margin-bottom: .5em;
+    padding-left: 1.3em;
+    line-height: 1.4;
+    text-align: left;
+    font-weight: 400;
+    font-size: 18px;
+    background-image: url('img/spotlight-spotlight-2.png');
+    background-repeat: no-repeat;
+    background-position: 0 2px;
+    background-size: 14px;
+    background-size: 19px;
+    color: $primarycolor;
+    opacity: .75;
+
+    & span {
+      color: $font-color-lighter;
+    }
   }
 
   &__date {
@@ -70,14 +202,28 @@
   }
 
   &__head {
-    @extend .f-item__head--major;
+    /*@extend .f-item__head--major;*/
+    display: block;
+    padding-bottom: .25rem;
+    margin-bottom: .25em;
+    font-weight: 400;
+    font-size: 1rem;
     line-height: 1.33;
+    text-align: left;
+    border-bottom: 1px solid $lightgray;
+    color: $primarycolor;
 
     > a {
       color: inherit;
       transition: color .25s ease;
       @include red-hover;
+    }
 
+    & .icon-link {
+      position: relative;
+      top: 0;
+      margin-left: 1px;
+      font-size: .625rem;
     }
   }
 
@@ -87,12 +233,35 @@
   }
 
   &__link {
+
     color: $font-color;
     font-weight: 600;
-      &:hover {
-        transition: color .25s ease;
-        @include red-hover;
-      }
-    }
 
+    &:hover {
+      transition: color .25s ease;
+      @include red-hover;
+    }
+  }
+
+  &__explicitlink {
+    display: block;
+    padding-left: 1.0625rem;
+    background-image: url('img/link-icon-gray.png');
+    background-repeat: no-repeat;
+    background-position: 0 1.75px;
+    background-size: 12px;
+    font-size: .875em;
+    text-align: left;
+    line-height: 1.2;
+    /*color: $font-color-lighter;*/
+    transition: color .25s ease;
+    @include red-hover;
+  }
+
+  &__social {
+    padding-top: 1.5rem;
+    @include breakpoint($screen $xlarge-start) {
+      padding-top: 0;
+    }
+  }
 }

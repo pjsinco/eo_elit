@@ -60,7 +60,7 @@ function elit_setup() {
   require_once elit_inc_path . 'elit-shortcodes.php';
   require_once elit_inc_path . 'elit-taxonomies.php';
   require_once elit_inc_path . 'elit-super.php';
-  require_once elit_inc_path . 'elit-spotlight-video.php';
+  require_once elit_inc_path . 'elit-spotlight.php';
   require_once elit_inc_path . 'template-tags.php'; 
   require_once elit_inc_path . 'elit-widgets.php'; 
 }
@@ -247,7 +247,7 @@ function elit_scripts() {
     array( 'jquery' ), false, true
   );
 
-  wp_register_script( 'd3', 
+  wp_register_script( 'elit_load_d3', 
     get_template_directory_uri() . '/js/d3.min.js', 
     array(), false, true
   );
@@ -276,25 +276,25 @@ function elit_scripts() {
   
   ***************************/
 
-  wp_register_script( 'topojson', 
+  wp_register_script( 'elit_load_topojson', 
     get_template_directory_uri() . '/js/topojson.v1.min.js', 
-    array( 'd3' ), false, true
+    array( 'elit_load_d3' ), false, true
   );
 
-  wp_register_script( 'd3-geomap-state-growth', 
-    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
-    array( 'd3', 'topojson' ), false, true
-  );
+//  wp_register_script( 'd3-geomap-state-growth', 
+//    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
+//    array( 'd3', 'topojson' ), false, true
+//  );
 
-  wp_register_script( 'd3-tip', 
+  wp_register_script( 'elit_load_d3_tip', 
     get_template_directory_uri() . '/js/d3-tip.min.js', 
-    array(), false, true
+    array( 'elit_load_d3' ), false, true
   );
 
-  wp_register_script( 'd3-grads-counties', 
-    get_template_directory_uri() . '/js/d3-grads-counties.js', 
-    array( 'd3', 'topojson', 'd3-tip' ), false, true
-  );
+//  wp_register_script( 'd3-grads-counties', 
+//    get_template_directory_uri() . '/js/d3-grads-counties-2015-05-04.js', 
+//    array( 'd3', 'topojson', 'd3-tip' ), false, true
+//  );
 
   if ( is_front_page() ) {
     wp_enqueue_script( 'topojson' );
@@ -329,7 +329,7 @@ function elit_scripts() {
 
 
   // if we're on a video page, load FitVids to make the video responsive
-  if ( has_post_format( 'video' ) || is_front_page() )  {
+  if ( has_post_format( 'video' ) || is_front_page() || is_singular( 'elit_spotlight' ) )  {
     wp_enqueue_script( 'fitvids' );
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }
@@ -740,3 +740,90 @@ function elit_add_custom_ninja_form_response_class( $form_class, $form_id ) {
   return $form_class;
 }
 //add_filter ( 'ninja_forms_display_response_message_class', 'elit_add_custom_ninja_form_response_class', 10, 2);
+
+/**
+ * Spotlights have the same categories as regular posts.
+ * Include them in the archive page for a category.
+ */
+function elit_modify_main_query_for_archive( $query ) {
+
+  if ( is_category() ) {
+    $query->set( 'post_type', array( 'post', 'elit_spotlight' ) );
+  }
+
+  return $query;
+
+}
+
+add_action('pre_get_posts' , 'elit_modify_main_query_for_archive');
+
+/**
+ * Redo WP's get_adjacent_post() to allow us to get an adjacent post 
+ * regardless of its type.
+ *
+ * WP's default function does not work across post types.
+ *
+ * Source: http://stackoverflow.com/questions/10376891/
+ *   make-get-adjacent-post-work-across-custom-post-types
+ */
+function elit_get_adjacent_post( $direction = 'prev', $post_types = 'post' ) {
+  global $post, $wpdb;
+
+  if ( empty( $post ) ) {
+    return null;
+  }
+
+  if ( is_array( $post_types ) ) {
+    $text = '';
+    for ( $i = 0; $i < count( $post_types ); $i++ ) {
+      $text .= "'" . $post_types[$i] . "'";
+      if ( $i != count( $post_types ) - 1 ) {
+        $text .= ', ';
+      }
+    }
+    $post_types = $text;
+  }
+
+  $current_post_date = $post->post_date;
+  
+  $join = '';
+  $in_same_cat = false;
+  $excluded_categories = '';
+  $adjacent = ( $direction == 'prev' ? 'prev' : 'next' );
+  $op = ( $direction == 'prev' ? '<' : '>' );
+  $order = ( $direction == 'prev' ? 'DESC' : 'ASC' );
+
+  $join = apply_filters( 
+    'get_{$adjacent}_post_join', 
+    $join, 
+    $in_same_cat, 
+    $excluded_categories );
+
+  $where = apply_filters(
+    'get_{$adjacent}_post_where', 
+    $wpdb->prepare( "WHERE p.post_date $op %s AND p.post_type " .
+                    "IN ({$post_types}) " .
+                    "AND p.post_status = 'publish'", $current_post_date),
+    $in_same_cat,
+    $excluded_categories );
+    
+  $sort = apply_filters(
+    'get_{$adjacent}_post_sort', 
+    "ORDER BY p.post_date $order LIMIT 1" );
+
+  $query = "SELECT p.* FROM $wpdb->posts as p $join $where $sort";
+  $query_key = 'adjacent_post_' . md5( $query );
+  $result = wp_cache_get( $query_key, 'counts' );
+  if ( $result !== false ) {
+    return $result;
+  }
+
+  $result = 
+    $wpdb->get_row( "select p.* from $wpdb->posts as p $join $where $sort" );
+
+  if ( $result == null ) {
+    $result = '';
+  }
+
+  return $result;
+}

@@ -1,16 +1,16 @@
-@mixin srt {
+@mixin srt() {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-@mixin center {
+@mixin center() {
   position: absolute;
   margin: auto;
   top: 0; right: 0; bottom: 0; left: 0;
 }
 
-@mixin border-before {
+@mixin border-before() {
   content: '';
   position: absolute;
   top: 0;
@@ -21,7 +21,7 @@
   border-left: 1px solid $lightgray;
 }
 
-@mixin red-hover {
+@mixin red-hover() {
   &:link, &:visited {
     color: inherit;
   }
@@ -32,7 +32,7 @@
   }
 }
 
-@mixin red-hover-border {
+@mixin red-hover-border() {
   &:hover, &:active {
     text-decoration: none;
     border-bottom: 1px solid $primarycolor;
@@ -40,4 +40,10 @@
     color: $primarycolor;
   }
   
+}
+
+@mixin social-icon-hover($color) {
+  &:hover, &:active {
+    color: darken($color, 12%);
+  }
 }

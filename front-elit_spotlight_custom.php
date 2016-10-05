@@ -1,6 +1,6 @@
 <?php 
 /**
- * Template for the Spotlight: Video type.
+ * Template for the Spotlight: Custom type.
  * 
  *
  * @package elit

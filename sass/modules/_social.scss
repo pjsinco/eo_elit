@@ -2,9 +2,20 @@
   padding: 0;
 }
 
+%social-icon-base {
+  font-size: 2em;
+}
+
 %link-padding {
   padding-left: .4em;
   padding-right: .4em;
+}
+
+%link-base {
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
 }
 
 .social {
@@ -13,6 +24,27 @@
   list-style-type: none;
   line-height: 3;
   text-align: center;
+
+  [class^="icon-"], [class*=" icon-"] {
+    @extend %social-icon-base;
+  
+    @include breakpoint($screen $large-start) {
+      font-size: 2.5em; 
+    }
+  }
+
+  &--small {
+    [class^="icon-"], [class*=" icon-"] {
+      @extend %social-icon-base ;
+    }
+
+    &__link {
+      display: block;
+      @extend %link-padding;
+      @extend %link-base;
+      
+    } // end &__link
+  }
   
   &--shiftable {
     margin-top: 1.5em;
@@ -29,10 +61,7 @@
 
     &__link {
       @extend %link-padding;
-
-      &:hover {
-        text-decoration: none;
-      }
+      @extend %link-base;
 
       @include breakpoint($screen $medium-start) {
         padding-left: 0;
@@ -51,18 +80,13 @@
   &__link {
     display: block;
     @extend %link-padding;
+    @extend %link-base;
     
-
-    /*@include red-hover;*/
-
-    &:hover,
-    &:active {
-      text-decoration: none;
-    }
-    
-    @include breakpoint($screen $large-start) {
-      padding-left: 1em;
-      padding-right: 1em;
+    .social & {
+      @include breakpoint($screen $large-start) {
+        padding-left: 1em;
+        padding-right: 1em;
+      }
     }
 
     &--white {
@@ -80,43 +104,45 @@
     } // end &--white
   } // end &__link
 
-  [class^="icon-"], [class*=" icon-"] {
-    font-size: 2em;
-  
-    @include breakpoint($screen $large-start) {
-      font-size: 2.5em; 
+
+  &, &--small {
+    [class*='icon-facebook'] {
+      color: $facebook;
+      @include social-icon-hover($facebook);
     }
-  }
+  
+    [class*='icon-twitter'] {
+      color: $twitter;
+      @include social-icon-hover($twitter);
+    }
+  
+    [class*='icon-linkedin'] {
+      color: $linkedin;
+      @include social-icon-hover($linkedin);
+    }
+  
+    [class*='icon-gplus'] {
+      color: $gplus;
+    }
+  
+    [class*='icon-pinterest'] {
+      color: $pinterest;
+      @include social-icon-hover($pinterest);
+    }
+  
+    [class*='icon-youtube'] {
+      color: $youtube;
+    }
+  
+    [class*='icon-email'] {
+      color: $mediumgray;
+      @include social-icon-hover($mediumgray);
+    }
+  
+    [class*='icon-mail'] {
+      color: $mediumgray;
+      @include social-icon-hover($mediumgray);
+    }
 
-  [class*='icon-facebook'] {
-    color: $facebook;
-  }
-
-  [class*='icon-twitter'] {
-    color: $twitter;
-  }
-
-  [class*='icon-linkedin'] {
-    color: $linkedin;
-  }
-
-  [class*='icon-gplus'] {
-    color: $gplus;
-  }
-
-  [class*='icon-pinterest'] {
-    color: $pinterest;
-  }
-
-  [class*='icon-youtube'] {
-    color: $youtube;
-  }
-
-  [class*='icon-email'] {
-    color: $mediumgray;
-  }
-
-  [class*='icon-mail'] {
-    color: $mediumgray;
   }
 }

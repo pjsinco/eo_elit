@@ -1,4 +1,4 @@
-%prev-or-next-base {
+%item-base {
   margin: 0;
   padding: 0;
   /*padding-right: 1em;*/
@@ -9,6 +9,55 @@
   display: inline-block;
   width: 100%;
   text-align: center;
+}
+
+%prev-base {
+  @include breakpoint($screen $medium-start) { 
+    float: left;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      /*height: calc(100% - 43px);*/
+      height: 100%;
+      content: '';
+      /*border-right: 1px dashed $mediumgray;*/
+      /*border-right: 1px dashed $white;*/
+      transform: translatey(-50%);
+    }
+  }
+}
+
+%next-base {
+  @include breakpoint($screen $medium-start) { 
+    float: right;
+
+    &:before {
+      content: "";
+      position: absolute;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      border-left: 1px solid $lightgray;
+    }
+  }
+}
+
+%only-base {
+  @include breakpoint($screen $medium-start) {
+    float: none;
+
+    &:after {
+      content: none;
+    }
+
+    &:before {
+      content: none;
+    }
+
+  }
+
 }
 
 %prev-next-base {
@@ -37,45 +86,64 @@
     margin-right: 0;
   }
 
+  &__item {
+
+    &:first-of-type {
+      @extend %item-base;
+      @extend %prev-base;
+      @include breakpoint($screen $medium-start) {
+        width: 50%;
+      }
+    }
+
+    &:last-of-type {
+      @extend %item-base;
+      @extend %next-base;
+      @include breakpoint($screen $medium-start) {
+        width: 50%;
+      }
+    }
+
+    &:only-of-type {
+      @extend %item-base;
+      @extend %only-base;
+      @include breakpoint($screen $medium-start) {
+        width: 100%;
+      }
+    }
+
+
+    &--prev {
+      @extend %item-base;
+      @extend %prev-base;
+
+      @include breakpoint($screen $medium-start) {
+        width: 50%;
+      }
+    }
+
+    &--next {
+      @extend %item-base;
+      @extend %next-base;
+
+      @include breakpoint($screen $medium-start) {
+        width: 50%;
+      }
+    }
+
+
+
+    &--thirds {
+      @extend %item-base;
+      @extend %prev-base;
+
+      @include breakpoint($screen $medium-start) {
+        width: 33%;
+      }
+    }
+  }
+
   
-  &__prev {
-    @extend %prev-or-next-base;
-
-    @include breakpoint($screen $medium-start) { 
-      float: left;
-      width: 50%;
-
-      &:after {
-        position: absolute;
-        top: 50%;
-        right: 50%;
-        /*height: calc(100% - 43px);*/
-        height: 100%;
-        content: '';
-        /*border-right: 1px dashed $mediumgray;*/
-        /*border-right: 1px dashed $white;*/
-        transform: translatey(-50%);
-      }
-    }
-  }
-
-  &__next {
-    @extend %prev-or-next-base;
-
-    @include breakpoint($screen $medium-start) { 
-      float: right;
-      width: 50%;
-
-      &:before {
-        content: "";
-        position: absolute;
-        height: 100%;
-        top: 0;
-        left: 50%;
-        border-left: 1px solid $lightgray;
-      }
-    }
-  }
 
   &__title {
     display: inline-block;
@@ -85,7 +153,7 @@
     padding-left: .25em;
     width: 100%;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 200;
     font-size: .875em;
     letter-spacing: .125em;
     color: $primarycolor;
