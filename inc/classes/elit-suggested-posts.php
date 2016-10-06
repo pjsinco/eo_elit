@@ -147,7 +147,7 @@ class ElitSuggestedPosts
       'orderby' => 'date',
       'order' => 'DESC',
       'post_status' => 'publish',
-      'post_type' => 'post',
+      'post_type' => array( 'post', 'elit_spotlight' ),
     );
 
     $posts = get_posts( $args );
