@@ -45,7 +45,7 @@
             
             <footer class="story-footer"> 
               <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
-              <?php elit_story_footer(); ?>
+              <?php elit_story_footer( get_post() ); ?>
             </footer>
           </div> <!-- .story -->
         </article>
