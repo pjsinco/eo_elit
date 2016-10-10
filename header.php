@@ -42,15 +42,14 @@
       <section class="site-navigation"><a href="#site-nav" class="nav__link--toggle"><span class="icon-menu"></span></a>
         <nav role="navigation" id="site-nav" class="nav">
           <?php 
-            $args = array(
-              'theme_location' => 'main-menu',
-              'menu' => 'main-menu',
-              'container' => false,
-              'menu_class' => 'nav__list',
-              'depth' => 0,
-            );
+            if ( !get_main_menu( 'main-menu' ) ) {
+              $orig_wp_query = $wp_query;
+              $wp_query = null;
+              $wp_query = new WP_Query( array( 'post_type' => 'post' ) );
+              get_main_menu( 'main-menu' );
+              $wp_query = $orig_wp_query;
+            }
           ?>
-          <?php wp_nav_menu( $args ); ?>
         </nav>
       </section>
     </header>

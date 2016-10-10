@@ -215,7 +215,39 @@ function elit_add_search_box_to_menu( $items, $args ) {
 
   return $items;
 }
- 
+
+/**
+ * Hack to get menu to appear on archive pages
+ * 
+ * Source: https://wordpress.org/support/topic/
+ *    wp-nav-menu-dissapears-in-category-pages-1/page/2/#post-1751763
+ *
+ * via: http://wordpress.stackexchange.com/questions/35264/
+ *    wp-nav-menu-not-appearing-for-a-couple-pages
+ * 
+ * @param $menu_location string - The menu location slug
+ */
+function get_main_menu( $menu_location ) {
+
+  $locations = get_nav_menu_locations();
+  $menu_items = wp_get_nav_menu_items( $locations[$menu_location] );
+
+  if ( empty( $menu_items ) ) {
+    return false;
+  }
+
+  $args = array(
+    'theme_location' => $menu_location,
+    'menu' => 'main-menu',
+    'container' => false,
+    'menu_class' => 'nav__list',
+    'depth' => 0,
+  );
+
+  wp_nav_menu( $args );
+  return true;
+}
+
 /**
  * Register scripts and styles. Enqueue as needed.
  */
