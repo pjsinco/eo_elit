@@ -10,7 +10,8 @@ class ElitSuggestedPosts
   private $categories;              // the categories object of the current post
   private $category_id;             // the category ID of the current post
   private $meta;                    // the meta data object for the current post
-  private $school_slugs;            // the schools associated with the current post
+  private $schools;                 // the taxonomy objects for schools 
+                                    //    associated with the current post
   private $suggested_ids = array(); // array of the IDs of posts that we are suggesting
 
   public function __construct( $post ) {
@@ -18,7 +19,7 @@ class ElitSuggestedPosts
     $this->categories   = get_the_category( $post->ID );
     $this->category_id  = $this->categories[0]->term_id;
     $this->meta         = get_post_meta( $post->ID );
-    $this->school_slugs = $this->get_schools_for_post( $post->ID );
+    $this->schools      = $this->get_schools_for_post( $post->ID );
   }
 
   /**
@@ -63,22 +64,20 @@ class ElitSuggestedPosts
      * Display posts for associated schools if we have them
      *
      */
+    if ( ! empty( $this->schools ) ) {
 
-    if ( ! empty( $this->school_slugs ) ) {
-      foreach( $this->school_slugs as $school_slug ) {
+      foreach( $this->schools as $school ) {
         $school_posts = $this->get_school_posts( 
             array_merge( $this->suggested_ids, array( $this->post_id ) ), 
-            $school_slug
+            $school->slug
         );
-
         if ( ! empty( $school_posts ) ) {
           $this->add_to_suggested( $school_posts );
-
           $this->display_section( 
             sprintf( 
               '%s featuring <span>%s</span>', 
               $this->singular_or_plural( 'Article', count( $school_posts ) ),
-              $school_slug 
+              $school->name
             ),
             $school_posts 
           );
@@ -119,6 +118,7 @@ class ElitSuggestedPosts
    */
   private function display_section( $text, $posts ) {
   ?>
+
     <div class="suggested">
       <h4 class="suggested__title">
         <?php echo $text; ?>
@@ -166,14 +166,11 @@ class ElitSuggestedPosts
   }
 
   private function get_schools_for_post( $post_id ) {
-    function filter_school_slug( $taxonomy ) {
-      return $taxonomy->slug;
-    }
 
     $posts = get_the_terms( $post_id, 'elit_school' );
 
     if ( $posts ) {
-      return array_map('filter_school_slug', $posts );
+      return $posts;
     }
 
     return null;
