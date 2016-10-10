@@ -52,6 +52,10 @@
 
     & p {
       @extend .f-item__body-text--minor;
+      font-weight: 200;
+      @include breakpoint($screen $large-start) {
+        font-weight: inherit;
+      }
     }
 
     & h5 {
