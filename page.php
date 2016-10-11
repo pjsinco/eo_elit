@@ -15,7 +15,7 @@
 
       <section id="secondary" class="<?php elit_secondary_class( $layout ); ?>">
 
-        <?php get_sidebar('article'); ?>
+        <?php get_sidebar('page'); ?>
 
       </section>
     </div> <!-- #main -->
