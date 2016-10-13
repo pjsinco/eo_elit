@@ -124,5 +124,12 @@
 
   li {
     @extend p;
+
+  }
+
+  // Nested lists in stories
+  ul > li > ul {
+    margin-top: 1rem;
+    margin-left: 2rem;
   }
 }
