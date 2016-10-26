@@ -1,0 +1,32 @@
+.styledef {
+
+  display: table;
+  position: relative;
+  padding: 3rem 2rem 2rem;
+  margin-bottom: 2rem;
+  font-family: monospace;
+  font-size: 1em;
+  line-height: 1.5;
+  color: $red;
+  border: 1px dashed #d0d0d0;
+  opacity: .8;
+
+  &--shortcode {
+
+    &:before {
+      content: "SHORTCODE";
+      position: absolute;
+      top: -1px;
+      padding: 6px;
+      font-size: 10px;
+      color: white;
+      background: #ef3f23;
+      left: -1px;
+    }
+  }
+
+  &--note {
+      font-style: italic;
+      color: #888888;
+  }
+}

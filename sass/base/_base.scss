@@ -204,3 +204,27 @@ $breakpoint-alpha: 480px; // adjust to your needs
     color: $font-color-lighter;
   }
 }
+
+blockquote {
+  position: relative;
+  margin: 0 2rem 0 2rem;
+
+  @include breakpoint($screen $large-start) {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  & p {
+
+    color: $font-color-lighter;
+  }
+
+  &:before {
+    content: "";
+    border-left: 6px solid #ddd;
+    position: absolute;
+    top: 5px;
+    bottom: 6px;
+    left: -2rem;
+  }
+}
