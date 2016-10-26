@@ -859,3 +859,12 @@ function elit_get_adjacent_post( $direction = 'prev', $post_types = 'post' ) {
 
   return $result;
 }
+
+/**
+ * Add excerpt to our page-styles.php template
+ */
+function elit_add_excerpt_to_page_styles() {
+  add_post_type_support( 'page', 'excerpt' );
+}
+add_action('init' , 'elit_add_excerpt_to_page_styles');
+
