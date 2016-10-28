@@ -706,3 +706,12 @@ PHP Fatal error:  require_once(): Failed opening required '/tmp/wordpress//wp-in
 * Blog: [How to Create a Photo Album Gallery in WordPress without a plugin](http://www.wpbeginner.com/wp-tutorials/how-to-create-a-photo-album-gallery-in-wordpress-without-a-plugin/)
 
 * Sitepoint: * [Adding a Stylish Lightbox Effect to the WordPress Gallery](https://www.sitepoint.com/adding-a-stylish-lightbox-effect-to-the-wordpress-gallery/)
+
+###Thu Oct 27 17:25:26 2016 CDT
+* [How to Add a Video Background to Your WordPress Site in 4 Easy Steps - WPMU DEV](https://premium.wpmudev.org/blog/add-video-background/?utm_expid=3606929-90.6a_uo883STWy99lnGf8x1g.0&utm_referrer=https%3A%2F%2Fwww.google.com%2F)
+
+* [10 Guidelines for Better Website Background Videos](https://www.sitepoint.com/10-guidelines-better-website-background-videos/)
+
+* [The Current Video Background Design Trends in Web Design](https://envato.com/blog/video-backgrounds-web-design-trends-usability-best-practices/)
+
+* [the new code – Create Fullscreen HTML5 Page Background Video](http://thenewcode.com/777/Create-Fullscreen-HTML5-Page-Background-Video)
