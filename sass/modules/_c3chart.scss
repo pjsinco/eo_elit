@@ -1,0 +1,14 @@
+.c3 {
+  margin-bottom: 2em;
+}
+
+.c3chart {
+
+  &__title {
+    @extend .chart;
+    @extend .chart__title;
+    margin-bottom: 1.6875em;
+    padding-top: 1em;
+    border-bottom: none;
+  }
+}
