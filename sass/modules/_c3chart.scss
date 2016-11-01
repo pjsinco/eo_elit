@@ -1,5 +1,4 @@
 .c3 {
-  margin-bottom: 2em;
 }
 
 .c3chart {
@@ -10,5 +9,12 @@
     margin-bottom: 1.6875em;
     padding-top: 1em;
     border-bottom: none;
+  }
+
+  &__caption {
+    @extend %caption-base;
+    font-size: 1em;
+    line-height: 1.3;
+    margin-bottom: 2em;
   }
 }
