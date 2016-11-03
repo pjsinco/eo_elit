@@ -22,11 +22,7 @@
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
             <figure class="super__figure">
-
-<video class="super__vid" style="width: 100%; height: auto;" autoplay muted loop playsinline poster="wp-content/uploads/2016/10/zay-grab.jpg">
-  <source src="wp-content/uploads/2016/10/zay.mp4" type="video/mp4">
-</video>
-
+              <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo wp_get_attachment_image_sizes( $featured_image_id, 'elit-super' ); ?> />
               <?php if ( !empty( $featured_image_content ) ): ?>
                 <figcaption class="super__label--<?php echo $super_meta['elit_super_label_quadrant'][0]; ?>"><?php echo $featured_image_content->post_content ?></figcaption>
               <?php endif; ?>
