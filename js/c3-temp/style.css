@@ -1,0 +1,29 @@
+.c3-axis-y-label{
+	fill:#ef3f23;
+  font-family: "proxima-nova", sans-serif;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.c3-axis-y{
+	font-family: "proxima-nova", sans-serif;
+	font-weight:bold;
+	
+}
+
+.c3-axis-x-label{
+	fill:#ef3f23;
+	font-family: "proxima-nova", sans-serif;
+	font-weight:bold;
+	font-size:1.2em;
+}
+
+.c3-axis-x{
+	font-family: "proxima-nova", sans-serif;
+	font-weight:bold;
+}
+
+.c3-legend-item text{
+	font-family: "proxima-nova", sans-serif;
+	font-weight:bold;
+}
