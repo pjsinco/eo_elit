@@ -92,9 +92,6 @@
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/Education/postdoctoral-training/Pages/default.aspx" title="Postdoctoral Training">Postdoctoral Training</a>
                 </li>
-                <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/Education/OGME-development-initiative/Pages/default.aspx" title="OGME Development Initiative">OGME Development</a>
-                </li>
               </ul>
             </div> <!-- .footer__col -->
 
@@ -102,7 +99,7 @@
               <h3 class="footer__title">CME Opportunities</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="https://www.docmeonline.com/Default.aspx" title="AOA Professional Development">DO CME Online</a>
+                  <a href="https://minerva.osteopathic.org" title="AOA CME">Online Learning Modules</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/events/omed/Pages/default.aspx" title="Home - OMED: Osteopathic Medical Conference & Exposition">OMED</a>
