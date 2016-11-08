@@ -925,8 +925,8 @@ function elit_temp_c3_for_post_196768() {
 
   global $post;
 
-  //$target_id = 196768;
-  $target_id = 186295;
+  $target_id = 196768;
+  //$target_id = 186295;
 
   if ( $post->ID == $target_id ) {
 
