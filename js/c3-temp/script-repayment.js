@@ -1,8 +1,5 @@
+
 var chart = c3.generate({
-    padding: {
-      left: 72,
-      right: 10,
-    },
     data: {
         columns: [
             ['First monthly payment', 2271, 1306, 1350, 1083, 310, 310, 310, 465, 719],
@@ -36,9 +33,13 @@ var chart = c3.generate({
         x:{
             label: {
                 text:'Repayment plan',
-                position: 'outer-left'
+                position: 'inner-left'
                     },
             type: 'category',
+            tick: {
+            	rotate: 75,
+            	multiline:false
+            },
             categories: [ 'Standard','Graduated','Extended Fixed', 
             'Extended Graduated', 'REPAYE',
             'PAYE', 'IBR for New Borrowers',
