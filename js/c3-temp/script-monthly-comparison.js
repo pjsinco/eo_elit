@@ -1,5 +1,10 @@
 
 var chart = c3.generate({
+    padding: {
+      left: 62,
+      right: 0,
+    },
+    bindto: '#chart2', 
     data: {
         columns: [
             ['First monthly payment', 2271, 1306, 1350, 1083, 310, 310, 310, 465, 719],

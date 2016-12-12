@@ -1,5 +1,10 @@
 
 var chart = c3.generate({
+    padding: {
+      left: 72,
+      right: 0,
+    },
+    bindto: '#chart1',
     data: {
         columns: [
         ['Total amount paid', 272515, 292291, 405124, 439585, 203039, 137303, 137303, 304640, 445790],
