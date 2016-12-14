@@ -1,10 +1,5 @@
 
 var chart = c3.generate({
-    padding: {
-      left: 62,
-      right: 0,
-    },
-    bindto: '#chart2', 
     data: {
         columns: [
             ['First monthly payment', 2271, 1306, 1350, 1083, 310, 310, 310, 465, 719],
@@ -28,10 +23,11 @@ var chart = c3.generate({
         //width: 100 // this makes bar width 100px
     },
     axis: {
+        rotated:true,
         x:{
             label: {
                 text:'Repayment plan',
-                position: 'inner-left'
+                position: 'outer-middle'
                     },
                     tick:{
             rotate: 75,
@@ -50,13 +46,14 @@ var chart = c3.generate({
                 position: 'outer-middle'
                   },
             tick:{
-                format: d3.format("$,")  
+                values: ['1000', '2000', '3000', '4000'],
+                format: d3.format("$,"),  
                 }
            } 
         },
 
         legend:{
-            position: 'inset',
+            position: 'inset-right',
         },
 
  
