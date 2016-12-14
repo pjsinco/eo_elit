@@ -1,8 +1,8 @@
 var chart = c3.generate({
-    padding: {
-      left: 62,
-      right: 0,
-    },
+//    padding: {
+//      left: 62,
+//      right: 0,
+//    },
     bindto: '#chart2',
     data: {
         columns: [
@@ -29,13 +29,13 @@ var chart = c3.generate({
     axis: {
         rotated:true,
         x:{
-            label: {
-                text:'Repayment plan',
-                position: 'outer-middle'
-                    },
-                    tick:{
-            rotate: 75,
-            multiline: false
+//            label: {
+//                text:'Repayment plan',
+//                position: 'outer-middle'
+//            },
+            tick:{
+              rotate: 75,
+              multiline: true
             },
             type: 'category',
             categories: [ 'Standard','Graduated','Extended Fixed', 
@@ -51,7 +51,7 @@ var chart = c3.generate({
                   },
             tick:{
                 values: ['1000', '2000', '3000', '4000'],
-                format: d3.format("$,"),  
+                format: d3.format("$s"),  
                 }
            } 
         },
