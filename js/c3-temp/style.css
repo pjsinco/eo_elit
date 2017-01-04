@@ -1,5 +1,5 @@
 .c3-axis-y-label{
-	fill:#ef3f23;
+	/*fill:#ef3f23;*/
   font-family: "proxima-nova", sans-serif;
 	font-weight:bold;
 	font-size:1.2em;
@@ -12,7 +12,7 @@
 }
 
 .c3-axis-x-label{
-	fill:#ef3f23;
+	/*fill:#ef3f23;*/
 	font-family: "proxima-nova", sans-serif;
 	font-weight:bold;
 	font-size:1.2em;
@@ -26,4 +26,16 @@
 .c3-legend-item text{
 	font-family: "proxima-nova", sans-serif;
 	font-weight:bold;
+}
+
+@media screen and (min-width: 480px) {
+
+  .postid-196768 .c3-axis-x-label,
+  .postid-196768 .c3-axis-y-label
+  .postid-196768 .c3-legend-item text,
+  .postid-196768 g.tick {
+    font-size: 1.3em;
+  }
+
+
 }

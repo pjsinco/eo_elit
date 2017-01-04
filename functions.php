@@ -957,8 +957,16 @@ function elit_temp_c3_for_post_196768() {
     );
 
     wp_enqueue_script(
-      'c3-chart-script',
-      get_template_directory_uri() . '/js/c3-temp/script-repayment.js',
+      'c3-chart-script-loan-forgiveness',
+      get_template_directory_uri() . '/js/c3-temp/script-loan-forgiveness.js',
+      array( 'd3-library-script', 'c3-library-script' ),
+      false,
+      true
+    );
+
+    wp_enqueue_script(
+      'c3-chart-script-monthly-comparison',
+      get_template_directory_uri() . '/js/c3-temp/script-monthly-comparison.js',
       array( 'd3-library-script', 'c3-library-script' ),
       false,
       true
