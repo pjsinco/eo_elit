@@ -99,7 +99,7 @@
               <h3 class="footer__title">CME Opportunities</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="https://minerva.osteopathic.org" title="AOA CME">Online Learning Modules</a>
+                  <a href="https://minerva.osteopathic.org" title="Online CME">Online CME</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/events/omed/Pages/default.aspx" title="Home - OMED: Osteopathic Medical Conference & Exposition">OMED</a>
