@@ -77,9 +77,6 @@
                   <a href="http://www.osteopathic.org/inside-aoa/public-policy/regulatory-issues/Pages/default.aspx" title="Regulatory Issues">Regulatory Issues</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://osteopathic.org/inside-aoa/advocacy/Pages/action-center.aspx" title="Write to Congress">Write to Congress</a>
-                </li>
-                <li class="footer__list-item">
                   <a href="http://www.osteopathic.org/inside-aoa/public-policy/state-government-affairs/Pages/default.aspx" title="State Government Affairs">State Government Affairs</a>
                 </li>
               </ul>
