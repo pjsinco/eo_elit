@@ -94,7 +94,11 @@ function elit_story_image_shortcode($atts, $content = null) {
     $caption = $attachment->post_excerpt;
     $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
     $image_size = 'secondary';
-
+  } elseif ( $size == 'stamp' ) {
+    $largest = wp_get_attachment_image_src( $a['id'], 'elit-stamp', false );
+    $caption = $attachment->post_content;
+    $credit = null;
+    $image_size = 'quaternary';
   } else {
     $largest = wp_get_attachment_image_src( $a['id'], 'elit-large', false );
     $caption = $attachment->post_excerpt;
@@ -106,9 +110,8 @@ function elit_story_image_shortcode($atts, $content = null) {
   $ricg_responsive_str = '<figure class="image image--' . $image_size . 
     ( $a['size'] == 'small' ? ' fractional' : '' ) . '">';
   $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
-  if ( $size != 'mug' ) {
-    // we'll need srcset if we're not serving up a mugshot
-    $ricg_responsive_str .= tevkori_get_srcset_string( $a['id'], $largest[0] );
+  if ( $size != 'mug' && $size != 'stamp' ) {
+    $ricg_responsive_str .= 'srcset="' . wp_get_attachment_image_srcset( $a['id'], $largest[0] ) . '" ';
   } 
   $ricg_responsive_str .= '/>';
   $ricg_responsive_str .= '<figcaption class="caption">';
