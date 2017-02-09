@@ -42,6 +42,7 @@ function elit_setup() {
   add_image_size( 'elit-large', 768, false );
   add_image_size( 'elit-medium', 480, false ); 
   add_image_size( 'elit-mug', 180 ); // vertical; mugshot
+  add_image_size( 'elit-stamp', 120, 120, array( 'center', 'top' ) ); // vertical; mugshot
 
   // these precisely cropped because they often
   // need to align on the front page
