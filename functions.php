@@ -258,7 +258,7 @@ function elit_scripts() {
     get_stylesheet_uri(),
     array(),
     filemtime( get_template_directory() . '/style.css' ), 
-    'screen'
+    'all'
   );
 
   wp_register_script( 'modernizr', 
