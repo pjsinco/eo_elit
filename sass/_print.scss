@@ -1,5 +1,9 @@
 @media print {
 
+  .story-sidebar {
+    border: 1px solid #000000;
+  }
+
   .image-overlay__body,
   .story-meta__author-email,
   .story-nav,
@@ -7,6 +11,8 @@
   .footer__list--horiz,
   #comments,
   #photoCredit,
+  figure,
+  img,
   figcaption,
   .prev-next,
   .story-footer__note,
@@ -20,7 +26,7 @@
   .image__img,
   .ad,
   .site-navigation {
-    display: none;
+    display: none !important;
   }
 
   .banner {
