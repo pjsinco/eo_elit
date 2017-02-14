@@ -253,7 +253,7 @@ function elit_photo_credit_for_top_of_page() {
   $credit = get_post_meta( get_the_id(), 'elit_standalone_credit', true );
   if ( $credit ) {
 
-    $credit_line  = '<div class="story-footer__section">';
+    $credit_line  = '<div id="photoCredit" class="story-footer__section">';
     $credit_line .= '<div class="story-footer__title">Credit</div>';
     $credit_line .= '<div class="story-footer__body">';
     $credit_line .= $credit;

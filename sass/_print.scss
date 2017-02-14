@@ -1,0 +1,29 @@
+@media print {
+
+  .story-meta__author-email,
+  .story-nav,
+  .footer__body,
+  .footer__list--horiz,
+  #comments,
+  #photoCredit,
+  figcaption,
+  .prev-next,
+  .story-footer__note,
+  #secondary,
+  .comments__respond,
+  .comment-link,
+  .suggested,
+  .suggested__bigtitle,
+  .story-footer__jump-link,
+  .social,
+  .image__img,
+  .ad,
+  .site-navigation {
+    display: none;
+  }
+
+  .banner {
+    box-shadow: none;
+  }
+
+}
