@@ -1,0 +1,22 @@
+/**
+ *
+ * Vex overrides
+ *
+ * @see Elit Comment Modal in functions.php
+ */
+
+.vex.vex-theme-default .vex-content {
+  font-family: $primaryfont;
+  border-radius: 0;
+  border: 1px solid $primarycolor;
+  color: $primarycolor;
+  background-color: $white;
+}
+
+.vex.vex-theme-default .vex-dialog-button.vex-dialog-button-primary {
+  background-color: $primarycolor;
+}
+
+.vex.vex-theme-default .vex-dialog-button {
+  border-radius: 0;
+}
