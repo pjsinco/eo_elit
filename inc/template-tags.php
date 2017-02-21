@@ -507,9 +507,6 @@ function elit_comment( $comment, $args, $depth ) {
             <h3 class="comment__author-name"><?php echo $comment->comment_author; ?></h3>
             </h3>
           </div>
-          <?php if ( $comment->comment_approved == '0' ): ?>
-            <em>Your comment is awaiting moderation.</em><br />
-          <?php endif; ?>
           <div class="comment__metadata">
             <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
               <time datetime="<?php comment_time( 'c' ); ?>" pubdate>
@@ -522,6 +519,9 @@ function elit_comment( $comment, $args, $depth ) {
 
         <div class="comment__content">
           <?php comment_text(); ?>
+          <?php if ( $comment->comment_approved == '0' ): ?>
+            <span class='comment__alert'>Your comment is awaiting moderation.</span><br />
+          <?php endif; ?>
         </div>
 
         <div class="comment__reply">
