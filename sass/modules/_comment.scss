@@ -68,12 +68,16 @@
 
   &__alert {
     @extend %metadata-base;
-    display: block;
     color: $primarycolor;
     padding: .625rem;
+    margin-bottom: 1rem;
     text-align: center;
     background-color: lighten($primarycolor, 40%);
     border: 1px solid $primarycolor;
+
+    & span {
+      text-transform: none;
+    }
   }
   
   &__metadata {
