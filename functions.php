@@ -376,6 +376,7 @@ function elit_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 

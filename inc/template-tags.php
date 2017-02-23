@@ -520,7 +520,7 @@ function elit_comment( $comment, $args, $depth ) {
         <div class="comment__content">
           <?php comment_text(); ?>
           <?php if ( $comment->comment_approved == '0' ): ?>
-            <span class='comment__alert'>Your comment is awaiting moderation.</span><br />
+            <div class='comment__alert'>Your comment is awaiting moderation.<br><span>Please allow up to two business days for review.</span>
           <?php endif; ?>
         </div>
 
