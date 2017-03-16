@@ -119,10 +119,10 @@
                 </li>
               </ul>
               
-              <h3 class="footer__title">DO Profiles</h3>
+              <h3 class="footer__title">Physician Profiles</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="https://www.doprofiles.org/sign_in.cfm" title="AOIA - Account Sign In">Order Physician Credentialing Reports</a>
+                  <a href="https://aoaprofiles.org/" title="AOA Profiles">Order Physician Credentialing Reports</a>
                 </li>
               </ul>
               
