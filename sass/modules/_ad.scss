@@ -86,7 +86,7 @@
     text-align: center;
     width: 100%;
     max-width: $article-max-width;
-    overflow-x: scroll;
+    overflow-x: auto;
 
     /* Prevent page flickering  when ad changes */
     & img {
