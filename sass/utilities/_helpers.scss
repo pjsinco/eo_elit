@@ -12,3 +12,39 @@
   }
 
 }
+
+%center {
+  margin: 0 auto;
+}
+
+.space-to-right {
+  margin-right: .25em;
+}
+
+.space-to-left {
+  margin-left: .25em;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.m-b {
+  margin-bottom: 1rem !important;
+
+  &--lg {
+    margin-bottom: 2rem !important;
+  }
+
+  &--xl {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.no-m-b {
+  margin-bottom: 0 !important;
+}
