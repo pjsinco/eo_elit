@@ -18,6 +18,18 @@
   float: left;
 }
 
+.m-b {
+  margin-bottom: 1rem !important;
+
+  &--lg {
+    margin-bottom: 2rem !important;
+  }
+
+  &--xl {
+    margin-bottom: 3rem !important;
+  }
+}
+
 .no-m-b {
   margin-bottom: 0 !important;
 }
