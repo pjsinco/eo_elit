@@ -48,3 +48,8 @@
 .no-m-b {
   margin-bottom: 0 !important;
 }
+
+.contain {
+  max-width: 100% !important;
+  overflow: auto;
+}
