@@ -871,6 +871,23 @@ function elit_add_excerpt_to_page_styles() {
 add_action('init' , 'elit_add_excerpt_to_page_styles');
 
 
+function elit_oneoff_for_post_202732() {
+
+  global $post;
+
+  $target_id = 202732;
+
+  if ( $post->ID != $target_id ) return;
+
+  wp_enqueue_script(
+    'ashley-quiz-costs-of-care',
+    get_template_directory_uri() . '/js/temp/ashley-quiz-costs-of-care.js',
+    array( 'jquery' ),
+    false,
+    true
+  ) ;
+}
+add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_202732', 10 );
 
 
 /**
