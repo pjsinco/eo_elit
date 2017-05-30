@@ -999,3 +999,35 @@ add_action('wp_enqueue_scripts' , 'elit_temp_c3_for_post_196768', 10 );
  * TEMP -- end
  *
  */
+function is_dev_env() {
+  return WP_ENV === 'development';
+}
+
+function elit_add_google_tag_manager_code(){
+  if ( is_dev_env() ) {
+    return;
+  }
+?> 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W99R32S');</script>
+<!-- End Google Tag Manager -->
+<?php
+}
+add_action('wp_head' , 'elit_add_google_tag_manager_code');
+
+function elit_add_google_tag_manager_body_code() {
+  if ( is_dev_env() ) {
+    return;
+  }
+?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W99R32S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php 
+}
+add_action( 'just_opened_body_tag' , 'elit_add_google_tag_manager_body_code' );
