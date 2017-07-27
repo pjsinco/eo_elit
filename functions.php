@@ -1031,3 +1031,44 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <?php 
 }
 add_action( 'just_opened_body_tag' , 'elit_add_google_tag_manager_body_code' );
+
+
+/**
+ * Retrieve the url of a post's elit_thumb.
+ * The elit_thumb meta data property is the image to use on a post
+ * in place of a featured image.
+ *
+ * @param int $post_id The post id
+ * @param string $size The image size to retrieve
+ * @return string      The full url of the elit_thum
+ */
+function elit_get_thumb_url($post_id, $size = 'elit-super') {
+
+}
+
+/**
+ * Make sure we add an image to the Open Graph meta tags.
+ * This ensures an image will appear when someone posts a story
+ * on Facebook or Twitter.
+ *
+ * Note: We're only adding an Open Graph image tag. Twitter cards
+ * will fall back to this Open Graph tag.
+ *
+ * @see https://dev.twitter.com/cards/getting-started#opengraph
+ * @see https://github.com/Yoast/wordpress-seo/issues/1060
+ *
+ */
+function elit_opengraph_add_social_thumbnail() {
+
+  global $post;
+
+  if ( has_post_thumbnail( $post->ID ) ) return;
+
+  $thumb = get_post_meta( $post->ID, 'elit_thumb' );
+  $thumb_url = wp_get_attachment_image_src( $thumb[0], 'elit-super' );
+  
+  if ( $thumb_url ) {
+    $GLOBALS['wpseo_og']->image_output( $thumb_url[0] );
+  }
+}
+add_action( 'wpseo_opengraph', 'elit_opengraph_add_social_thumbnail' );
