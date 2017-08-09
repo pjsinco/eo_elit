@@ -1033,6 +1033,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 add_action( 'just_opened_body_tag' , 'elit_add_google_tag_manager_body_code' );
 
 
+function elit_add_worldata_pixel() {
+  if ( is_dev_env() || is_admin() ) {
+    return;
+  }
+?>
+<script>
+var versaTag = {};
+versaTag.id = "7475";
+versaTag.sync = 0;
+versaTag.dispType = "js";
+versaTag.ptcl = "HTTPS";
+versaTag.bsUrl = "bs.serving-sys.com/BurstingPipe";
+versaTag.activityParams = { "Session":"" };
+versaTag.retargetParams = {};
+versaTag.dynamicRetargetParams = {};
+versaTag.conditionalParams = {};
+</script>
+<script id="ebOneTagUrlId" src="https://secure-ds.serving-sys.com/SemiCachedScripts/ebOneTag.js"></script>
+<noscript>
+<iframe src="https://bs.serving-sys.com/BurstingPipe?cn=ot&amp;onetagid=7475&amp;ns=1&amp;activityValues=$$Session=[Session]$$&amp;retargetingValues=$$$$&amp;dynamicRetargetingValues=$$$$&amp;acp=$$$$&amp;" style="display:none;width:0px;height:0px"></iframe>
+</noscript>
+<?php
+}
+add_action('just_opened_body_tag' , 'elit_add_worldata_pixel');
+
 /**
  * Retrieve the url of a post's elit_thumb.
  * The elit_thumb meta data property is the image to use on a post
