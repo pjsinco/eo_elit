@@ -1,18 +1,5 @@
 <?php
 
-function elit_hiya_shortcode($atts) {
-  $a = shortcode_atts(
-    array(
-      'name' => 'Josie',
-      'occupation' => 'Guitar player',
-    ),
-    $atts
-  );
-
-  return 'hiya ' . $a['name'] . '. You are a ' . $a['occupation'] . '.';
-}
-add_shortcode('hiya', 'elit_hiya_shortcode');
-
 function elit_ed_note_shortcode($atts, $content = null) {
 
     //[ed-note]This is <a href="#">hiya</a> an editor's note[/ed-note]
@@ -259,3 +246,19 @@ function elit_story_chart_shortcode( $atts, $content = null ) {
   return $markup;
 }
 add_shortcode('story-chart', 'elit_story_chart_shortcode' );
+
+function elit_add_story_gif_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => ''
+    ), $atts
+  );
+
+  if ( $a['id'] === '' ) return;
+
+  $shortcode = sprintf( '[story-image id="%s" size="original"]', $a['id'] );
+
+  return do_shortcode( $shortcode );
+}
+add_shortcode( 'story-gif', 'elit_add_story_gif_shortcode' );
