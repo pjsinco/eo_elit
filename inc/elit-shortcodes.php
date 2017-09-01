@@ -99,6 +99,11 @@ function elit_story_image_shortcode($atts, $content = null) {
     $caption = $attachment->post_content;
     $credit = null;
     $image_size = 'quaternary';
+  } elseif ( $size == 'original' ) {
+    $largest = wp_get_attachment_image_src( $a['id'], 'full', false );
+    $caption = $attachment->post_content;
+    $credit = null;
+    $image_size = 'secondary';
   } else {
     $largest = wp_get_attachment_image_src( $a['id'], 'elit-large', false );
     $caption = $attachment->post_excerpt;
