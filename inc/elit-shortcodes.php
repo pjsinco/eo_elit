@@ -122,6 +122,7 @@ function elit_pull_quote_shortcode($atts, $content = null ) {
       'quote' => '',
       'style' => 'left',
       'speaker' => '',
+      'show' => true,
       'image-id' => '',
     ), $atts
   );
@@ -132,7 +133,9 @@ function elit_pull_quote_shortcode($atts, $content = null ) {
 
   // so in this ternary operator, we're deciding whether we have full column width 
   // or a just a fraction
-  $str .= ('full' == $a['style']) ? '--full fractional--full">' : ' fractional">';
+  $str .= ('full' == $a['style']) ? '--full fractional--full' : ' fractional';
+  $str .= (bool) $a['show'] ? ' pq--show' : '';
+  $str .= '">';
   $str .= '<div class="pq__body">';
   $str .= $a['quote'];
   $str .= '</div>';
