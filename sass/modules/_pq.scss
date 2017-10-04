@@ -4,9 +4,13 @@
 
 
 %pq-base {
-  font-family: $primaryfont;
-  color: $verydark;
   display: none;
+  font-family: $primaryfont;
+  text-align: left;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: $verydark;
+  border-top: 1px solid $primarycolor;
 
   @include breakpoint($screen $large-minor-start) {
     display: block;
@@ -15,13 +19,18 @@
 
 .pq {
   @extend %pq-base;
-  text-align: right;
   
+  @include breakpoint($screen $large-minor-start) {
+    text-align: right;
+    border-top: none;
+  }
+
+  &--show {
+    display: block !important;
+  }
 
   &--full {
     @extend %pq-base;
-    text-align: left;
-    border-top: 1px solid $primarycolor;
   }
 
   &:after {
