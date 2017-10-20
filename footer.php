@@ -158,7 +158,9 @@
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
-    <script src="http://localhost:35729/livereload.js"></script>
+    <?php if ( is_dev_env() ): ?>
+      <script src="http://localhost:35729/livereload.js"></script>
+    <?php endif; ?>
     <?php wp_footer(); ?>
   </body>
 </html>
