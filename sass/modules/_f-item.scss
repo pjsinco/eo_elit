@@ -148,6 +148,8 @@
     @extend %f-item-base;
 
     @include breakpoint($screen $large-start) {
+      min-height: 11.5em;
+
       &:not(:last-of-type) {
         padding-bottom: 1em;
       }
