@@ -580,6 +580,7 @@ function elit_save_featurable_meta( $post_id, $post ) {
 add_action( 'load-post.php', 'elit_thumb_meta_box_setup' );
 add_action( 'load-post-new.php', 'elit_thumb_meta_box_setup' );
 
+
 function elit_thumb_meta_box_setup() {
   add_action( 'add_meta_boxes', 'elit_add_thumb_meta_box' );
   add_action( 'save_post', 'elit_save_thumb_meta', 10, 2 );
@@ -616,6 +617,7 @@ function elit_thumb_meta_box( $object, $box ) {
     <label for="widefat">The ID of the thumbnail image to use with this story. Not needed if a Featured Image is selected.</label>
     <br />
     <input class="widefat" type="text" name="elit-thumb-meta" id="elit-thumb-meta" value="<?php echo esc_attr( get_post_meta( $object->ID, 'elit_thumb', true ) ); ?>" />
+
   </p>
   <?php 
 }
