@@ -873,6 +873,8 @@ add_action('init' , 'elit_add_excerpt_to_page_styles');
 
 function elit_oneoff_for_post_202732() {
 
+  if ( ! is_singular() ) return;
+
   global $post;
 
   $target_id = 202732;
@@ -1117,7 +1119,71 @@ function elit_opengraph_add_social_thumbnail() {
   }
 }
 add_action( 'wpseo_opengraph', 'elit_opengraph_add_social_thumbnail' );
+
+function elit_get_available_dependencies( $all_fields ) {
+
+  if ( ! $all_fields ) return false;
+
+  // Dependencies begin with "elit_load_"
+  return array_filter( array_keys( $all_fields ), function( $val ) {
+    return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
+  } );
+}
+
+function elit_get_possible_dependencies( $all_fields, 
+                                         $all_available_dependencies ) {
+
+    if ( ! ( $all_fields && $all_available_dependencies ) ) return false;
+
+    return 
+      array_filter_key( $all_fields, 
+                        function( $value ) use ( $all_available_dependencies ) {
+                          return in_array( $value, 
+                                           $all_available_dependencies, 
+                                           true );
+                        } );
+}  
+
+function elit_get_dependencies_to_load( $possible_deps ) {
+  
+  if ( ! $possible_deps ) return false;
+
+  return array_keys( array_filter( $possible_deps, function( $value ) {
+      return $value == true;
+  } ) );
+}
  
+function elit_rename_dependencies( $deps_to_load ) {
+
+  if ( ! $deps_to_load ) return false;
+
+  // Rename jquery dependency so WP will load it
+  return array_map( function( $dep ) {
+    return $dep === 'elit_load_jquery' ? 'jquery' : $dep;
+  }, $deps_to_load );
+}
+
+/**
+ * List the JavaScript library dependencies needed based on the Advanced
+ * Custom Fields fields associated with a post.
+ *
+ * @param array $all_fields - The result of ACF function get_fields()
+ * @return array | false    - The dependencies to load
+ */
+function elit_get_script_dependencies_for_post( $all_fields ) {
+
+  if ( ! $all_fields ) return false;
+
+  $all_available_deps = elit_get_available_dependencies( $all_fields );
+  $possible_deps = elit_get_possible_dependencies( $all_fields, 
+                                                   $all_available_deps );
+  $deps_to_load = elit_get_dependencies_to_load( $possible_deps );
+
+  $deps = elit_rename_dependencies( $deps_to_load );
+
+  return $deps;
+}
+
 /**
  * Load any post-specific scripts.
  * 
@@ -1141,29 +1207,9 @@ function elit_load_scripts_for_post() {
 
   $script = $all_fields['elit_script_file'];
 
-  // Dependencies begin with "elit_load_"
-  $all_available_dependencies = 
-    array_filter( array_keys( $all_fields ), function( $val ) {
-      return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
-    } );
+  $deps = elit_get_script_dependencies_for_post( $all_fields );
 
-  $possible_deps = 
-    array_filter_key( $all_fields, 
-                      function( $value ) use ( $all_available_dependencies ) {
-                        return in_array( $value, 
-                                         $all_available_dependencies, 
-                                         true );
-                      } );
-
-  $deps_to_load = 
-    array_keys( array_filter( $possible_deps, function( $value ) {
-      return $value == true;
-    } ) );
-
-  // Rename jquery dependency so WP will load it
-  $deps = array_map( function( $dep ) {
-    return $dep === 'elit_load_jquery' ? 'jquery' : $dep;
-  }, $deps_to_load );
+  if ( ! $deps ) return;
 
   wp_enqueue_script( 
     $script['title'],
