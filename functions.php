@@ -907,26 +907,6 @@ function elit_oneoff_for_post_205390()
 }
 add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_205390');
 
-
-function elit_oneoff_for_post_206341() {
-
-  global $post;
-
-  $target_id = 206341;
-
-  if ( $post->ID != $target_id ) return;
-
-  wp_enqueue_script(
-    'nutrition-quiz-2017-10-25',
-    get_template_directory_uri() . '/js/nutrition-quiz-2017-10-25.js',
-    array( 'jquery' ),
-    false,
-    true
-  );
-}
-add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_206341');
-
-
 /**
  * TEMP -- start
  *
