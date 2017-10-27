@@ -8,7 +8,7 @@
 
 ?>
 
-  <?php if ($spotlight && !empty($spotlight)): ?>
+  <?php if ( isset( $spotlight ) && ! empty( $spotlight )): ?>
       <div class="row">
         <div class="size-1-of-1">
           <div class="section-title-hat">
