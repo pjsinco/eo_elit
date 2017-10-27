@@ -1134,3 +1134,58 @@ function elit_opengraph_add_social_thumbnail() {
   }
 }
 add_action( 'wpseo_opengraph', 'elit_opengraph_add_social_thumbnail' );
+ 
+/**
+ * Load any post-specific scripts.
+ * 
+ * The scripts are set in the post via an Advanced Custom Fields
+ * meta box.
+ *
+ * @return none
+ * @author pjs
+ */
+function elit_load_scripts_for_post() {
+
+  if ( ! is_singular() ) return;
+
+  global $post;
+
+  $all_fields = get_fields( $post->ID );
+
+  if ( ! in_array( 'elit_script_file', $all_fields ) ) return;
+
+  $script = $all_fields['elit_script_file'];
+
+  // Dependencies begin with "elit_load_"
+  $all_available_dependencies = 
+    array_filter( array_keys( $all_fields ), function( $val ) {
+      return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
+    } );
+
+  $possible_deps = 
+    array_filter_key( $all_fields, 
+                      function( $value ) use ( $all_available_dependencies ) {
+                        return in_array( $value, 
+                                         $all_available_dependencies, 
+                                         true );
+                      } );
+
+  $deps_to_load = 
+    array_keys( array_filter( $possible_deps, function( $value ) {
+      return $value == true;
+    } ) );
+
+  // Rename jquery dependency so WP will load it
+  $deps = array_map( function( $dep ) {
+    return $dep === 'elit_load_jquery' ? 'jquery' : $dep;
+  }, $deps_to_load );
+
+  wp_enqueue_script( 
+    $script['title'],
+    $script['url'],
+    $deps, 
+    false, 
+    true
+  );
+}
+add_action( 'wp_enqueue_scripts', 'elit_load_scripts_for_post' );
