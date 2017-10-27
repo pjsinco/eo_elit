@@ -871,44 +871,6 @@ function elit_add_excerpt_to_page_styles() {
 add_action('init' , 'elit_add_excerpt_to_page_styles');
 
 
-function elit_oneoff_for_post_202732() {
-
-  if ( ! is_singular() ) return;
-
-  global $post;
-
-  $target_id = 202732;
-
-  if ( $post->ID != $target_id ) return;
-
-  wp_enqueue_script(
-    'ashley-quiz-costs-of-care',
-    get_template_directory_uri() . '/js/temp/ashley-quiz-costs-of-care.js',
-    array( 'jquery' ),
-    false,
-    true
-  ) ;
-}
-add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_202732', 10 );
-
-//function elit_oneoff_for_post_205390()
-//{
-//  global $post;
-//
-//  $target_id = 205390;
-//
-//  if ( $post->ID != $target_id ) return;
-//
-//  wp_enqueue_script(
-//    'specialty-quiz-1',
-//    get_template_directory_uri() . '/js/specialty-quiz-1.js',
-//    array(),
-//    false,
-//    true
-//  );
-//}
-//add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_205390');
-
 /**
  * TEMP -- start
  *
