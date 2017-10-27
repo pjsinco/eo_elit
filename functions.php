@@ -1153,9 +1153,7 @@ function elit_get_dependencies_to_load( $possible_deps ) {
   } ) );
 }
  
-function elit_rename_dependencies( $deps_to_load ) {
-
-  if ( ! $deps_to_load ) return false;
+function elit_rename_dependencies( $deps_to_load = array()) {
 
   // Rename jquery dependency so WP will load it
   return array_map( function( $dep ) {
@@ -1208,8 +1206,6 @@ function elit_load_scripts_for_post() {
   $script = $all_fields['elit_script_file'];
 
   $deps = elit_get_script_dependencies_for_post( $all_fields );
-
-  if ( ! $deps ) return;
 
   wp_enqueue_script( 
     $script['title'],
