@@ -669,44 +669,6 @@ function array_filter_key( $arr, $callback ) {
   return array_intersect_key( $arr, array_flip( $matched_keys ) );
 }
 
-/**
- * Load any post-specific scripts.
- * 
- * The scripts are set in the post via an Advanced Custom Fields
- * meta box.
- *
- * @param array   $all_fields   Advanced Custom Fields fields
- * @return none
- * @author pjs
- */
-function elit_load_scripts_for_post( $all_fields ) {
-
-  $script = $all_fields['elit_script_file'];
-
-  if ( $script ) {
-
-    // Dependencies begin with "elit_load_"
-    $all_available_dependencies = array_filter( array_keys( $all_fields ), function( $val ) {
-      return substr( $val, 0, strlen( 'elit_load_' ) ) == 'elit_load_';
-    } );
-
-    $possible_deps = array_filter_key( $all_fields, function( $value ) use ( $all_available_dependencies ) {
-      return in_array( $value, $all_available_dependencies, true );
-    } );
-
-    $deps_to_load = array_keys( array_filter( $possible_deps, function( $value ) {
-      return $value == true;
-    } ) );
-
-    wp_enqueue_script( 
-      $script['title'],
-      $script['url'],
-      $deps_to_load, 
-      false, 
-      true
-    );
-  }
-}
 
 /**
  * A Series of helper functions to help us distinguish

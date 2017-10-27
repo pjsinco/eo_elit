@@ -6,7 +6,6 @@
  */
 ?>
 
-
 <?php $layout = 'one-col'; ?>
 
 <?php get_header(); ?>
@@ -20,8 +19,6 @@
           $spotlight_post = get_post();
           $spotlight = get_fields( $spotlight_post->ID );
           $permalink = get_permalink( $spotlight_post->ID );
-
-          elit_load_scripts_for_post( $spotlight );
 
           include( locate_template( 'content-spotlight.php' ) );
         ?>
