@@ -2,8 +2,6 @@
 
 <?php get_template_part('sidebar', 'leaderboard'); ?>
 
-<?php //elit_load_scripts_for_post(); ?>
-
 <?php 
   // TODO We have the makings for distinguishing layout types.
   // For now, we're sticking with two-col only. 

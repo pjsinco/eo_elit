@@ -8,10 +8,6 @@
 
 ?>
 
-  <?php 
-    elit_load_scripts_for_post( $spotlight );
-  ?>
-    
   <?php if ($spotlight && !empty($spotlight)): ?>
       <div class="row">
         <div class="size-1-of-1">
