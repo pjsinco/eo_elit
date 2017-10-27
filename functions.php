@@ -1122,11 +1122,14 @@ function elit_get_thumb_url($post_id, $size = 'elit-super') {
  */
 function elit_opengraph_add_social_thumbnail() {
 
+  if ( ! is_singular() ) return;
+
   global $post;
 
-  if ( has_post_thumbnail( $post->ID ) ) return;
+  if ( ! has_post_thumbnail( $post->ID ) ) return;
 
   $thumb = get_post_meta( $post->ID, 'elit_thumb' );
+
   $thumb_url = wp_get_attachment_image_src( $thumb[0], 'elit-super' );
   
   if ( $thumb_url ) {
@@ -1151,6 +1154,8 @@ function elit_load_scripts_for_post() {
   global $post;
 
   $all_fields = get_fields( $post->ID );
+
+  if ( ! $all_fields ) return;
 
   if ( ! in_array( 'elit_script_file', $all_fields ) ) return;
 
