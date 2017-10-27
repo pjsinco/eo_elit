@@ -891,23 +891,23 @@ function elit_oneoff_for_post_202732() {
 }
 add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_202732', 10 );
 
-function elit_oneoff_for_post_205390()
-{
-  global $post;
-
-  $target_id = 205390;
-
-  if ( $post->ID != $target_id ) return;
-
-  wp_enqueue_script(
-    'specialty-quiz-1',
-    get_template_directory_uri() . '/js/specialty-quiz-1.js',
-    array(),
-    false,
-    true
-  );
-}
-add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_205390');
+//function elit_oneoff_for_post_205390()
+//{
+//  global $post;
+//
+//  $target_id = 205390;
+//
+//  if ( $post->ID != $target_id ) return;
+//
+//  wp_enqueue_script(
+//    'specialty-quiz-1',
+//    get_template_directory_uri() . '/js/specialty-quiz-1.js',
+//    array(),
+//    false,
+//    true
+//  );
+//}
+//add_action('wp_enqueue_scripts' , 'elit_oneoff_for_post_205390');
 
 /**
  * TEMP -- start
