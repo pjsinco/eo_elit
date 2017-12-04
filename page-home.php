@@ -65,7 +65,7 @@
         // NOTE: The categories we're selecting (3,4,5,6,7) are the IDs of the 
         // the categories on the live site. 
         // They correspond to Lifestyle (3), Patient Care (4), 
-        // Policy (5), Profession (6), Training (7)
+        // Advocacy (5), Profession (6), Training (7)
         $query = "
           select *
           from 
@@ -165,7 +165,7 @@
           'posts_per_page' => 4,
           'post_type' => $post_types_to_include,
           'ignore_sticky_posts' => 1,
-          'category_name' => 'lifestyle,patient-care,policy,profession,training',
+          'category_name' => 'lifestyle,patient-care,advocacy,profession,training',
         );
         $secondary = new WP_Query ( $args );
         if ( $secondary->have_posts() ) {
