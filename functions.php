@@ -1070,7 +1070,8 @@ function elit_opengraph_add_social_thumbnail() {
 
   global $post;
 
-  if ( ! has_post_thumbnail( $post->ID ) ) return;
+  // If we already have a featured image, we don't need to add it
+  if ( has_post_thumbnail( $post->ID ) ) return;
 
   $thumb = get_post_meta( $post->ID, 'elit_thumb' );
 
