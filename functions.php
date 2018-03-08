@@ -493,6 +493,20 @@ function elit_picture_elem_shim() {
 //add_action('wp_head', 'elit_picture_elem_shim');
 
 /**
+ * Association Revenue Partners snippet for retargeting ads.
+ *
+ */
+function elit_add_arp_snippet() {
+  $src = '//nexus.ensighten.com/choozle/4769/Bootstrap.js';
+  $output  = "<script type=\"text/javascript\" src=\"$src\"></script>" . 
+             PHP_EOL;
+
+  echo $output;
+}
+add_action( 'wp_head' , 'elit_add_arp_snippet' );
+
+
+/**
  * Add html5 shim
  */
 function elit_html5_shim() {
