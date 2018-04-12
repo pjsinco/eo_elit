@@ -1203,3 +1203,30 @@ function elit_mail_from_name( $name ) {
   return 'WordPress - The DO';
 }
 add_filter( 'wp_mail_from_name', 'elit_mail_from_name' );
+
+function elit_sd_enqueue_scripts() {
+  $path = '/js/jquery.scrolldepth.min.js';
+
+  if ( ! is_admin() ) {
+    wp_enqueue_script(
+      'scrollDepth',
+      get_template_directory_uri() . $path, 
+      array( 'jquery' ),
+      false,
+      true
+    );
+
+    $output = '<script>' . PHP_EOL;
+    $output .= 'jQuery.scrollDepth({' . PHP_EOL;
+    $output .= '  minHeight: 2000,' . PHP_EOL;
+    $output .= '  pixelDepth: false,' . PHP_EOL;
+    $output .= '  elements: [\'.story-footer\'],' . PHP_EOL;
+    $output .= '  userTiming: false,' . PHP_EOL;
+    $output .= "});";
+    $output .= '</script>' . PHP_EOL;
+
+    wp_add_inline_script( 'scrollDepth', $output, 'after' );
+  }
+}
+add_action( 'wp_enqueue_scripts' , 'elit_sd_enqueue_scripts' );
+
