@@ -1193,3 +1193,13 @@ function elit_load_scripts_for_post() {
   );
 }
 add_action( 'wp_enqueue_scripts', 'elit_load_scripts_for_post' );
+
+function elit_mail_from( $email ) {
+  return 'wordpress@thedo.osteopathic.org';
+}
+add_filter( 'wp_mail_from', 'elit_mail_from' );
+
+function elit_mail_from_name( $name ) {
+  return 'WordPress - The DO';
+}
+add_filter( 'wp_mail_from_name', 'elit_mail_from_name' );
