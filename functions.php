@@ -1070,6 +1070,7 @@ function elit_sd_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts' , 'elit_sd_enqueue_scripts' );
 
+/* D I S A B L E D */
 function elit_add_http_to_https_script() {
   if ( ! is_dev_env() ) {
     /**
@@ -1086,4 +1087,4 @@ function elit_add_http_to_https_script() {
     echo $script;
   }
 }
-add_action( 'wp_head' , 'elit_add_http_to_https_script', 0 );
+//add_action( 'wp_head' , 'elit_add_http_to_https_script', 0 );
