@@ -335,18 +335,6 @@ function elit_scripts() {
 
   wp_add_inline_script( 'main', $output );
   
-  if ( ! is_dev_env() ) {
-    /**
-     * Forward from http to https
-     *
-     */
-    $script  = 'if (location.protocol != \'https:\') { ';
-    $script .= '  location.href = \'https:\' + ';
-    $script .= '  window.location.href.substring(window.location.protocol.length)';
-    $script .= '}';
-
-    wp_add_inline_script( 'main', $script);
-  }
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 
@@ -1081,3 +1069,21 @@ function elit_sd_enqueue_scripts() {
   }
 }
 add_action( 'wp_enqueue_scripts' , 'elit_sd_enqueue_scripts' );
+
+function elit_add_http_to_https_script() {
+  if ( ! is_dev_env() ) {
+    /**
+     * Forward from http to https
+     *
+     */
+    $script  = '<script type="text/javascript">';
+    $script .= 'if (location.protocol != \'https:\') { ';
+    $script .= '  location.href = \'https:\' + ';
+    $script .= '  window.location.href.substring(window.location.protocol.length)';
+    $script .= '}';
+    $script .= '</script>';
+
+    echo $script;
+  }
+}
+add_action( 'wp_head' , 'elit_add_http_to_https_script', 0 );
