@@ -290,76 +290,15 @@ function elit_scripts() {
     array( 'jquery' ), false, true
   );
 
-  
-  wp_enqueue_script( 'append-around' );
-  wp_enqueue_script( 'main' );
-
-
-  /**************************
-  
-    TEMPORARY
-      TEMPORARY
-        TEMPORARY
-          TEMPORARY
-            TEMPORARY
-          TEMPORARY
-        TEMPORARY
-      TEMPORARY
-    TEMPORARY
-  
-  ***************************/
-
   wp_register_script( 'elit_load_topojson', 
     get_template_directory_uri() . '/js/topojson.v1.min.js', 
     array( 'elit_load_d3' ), false, true
   );
 
-//  wp_register_script( 'd3-geomap-state-growth', 
-//    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
-//    array( 'd3', 'topojson' ), false, true
-//  );
-
   wp_register_script( 'elit_load_d3_tip', 
     get_template_directory_uri() . '/js/d3-tip.min.js', 
     array( 'elit_load_d3' ), false, true
   );
-
-//  wp_register_script( 'd3-grads-counties', 
-//    get_template_directory_uri() . '/js/d3-grads-counties-2015-05-04.js', 
-//    array( 'd3', 'topojson', 'd3-tip' ), false, true
-//  );
-
-  if ( is_front_page() ) {
-    wp_enqueue_script( 'topojson' );
-    wp_enqueue_script( 'd3-grads-counties' );
-  }
-
-  /**************************
-  
-                    TEMPORARY
-                  TEMPORARY
-                TEMPORARY
-              TEMPORARY
-            TEMPORARY
-              TEMPORARY
-                TEMPORARY
-                  TEMPORARY
-                    TEMPORARY
-  
-  ***************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   // if we're on a video page, load FitVids to make the video responsive
   if ( has_post_format( 'video' ) || is_front_page() || is_singular( 'elit_spotlight' ) )  {
@@ -367,16 +306,13 @@ function elit_scripts() {
     add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
   }
 
-  //if ( has_post_format( 'gallery' ) ) {
-    //add_action( 'wp_head' , 'elit_add_no_fouc_snippet' );
-  //}
-
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
+  wp_enqueue_script( 'append-around' );
+  wp_enqueue_script( 'main' );
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 
@@ -437,29 +373,6 @@ function elit_modify_jquery() {
   }    
 }
 add_action( 'wp_enqueue_scripts' , 'elit_modify_jquery' );
-
-
-
-/**
- * Custom template tags for this theme.
- */
-//require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-//require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-//require get_template_directory() . '/inc/jetpack.php';
-
 
 /**
  * Load our typekit fonts
