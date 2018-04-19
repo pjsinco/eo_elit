@@ -467,7 +467,7 @@ add_action( 'wp_enqueue_scripts' , 'elit_modify_jquery' );
  */
 function elit_load_typekit() {
 ?>
-  <script>
+<script>
   (function(d) {
     var config = {
       kitId: 'vdi5qvx',
