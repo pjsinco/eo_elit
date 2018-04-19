@@ -290,141 +290,67 @@ function elit_scripts() {
     array( 'jquery' ), false, true
   );
 
-  
-  wp_enqueue_script( 'append-around' );
-  wp_enqueue_script( 'main' );
-
-
-  /**************************
-  
-    TEMPORARY
-      TEMPORARY
-        TEMPORARY
-          TEMPORARY
-            TEMPORARY
-          TEMPORARY
-        TEMPORARY
-      TEMPORARY
-    TEMPORARY
-  
-  ***************************/
-
   wp_register_script( 'elit_load_topojson', 
     get_template_directory_uri() . '/js/topojson.v1.min.js', 
     array( 'elit_load_d3' ), false, true
   );
-
-//  wp_register_script( 'd3-geomap-state-growth', 
-//    get_template_directory_uri() . '/js/d3-geomap-state-growth.js', 
-//    array( 'd3', 'topojson' ), false, true
-//  );
 
   wp_register_script( 'elit_load_d3_tip', 
     get_template_directory_uri() . '/js/d3-tip.min.js', 
     array( 'elit_load_d3' ), false, true
   );
 
-//  wp_register_script( 'd3-grads-counties', 
-//    get_template_directory_uri() . '/js/d3-grads-counties-2015-05-04.js', 
-//    array( 'd3', 'topojson', 'd3-tip' ), false, true
-//  );
-
-  if ( is_front_page() ) {
-    wp_enqueue_script( 'topojson' );
-    wp_enqueue_script( 'd3-grads-counties' );
-  }
-
-  /**************************
-  
-                    TEMPORARY
-                  TEMPORARY
-                TEMPORARY
-              TEMPORARY
-            TEMPORARY
-              TEMPORARY
-                TEMPORARY
-                  TEMPORARY
-                    TEMPORARY
-  
-  ***************************/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // if we're on a video page, load FitVids to make the video responsive
   if ( has_post_format( 'video' ) || is_front_page() || is_singular( 'elit_spotlight' ) )  {
     wp_enqueue_script( 'fitvids' );
-    add_action( 'wp_footer' , 'elit_add_fitvids_script', 50 );
-  }
 
-  //if ( has_post_format( 'gallery' ) ) {
-    //add_action( 'wp_head' , 'elit_add_no_fouc_snippet' );
-  //}
+    /* Add our fitvids loader */
+    $output  = 'jQuery(document).ready(function() {' . PHP_EOL;
+    $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
+    $output .= "});";
+
+    wp_add_inline_script( 'fitvids', $output );
+  }
 
   // note: comment-reply is built in; found in wp-includes
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
+  wp_enqueue_script( 'append-around' );
+  wp_enqueue_script( 'main' );
 
+  /**
+   * Load our typekit fonts
+   * https://typekit.com/account/kits
+   */
+  $output  =  '(function(d) {' . PHP_EOL;
+  $output .=  '  var config = {' . PHP_EOL;
+  $output .=  '    kitId: \'vdi5qvx\',' . PHP_EOL;
+  $output .=  '    scriptTimeout: 3000,' . PHP_EOL;
+  $output .=  '    async: true' . PHP_EOL;
+  $output .=  '  },' . PHP_EOL;
+  $output .=  '  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src=\'https://use.typekit.net/\'+config.kitId+\'.js\';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)' . PHP_EOL;
+  $output .=  '})(document);';
+
+  wp_add_inline_script( 'main', $output );
+  
+  if ( ! is_dev_env() ) {
+    /**
+     * Forward from http to https
+     *
+     */
+    $script  = 'if (location.protocol != \'https:\') { ';
+    $script .= '  location.href = \'https:\' + ';
+    $script .= '  window.location.href.substring(window.location.protocol.length)';
+    $script .= '}';
+
+    wp_add_inline_script( 'main', $script);
+  }
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 
-/**
- * Enqueue admin scripts and styles.
- */
-function elit_admin_scripts() {
-  wp_register_script( 'elit-admin-inside-the-aoa',
-    get_template_directory_uri() . '/js/elit-admin-inside-the-aoa.js',
-    array('jquery'), false, true
-  );
 
-  wp_enqueue_script( 'elit-admin-inside-the-aoa' );
-}
-//add_action( 'admin_enqueue_scripts' , 'elit_admin_scripts' );
-
-/**
- * Add our fitvids loader
- *
- * http://fitvidsjs.com/
- */
-function elit_add_fitvids_script() {
-  $output = '<script>' . PHP_EOL;
-  $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
-  $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
-  $output .= "});";
-  $output .= '</script>' . PHP_EOL;
-
-  echo $output;
-}
-
-/**
- * Prevent flash of unstyled content (fouc)
- *
- * https://gist.github.com/johnpolacek/3827270
- *
- */
-//function elit_add_no_fouc_snippet() {
-//  $output  = '<style type="text/css">' . PHP_EOL;
-//  $output .= '.no-fouc { display: none; }' . PHP_EOL;
-//  $output .= '</style>' . PHP_EOL;
-//
-//  $output .= '<script>' . PHP_EOL;
-//  $output .= 'document.documentElement.className = \'no-fouc\'' . PHP_EOL;
-//  $output .= '</script>' . PHP_EOL;
-//
-//  echo $output;
-//}
 
 // use google's cdn for jquery and load it in the footer
 // http://www.wpbeginner.com/wp-themes/
@@ -438,61 +364,6 @@ function elit_modify_jquery() {
 }
 add_action( 'wp_enqueue_scripts' , 'elit_modify_jquery' );
 
-
-
-/**
- * Custom template tags for this theme.
- */
-//require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-//require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-//require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-//require get_template_directory() . '/inc/jetpack.php';
-
-
-/**
- * Load our typekit fonts
- * https://typekit.com/account/kits
- */
-function elit_load_typekit() {
-?>
-<script>
-  (function(d) {
-    var config = {
-      kitId: 'vdi5qvx',
-      scriptTimeout: 3000,
-      async: true
-    },
-    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-  })(document);
-</script>
-<?php
-}
-add_action('wp_head', 'elit_load_typekit');
-
-/**
- * Picture element html5 shim
- */
-function elit_picture_elem_shim() {
-  $output  = '<script>' . PHP_EOL;
-  $output .= 'document.createElement("picture");' . PHP_EOL;
-  $output .= '</script>' . PHP_EOL;
-  
-  echo $output;
-}
-//add_action('wp_head', 'elit_picture_elem_shim');
-
 /**
  * Association Revenue Partners snippet for retargeting ads.
  *
@@ -505,19 +376,6 @@ function elit_add_arp_snippet() {
   echo $output;
 }
 add_action( 'wp_head' , 'elit_add_arp_snippet' );
-
-
-/**
- * Add html5 shim
- */
-function elit_html5_shim() {
-  $output =  '<!--[if lt IE 9]>' . PHP_EOL;
-  $output .= '<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>' . PHP_EOL;
-  $output .= '<![endif]-->' . PHP_EOL;
-
-  echo $output;
-}
-add_action('wp_head', 'elit_html5_shim');
 
 function elit_append_around() {
   $output = '<script>' . PHP_EOL;
@@ -990,13 +848,8 @@ function elit_temp_c3_for_post_196768() {
 }
 add_action('wp_enqueue_scripts' , 'elit_temp_c3_for_post_196768', 10 );
 
-
-/**
- * TEMP -- end
- *
- */
 function is_dev_env() {
-  return WP_ENV === 'development';
+  return WP_ENV !== null && WP_ENV === 'development';
 }
 
 function elit_add_google_tag_manager_code(){
@@ -1217,17 +1070,14 @@ function elit_sd_enqueue_scripts() {
       true
     );
 
-    $output = '<script>' . PHP_EOL;
     $output .= 'jQuery.scrollDepth({' . PHP_EOL;
     $output .= '  minHeight: 2000,' . PHP_EOL;
     $output .= '  pixelDepth: false,' . PHP_EOL;
     $output .= '  elements: [\'.story-footer\'],' . PHP_EOL;
     $output .= '  userTiming: false,' . PHP_EOL;
     $output .= "});";
-    $output .= '</script>' . PHP_EOL;
 
     wp_add_inline_script( 'scrollDepth', $output, 'after' );
   }
 }
 add_action( 'wp_enqueue_scripts' , 'elit_sd_enqueue_scripts' );
-
