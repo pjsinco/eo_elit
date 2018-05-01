@@ -1076,7 +1076,7 @@ function elit_sd_enqueue_scripts() {
     $output .= '  minHeight: 2000,' . PHP_EOL;
     $output .= '  pixelDepth: false,' . PHP_EOL;
     $output .= '  elements: [\'.story-footer\'],' . PHP_EOL;
-    $output .= '  userTiming: false,' . PHP_EOL;
+    $output .= '  userTiming: true,' . PHP_EOL;
     $output .= "});";
 
     wp_add_inline_script( 'scrollDepth', $output, 'after' );
