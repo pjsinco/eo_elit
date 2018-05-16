@@ -206,7 +206,11 @@ add_shortcode('advertisements', 'elit_advertisements_shortcode');
 function elit_story_video_shortcode($atts, $content = null ) {
   // we're going to need fitvids
   wp_enqueue_script('fitvids');
-  add_action( 'wp_footer', 'elit_add_fitvids_script', 50 );
+  /* Add our fitvids loader */
+  $output  = 'jQuery(document).ready(function() {' . PHP_EOL;
+  $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
+  $output .= "});";
+  wp_add_inline_script( 'fitvids', $output );
 
   $a = shortcode_atts(
     array(

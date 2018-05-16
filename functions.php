@@ -305,7 +305,11 @@ function elit_scripts() {
        is_front_page() || 
        is_singular( 'elit_spotlight' ) ) {
     wp_enqueue_script( 'fitvids' );
-    add_action( 'wp_footer' , 'elit_add_fitvids_script' );
+    $output  = 'jQuery(document).ready(function() {' . PHP_EOL;
+    $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
+    $output .= "});";
+
+    wp_add_inline_script( 'fitvids', $output );
   }
 
   // note: comment-reply is built in; found in wp-includes
@@ -1098,14 +1102,3 @@ function elit_add_http_to_https_script() {
   }
 }
 //add_action( 'wp_head' , 'elit_add_http_to_https_script', 0 );
-
-function elit_add_fitvids_script() {
-    /* Add our fitvids loader */
-    $output  = '<script>' . PHP_EOL;
-    $output .= 'jQuery(document).ready(function() {' . PHP_EOL;
-    $output .= "  jQuery('.elit-video').fitVids();" . PHP_EOL;
-    $output .= "});" . PHP_EOL;
-    $output .= '</script>' . PHP_EOL;
-
-    echo $output;
-}
