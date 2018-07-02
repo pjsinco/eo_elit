@@ -37,32 +37,29 @@
                   <a href="http://doctorsthatdo.org/" title="Home - Doctors of Osteopathic Medicine">Doctors That DO</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/about/aoa-membership/Pages/default.aspx" title="Enjoy the Benefits of Being an AOA Member">AOA Membership</a>
+                  <a href="https://osteopathic.org/about/aoa-membership/" title="AOA Membership - American Osteopathic Association">AOA Membership</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/about/leadership/Pages/default.aspx" title="Leadership & Policy">Leadership and Policy</a>
+                  <a href="https://osteopathic.org/about/leadership/" title="Leadership & Policy - American Osteopathic Association">Leadership and Policy</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/about/affiliates/Pages/default.aspx" title="AOA Affiliates, Partnerships, and Teams">Related Organizations</a>
+                  <a href="https://osteopathic.org/about/affiliated-organizations/" title="Affiliated Organizations - American Osteopathic Association">Related Organizations</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="https://aoa.rangemod.com/RetailSite.asp" title="American Osteopathic Association">AOA Store</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/about/Pages/employment-opportunities.aspx" title="Employment Opportunities">Work at the AOA</a>
+                  <a href="https://osteopathic.org/about/work-at-the-aoa/" title="Work at the AOA - American Osteopathic Association">Work at the AOA</a>
                 </li>
               </ul>
               
               <h3 class="footer__title">Accreditation</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/accreditation/predoctoral%20accreditation/Pages/default.aspx" title="COM Accreditation">COM Accreditation</a>
+                  <a href="https://osteopathic.org/accreditation/" title="COM Accreditation - American Osteopathic Association">COM Accreditation</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/accreditation/postdoctoral-training-approval/Pages/default.aspx" title="Postdoctoral Training Approval">Postdoctoral Training Approval</a>
-                </li>
-                <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/accreditation/opti-approval/Pages/default.aspx" title="Osteopathic Postdoctoral Training Institution Approval">OPTI Approval</a>
+                  <a href="https://osteopathic.org/graduate-medical-educators/search-opti-data/" title="Search OPTI data - American Osteopathic Association">Search OPTI Data</a>
                 </li>
               </ul>
             </div> <!-- .footer__col -->
@@ -71,51 +68,51 @@
               <h3 class="footer__title">Advocacy</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/public-policy/federal-legislative-priorities/Pages/default.aspx" title="Federal Legislative Priorities">Legislative Priorities</a>
+                  <a href="https://osteopathic.org/about/advocacy/federal-advocacy-initiatives/" title="Federal Advocacy Initiatives - American Osteopathic Association">Federal Advocacy</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/public-policy/regulatory-issues/Pages/default.aspx" title="Regulatory Issues">Regulatory Issues</a>
+                  <a href="https://osteopathic.org/about/advocacy/state-advocacy-initiatives/" title="State Advocacy Initiatives - American Osteopathic Association">State Advocacy</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/public-policy/state-government-affairs/Pages/default.aspx" title="State Government Affairs">State Government Affairs</a>
+                  <a href="https://osteopathic.org/about/advocacy/international-advocacy" title="International advocacy initiatives - American Osteopathic Association">International Advocacy</a>
                 </li>
               </ul>
               
               <h3 class="footer__title">Education</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="http://opportunities.osteopathic.org/index.htm" title="Opportunities.osteopathic.org">Find a Training Program</a>
+                  <a href="http://opportunities.osteopathic.org/index.htm" title="AOA Opportunities">Find a Training Program</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/Education/postdoctoral-training/Pages/default.aspx" title="Postdoctoral Training">Postdoctoral Training</a>
+                  <a href="https://osteopathic.org/graduate-medical-educators/postdoctoral-training-standards/" title="Postdoctoral Training Standards - American Osteopathic Association">Postdoctoral Training</a>
                 </li>
               </ul>
-            </div> <!-- .footer__col -->
-
-            <div class="footer__col--last">
               <h3 class="footer__title">CME Opportunities</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="https://minerva.osteopathic.org" title="Online CME">Online CME</a>
+                  <a href="https://aoaonlinelearning.osteopathic.org/" title="AOA Online Learning">AOA Online Learning</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/events/omed/Pages/default.aspx" title="Home - OMED: Osteopathic Medical Conference & Exposition">OMED</a>
+                  <a href="https://omed.osteopathic.org/" title="OMED 2018: Come Together">OMED</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://osteopathic.org/inside-aoa/events/regional-osteopathic-medical-education/Pages/default.aspx" title="AOA ROME Conferences">ROME</a>
+                  <a href="https://osteopathic.org/cme/search/" title="CME Search - American Osteopathic Association">CME Search</a>
                 </li>
               </ul>
 
+            </div> <!-- .footer__col -->
+
+            <div class="footer__col--last">
               <h3 class="footer__title">Professional Development</h3>
               <ul class="footer__list">
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/development/practice-mgt/Pages/default.aspx" title="Practice Management">Practice Management</a>
+                  <a href="https://osteopathic.org/practicing-medicine/" title="Practicing Medicine - American Osteopathic Association">Practicing Medicine</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/development/do-jobs-online/Pages/default.aspx" title="DO Jobs Online">DO Jobs Online</a>
+                  <a href="https://osteopathic.org/life-career/career-planning/" title="Career Center - American Osteopathic Association">Career Center</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="http://www.osteopathic.org/inside-aoa/development/research-and-development/Pages/default.aspx" title="Research and Development">Research and Development</a>
+                  <a href="https://osteopathic.org/life-career/research/" title="Osteopathic Research - American Osteopathic Association">Research</a>
                 </li>
               </ul>
               
@@ -128,7 +125,7 @@
               
               <h3 class="footer__title">Other publications</h3>
               <ul class="footer__list">
-                <li class="footer__list-item"><a href="http://www.do-online.org/JAOA/JAOA.cfm" title="The Journal of the American Osteopathic Association">JAOA</a>
+                <li class="footer__list-item"><a href="http://jaoa.org/" title="Home | The Journal of the American Osteopathic Association">JAOA</a>
                 </li>
               </ul>
             </div><!-- .footer__col-last -->
