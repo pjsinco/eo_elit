@@ -144,14 +144,14 @@
               <a href="<?php bloginfo( 'rss_url' ) ?>" title="RSS feed">RSS</a>
             </li>
             <li class="footer__list-item--horiz">
-              <a href="http://www.osteopathic.org/inside-aoa/about/Pages/terms-of-use-agreement.aspx" title="Terms of Use Agreement">Terms of Use</a>
+              <a href="https://osteopathic.org/terms-of-use/" title="Terms of Use - American Osteopathic Association">Terms of Use</a>
             </li>
             <li class="footer__list-item--horiz">
-              <a href="http://www.osteopathic.org/inside-aoa/about/Pages/privacy-policy.aspx" title="Privacy Policy">Privacy Policy</a>
+              <a href="https://osteopathic.org/about/privacy-policy/" title="Privacy Policy - American Osteopathic Association">Privacy Policy</a>
             </li>
-            <li class="footer__list-item--horiz">
-              <a href="http://www.osteopathic.org/inside-aoa/about/Pages/copyright-notice.aspx" title="Copyright Notice">Copyright Notice</a>
-            </li>
+<!--             <li class="footer__list-item--horiz"> -->
+<!--               <a href="http://www.osteopathic.org/inside-aoa/about/Pages/copyright-notice.aspx" title="Copyright Notice">Copyright Notice</a> -->
+<!--             </li> -->
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
