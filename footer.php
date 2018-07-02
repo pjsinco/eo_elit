@@ -149,9 +149,6 @@
             <li class="footer__list-item--horiz">
               <a href="https://osteopathic.org/about/privacy-policy/" title="Privacy Policy - American Osteopathic Association">Privacy Policy</a>
             </li>
-<!--             <li class="footer__list-item--horiz"> -->
-<!--               <a href="http://www.osteopathic.org/inside-aoa/about/Pages/copyright-notice.aspx" title="Copyright Notice">Copyright Notice</a> -->
-<!--             </li> -->
           </ul>
         </div><!-- .row -->
       </footer><!-- #colophon -->
