@@ -127,3 +127,13 @@
     letter-spacing: 1px;
   }
 }
+
+.comment-warning {
+  display: block;
+  position: relative;
+  top: -10px;
+  clear: both;
+  text-align: right;
+  color: $red;
+  animation: fade-in-down 0.15s ease-out;
+}
