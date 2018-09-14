@@ -54,7 +54,4 @@ jQuery(document).ready(function() {
       evt.preventDefault();
       windowPopup($(this).attr('href'), 500, 300);
     })
-
-
 });
-
