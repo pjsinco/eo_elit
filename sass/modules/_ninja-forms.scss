@@ -179,6 +179,10 @@ input.signup {
   }
 
   .ninja-forms-field-error {
+    position: absolute;
+    top: auto;
+    clear: both;
+    bottom: -7px;
     text-align: left;
   }
 
@@ -204,8 +208,6 @@ input.signup {
     position: absolute;
     right: 0;
     top: 0;
-
-
 
     @include breakpoint(max-width $large-start-minus-1) {
       width: 112px;
