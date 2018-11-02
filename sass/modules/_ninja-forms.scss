@@ -170,11 +170,16 @@ input.signup {
 //    height: 63px;
 //  }
 
+  .ninja-forms-error-msg,
   .nf-error-msg.nf-error-field-errors,
   .nf-before-form-content,
   .ninja-forms-req-symbol,
   .label-above .nf-field-label {
     display: none;
+  }
+
+  .ninja-forms-field-error {
+    text-align: left;
   }
 
   .submit-container,
@@ -230,6 +235,7 @@ input.signup {
     }
   }
 
+  .ninja-forms-response-msg.ninja-forms-success-msg p,
   .nf-response-msg p {
     text-align: center;
     font-weight: 200;
