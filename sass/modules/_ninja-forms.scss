@@ -152,3 +152,76 @@ input.signup {
   }
 }
 
+
+/**
+ * Subscribe-page form styles
+ */
+.page-template-page-subscribe {
+
+  .nf-form-cont {
+    margin-bottom: 10px;
+  }
+
+  .nf-form-content {
+    position: relative;
+  }
+
+//  .nf-response-msg {
+//    height: 63px;
+//  }
+
+  .nf-error-msg.nf-error-field-errors,
+  .nf-before-form-content,
+  .ninja-forms-req-symbol,
+  .label-above .nf-field-label {
+    display: none;
+  }
+
+  .submit-container,
+  .email-container {
+    display: inline-block;
+    clear: none;
+  }
+
+  .email-container {
+    width: 100%;
+  }
+
+  .email-container .nf-after-field {
+    position: absolute;
+  }
+
+  .submit-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .nf-element[type=button] {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: $primarycolor;
+    color: $white;
+  }
+
+  .nf-response-msg p {
+    text-align: center;
+    font-weight: 200;
+    font-size: 27px;
+    color: $primarycolor;
+
+
+    @include breakpoint($large-minor-start) {
+      font-size: 2.25rem;
+    }
+  }
+
+  .nf-field-element input {
+    border-color: $primarycolor;
+
+    @include breakpoint($large-start) {
+      height: 60px;
+    }
+  }
+}
+
