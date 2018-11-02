@@ -242,7 +242,8 @@ input.signup {
     }
   }
 
-  input,
+  .submit-container-wrap input[type=submit],
+  .email-container-wrap input[type=text],
   .nf-field-element input {
     border-color: $primarycolor;
 
