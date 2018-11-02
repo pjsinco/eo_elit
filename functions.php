@@ -321,6 +321,22 @@ function elit_scripts() {
   wp_enqueue_script( 'main' );
 
   /**
+   * Subscribe page styles
+   */
+  if ( is_page_template( 'page-subscribe.php' ) ) {
+    $style_uri = get_template_directory_uri() . '/dist/styles-subscribe.css';
+    $style_path = get_template_directory() . '/dist/style.css';
+
+    wp_enqueue_style(
+      'subscribe-style',
+      $style_uri,
+      array( 'elit-style' ),
+      filemtime( $style_path ), 
+      'all'
+    );
+  }
+
+  /**
    * Load our typekit fonts
    * https://typekit.com/account/kits
    */
