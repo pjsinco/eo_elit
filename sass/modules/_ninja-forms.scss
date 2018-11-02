@@ -185,6 +185,10 @@ input.signup {
 
   .email-container {
     width: 100%;
+
+    @include breakpoint(max-width $large-start-minus-1) {
+      padding-right: 112px;
+    }
   }
 
   .email-container .nf-after-field {
@@ -195,6 +199,12 @@ input.signup {
     position: absolute;
     right: 0;
     top: 0;
+
+
+
+    @include breakpoint(max-width $large-start-minus-1) {
+      width: 112px;
+    }
   }
 
   @include breakpoint($large-minor-start) {
@@ -210,7 +220,7 @@ input.signup {
     background-color: $primarycolor;
     color: $white;
 
-    @include breakpoint($large-minor-start) {
+    @include breakpoint($large-start) {
       padding-left: 60px;
       padding-right: 60px;
       font-size: 21px;
