@@ -197,11 +197,25 @@ input.signup {
     top: 0;
   }
 
+  @include breakpoint($large-minor-start) {
+    .nf-element[type=email] {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
   .nf-element[type=button] {
     padding-left: 20px;
     padding-right: 20px;
     background-color: $primarycolor;
     color: $white;
+
+    @include breakpoint($large-minor-start) {
+      padding-left: 60px;
+      padding-right: 60px;
+      font-size: 21px;
+
+    }
   }
 
   .nf-response-msg p {
