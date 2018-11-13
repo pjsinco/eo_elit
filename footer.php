@@ -46,7 +46,7 @@
                   <a href="https://osteopathic.org/about/affiliated-organizations/" title="Affiliated Organizations - American Osteopathic Association">Related Organizations</a>
                 </li>
                 <li class="footer__list-item">
-                  <a href="https://aoa.rangemod.com/RetailSite.asp" title="American Osteopathic Association">AOA Store</a>
+                  <a href="https://osteopathic.org/store" title="American Osteopathic Association">AOA Store</a>
                 </li>
                 <li class="footer__list-item">
                   <a href="https://osteopathic.org/about/work-at-the-aoa/" title="Work at the AOA - American Osteopathic Association">Work at the AOA</a>
