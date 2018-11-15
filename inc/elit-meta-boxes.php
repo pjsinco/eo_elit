@@ -432,12 +432,24 @@ function elit_add_featured_video_meta_box() {
 
 function elit_featured_video_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_featured_video_nonce' );
+  $autoplay = get_post_meta( $object->ID, 'elit_featured_video_autoplay', true );
+  $mute = get_post_meta( $object->ID, 'elit_featured_video_mute', true );
+
   ?>
   <p>
-    <label for="widefat">The embed code for the YouTube video, sized to 728px wide.</label>
-    <br />
+    <label class="widefat" for="elit-featured-video">The embed code for the YouTube video, sized to 728px wide.</label>
+    <br>
     <textarea class="widefat"  name="elit-featured-video" id="elit-featured-video" rows="5"><?php echo esc_attr( get_post_meta( $object->ID, 'elit_featured_video', true ) ); ?></textarea>
   </p>
+        
+  <fieldset>
+    <label  for="elit-featured-video-autoplay">Autoplay</label>
+    <input  style="margin-right: 4px;" type="checkbox" name="elit-featured-video-autoplay" id="elit-featured-video-autoplay" value="no" <?php if ( $autoplay ): checked( $autoplay, 'no' ); endif; ?> />
+
+    <label  for="elit-featured-video-mute">Mute</label>
+    <input  type="checkbox" name="elit-featured-video-mute" id="elit-featured-video-mute" value="no" <?php if ( $mute ): checked( $mute, 'no' ); endif; ?> />
+  </p>
+  </fieldset>
   <?php 
 }
 
@@ -465,20 +477,39 @@ function elit_save_featured_video_meta( $post_id, $post ) {
 
   // set the meta key
   $meta_key = 'elit_featured_video';
+  $meta_key_autoplay = 'elit_featured_video_autoplay';
+  $meta_key_mute = 'elit_featured_video_mute';
 
   // get the meta value as a string
   $meta_value = get_post_meta( $post_id, $meta_key, true);
 
-  // if a new meta value was added and there was no previous value, add it
-  if ( $new_meta_value && $meta_value == '' ) {
-    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
-  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
-    // so the new meta value doesn't match the old one, so we're updating
-    update_post_meta( $post_id, $meta_key, $new_meta_value );
-  } elseif ( $new_meta_value == '' && $meta_value) {
-    // if there is no new meta value but an old value exists, delete it
-    delete_post_meta( $post_id, $meta_key, $meta_value );
+  if ( isset( $_POST['elit-featured-video'] ) ) {
+    update_post_meta( $post_id, $meta_key, $_POST['elit-featured-video'] );
   }
+
+  if ( isset( $_POST['elit-featured-video-autoplay'] ) ) {
+    update_post_meta( $post_id, $meta_key_autoplay, $_POST['elit-featured-video-autoplay'] );
+  } else {
+    delete_post_meta( $post_id, $meta_key_autoplay );
+  }
+  
+  if ( isset( $_POST['elit-featured-video-mute'] ) ) {
+    update_post_meta( $post_id, $meta_key_mute, $_POST['elit-featured-video-mute'] );
+  } else {
+    delete_post_meta( $post_id, $meta_key_mute );
+  }
+
+
+//  // if a new meta value was added and there was no previous value, add it
+//  if ( $new_meta_value && $meta_value == '' ) {
+//    add_post_meta( $post_id, $meta_key, $new_meta_value, true);
+//  } elseif ($new_meta_value && $new_meta_value != $meta_value ) {
+//    // so the new meta value doesn't match the old one, so we're updating
+//    update_post_meta( $post_id, $meta_key, $new_meta_value );
+//  } elseif ( $new_meta_value == '' && $meta_value) {
+//    // if there is no new meta value but an old value exists, delete it
+//    delete_post_meta( $post_id, $meta_key, $meta_value );
+//  }
 }
 
 
