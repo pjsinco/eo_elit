@@ -4,8 +4,19 @@
  */
 ?>
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-          <?php $iframe = get_post_meta( $post->ID, 'elit_featured_video', true ); ?>
-          <?php if ( $iframe ): ?>
+          <?php $post_meta = get_post_meta( $post->ID ); ?>
+          <?php $iframe = $post_meta['elit_featured_video'][0]; ?>
+          <?php if ( !empty( $iframe ) ): ?>
+            <?php if ( $post_meta['elit_featured_video_autoplay'] ): ?>
+              <?php $subst = 'src="$1?autoplay=1&cc_load_policy=1"'; ?>
+              <?php if ( $post_meta['elit_featured_video_mute'] ): ?>
+                <?php $subst = 'src="$1?autoplay=1&cc_load_policy=1&mute=1"'; ?>
+              <?php endif; ?>
+              <?php $iframe = preg_replace( '/src="(.*?)"/m', $subst, $iframe ); ?>
+            <?php elseif ( $post_meta['elit_featured_video_mute'] ): ?>
+              <?php $iframe = preg_replace( '/src="(.*?)"/m', 'src="$1?mute=1"', $iframe ); ?>
+            <?php endif; ?>
+
             <figure class="image--primary image-overlay--space elit-video" id="video">
               <?php echo $iframe; ?>
             </figure>
