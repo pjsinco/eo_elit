@@ -253,7 +253,7 @@ function get_main_menu( $menu_location ) {
  * Register scripts and styles. Enqueue as needed.
  */
 function elit_scripts() {
-	wp_enqueue_style(
+  wp_enqueue_style(
     'elit-style', 
     get_stylesheet_uri(),
     array(),
@@ -261,18 +261,8 @@ function elit_scripts() {
     'all'
   );
 
-  wp_register_script( 'modernizr', 
-    get_template_directory_uri() . '/js/modernizr.js', 
-    array(), false, false
-  );
-
   wp_register_script('typekit-load', 
     '//use.typekit.net/vdi5qvx.js', array(), false, false
-  );
-
-  wp_register_script( 'append-around', 
-    get_template_directory_uri() . '/js/appendAround.js', 
-    array( 'jquery' ), false, true
   );
 
   wp_register_script( 'fitvids', 
@@ -286,8 +276,10 @@ function elit_scripts() {
   );
 
   wp_register_script('main',
-    get_template_directory_uri() . '/js/main.js', 
-    array( 'jquery' ), false, true
+    get_template_directory_uri() . '/dist/the-do.min.js', 
+    array( 'jquery' ), 
+    false, 
+    true
   );
 
   wp_register_script( 'elit_load_topojson', 
@@ -317,7 +309,6 @@ function elit_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-  wp_enqueue_script( 'append-around' );
   wp_enqueue_script( 'main' );
 
   /**
@@ -351,6 +342,7 @@ function elit_scripts() {
 
   wp_add_inline_script( 'main', $output );
   
+
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 
@@ -380,16 +372,6 @@ function elit_add_arp_snippet() {
   echo $output;
 }
 add_action( 'wp_head' , 'elit_add_arp_snippet' );
-
-function elit_append_around() {
-  $output = '<script>' . PHP_EOL;
-  $output .= 'jQuery(".rover-don").appendAround();' . PHP_EOL;
-  $output .= 'jQuery(".rover-peggy").appendAround();' . PHP_EOL;
-  $output = '</script>' . PHP_EOL;
-  
-  //echo $output;
-}
-//add_action( 'wp_footer', 'elit_append_around', 50 );
 
 /**
  *  Add async to loading of picturefill script
@@ -1118,3 +1100,20 @@ function elit_add_http_to_https_script() {
   }
 }
 //add_action( 'wp_head' , 'elit_add_http_to_https_script', 0 );
+
+
+function elit_add_query_string_to_redirect( $location, $comment ) 
+{
+    if ( $comment->comment_approved == 1 ) {
+      return $location;
+    }
+
+    $query_str = 'show_comment_policy=true';
+
+    if ( strpos( $location, '&' ) ) {
+      return $location . '&' . $query_str;
+    }
+
+    return $location . '?' . $query_str;
+}
+add_action( 'comment_post_redirect', 'elit_add_query_string_to_redirect', 10, 2 );
