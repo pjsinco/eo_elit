@@ -1,6 +1,6 @@
 {
   "name": "the-do",
-  "version": "1.3.10",
+  "version": "1.4.0",
   "main": "index.php",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
