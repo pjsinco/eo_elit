@@ -19,10 +19,6 @@ if ( post_password_required() ) {
 ?>
 <div class="comments__wrapper">
 
-  <?php if ( isset( $_SESSION ) ): ?>
-    <?php // echo '<pre>'; var_dump($_SESSION); echo '</pre>'; ?>
-  <?php endif; ?>
-  
   <div id="comments" class="comments">
   	<?php if ( have_comments() ) : ?>
       <h2 class="comments__title">

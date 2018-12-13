@@ -25,6 +25,7 @@ elit is based on Underscores http://underscores.me/
 @include border-box-sizing;
 
 @import "utilities/index"; // Variables, mixins, grid-system, etc.
+@import "vendor/index"; 
 @import 'base/index';
 @import 'layout/index';
 @import 'modules/index';

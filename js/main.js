@@ -54,4 +54,27 @@ jQuery(document).ready(function() {
       evt.preventDefault();
       windowPopup($(this).attr('href'), 500, 300);
     })
+
+  if (window.location.href.indexOf('show_comment_policy=true') > -1) {
+    vex.defaultOptions.className = "vex-theme-default";
+    vex.dialog.alert({ 
+      unsafeMessage: '<h3>Thank you for your comment!</h3>' +
+                     'Please note that all comments are moderated. ' +
+                     'Review may take up to two business days.' +
+                     '<br><br>See the <a href="/comment-policy">' +
+                     'comment policy</a> for details.',
+      afterClose: function() {
+        // Remove 'show_comment_policy' query string
+        // https://www.quora.com/How-do-I-remove-a-specific-key-value-pair-in-
+        //         a-query-string-without-reloading-using-JavaScript
+        var href = window.location.href
+        window.location.href = href.split('?')
+          .map(function (url, i) {
+            return !i ? url : url.split('&').filter(function(p) {
+              return p.indexOf('show_comment_policy=') < 0;
+            }).join('&');
+          }).join('?');
+      }
+    });
+  }
 });
