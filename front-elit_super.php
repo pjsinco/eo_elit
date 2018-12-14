@@ -22,7 +22,7 @@
         <div class="size-1-of-1">
           <div class="super"><a href="<?php echo $super_meta['elit_super_link'][0]; ?>">
             <figure class="super__figure">
-              <img class="image__img" src="<?php echo wp_get_attachment_url( $featured_image_id ); ?>" <?php echo wp_get_attachment_image_sizes( $featured_image_id, 'elit-super' ); ?> />
+              <img class="image__img" src="<?php echo esc_url( wp_get_attachment_image_url( $featured_image_id ) ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_image_id, 'elit-super' ) ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $featured_image_id, 'elit-super' ); ?>" />
               <?php if ( !empty( $featured_image_content ) ): ?>
                 <figcaption class="super__label--<?php echo $super_meta['elit_super_label_quadrant'][0]; ?>"><?php echo $featured_image_content->post_content ?></figcaption>
               <?php endif; ?>
