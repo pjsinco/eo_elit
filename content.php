@@ -16,7 +16,7 @@
 
             <?php // if we don't have a label for the image, add some space below with image-overlay--space ?>
             <figure class="<?php elit_featured_image_class( $layout ); ?> <?php echo (($featured_image_content->post_excerpt) ? 'image-overlay ' : ''); ?> <?php echo (($featured_image_content->post_content) ? '' : 'image-overlay--space '); ?>">
-              <img class="image__img" src="<?php echo wp_get_attachment_url($featured_image_id); ?>" <?php echo wp_get_attachment_image_srcset( $featured_image_id, elit_get_featured_image_size( $layout ) ); ?> />
+              <img class="image__img" src="<?php echo esc_url( wp_get_attachment_url( $featured_image_id ) ); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( $featured_image_id, elit_get_featured_image_size( $layout ) ) ); ?>" sizes="<?php echo wp_get_attachment_image_sizes( $featured_image_id, 'elit-large' ); ?>" />
 
             <?php // the caption overlay ?>
             <?php if ($featured_image_content->post_excerpt): ?>
