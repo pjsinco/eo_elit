@@ -97,13 +97,14 @@ function elit_story_image_shortcode($atts, $content = null) {
     $credit = get_post_meta( $attachment->ID, 'elit_image_credit', true );
     $image_size = 'secondary';
   }
-  
+ 
   // generates the string needed to use with the RICG Responsive Images plugin
   $ricg_responsive_str = '<figure class="image image--' . $image_size . 
     ( $a['size'] == 'small' ? ' fractional' : '' ) . '">';
   $ricg_responsive_str .= '<img class="image__img" src="' . $largest[0] . '" '; 
-  if ( $size != 'mug' && $size != 'stamp' ) {
+  if ( $size == 'full' ) {
     $ricg_responsive_str .= 'srcset="' . wp_get_attachment_image_srcset( $a['id'], $largest[0] ) . '" ';
+    $ricg_responsive_str .= 'sizes="' . wp_get_attachment_image_sizes( $a['id'], 'elit-large' ) . '" ';
   } 
   $ricg_responsive_str .= '/>';
   $ricg_responsive_str .= '<figcaption class="caption">';
