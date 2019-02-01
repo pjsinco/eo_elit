@@ -28,6 +28,12 @@ jQuery(document).ready(function() {
   jQuery(".rover-don").appendAround();
   jQuery(".rover-peggy").appendAround();
 
+  $(window).resize(function() {
+    if (window.googletag) {
+      window.googletag.pubads().refresh();
+    }
+  });
+
   /**
    * Social popups
    *
