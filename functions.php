@@ -341,8 +341,6 @@ function elit_scripts() {
   $output .=  '})(document);';
 
   wp_add_inline_script( 'main', $output );
-  
-
 }
 add_action( 'wp_enqueue_scripts', 'elit_scripts', 9999 );
 
@@ -372,6 +370,50 @@ function elit_add_arp_snippet() {
   echo $output;
 }
 add_action( 'wp_head' , 'elit_add_arp_snippet' );
+
+/**
+ * Add Google Publisher Tag head matter
+ *
+ */
+function elit_add_gpt_script() {
+  $src = 'https://www.googletagservices.com/tag/js/gpt.js';
+  $output  = "<script type=\"text/javascript\" async=\"async\" src=\"$src\"></script>" . PHP_EOL;
+  $output .= '<script>var googletag = googletag || {}; googletag.cmd = googletag.cmd || [];</script>' .  PHP_EOL;
+  
+
+  // Right Rail - Top (Don)
+  $output .= '<script>' . PHP_EOL;
+  $output .= '  googletag.cmd.push(function() {' . PHP_EOL;
+  $output .= '  googletag.defineSlot("/11459905/thedo.osteopathic.org/Top_Right_Rail", [300, 250], ';
+  $output .= '"div-gpt-ad-1546881023339-0").addService(googletag.pubads());' . PHP_EOL;
+  $output .= '  googletag.pubads().enableSingleRequest();' . PHP_EOL;
+  $output .= '  googletag.enableServices();' . PHP_EOL;
+  $output .= '});' . PHP_EOL;
+  $output .= '</script>' . PHP_EOL;
+
+  // Right Rail - Bottom (Peggy)
+  $output .= '<script>' . PHP_EOL;
+  $output .= '  googletag.cmd.push(function() {' . PHP_EOL;
+  $output .= '  googletag.defineSlot("/11459905/thedo.osteopathic.org/Bottom_Right_Rail", [300, 250], ';
+  $output .= '"div-gpt-ad-1546881092063-0").addService(googletag.pubads());' . PHP_EOL;
+  $output .= '  googletag.pubads().enableSingleRequest();' . PHP_EOL;
+  $output .= '  googletag.enableServices();' . PHP_EOL;
+  $output .= '});' . PHP_EOL;
+  $output .= '</script>' . PHP_EOL;
+
+  // Leaderboard
+  $output .= '<script>' . PHP_EOL;
+  $output .= '  googletag.cmd.push(function() {' . PHP_EOL;
+  $output .= '  googletag.defineSlot("/11459905/thedo.osteopathic.org/Top_Banner", [728, 90], ';
+  $output .= '"div-gpt-ad-1546880898179-0").addService(googletag.pubads());' . PHP_EOL;
+  $output .= '  googletag.pubads().enableSingleRequest();' . PHP_EOL;
+  $output .= '  googletag.enableServices();' . PHP_EOL;
+  $output .= '});' . PHP_EOL;
+  $output .= '</script>' . PHP_EOL;
+
+  echo $output;
+}
+add_action( 'wp_head' , 'elit_add_gpt_script' );
 
 /**
  *  Add async to loading of picturefill script
