@@ -783,7 +783,7 @@ function elit_temp_c3_for_post_196413() {
 
   $target_id = 196413;
 
-  if ( $post->ID == $target_id ) {
+  if ( $post && ( $post->ID == $target_id ) ) {
 
     wp_enqueue_style(
       'c3-library-style',
@@ -829,7 +829,7 @@ function elit_temp_c3_for_post_196768() {
   $target_id = 196768;
   //$target_id = 186295;
 
-  if ( $post->ID == $target_id ) {
+  if ( $post && ( $post->ID == $target_id ) ) {
 
     wp_enqueue_style(
       'c3-library-style',
