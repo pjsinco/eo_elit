@@ -632,6 +632,7 @@ function elit_thumb_meta_box( $object, $box ) {
   wp_nonce_field( basename(__FILE__), 'elit_thumb_nonce' );
 
   $thumb_id = get_post_meta( $object->ID, 'elit_thumb', true );
+  $image_markup = null;
 
   if ( $thumb_id ){
     $thumb_src = wp_get_attachment_image_src( $thumb_id, 'elit-medium' );

@@ -1019,7 +1019,7 @@ function elit_get_possible_dependencies( $all_fields,
 
 function elit_get_dependencies_to_load( $possible_deps ) {
   
-  if ( ! $possible_deps ) return false;
+  if ( ! $possible_deps ) return [];
 
   return array_keys( array_filter( $possible_deps, function( $value ) {
       return $value == true;

@@ -164,8 +164,9 @@ class elit_widget_recent_posts extends WP_Widget {
 		<?php while ( $r->have_posts() ) : $r->the_post(); ?>
     <?php 
       $meta = get_post_meta( get_the_ID() );
+      $meta_thumb = array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : false;
       $thumb_id = ( 
-        has_post_thumbnail() ? get_post_thumbnail_id() : $meta['elit_thumb'][0]
+        has_post_thumbnail() ? get_post_thumbnail_id() : $meta_thumb
       );
    ?>
 			<li class="widget__list-item">

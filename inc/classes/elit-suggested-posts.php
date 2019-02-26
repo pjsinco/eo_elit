@@ -89,24 +89,27 @@ class ElitSuggestedPosts
      * Display other posts in same category
      *
      */
-    $field_exists = array_key_exists( 'elit_display_more_posts_in_category', get_fields() );
-    
-    // Make sure older posts that haven't yet set the field
-    // don't falsely indicate they do not want to display cagegory posts
-    if ( $field_exists && get_field( 'elit_display_more_posts_in_category' ) || 
-         !$field_exists ) {
-      $category_posts = 
-        $this->get_posts_in_category( 
-          array_merge( $this->suggested_ids, array( $this->post_id ) ), 
-          $this->category_id );
-    
-      if ( ! empty( $category_posts ) ) {
-        $this->add_to_suggested( $category_posts );
-        $this->display_section( 
-          sprintf( 'More in <span>%s</span>', $this->categories[0]->name ),
-          $category_posts 
-        );
-      }
+    if ( $fields = get_fields( $this->post_id ) ) {
+        
+        $field_exists = array_key_exists( 'elit_display_more_posts_in_category', $fields );
+        
+        // Make sure older posts that haven't yet set the field
+        // don't falsely indicate they do not want to display cagegory posts
+        if ( $field_exists && get_field( 'elit_display_more_posts_in_category' ) || 
+             !$field_exists ) {
+          $category_posts = 
+            $this->get_posts_in_category( 
+              array_merge( $this->suggested_ids, array( $this->post_id ) ), 
+              $this->category_id );
+        
+          if ( ! empty( $category_posts ) ) {
+            $this->add_to_suggested( $category_posts );
+            $this->display_section( 
+              sprintf( 'More in <span>%s</span>', $this->categories[0]->name ),
+              $category_posts 
+            );
+          }
+        }
     }
   }
 
