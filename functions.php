@@ -985,10 +985,12 @@ function elit_opengraph_add_social_thumbnail() {
 
   $thumb = get_post_meta( $post->ID, 'elit_thumb' );
 
+  if ( count( $thumb ) == 0 ) return;
+
   $thumb_url = wp_get_attachment_image_src( $thumb[0], 'elit-super' );
   
   if ( $thumb_url ) {
-    $GLOBALS['wpseo_og']->image_output( $thumb_url[0] );
+    $GLOBALS['wpseo_og']->image( $thumb_url[0] );
   }
 }
 add_action( 'wpseo_opengraph', 'elit_opengraph_add_social_thumbnail' );
