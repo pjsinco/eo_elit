@@ -1076,7 +1076,7 @@ function elit_load_scripts_for_post() {
 
   if ( ! $all_fields ) return;
 
-  if ( ! in_array( 'elit_script_file', $all_fields ) ) return;
+  if ( ! array_key_exists( 'elit_script_file', $all_fields ) ) return;
 
   $script = $all_fields['elit_script_file'];
 
