@@ -316,7 +316,7 @@ function elit_scripts() {
    */
   if ( is_page_template( 'page-subscribe.php' ) ) {
     $style_uri = get_template_directory_uri() . '/dist/styles-subscribe.css';
-    $style_path = get_template_directory() . '/dist/style.css';
+    $style_path = get_template_directory() . '/dist/styles-subscribe.css';
 
     wp_enqueue_style(
       'subscribe-style',
