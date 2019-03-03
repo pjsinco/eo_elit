@@ -311,7 +311,7 @@ function elit_latest_related_posts( $post_type = 'post' ) {
 
       $meta = get_post_meta( $related->ID );
       $thumb_id = ( 
-        has_post_thumbnail( $related->ID ) ? get_post_thumbnail_id( $related->ID ) : $related['elit_thumb'][0]
+        has_post_thumbnail( $related->ID ) ? get_post_thumbnail_id( $related->ID ) : ( array_key_exists( 'elit_thumb', $related ) ? $related['elit_thumb'][0] : '' )
       );
       $url = get_permalink( $related->ID ); 
     ?>
@@ -413,7 +413,7 @@ function elit_recommended() {
   <?php foreach ( $recs as $rec ):
     $meta = get_post_meta( $rec->ID );
     $thumb_id = ( 
-      has_post_thumbnail( $rec->ID ) ? get_post_thumbnail_id( $rec->ID ) : $meta['elit_thumb'][0]
+      has_post_thumbnail( $rec->ID ) ? get_post_thumbnail_id( $rec->ID ) : ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '' )
     );
     $url = get_permalink( $rec->ID );
   ?>

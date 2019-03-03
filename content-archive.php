@@ -17,7 +17,7 @@
       <?php $thumb_id = (
         has_post_thumbnail() ? 
           get_post_thumbnail_id() : 
-          $meta['elit_thumb'][0]
+          ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '' )
       );
         if ( $thumb_id ):
           $thumb_url = wp_get_attachment_image_src( $thumb_id, 'elit-thumb' );
