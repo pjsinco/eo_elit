@@ -611,9 +611,9 @@ add_filter( 'the_content', 'elit_remove_shortcodes_from_content_for_aoa_app', 10
  * Based on this gist:
  * https://gist.github.com/danielbachhuber/7126249
  */
-function elit_include_authors_in_search($posts_search)
+function elit_include_authors_in_search($posts_search, $wp_query)
 {
-    if (! is_search() || empty($posts_search)) {
+    if (! $wp_query->is_search() || empty($posts_search)) {
         return $posts_search;
     }
 
@@ -646,7 +646,7 @@ function elit_include_authors_in_search($posts_search)
     return $posts_search;
 
 }
-add_filter('posts_search' , 'elit_include_authors_in_search');
+add_filter('posts_search' , 'elit_include_authors_in_search', 10, 2);
 
 function elit_filter_user_query( &$user_query )
 {
@@ -682,12 +682,11 @@ function elit_add_custom_ninja_form_response_class( $form_class, $form_id ) {
  */
 function elit_modify_main_query_for_archive( $query ) {
 
-  if ( is_category() ) {
+  if ( $query->is_category() ) {
     $query->set( 'post_type', array( 'post', 'elit_spotlight' ) );
   }
 
   return $query;
-
 }
 
 add_action('pre_get_posts' , 'elit_modify_main_query_for_archive');
