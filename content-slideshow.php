@@ -30,8 +30,16 @@
              </div> <!-- story__body-text -->
              
              <footer class="story-footer--full-width"> 
-               <?php elit_social_links( $meta, $link, $title, $thumb_id, false ); ?>
-               <?php elit_story_footer( get_post() ); ?>
+                <?php
+                $meta = get_post_meta( $post->ID );
+                $link = get_permalink();
+                $title = get_the_title();
+                $thumb_id = ( 
+                  has_post_thumbnail() ? get_post_thumbnail_id() : 
+                    ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '' )
+                );
+                elit_social_links( $meta, $link, $title, $thumb_id, false );
+                elit_story_footer( get_post() ); ?>
              </footer>
 
            </div> <!-- .story -->
