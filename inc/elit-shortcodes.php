@@ -36,7 +36,7 @@ function elit_related_shortcode($atts, $content = null) {
     $thumb_id = get_post_thumbnail_id( $post->ID );
   } else {
     $meta = get_post_meta( $post->ID );
-    $thumb_id = $meta['elit_thumb'][0];
+    $thumb_id = ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '');
   }
   
   $thumb = get_post( $thumb_id );

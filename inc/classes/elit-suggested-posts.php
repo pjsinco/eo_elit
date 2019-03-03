@@ -216,7 +216,7 @@ class ElitSuggestedPosts
     $meta = get_post_meta( $post->ID );
     $thumb_id = ( has_post_thumbnail( $post->ID ) ? 
                     get_post_thumbnail_id( $post->ID ) : 
-                    $meta['elit_thumb'][0]);
+                    ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '' ) );
     $url = get_permalink( $post->ID );
     ob_start();
     ?>
