@@ -35,7 +35,7 @@
                 $title = get_the_title();
                 $thumb_id = ( 
                   has_post_thumbnail() ? get_post_thumbnail_id() : 
-                    $meta['elit_thumb'][0]
+                    ( array_key_exists( 'elit_thumb', $meta ) ? $meta['elit_thumb'][0] : '' )
                 );
                 elit_social_links( $meta, $link, $title, $thumb_id, true ); ?>
             </header>
