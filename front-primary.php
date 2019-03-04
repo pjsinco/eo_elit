@@ -32,7 +32,7 @@
               </a>
             </figure>
             <div class="f-item__body--major"> 
-              <h5 class="f-item__kicker--major"><?php echo $meta['elit_kicker'][0]; ?></h5>
+              <h5 class="f-item__kicker--major"><?php echo metadata_exists( 'post', $post->ID, 'elit_kicker' ) ? $meta['elit_kicker'][0] : ''; ?></h5>
               <span class="f-item__date--major"><?php echo get_the_date( 'M. j, Y' ); ?></span>
               <h2 class="f-item__head--major">
                 <a href="<?php the_permalink(); ?>" class="f-item__link"><?php the_title(); ?></a>

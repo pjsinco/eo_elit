@@ -17,7 +17,7 @@ class ElitSuggestedPosts
   public function __construct( $post ) {
     $this->post_id      = $post->ID;
     $this->categories   = get_the_category( $post->ID );
-    $this->category_id  = $this->categories[0]->term_id;
+    $this->category_id  = count($this->categories) ? $this->categories[0]->term_id : '';
     $this->meta         = get_post_meta( $post->ID );
     $this->schools      = $this->get_schools_for_post( $post->ID );
   }
