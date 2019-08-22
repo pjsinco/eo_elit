@@ -13,6 +13,7 @@
     padding-bottom: 0;
     background: $extralightgray;
 
+    textarea,
     input[type=text] {
       @extend %comment-form-input-base;
       /*@extend .comment-form input;*/

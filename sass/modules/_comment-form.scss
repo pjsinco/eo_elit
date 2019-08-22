@@ -1,6 +1,6 @@
 %comment-form-input-base {
   float: right;
-  width: 100%;
+  width: 100% !important;
 
   @include breakpoint($screen $medium-minor-start) {
     max-width: 75%;      
