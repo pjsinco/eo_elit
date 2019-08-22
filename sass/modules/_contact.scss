@@ -48,4 +48,20 @@
     @extend %comment-form-p-base;
   }
 
+  .recaptcha-wrap > label {
+    position: absolute;
+    left: -10px;
+  }
+  
+  .recaptcha-wrap {
+    float: right;
+    position: relative;
+  }
+  
+  .submit-wrap {
+    clear: both;
+  }
+
 }
+
+
