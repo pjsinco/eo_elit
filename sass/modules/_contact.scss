@@ -30,6 +30,9 @@
       @extend %comment-form-button-base;
     }
     
+    .submit-wrap {
+      clear: both;
+    }
 
     label {
       @extend %comment-form-label-base;
