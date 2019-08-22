@@ -6,14 +6,18 @@
   display: none;
 }
 
-.recaptcha-wrap > label {
-  position: absolute;
-  left: -10px;
-}
-
 .recaptcha-wrap {
   float: right;
   position: relative;
+
+  & > label {
+    position: absolute;
+    left: -10px;
+  }
+
+  & .ninja-forms-field-error {
+    margin-top: 16px;
+  }
 }
 
 .submit-wrap {
