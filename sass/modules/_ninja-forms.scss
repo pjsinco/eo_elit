@@ -7,8 +7,11 @@
 }
 
 .recaptcha-wrap {
-  float: right;
   position: relative;
+
+  @include breakpoint($screen $medium-minor-start) {
+    float: right;
+  }
 
   & > label {
     position: absolute;
