@@ -12,6 +12,7 @@
 
   @include breakpoint($screen $medium-minor-start) {
     float: right;
+    overflow-x: auto;
   }
 
   & > label {
