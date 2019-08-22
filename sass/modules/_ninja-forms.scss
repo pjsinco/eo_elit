@@ -6,6 +6,21 @@
   display: none;
 }
 
+.recaptcha-wrap > label {
+  position: absolute;
+  left: -10px;
+}
+
+.recaptcha-wrap {
+  float: right;
+  position: relative;
+}
+
+.submit-wrap {
+  clear: both;
+}
+
+
 .footer {
 
   .ninja-forms {
@@ -33,6 +48,7 @@
 
     &-form {
 
+      &-wrap textarea,
       &-wrap input {
         @include breakpoint($screen $medium-start) {
           width: 100%;
@@ -59,8 +75,6 @@
 
 
   }
-
-
 
 }
 
