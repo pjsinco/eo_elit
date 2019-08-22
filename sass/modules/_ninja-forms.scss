@@ -8,6 +8,7 @@
 
 .recaptcha-wrap {
   position: relative;
+  overflow-x: scroll;
 
   @include breakpoint($screen $medium-minor-start) {
     float: right;
